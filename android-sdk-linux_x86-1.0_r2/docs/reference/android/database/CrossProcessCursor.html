@@ -1,0 +1,1350 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.database.CrossProcessCursor - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/database/package-summary.html">android.database</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>android.database.CrossProcessCursor</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.database.CrossProcessCursor</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/database/Cursor.html">Cursor</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/android/database/AbstractCursor.html">AbstractCursor</a>,
+            
+                <a href="../../../reference/android/database/AbstractWindowedCursor.html">AbstractWindowedCursor</a>,
+            
+                <a href="../../../reference/android/database/MatrixCursor.html">MatrixCursor</a>,
+            
+                <a href="../../../reference/android/database/MergeCursor.html">MergeCursor</a>,
+            
+                <a href="../../../reference/android/database/sqlite/SQLiteCursor.html">SQLiteCursor</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/AbstractCursor.html">AbstractCursor</a></td>
+            <td class="jd-descrcol" width="100%">This is an abstract cursor class that handles a lot of the common code
+ that all cursors need to deal with and is provided for convenience reasons.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/AbstractWindowedCursor.html">AbstractWindowedCursor</a></td>
+            <td class="jd-descrcol" width="100%">A base class for Cursors that store their data in <a href="../../../reference/android/database/CursorWindow.html">CursorWindow</a>s.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/MatrixCursor.html">MatrixCursor</a></td>
+            <td class="jd-descrcol" width="100%">A mutable cursor implementation backed by an array of <code class="Code prettyprint">Object</code>s.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/MergeCursor.html">MergeCursor</a></td>
+            <td class="jd-descrcol" width="100%">A convience class that lets you present an array of Cursors as a single linear Cursor.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/sqlite/SQLiteCursor.html">SQLiteCursor</a></td>
+            <td class="jd-descrcol" width="100%">A Cursor implementation that exposes results from a query on a
+ <a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/CrossProcessCursor.html#fillWindow(int, android.database.CursorWindow)">fillWindow</a>(int pos, <a href="../../../reference/android/database/CursorWindow.html">CursorWindow</a> winow)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">copies cursor data into the window start at pos
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/database/CursorWindow.html">CursorWindow</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/CrossProcessCursor.html#getWindow()">getWindow</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">returns a pre-filled window, return NULL if no such window
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/CrossProcessCursor.html#onMove(int, int)">onMove</a>(int oldPosition, int newPosition)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This function is called every time the cursor is successfully scrolled
+ to a new position, giving the subclass a chance to update any state it
+ may have.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.database.Cursor')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.database.Cursor-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/database/Cursor.html">android.database.Cursor</a>
+</h5>
+<div id="inherited-methods-android.database.Cursor">
+<div id="inherited-methods-android.database.Cursor-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/database/Cursor.html#close()">close</a>,
+
+<a href="../../../reference/android/database/Cursor.html#copyStringToBuffer(int, android.database.CharArrayBuffer)">copyStringToBuffer</a>,
+
+<a href="../../../reference/android/database/Cursor.html#deactivate()">deactivate</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getBlob(int)">getBlob</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getColumnCount()">getColumnCount</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getColumnIndex(java.lang.String)">getColumnIndex</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getColumnIndexOrThrow(java.lang.String)">getColumnIndexOrThrow</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getColumnName(int)">getColumnName</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getColumnNames()">getColumnNames</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getCount()">getCount</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getDouble(int)">getDouble</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getExtras()">getExtras</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getFloat(int)">getFloat</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getInt(int)">getInt</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getLong(int)">getLong</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getPosition()">getPosition</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getShort(int)">getShort</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getString(int)">getString</a>,
+
+<a href="../../../reference/android/database/Cursor.html#getWantsAllOnMoveCalls()">getWantsAllOnMoveCalls</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isAfterLast()">isAfterLast</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isBeforeFirst()">isBeforeFirst</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isClosed()">isClosed</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isFirst()">isFirst</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isLast()">isLast</a>,
+
+<a href="../../../reference/android/database/Cursor.html#isNull(int)">isNull</a>,
+
+<a href="../../../reference/android/database/Cursor.html#move(int)">move</a>,
+
+<a href="../../../reference/android/database/Cursor.html#moveToFirst()">moveToFirst</a>,
+
+<a href="../../../reference/android/database/Cursor.html#moveToLast()">moveToLast</a>,
+
+<a href="../../../reference/android/database/Cursor.html#moveToNext()">moveToNext</a>,
+
+<a href="../../../reference/android/database/Cursor.html#moveToPosition(int)">moveToPosition</a>,
+
+<a href="../../../reference/android/database/Cursor.html#moveToPrevious()">moveToPrevious</a>,
+
+<a href="../../../reference/android/database/Cursor.html#registerContentObserver(android.database.ContentObserver)">registerContentObserver</a>,
+
+<a href="../../../reference/android/database/Cursor.html#registerDataSetObserver(android.database.DataSetObserver)">registerDataSetObserver</a>,
+
+<a href="../../../reference/android/database/Cursor.html#requery()">requery</a>,
+
+<a href="../../../reference/android/database/Cursor.html#respond(android.os.Bundle)">respond</a>,
+
+<a href="../../../reference/android/database/Cursor.html#setNotificationUri(android.content.ContentResolver, android.net.Uri)">setNotificationUri</a>,
+
+<a href="../../../reference/android/database/Cursor.html#unregisterContentObserver(android.database.ContentObserver)">unregisterContentObserver</a>,
+
+<a href="../../../reference/android/database/Cursor.html#unregisterDataSetObserver(android.database.DataSetObserver)">unregisterDataSetObserver</a>
+
+</div>
+<div id="inherited-methods-android.database.Cursor-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Closes the Cursor, releasing all of its resources and making it completely invalid.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#copyStringToBuffer(int, android.database.CharArrayBuffer)">copyStringToBuffer</a>(int columnIndex, <a href="../../../reference/android/database/CharArrayBuffer.html">CharArrayBuffer</a> buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieves the requested column text and stores it in the buffer provided.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#deactivate()">deactivate</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Deactivates the Cursor, making all calls on it fail until <a href="../../../reference/android/database/Cursor.html#requery()">requery()</a> is called.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getBlob(int)">getBlob</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a byte array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getColumnCount()">getColumnCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return total number of columns</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getColumnIndex(java.lang.String)">getColumnIndex</a>(<a href="../../../reference/java/lang/String.html">String</a> columnName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the zero-based index for the given column name, or -1 if the column doesn't exist.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getColumnIndexOrThrow(java.lang.String)">getColumnIndexOrThrow</a>(<a href="../../../reference/java/lang/String.html">String</a> columnName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the zero-based index for the given column name, or throws
+ <a href="../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a> if the column doesn't exist.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getColumnName(int)">getColumnName</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the column name at the given zero-based column index.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getColumnNames()">getColumnNames</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string array holding the names of all of the columns in the
+ result set in the order in which they were listed in the result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getCount()">getCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the numbers of rows in the cursor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getDouble(int)">getDouble</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a double.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getExtras()">getExtras</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a bundle of extra values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getFloat(int)">getFloat</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a float.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getInt(int)">getInt</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as an int.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getLong(int)">getLong</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a long.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getPosition()">getPosition</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the current position of the cursor in the row set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">short&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getShort(int)">getShort</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a short.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getString(int)">getString</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the requested column as a String.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#getWantsAllOnMoveCalls()">getWantsAllOnMoveCalls</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">onMove() will only be called across processes if this method returns true.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isAfterLast()">isAfterLast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the cursor is pointing to the position after the last
+ row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isBeforeFirst()">isBeforeFirst</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the cursor is pointing to the position before the first
+ row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isClosed()">isClosed</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">return true if the cursor is closed</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isFirst()">isFirst</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the cursor is pointing to the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isLast()">isLast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the cursor is pointing to the last row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#isNull(int)">isNull</a>(int columnIndex)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns <code>true</code> if the value in the indicated column is null.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#move(int)">move</a>(int offset)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor by a relative amount, forward or backward, from the
+ current position.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#moveToFirst()">moveToFirst</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor to the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#moveToLast()">moveToLast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor to the last row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#moveToNext()">moveToNext</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor to the next row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#moveToPosition(int)">moveToPosition</a>(int position)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor to an absolute position.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#moveToPrevious()">moveToPrevious</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the cursor to the previous row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#registerContentObserver(android.database.ContentObserver)">registerContentObserver</a>(<a href="../../../reference/android/database/ContentObserver.html">ContentObserver</a> observer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an observer that is called when changes happen to the content backing this cursor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#registerDataSetObserver(android.database.DataSetObserver)">registerDataSetObserver</a>(<a href="../../../reference/android/database/DataSetObserver.html">DataSetObserver</a> observer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an observer that is called when changes happen to the contents
+ of the this cursors data set, for example, when the data set is changed via
+ <a href="../../../reference/android/database/Cursor.html#requery()">requery()</a>, <a href="../../../reference/android/database/Cursor.html#deactivate()">deactivate()</a>, or <a href="../../../reference/android/database/Cursor.html#close()">close()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#requery()">requery</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Performs the query that created the cursor again, refreshing its 
+ contents.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#respond(android.os.Bundle)">respond</a>(<a href="../../../reference/android/os/Bundle.html">Bundle</a> extras)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This is an out-of-band way for the the user of a cursor to communicate with the cursor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#setNotificationUri(android.content.ContentResolver, android.net.Uri)">setNotificationUri</a>(<a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a> cr, <a href="../../../reference/android/net/Uri.html">Uri</a> uri)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register to watch a content URI for changes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#unregisterContentObserver(android.database.ContentObserver)">unregisterContentObserver</a>(<a href="../../../reference/android/database/ContentObserver.html">ContentObserver</a> observer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unregister an observer that has previously been registered with this
+ cursor via <a href="../../../reference/android/database/Cursor.html#registerContentObserver(android.database.ContentObserver)">registerContentObserver(ContentObserver)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/Cursor.html#unregisterDataSetObserver(android.database.DataSetObserver)">unregisterDataSetObserver</a>(<a href="../../../reference/android/database/DataSetObserver.html">DataSetObserver</a> observer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unregister an observer that has previously been registered with this
+ cursor via <a href="../../../reference/android/database/Cursor.html#registerContentObserver(android.database.ContentObserver)">registerContentObserver(ContentObserver)</a>.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="fillWindow(int, android.database.CursorWindow)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        fillWindow(int pos, <a href="../../../reference/android/database/CursorWindow.html">CursorWindow</a> winow)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+copies cursor data into the window start at pos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWindow()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/database/CursorWindow.html">CursorWindow</a>
+        getWindow()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+returns a pre-filled window, return NULL if no such window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onMove(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onMove(int oldPosition, int newPosition)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This function is called every time the cursor is successfully scrolled
+ to a new position, giving the subclass a chance to update any state it
+ may have. If it returns false the move function will also do so and the
+ cursor will scroll to the beforeFirst position.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>oldPosition</td>
+        <td>the position that we're moving from</td>
+      </tr>
+    <tr>
+        <th>newPosition</td>
+        <td>the position that we're moving to</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the move is successful, false otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

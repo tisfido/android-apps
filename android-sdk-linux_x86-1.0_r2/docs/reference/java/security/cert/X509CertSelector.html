@@ -1,0 +1,3371 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.security.cert.X509CertSelector - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/security/cert/package-summary.html">java.security.cert</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>java.security.cert.X509CertSelector</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.security.cert.X509CertSelector</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/security/cert/CertSelector.html">CertSelector</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#X509CertSelector()">X509CertSelector</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#addPathToName(int, byte[])">addPathToName</a>(int type, byte[] name)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#addPathToName(int, java.lang.String)">addPathToName</a>(int type, <a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#addSubjectAlternativeName(int, byte[])">addSubjectAlternativeName</a>(int tag, byte[] name)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#addSubjectAlternativeName(int, java.lang.String)">addSubjectAlternativeName</a>(int tag, <a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getAuthorityKeyIdentifier()">getAuthorityKeyIdentifier</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getBasicConstraints()">getBasicConstraints</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/security/cert/X509Certificate.html">X509Certificate</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getCertificate()">getCertificate</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Date.html">Date</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getCertificateValid()">getCertificateValid</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getExtendedKeyUsage()">getExtendedKeyUsage</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getIssuer()">getIssuer</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getIssuerAsBytes()">getIssuerAsBytes</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getIssuerAsString()">getIssuerAsString</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getKeyUsage()">getKeyUsage</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getMatchAllSubjectAltNames()">getMatchAllSubjectAltNames</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getNameConstraints()">getNameConstraints</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getPathToNames()">getPathToNames</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getPolicy()">getPolicy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Date.html">Date</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getPrivateKeyValid()">getPrivateKeyValid</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/math/BigInteger.html">BigInteger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSerialNumber()">getSerialNumber</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubject()">getSubject</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectAlternativeNames()">getSubjectAlternativeNames</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectAsBytes()">getSubjectAsBytes</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectAsString()">getSubjectAsString</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectKeyIdentifier()">getSubjectKeyIdentifier</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/security/PublicKey.html">PublicKey</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectPublicKey()">getSubjectPublicKey</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#getSubjectPublicKeyAlgID()">getSubjectPublicKeyAlgID</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#match(java.security.cert.Certificate)">match</a>(<a href="../../../../reference/java/security/cert/Certificate.html">Certificate</a> certificate)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setAuthorityKeyIdentifier(byte[])">setAuthorityKeyIdentifier</a>(byte[] authorityKeyIdentifier)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setBasicConstraints(int)">setBasicConstraints</a>(int pathLen)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setCertificate(java.security.cert.X509Certificate)">setCertificate</a>(<a href="../../../../reference/java/security/cert/X509Certificate.html">X509Certificate</a> certificate)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setCertificateValid(java.util.Date)">setCertificateValid</a>(<a href="../../../../reference/java/util/Date.html">Date</a> certificateValid)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setExtendedKeyUsage(java.util.Set<java.lang.String>)">setExtendedKeyUsage</a>(<a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; keyUsage)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setIssuer(byte[])">setIssuer</a>(byte[] issuerDN)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setIssuer(java.lang.String)">setIssuer</a>(<a href="../../../../reference/java/lang/String.html">String</a> issuerName)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setIssuer(javax.security.auth.x500.X500Principal)">setIssuer</a>(<a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a> issuer)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setKeyUsage(boolean[])">setKeyUsage</a>(boolean[] keyUsage)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setMatchAllSubjectAltNames(boolean)">setMatchAllSubjectAltNames</a>(boolean matchAllNames)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setNameConstraints(byte[])">setNameConstraints</a>(byte[] bytes)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setPathToNames(java.util.Collection<java.util.List<?>>)">setPathToNames</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt; names)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setPolicy(java.util.Set<java.lang.String>)">setPolicy</a>(<a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; policies)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setPrivateKeyValid(java.util.Date)">setPrivateKeyValid</a>(<a href="../../../../reference/java/util/Date.html">Date</a> privateKeyValid)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSerialNumber(java.math.BigInteger)">setSerialNumber</a>(<a href="../../../../reference/java/math/BigInteger.html">BigInteger</a> serialNumber)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubject(javax.security.auth.x500.X500Principal)">setSubject</a>(<a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a> subject)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubject(java.lang.String)">setSubject</a>(<a href="../../../../reference/java/lang/String.html">String</a> subjectDN)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubject(byte[])">setSubject</a>(byte[] subjectDN)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubjectAlternativeNames(java.util.Collection<java.util.List<?>>)">setSubjectAlternativeNames</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt; names)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubjectKeyIdentifier(byte[])">setSubjectKeyIdentifier</a>(byte[] subjectKeyIdentifier)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubjectPublicKey(byte[])">setSubjectPublicKey</a>(byte[] key)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubjectPublicKey(java.security.PublicKey)">setSubjectPublicKey</a>(<a href="../../../../reference/java/security/PublicKey.html">PublicKey</a> key)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#setSubjectPublicKeyAlgID(java.lang.String)">setSubjectPublicKeyAlgID</a>(<a href="../../../../reference/java/lang/String.html">String</a> oid)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/X509CertSelector.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.security.cert.CertSelector')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.security.cert.CertSelector-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/security/cert/CertSelector.html">java.security.cert.CertSelector</a>
+</h5>
+<div id="inherited-methods-java.security.cert.CertSelector">
+<div id="inherited-methods-java.security.cert.CertSelector-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/security/cert/CertSelector.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/security/cert/CertSelector.html#match(java.security.cert.Certificate)">match</a>
+
+</div>
+<div id="inherited-methods-java.security.cert.CertSelector-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/CertSelector.html#clone()">clone</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/security/cert/CertSelector.html#match(java.security.cert.Certificate)">match</a>(<a href="../../../../reference/java/security/cert/Certificate.html">Certificate</a> cert)</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="X509CertSelector()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        X509CertSelector()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addPathToName(int, byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addPathToName(int type, byte[] name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addPathToName(int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addPathToName(int type, <a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addSubjectAlternativeName(int, byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addSubjectAlternativeName(int tag, byte[] name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addSubjectAlternativeName(int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addSubjectAlternativeName(int tag, <a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clone()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/Object.html">Object</a>
+        clone()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.
+ <p>
+ Classes which wish to support cloning must specify that they implement
+ the Cloneable interface, since the implementation checks for this.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Object a shallow copy of this object.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAuthorityKeyIdentifier()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getAuthorityKeyIdentifier()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getBasicConstraints()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getBasicConstraints()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCertificate()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/security/cert/X509Certificate.html">X509Certificate</a>
+        getCertificate()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCertificateValid()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Date.html">Date</a>
+        getCertificateValid()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getExtendedKeyUsage()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt;
+        getExtendedKeyUsage()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getIssuer()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a>
+        getIssuer()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getIssuerAsBytes()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getIssuerAsBytes()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getIssuerAsString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getIssuerAsString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getKeyUsage()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean[]
+        getKeyUsage()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMatchAllSubjectAltNames()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getMatchAllSubjectAltNames()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getNameConstraints()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getNameConstraints()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPathToNames()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt;
+        getPathToNames()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPolicy()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt;
+        getPolicy()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPrivateKeyValid()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Date.html">Date</a>
+        getPrivateKeyValid()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSerialNumber()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/math/BigInteger.html">BigInteger</a>
+        getSerialNumber()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubject()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a>
+        getSubject()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectAlternativeNames()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt;
+        getSubjectAlternativeNames()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectAsBytes()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getSubjectAsBytes()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectAsString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getSubjectAsString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectKeyIdentifier()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getSubjectKeyIdentifier()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectPublicKey()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/security/PublicKey.html">PublicKey</a>
+        getSubjectPublicKey()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSubjectPublicKeyAlgID()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getSubjectPublicKeyAlgID()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="match(java.security.cert.Certificate)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        match(<a href="../../../../reference/java/security/cert/Certificate.html">Certificate</a> certificate)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setAuthorityKeyIdentifier(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setAuthorityKeyIdentifier(byte[] authorityKeyIdentifier)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBasicConstraints(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBasicConstraints(int pathLen)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCertificate(java.security.cert.X509Certificate)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCertificate(<a href="../../../../reference/java/security/cert/X509Certificate.html">X509Certificate</a> certificate)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCertificateValid(java.util.Date)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCertificateValid(<a href="../../../../reference/java/util/Date.html">Date</a> certificateValid)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setExtendedKeyUsage(java.util.Set<java.lang.String>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setExtendedKeyUsage(<a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; keyUsage)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setIssuer(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setIssuer(byte[] issuerDN)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setIssuer(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setIssuer(<a href="../../../../reference/java/lang/String.html">String</a> issuerName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setIssuer(javax.security.auth.x500.X500Principal)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setIssuer(<a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a> issuer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setKeyUsage(boolean[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setKeyUsage(boolean[] keyUsage)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setMatchAllSubjectAltNames(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setMatchAllSubjectAltNames(boolean matchAllNames)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setNameConstraints(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setNameConstraints(byte[] bytes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setPathToNames(java.util.Collection<java.util.List<?>>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setPathToNames(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt; names)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setPolicy(java.util.Set<java.lang.String>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setPolicy(<a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; policies)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setPrivateKeyValid(java.util.Date)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setPrivateKeyValid(<a href="../../../../reference/java/util/Date.html">Date</a> privateKeyValid)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSerialNumber(java.math.BigInteger)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSerialNumber(<a href="../../../../reference/java/math/BigInteger.html">BigInteger</a> serialNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubject(javax.security.auth.x500.X500Principal)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubject(<a href="../../../../reference/javax/security/auth/x500/X500Principal.html">X500Principal</a> subject)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubject(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubject(<a href="../../../../reference/java/lang/String.html">String</a> subjectDN)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubject(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubject(byte[] subjectDN)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubjectAlternativeNames(java.util.Collection<java.util.List<?>>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubjectAlternativeNames(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/List.html">List</a>&lt;?&gt;&gt; names)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubjectKeyIdentifier(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubjectKeyIdentifier(byte[] subjectKeyIdentifier)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubjectPublicKey(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubjectPublicKey(byte[] key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubjectPublicKey(java.security.PublicKey)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubjectPublicKey(<a href="../../../../reference/java/security/PublicKey.html">PublicKey</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSubjectPublicKeyAlgID(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSubjectPublicKeyAlgID(<a href="../../../../reference/java/lang/String.html">String</a> oid)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing a concise, human-readable description of the
+ receiver.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>String a printable representation for the receiver.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

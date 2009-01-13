@@ -1,0 +1,4043 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.logging.Logger - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/logging/package-summary.html">java.util.logging</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>java.util.logging.Logger</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.logging.Logger</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Loggers are used to log records to certain outputs, including file, console,
+ etc. They use various handlers to actually do the output-dependent
+ operations.
+ <p>
+ Client applications can get named loggers by calling the methods
+ <code>getLogger</code>. They can also get anonymous loggers by calling the
+ methods <code>getAnonymousLogger</code>. Named loggers are organized in a
+ namespace hierarchy managed by a log manager. The naming convention is
+ usually the same as java package's naming convention, i.e., using
+ dot-separated strings. Anonymous loggers do not belong to any namespace.
+ </p>
+ <p>
+ Loggers "inherit" log level setting from their parent if its own level is set
+ to <code>null</code>. This is also true for the resource bundle. The
+ logger's resource bundle is used to localize the log messages if no resource
+ bundle name is given when a log method is called. If
+ <code>getUseParentHandlers</code> is <code>true</code>, loggers also
+ inherit their parent's handlers. Here "inherit" only means the "behaviors"
+ are inherited. The internal fields value will not change, for example,
+ <code>getLevel()</code> still returns <code>null</code>.
+ </p>
+ <p>
+ When loading a given resource bundle, the logger first tries to use the
+ context classloader. If that fails, it tries the system classloader. And if
+ that still fails, it searches up the class stack and uses each class's
+ classloader to try to locate the resource bundle.
+ </p>
+ <p>
+ Some log methods accept log requests that do not specify the source class and
+ source method. In these cases, the logging framework will automatically infer
+ the calling class and method, but not guaranteed to be accurate.
+ </p>
+ <p>
+ Once a <code>LogRecord</code> object has been passed into the logging
+ framework, it is owned by the logging framework and the client applications
+ should not use it any longer.
+ </p>
+ <p>
+ All methods of this class are thread-safe.
+ </p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/util/logging/LogManager.html">LogManager</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/logging/Logger.html#global">global</a>&nbsp;</td>
+        <td class="jd-descrcol">The global logger is provided as convenience for casual use.&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#Logger(java.lang.String, java.lang.String)">Logger</a>(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a <code>Logger</code> object with the supplied name and
+ resource bundle name.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#addHandler(java.util.logging.Handler)">addHandler</a>(<a href="../../../../reference/java/util/logging/Handler.html">Handler</a> handler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Adds a handler to this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#config(java.lang.String)">config</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.CONFIG</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#entering(java.lang.String, java.lang.String, java.lang.Object[])">entering</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating entering a method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#entering(java.lang.String, java.lang.String, java.lang.Object)">entering</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object</a> param)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating entering a method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#entering(java.lang.String, java.lang.String)">entering</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating entering a method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#exiting(java.lang.String, java.lang.String, java.lang.Object)">exiting</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object</a> result)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating exiting a method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#exiting(java.lang.String, java.lang.String)">exiting</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating existing a method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#fine(java.lang.String)">fine</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.FINE</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#finer(java.lang.String)">finer</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.FINER</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#finest(java.lang.String)">finest</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.FINEST</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getAnonymousLogger()">getAnonymousLogger</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets an anonymous logger to use internally in a thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getAnonymousLogger(java.lang.String)">getAnonymousLogger</a>(<a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets an anonymous logger to use internally in a thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Filter.html">Filter</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getFilter()">getFilter</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the filter used by this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Handler.html">Handler[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getHandlers()">getHandlers</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all the handlers associated with this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Level.html">Level</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getLevel()">getLevel</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the logging level of this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getLogger(java.lang.String)">getLogger</a>(<a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets a named logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getLogger(java.lang.String, java.lang.String)">getLogger</a>(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets a named logger associated with the supplied resource bundle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getName()">getName</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the name of this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/logging/Logger.html">Logger</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getParent()">getParent</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the parent of this logger in the namespace.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/ResourceBundle.html">ResourceBundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getResourceBundle()">getResourceBundle</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the loaded resource bundle used by this logger to localize logging
+ messages.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getResourceBundleName()">getResourceBundleName</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the name of the loaded resource bundle used by this logger to
+ localize logging messages.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#getUseParentHandlers()">getUseParentHandlers</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the flag which indicates whether to use parent's handlers to publish
+ incoming log records, potentially recursively up the namespace.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#info(java.lang.String)">info</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.INFO</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#isLoggable(java.util.logging.Level)">isLoggable</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Determines whether this logger will actually log messages of the
+ specified level.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#log(java.util.logging.Level, java.lang.String, java.lang.Throwable)">log</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the specified level with the supplied
+ <code>Throwable</code> object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#log(java.util.logging.Level, java.lang.String, java.lang.Object[])">log</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the specified level with the supplied parameter array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#log(java.util.logging.Level, java.lang.String)">log</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the specified level.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#log(java.util.logging.Level, java.lang.String, java.lang.Object)">log</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the specified level with the supplied parameter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#log(java.util.logging.LogRecord)">log</a>(<a href="../../../../reference/java/util/logging/LogRecord.html">LogRecord</a> record)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a given log record.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Object[])">logp</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and parameter array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String)">logp</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">logp</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and parameter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable)">logp</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and <code>Throwable</code> object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String)">logrb</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name, using the given resource bundle to localize the
+ message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable)">logrb</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and <code>Throwable</code> object, using the
+ given resource bundle to localize the message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">logrb</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and parameter, using the given resource bundle to
+ localize the message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object[])">logrb</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of the given level with the specified source class name
+ and source method name and parameter array, using the given resource
+ bundle to localize the message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#removeHandler(java.util.logging.Handler)">removeHandler</a>(<a href="../../../../reference/java/util/logging/Handler.html">Handler</a> handler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes a handler for this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#setFilter(java.util.logging.Filter)">setFilter</a>(<a href="../../../../reference/java/util/logging/Filter.html">Filter</a> newFilter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the filter used by this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#setLevel(java.util.logging.Level)">setLevel</a>(<a href="../../../../reference/java/util/logging/Level.html">Level</a> newLevel)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the logging level for this logger.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#setParent(java.util.logging.Logger)">setParent</a>(<a href="../../../../reference/java/util/logging/Logger.html">Logger</a> parent)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the parent of this logger in the namespace.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#setUseParentHandlers(boolean)">setUseParentHandlers</a>(boolean notifyParentHandlers)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the flag which indicates whether to use parent's handlers to publish
+ incoming log records, potentially recursively up the namespace.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#severe(java.lang.String)">severe</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.SEVERE</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#throwing(java.lang.String, java.lang.String, java.lang.Throwable)">throwing</a>(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message indicating throwing an exception.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/logging/Logger.html#warning(java.lang.String)">warning</a>(<a href="../../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Logs a message of level <code>Level.WARNING</code>.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="global"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        global
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The global logger is provided as convenience for casual use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="Logger(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        Logger(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a <code>Logger</code> object with the supplied name and
+ resource bundle name.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the name of this logger, may be null for anonymous loggers</td>
+      </tr>
+    <tr>
+        <th>resourceBundleName</td>
+        <td>the name of the resource bundle used to localize logging
+            messages, may be null</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/MissingResourceException.html">MissingResourceException</a></td>
+            <td>If the specified resource bundle can not be loaded.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addHandler(java.util.logging.Handler)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addHandler(<a href="../../../../reference/java/util/logging/Handler.html">Handler</a> handler)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Adds a handler to this logger. The handler will be fed with log records
+ received by this logger.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>handler</td>
+        <td>the handler object to add, cannot be null</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="config(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        config(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.CONFIG</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="entering(java.lang.String, java.lang.String, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        entering(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating entering a method. A log record with log level
+ <code>Level.FINER</code>, log message "ENTRY", and the specified
+ source class name and source method name and parameters is submitted for
+ logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>an array of parameters for the method call
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="entering(java.lang.String, java.lang.String, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        entering(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object</a> param)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating entering a method. A log record with log level
+ <code>Level.FINER</code>, log message "ENTRY", and the specified
+ source class name and source method name and one parameter is submitted
+ for logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>param</td>
+        <td>the parameter for the method call
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="entering(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        entering(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating entering a method. A log record with log level
+ <code>Level.FINER</code>, log message "ENTRY", and the specified
+ source class name and source method name is submitted for logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the calling class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the method name
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="exiting(java.lang.String, java.lang.String, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        exiting(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Object.html">Object</a> result)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating exiting a method. A log record with log level
+ <code>Level.FINER</code>, log message "RETURN", and the specified
+ source class name and source method name and return value is submitted
+ for logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>result</td>
+        <td>the return value of the method call
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="exiting(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        exiting(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating existing a method. A log record with log level
+ <code>Level.FINER</code>, log message "RETURN", and the specified
+ source class name and source method name is submitted for logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the calling class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the method name
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="fine(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        fine(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.FINE</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="finer(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        finer(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.FINER</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="finest(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        finest(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.FINEST</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAnonymousLogger()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        getAnonymousLogger()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets an anonymous logger to use internally in a thread. Anonymous loggers
+ are not registered in the log manager's namespace. No security checks
+ will be performed when updating an anonymous logger's control settings
+ so that they can be used in applets.
+ <p>
+ Anonymous loggers' parent is set to be the root logger. This enables
+ them to inherit default logging level and handlers from the root logger.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of anonymous logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAnonymousLogger(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        getAnonymousLogger(<a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets an anonymous logger to use internally in a thread. Anonymous loggers
+ are not registered in the log manager's namespace. No security checks
+ will be performed when updating an anonymous logger's control settings
+ so that they can be used in applets.
+ <p>
+ Anonymous loggers' parent is set to be the root logger. This enables
+ them to inherit default logging level and handlers from the root logger.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>resourceBundleName</td>
+        <td>the name of the resource bundle used to localize log messages</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of anonymous logger</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/MissingResourceException.html">MissingResourceException</a></td>
+            <td>If the specified resource bundle can not be loaded.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFilter()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Filter.html">Filter</a>
+        getFilter()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the filter used by this logger.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the filter used by this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getHandlers()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Handler.html">Handler[]</a>
+        getHandlers()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets all the handlers associated with this logger.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an array of all the handlers associated with this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLevel()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Level.html">Level</a>
+        getLevel()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the logging level of this logger.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the logging level of this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLogger(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        getLogger(<a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets a named logger. The returned logger may already exist, or may be
+ newly created. If the latter, its level will be set to the configured
+ level according to the <code>LogManager</code>'s properties if any.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the name of the logger to get, cannot be null</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a named logger</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/MissingResourceException.html">MissingResourceException</a></td>
+            <td>If the specified resource bundle can not be loaded.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLogger(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        getLogger(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> resourceBundleName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets a named logger associated with the supplied resource bundle. The
+ resource bundle will be used to localize logging messages.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the name of the logger to get, cannot be null</td>
+      </tr>
+    <tr>
+        <th>resourceBundleName</td>
+        <td>the name of the resource bundle, may be null</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a named logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getName()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getName()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the name of this logger.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the name of this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getParent()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/logging/Logger.html">Logger</a>
+        getParent()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the parent of this logger in the namespace.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parent of this logger in the namespace
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResourceBundle()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/ResourceBundle.html">ResourceBundle</a>
+        getResourceBundle()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the loaded resource bundle used by this logger to localize logging
+ messages. If it's null, the parent's resource bundle will be inherited.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the loaded resource bundle used by this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResourceBundleName()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getResourceBundleName()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the name of the loaded resource bundle used by this logger to
+ localize logging messages. If it's null, the parent's resource bundle
+ name will be inherited.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the name of the loaded resource bundle used by this logger
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getUseParentHandlers()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getUseParentHandlers()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the flag which indicates whether to use parent's handlers to publish
+ incoming log records, potentially recursively up the namespace.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if set to use parent's handlers, otherwise
+         <code>false</code>
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="info(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        info(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.INFO</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isLoggable(java.util.logging.Level)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isLoggable(<a href="../../../../reference/java/util/logging/Level.html">Level</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Determines whether this logger will actually log messages of the
+ specified level. The effective level used to do the determination may be
+ inherited from its parent. The default level is <code>Level.INFO</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>l</td>
+        <td>the level to check</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if this logger will actually log this level,
+         otherwise <code>false</code>
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="log(java.util.logging.Level, java.lang.String, java.lang.Throwable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        log(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the specified level with the supplied
+ <code>Throwable</code> object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to log</td>
+      </tr>
+    <tr>
+        <th>thrown</td>
+        <td>the <code>Throwable</code> object associated with the event
+            that need to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="log(java.util.logging.Level, java.lang.String, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        log(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the specified level with the supplied parameter array.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to log</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameter array associated with the event that need to be
+            logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="log(java.util.logging.Level, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        log(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the specified level.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="log(java.util.logging.Level, java.lang.String, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        log(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the specified level with the supplied parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to log</td>
+      </tr>
+    <tr>
+        <th>param</td>
+        <td>the parameter associated with the event that need to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="log(java.util.logging.LogRecord)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        log(<a href="../../../../reference/java/util/logging/LogRecord.html">LogRecord</a> record)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a given log record. Only those with a logging level no lower than
+ this logger's level will be submitted to this logger's handlers for
+ logging. If <code>getUseParentHandlers()</code> is <code>true</code>,
+ the log record will also be submitted to the parent logger's handlers,
+ potentially recursively up the namespace.
+ <p>
+ Since all other log methods call this method to actually perform the
+ logging action, subclasses of this class can override this method to
+ catch all logging activities.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>record</td>
+        <td>the log record to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logp(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and parameter array.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameter array associated with the event that need to be
+            logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logp(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logp(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>param</td>
+        <td>the parameter associated with the event that need to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logp(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logp(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and <code>Throwable</code> object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>thrown</td>
+        <td>the <code>Throwable</code> object
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logrb(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name, using the given resource bundle to localize the
+ message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>bundleName</td>
+        <td>the name of the resource bundle, used to localize the message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Throwable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logrb(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and <code>Throwable</code> object, using the
+ given resource bundle to localize the message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>bundleName</td>
+        <td>the name of the resource bundle, used to localize the message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>thrown</td>
+        <td>the <code>Throwable</code> object
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logrb(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object</a> param)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and parameter, using the given resource bundle to
+ localize the message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>bundleName</td>
+        <td>the name of the resource bundle, used to localize the message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>param</td>
+        <td>the parameter associated with the event that need to be logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="logrb(java.util.logging.Level, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        logrb(<a href="../../../../reference/java/util/logging/Level.html">Level</a> logLevel, <a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/String.html">String</a> bundleName, <a href="../../../../reference/java/lang/String.html">String</a> msg, <a href="../../../../reference/java/lang/Object.html">Object[]</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of the given level with the specified source class name
+ and source method name and parameter array, using the given resource
+ bundle to localize the message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>logLevel</td>
+        <td>the level of the given message</td>
+      </tr>
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>bundleName</td>
+        <td>the name of the resource bundle, used to localize the message</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>the message to be logged</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameter array associated with the event that need to be
+            logged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeHandler(java.util.logging.Handler)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        removeHandler(<a href="../../../../reference/java/util/logging/Handler.html">Handler</a> handler)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Removes a handler for this logger. If the specified handler does not
+ exist, this method has no effect.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>handler</td>
+        <td>the handler to be removed, cannot be null</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFilter(java.util.logging.Filter)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFilter(<a href="../../../../reference/java/util/logging/Filter.html">Filter</a> newFilter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the filter used by this logger.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newFilter</td>
+        <td>the filter to set</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLevel(java.util.logging.Level)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLevel(<a href="../../../../reference/java/util/logging/Level.html">Level</a> newLevel)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the logging level for this logger. A <code>null</code> level
+ indicates this logger will inherit its parent's level.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newLevel</td>
+        <td>the logging level to set</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setParent(java.util.logging.Logger)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setParent(<a href="../../../../reference/java/util/logging/Logger.html">Logger</a> parent)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the parent of this logger in the namespace. This method should
+ usually be used by the <code>LogManager</code> object only.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parent</td>
+        <td>the parent logger to set</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setUseParentHandlers(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setUseParentHandlers(boolean notifyParentHandlers)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the flag which indicates whether to use parent's handlers to publish
+ incoming log records, potentially recursively up the namespace.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>notifyParentHandlers</td>
+        <td>the flag whether to use parent's handlers</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If a security manager determines that the caller does not
+             have the required permission.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="severe(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        severe(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.SEVERE</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="throwing(java.lang.String, java.lang.String, java.lang.Throwable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        throwing(<a href="../../../../reference/java/lang/String.html">String</a> sourceClass, <a href="../../../../reference/java/lang/String.html">String</a> sourceMethod, <a href="../../../../reference/java/lang/Throwable.html">Throwable</a> thrown)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message indicating throwing an exception. A log record with log
+ level <code>Level.FINER</code>, log message "THROW", and the specified
+ source class name and source method name and <code>Throwable</code>
+ object is submitted for logging.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sourceClass</td>
+        <td>the source class name</td>
+      </tr>
+    <tr>
+        <th>sourceMethod</td>
+        <td>the source method name</td>
+      </tr>
+    <tr>
+        <th>thrown</td>
+        <td>the <code>Throwable</code> object
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="warning(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        warning(<a href="../../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Logs a message of level <code>Level.WARNING</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>msg</td>
+        <td>the message to log
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

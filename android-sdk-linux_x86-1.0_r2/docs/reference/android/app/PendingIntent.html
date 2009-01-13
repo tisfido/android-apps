@@ -1,0 +1,2340 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.app.PendingIntent - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/app/package-summary.html">android.app</a>
+<br/>
+    public 
+     
+    final 
+    
+    class
+</div>
+<h1>android.app.PendingIntent</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.app.PendingIntent</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/os/Parcelable.html">Parcelable</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A description of an Intent and target action to perform with it.  Instances
+ of this class are created with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>; the returned object can be
+ handed to other applications so that they can perform the action you
+ described on your behalf at a later time.
+
+ <p>By giving a PendingIntent to another application,
+ you are granting it the right to perform the operation you have specified
+ as if the other application was yourself (with the same permissions and
+ identity).  As such, you should be careful about how you build the PendingIntent:
+ often, for example, the base Intent you supply will have the component
+ name explicitly set to one of your own components, to ensure it is ultimately
+ sent there and nowhere else.
+
+ <p>A PendingIntent itself is simply a reference to a token maintained by
+ the system describing the original data used to retrieve it.  This means
+ that, even if its owning application's process is killed, the
+ PendingIntent itself will remain usable from other processes that
+ have been given it.  If the creating application later re-retrieves the
+ same kind of PendingIntent (same operation, same Intent action, data,
+ categories, and components, and same flags), it will receive a PendingIntent
+ representing the same token if that is still valid, and can thus call
+ <a href="../../../reference/android/app/PendingIntent.html#cancel()">cancel()</a> to remove it.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a>,
+            
+                <a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td class="jd-descrcol" width="100%">Exception thrown when trying to send through a PendingIntent that
+ has been canceled or is otherwise no longer able to execute the request.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a></td>
+            <td class="jd-descrcol" width="100%">Callback interface for discovering when a send operation has
+ completed.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.html#CREATOR">CREATOR</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.html#FLAG_CANCEL_CURRENT">FLAG_CANCEL_CURRENT</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: if the described PendingIntent already exists,
+ the current one is canceled before generating a new one.&nbsp;</td>
+        
+            <td class="jd-valcol">268435456&nbsp;</td>
+            <td class="jd-valcol">0x10000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: if the described PendingIntent does not already
+ exist, then simply return null instead of creating it.&nbsp;</td>
+        
+            <td class="jd-valcol">536870912&nbsp;</td>
+            <td class="jd-valcol">0x20000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/PendingIntent.html#FLAG_ONE_SHOT">FLAG_ONE_SHOT</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: this
+ PendingIntent can only be used once.&nbsp;</td>
+        
+            <td class="jd-valcol">1073741824&nbsp;</td>
+            <td class="jd-valcol">0x40000000&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-android.os.Parcelable')" class="jd-expando-trigger"
+        ><img id="inherited-constants-android.os.Parcelable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+</h5>
+<div id="inherited-constants-android.os.Parcelable">
+<div id="inherited-constants-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR">CONTENTS_FILE_DESCRIPTOR</a>,
+
+<a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>
+
+</div>
+<div id="inherited-constants-android.os.Parcelable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR">CONTENTS_FILE_DESCRIPTOR</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit masks for use with <a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents()</a>: each bit represents a
+ kind of object considered to have potential special significance when
+ marshalled.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for use with <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel(Parcel, int)</a>: the object being written
+ is a return value, that is the result of a function such as
+ "<code>Parcelable someFunction()</code>",
+ "<code>void someFunction(out Parcelable)</code>", or
+ "<code>void someFunction(inout Parcelable)</code>".&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#cancel()">cancel</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Cancel a currently active PendingIntent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#describeContents()">describeContents</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> otherObj)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Comparison operator on two PendingIntent objects, such that true
+ is returned then they both represent the same operation from the
+ same package.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve a PendingIntent that will start a new activity, like calling
+ <a href="../../../reference/android/content/Context.html#startActivity(android.content.Intent)">Context.startActivity(Intent)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve a PendingIntent that will perform a broadcast, like calling
+ <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve a PendingIntent that will start a service, like calling
+ <a href="../../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#getTargetPackage()">getTargetPackage</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the package name of the application that created this
+ PendingIntent, that is the identity under which you will actually be
+ sending the Intent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#readPendingIntentOrNullFromParcel(android.os.Parcel)">readPendingIntentOrNullFromParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> in)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience function for reading either a Messenger or null pointer from
+ a Parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#send(int)">send</a>(int code)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform the operation associated with this PendingIntent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent)">send</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int code, <a href="../../../reference/android/content/Intent.html">Intent</a> intent)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform the operation associated with this PendingIntent, allowing the
+ caller to specify information about the Intent to use.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#send(int, android.app.PendingIntent.OnFinished, android.os.Handler)">send</a>(int code, <a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a> onFinished, <a href="../../../reference/android/os/Handler.html">Handler</a> handler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform the operation associated with this PendingIntent, allowing the
+ caller to be notified when the send has completed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)">send</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int code, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, <a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a> onFinished, <a href="../../../reference/android/os/Handler.html">Handler</a> handler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform the operation associated with this PendingIntent, allowing the
+ caller to specify information about the Intent to use and be notified
+ when the send has completed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#send()">send</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform the operation associated with this PendingIntent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#writePendingIntentOrNullToParcel(android.app.PendingIntent, android.os.Parcel)">writePendingIntentOrNullToParcel</a>(<a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a> sender, <a href="../../../reference/android/os/Parcel.html">Parcel</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience function for writing either a PendingIntent or null pointer to
+ a Parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/PendingIntent.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> out, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten this object in to a Parcel.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.os.Parcelable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.os.Parcelable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+</h5>
+<div id="inherited-methods-android.os.Parcelable">
+<div id="inherited-methods-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents</a>,
+
+<a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>
+
+</div>
+<div id="inherited-methods-android.os.Parcelable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> dest, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten this object in to a Parcel.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CREATOR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&gt;
+        CREATOR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_CANCEL_CURRENT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_CANCEL_CURRENT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: if the described PendingIntent already exists,
+ the current one is canceled before generating a new one.  You can use
+ this to retrieve a new PendingIntent when you are only changing the
+ extra data in the Intent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                268435456
+                (0x10000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_NO_CREATE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_NO_CREATE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: if the described PendingIntent does not already
+ exist, then simply return null instead of creating it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                536870912
+                (0x20000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_ONE_SHOT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_ONE_SHOT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for use with <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>, <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, and
+ <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>: this
+ PendingIntent can only be used once.  If set, after
+ <a href="../../../reference/android/app/PendingIntent.html#send()">send()</a> is called on it, it will be automatically
+ canceled for you and any future attempt to send through it will fail.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1073741824
+                (0x40000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="cancel()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        cancel()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Cancel a currently active PendingIntent.  Only the original application
+ owning an PendingIntent can cancel it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="describeContents()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        describeContents()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a bitmask indicating the set of special object types marshalled
+ by the Parcelable.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="equals(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        equals(<a href="../../../reference/java/lang/Object.html">Object</a> otherObj)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Comparison operator on two PendingIntent objects, such that true
+ is returned then they both represent the same operation from the
+ same package.  This allows you to use <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, or <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a> multiple times (even
+ across a process being killed), resulting in different PendingIntent
+ objects but whose equals() method identifies them as being the same
+ operation.
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>otherObj</td>
+        <td>Object the object to compare with this object.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean <code>true</code> if the object is the same as this
+         object <code>false</code> if it is different from this object.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getActivity(android.content.Context, int, android.content.Intent, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        getActivity(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve a PendingIntent that will start a new activity, like calling
+ <a href="../../../reference/android/content/Context.html#startActivity(android.content.Intent)">Context.startActivity(Intent)</a>.
+ Note that the activity will be started outside of the context of an
+ existing activity, so you must use the <a href="../../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">Intent.FLAG_ACTIVITY_NEW_TASK</a> launch flag in the Intent.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context in which this PendingIntent should start
+ the activity.</td>
+      </tr>
+    <tr>
+        <th>requestCode</td>
+        <td>Private request code for the sender (currently
+ not used).</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>Intent of the activity to be launched.</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>May be <a href="../../../reference/android/app/PendingIntent.html#FLAG_ONE_SHOT">FLAG_ONE_SHOT</a>, <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#FLAG_CANCEL_CURRENT">FLAG_CANCEL_CURRENT</a>, or any of the flags as supported by
+ <a href="../../../reference/android/content/Intent.html#fillIn(android.content.Intent, int)">Intent.fillIn()</a> to control which unspecified parts
+ of the intent that can be supplied when the actual send happens.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns an existing or new PendingIntent matching the given
+ parameters.  May return null only if <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a> has been
+ supplied.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getBroadcast(android.content.Context, int, android.content.Intent, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        getBroadcast(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve a PendingIntent that will perform a broadcast, like calling
+ <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast()</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context in which this PendingIntent should perform
+ the broadcast.</td>
+      </tr>
+    <tr>
+        <th>requestCode</td>
+        <td>Private request code for the sender (currently
+ not used).</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>The Intent to be broadcast.</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>May be <a href="../../../reference/android/app/PendingIntent.html#FLAG_ONE_SHOT">FLAG_ONE_SHOT</a>, <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#FLAG_CANCEL_CURRENT">FLAG_CANCEL_CURRENT</a>, or any of the flags as supported by
+ <a href="../../../reference/android/content/Intent.html#fillIn(android.content.Intent, int)">Intent.fillIn()</a> to control which unspecified parts
+ of the intent that can be supplied when the actual send happens.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns an existing or new PendingIntent matching the given
+ parameters.  May return null only if <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a> has been
+ supplied.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getService(android.content.Context, int, android.content.Intent, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        getService(<a href="../../../reference/android/content/Context.html">Context</a> context, int requestCode, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve a PendingIntent that will start a service, like calling
+ <a href="../../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a>.  The start
+ arguments given to the service will come from the extras of the Intent.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context in which this PendingIntent should start
+ the service.</td>
+      </tr>
+    <tr>
+        <th>requestCode</td>
+        <td>Private request code for the sender (currently
+ not used).</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>An Intent describing the service to be started.</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>May be <a href="../../../reference/android/app/PendingIntent.html#FLAG_ONE_SHOT">FLAG_ONE_SHOT</a>, <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#FLAG_CANCEL_CURRENT">FLAG_CANCEL_CURRENT</a>, or any of the flags as supported by
+ <a href="../../../reference/android/content/Intent.html#fillIn(android.content.Intent, int)">Intent.fillIn()</a> to control which unspecified parts
+ of the intent that can be supplied when the actual send happens.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns an existing or new PendingIntent matching the given
+ parameters.  May return null only if <a href="../../../reference/android/app/PendingIntent.html#FLAG_NO_CREATE">FLAG_NO_CREATE</a> has been
+ supplied.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTargetPackage()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getTargetPackage()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the package name of the application that created this
+ PendingIntent, that is the identity under which you will actually be
+ sending the Intent.  The returned string is supplied by the system, so
+ that an application can not spoof its package.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The package name of the PendingIntent, or null if there is
+ none associated with it.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hashCode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        hashCode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an integer hash code for the receiver. Any two objects which
+ answer <code>true</code> when passed to <code>.equals</code> must
+ answer the same value for this method.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int the receiver's hash.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readPendingIntentOrNullFromParcel(android.os.Parcel)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        readPendingIntentOrNullFromParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> in)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience function for reading either a Messenger or null pointer from
+ a Parcel.  You must have previously written the Messenger with
+ <a href="../../../reference/android/app/PendingIntent.html#writePendingIntentOrNullToParcel(android.app.PendingIntent, android.os.Parcel)">writePendingIntentOrNullToParcel(PendingIntent, Parcel)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>The Parcel containing the written Messenger.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns the Messenger read from the Parcel, or null if null had
+ been written.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="send(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        send(int code)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform the operation associated with this PendingIntent.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>code</td>
+        <td>Result code to supply back to the PendingIntent's target.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td>Throws CanceledException if the PendingIntent
+ is no longer allowing more intents to be sent through it.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)">send(Context, int, Intent, android.app.PendingIntent.OnFinished, Handler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="send(android.content.Context, int, android.content.Intent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        send(<a href="../../../reference/android/content/Context.html">Context</a> context, int code, <a href="../../../reference/android/content/Intent.html">Intent</a> intent)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform the operation associated with this PendingIntent, allowing the
+ caller to specify information about the Intent to use.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context of the caller.</td>
+      </tr>
+    <tr>
+        <th>code</td>
+        <td>Result code to supply back to the PendingIntent's target.</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>Additional Intent data.  See <a href="../../../reference/android/content/Intent.html#fillIn(android.content.Intent, int)">Intent.fillIn()</a> for information on how this is applied to the
+ original Intent.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td>Throws CanceledException if the PendingIntent
+ is no longer allowing more intents to be sent through it.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)">send(Context, int, Intent, android.app.PendingIntent.OnFinished, Handler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="send(int, android.app.PendingIntent.OnFinished, android.os.Handler)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        send(int code, <a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a> onFinished, <a href="../../../reference/android/os/Handler.html">Handler</a> handler)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform the operation associated with this PendingIntent, allowing the
+ caller to be notified when the send has completed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>code</td>
+        <td>Result code to supply back to the PendingIntent's target.</td>
+      </tr>
+    <tr>
+        <th>onFinished</td>
+        <td>The object to call back on when the send has
+ completed, or null for no callback.</td>
+      </tr>
+    <tr>
+        <th>handler</td>
+        <td>Handler identifying the thread on which the callback
+ should happen.  If null, the callback will happen from the thread
+ pool of the process.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td>Throws CanceledException if the PendingIntent
+ is no longer allowing more intents to be sent through it.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)">send(Context, int, Intent, android.app.PendingIntent.OnFinished, Handler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        send(<a href="../../../reference/android/content/Context.html">Context</a> context, int code, <a href="../../../reference/android/content/Intent.html">Intent</a> intent, <a href="../../../reference/android/app/PendingIntent.OnFinished.html">PendingIntent.OnFinished</a> onFinished, <a href="../../../reference/android/os/Handler.html">Handler</a> handler)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform the operation associated with this PendingIntent, allowing the
+ caller to specify information about the Intent to use and be notified
+ when the send has completed.
+
+ <p>For the intent parameter, a PendingIntent
+ often has restrictions on which fields can be supplied here, based on
+ how the PendingIntent was retrieved in <a href="../../../reference/android/app/PendingIntent.html#getActivity(android.content.Context, int, android.content.Intent, int)">getActivity(Context, int, Intent, int)</a>,
+ <a href="../../../reference/android/app/PendingIntent.html#getBroadcast(android.content.Context, int, android.content.Intent, int)">getBroadcast(Context, int, Intent, int)</a>, or <a href="../../../reference/android/app/PendingIntent.html#getService(android.content.Context, int, android.content.Intent, int)">getService(Context, int, Intent, int)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context of the caller.  This may be null if
+ <var>intent</var> is also null.</td>
+      </tr>
+    <tr>
+        <th>code</td>
+        <td>Result code to supply back to the PendingIntent's target.</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>Additional Intent data.  See <a href="../../../reference/android/content/Intent.html#fillIn(android.content.Intent, int)">Intent.fillIn()</a> for information on how this is applied to the
+ original Intent.  Use null to not modify the original Intent.</td>
+      </tr>
+    <tr>
+        <th>onFinished</td>
+        <td>The object to call back on when the send has
+ completed, or null for no callback.</td>
+      </tr>
+    <tr>
+        <th>handler</td>
+        <td>Handler identifying the thread on which the callback
+ should happen.  If null, the callback will happen from the thread
+ pool of the process.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td>Throws CanceledException if the PendingIntent
+ is no longer allowing more intents to be sent through it.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/PendingIntent.html#send()">send()</a></li>
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(int)">send(int)</a></li>
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent)">send(Context, int, Intent)</a></li>
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(int, android.app.PendingIntent.OnFinished, android.os.Handler)">send(int, android.app.PendingIntent.OnFinished, Handler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="send()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        send()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform the operation associated with this PendingIntent.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/app/PendingIntent.CanceledException.html">PendingIntent.CanceledException</a></td>
+            <td>Throws CanceledException if the PendingIntent
+ is no longer allowing more intents to be sent through it.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/PendingIntent.html#send(android.content.Context, int, android.content.Intent, android.app.PendingIntent.OnFinished, android.os.Handler)">send(Context, int, Intent, android.app.PendingIntent.OnFinished, Handler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writePendingIntentOrNullToParcel(android.app.PendingIntent, android.os.Parcel)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        writePendingIntentOrNullToParcel(<a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a> sender, <a href="../../../reference/android/os/Parcel.html">Parcel</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience function for writing either a PendingIntent or null pointer to
+ a Parcel.  You must use this with <a href="../../../reference/android/app/PendingIntent.html#readPendingIntentOrNullFromParcel(android.os.Parcel)">readPendingIntentOrNullFromParcel(Parcel)</a>
+ for later reading it.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sender</td>
+        <td>The PendingIntent to write, or null.</td>
+      </tr>
+    <tr>
+        <th>out</td>
+        <td>Where to write the PendingIntent.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeToParcel(android.os.Parcel, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeToParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> out, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten this object in to a Parcel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>out</td>
+        <td>The Parcel in which the object should be written.</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>Additional flags about how the object should be written.
+ May be 0 or <a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1962 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.impl.client.DefaultRequestDirector - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/style.css" />
+<script src="../../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../../')"
+            onchange="search_changed(event, false, '../../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../../reference/org/apache/http/impl/client/package-summary.html">org.apache.http.impl.client</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>org.apache.http.impl.client.DefaultRequestDirector</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.impl.client.DefaultRequestDirector</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../../reference/org/apache/http/client/RequestDirector.html">RequestDirector</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Default implementation of <a href="../../../../../../reference/org/apache/http/client/RequestDirector.html">RequestDirector</a>.
+ <br/>
+ This class replaces the <code>HttpMethodDirector</code> in HttpClient 3.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#connManager">connManager</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The connection manager.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpProcessor.html">HttpProcessor</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#httpProcessor">httpProcessor</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The HTTP protocol processor.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#keepAliveStrategy">keepAliveStrategy</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The keep-alive duration strategy.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ManagedClientConnection.html">ManagedClientConnection</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#managedConn">managedConn</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The currently allocated connection.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#params">params</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The HTTP parameters.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#redirectHandler">redirectHandler</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The redirect handler.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#requestExec">requestExec</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The request executor.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#retryHandler">retryHandler</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The request retry handler.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#reuseStrategy">reuseStrategy</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The connection re-use strategy.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#routePlanner">routePlanner</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The route planner.&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#DefaultRequestDirector(org.apache.http.protocol.HttpRequestExecutor, org.apache.http.conn.ClientConnectionManager, org.apache.http.ConnectionReuseStrategy, org.apache.http.conn.ConnectionKeepAliveStrategy, org.apache.http.conn.routing.HttpRoutePlanner, org.apache.http.protocol.HttpProcessor, org.apache.http.client.HttpRequestRetryHandler, org.apache.http.client.RedirectHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.UserTokenHandler, org.apache.http.params.HttpParams)">DefaultRequestDirector</a>(<a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a> requestExec, <a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a> conman, <a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a> reustrat, <a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a> kastrat, <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a> rouplan, <a href="../../../../../../reference/org/apache/http/protocol/HttpProcessor.html">HttpProcessor</a> httpProcessor, <a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a> retryHandler, <a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a> redirectHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> targetAuthHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> proxyAuthHandler, <a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a> userTokenHandler, <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#createConnectRequest(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)">createConnectRequest</a>(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates the CONNECT request for tunnelling.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#createTunnelToProxy(org.apache.http.conn.routing.HttpRoute, int, org.apache.http.protocol.HttpContext)">createTunnelToProxy</a>(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, int hop, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a tunnel to an intermediate proxy.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#createTunnelToTarget(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)">createTunnelToTarget</a>(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a tunnel to the target server.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#determineRoute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">determineRoute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Determines the route for a request.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#establishRoute(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)">establishRoute</a>(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Establishes the target route.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/impl/client/RoutedRequest.html">RoutedRequest</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#handleResponse(org.apache.http.impl.client.RoutedRequest, org.apache.http.HttpResponse, org.apache.http.protocol.HttpContext)">handleResponse</a>(<a href="../../../../../../reference/org/apache/http/impl/client/RoutedRequest.html">RoutedRequest</a> roureq, <a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a> response, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Analyzes a response to check need for a followup.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#releaseConnection()">releaseConnection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the connection back to the connection manager
+ and prepares for retrieving a new connection during
+ the next request.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#rewriteRequestURI(org.apache.http.impl.client.RequestWrapper, org.apache.http.conn.routing.HttpRoute)">rewriteRequestURI</a>(<a href="../../../../../../reference/org/apache/http/impl/client/RequestWrapper.html">RequestWrapper</a> request, <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.client.RequestDirector')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.client.RequestDirector-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../../reference/org/apache/http/client/RequestDirector.html">org.apache.http.client.RequestDirector</a>
+</h5>
+<div id="inherited-methods-org.apache.http.client.RequestDirector">
+<div id="inherited-methods-org.apache.http.client.RequestDirector-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/org/apache/http/client/RequestDirector.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.client.RequestDirector-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/RequestDirector.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="connManager"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>
+        connManager
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The connection manager. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="httpProcessor"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/protocol/HttpProcessor.html">HttpProcessor</a>
+        httpProcessor
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The HTTP protocol processor. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="keepAliveStrategy"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>
+        keepAliveStrategy
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The keep-alive duration strategy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="managedConn"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        <a href="../../../../../../reference/org/apache/http/conn/ManagedClientConnection.html">ManagedClientConnection</a>
+        managedConn
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The currently allocated connection. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="params"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>
+        params
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The HTTP parameters. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="redirectHandler"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>
+        redirectHandler
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The redirect handler. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="requestExec"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>
+        requestExec
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The request executor. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="retryHandler"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>
+        retryHandler
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The request retry handler. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="reuseStrategy"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>
+        reuseStrategy
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The connection re-use strategy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="routePlanner"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>
+        routePlanner
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The route planner. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="DefaultRequestDirector(org.apache.http.protocol.HttpRequestExecutor, org.apache.http.conn.ClientConnectionManager, org.apache.http.ConnectionReuseStrategy, org.apache.http.conn.ConnectionKeepAliveStrategy, org.apache.http.conn.routing.HttpRoutePlanner, org.apache.http.protocol.HttpProcessor, org.apache.http.client.HttpRequestRetryHandler, org.apache.http.client.RedirectHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.UserTokenHandler, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DefaultRequestDirector(<a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a> requestExec, <a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a> conman, <a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a> reustrat, <a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a> kastrat, <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a> rouplan, <a href="../../../../../../reference/org/apache/http/protocol/HttpProcessor.html">HttpProcessor</a> httpProcessor, <a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a> retryHandler, <a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a> redirectHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> targetAuthHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> proxyAuthHandler, <a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a> userTokenHandler, <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>
+        execute(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes a request.
+ <br/><b>Note:</b>
+ For the time being, a new director is instantiated for each request.
+ This is the same behavior as for <code>HttpMethodDirector</code>
+ in HttpClient 3.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>target</td>
+        <td>the target host for the request.
+                  Implementations may accept <code>null</code>
+                  if they can still determine a route, for example
+                  to a default target or by inspecting the request.</td>
+      </tr>
+    <tr>
+        <th>request</td>
+        <td>the request to execute</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for executing the request</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the final response to the request.
+          This is never an intermediate response with status code 1xx.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="createConnectRequest(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a>
+        createConnectRequest(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates the CONNECT request for tunnelling.
+ Called by <a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#createTunnelToTarget(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)">createTunnelToTarget</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route to establish</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for request execution</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the CONNECT request for tunnelling
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createTunnelToProxy(org.apache.http.conn.routing.HttpRoute, int, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        createTunnelToProxy(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, int hop, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a tunnel to an intermediate proxy.
+ This method is <i>not</i> implemented in this class.
+ It just throws an exception here.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route to establish</td>
+      </tr>
+    <tr>
+        <th>hop</td>
+        <td>the hop in the route to establish now.
+                  <code>route.getHopTarget(hop)</code>
+                  will return the proxy to tunnel to.</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for request execution</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if the partially tunnelled connection
+          is secure, <code>false</code> otherwise.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td>in case of a problem</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of an IO problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createTunnelToTarget(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        createTunnelToTarget(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a tunnel to the target server.
+ The connection must be established to the (last) proxy.
+ A CONNECT request for tunnelling through the proxy will
+ be created and sent, the response received and checked.
+ This method does <i>not</i> update the connection with
+ information about the tunnel, that is left to the caller.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route to establish</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for request execution</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if the tunnelled route is secure,
+          <code>false</code> otherwise.
+          The implementation here always returns <code>false</code>,
+          but derived classes may override.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td>in case of a problem</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of an IO problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="determineRoute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a>
+        determineRoute(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Determines the route for a request.
+ Called by <a href="../../../../../../reference/org/apache/http/impl/client/DefaultRequestDirector.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute(HttpHost, HttpRequest, HttpContext)</a>
+ to determine the route for either the original or a followup request.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>target</td>
+        <td>the target host for the request.
+                  Implementations may accept <code>null</code>
+                  if they can still determine a route, for example
+                  to a default target or by inspecting the request.</td>
+      </tr>
+    <tr>
+        <th>request</td>
+        <td>the request to execute</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context to use for the execution,
+                  never <code>null</code></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the route the request should take</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td>in case of a problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="establishRoute(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        establishRoute(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Establishes the target route.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route to establish</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for the request execution</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td>in case of a problem</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of an IO problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="handleResponse(org.apache.http.impl.client.RoutedRequest, org.apache.http.HttpResponse, org.apache.http.protocol.HttpContext)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/impl/client/RoutedRequest.html">RoutedRequest</a>
+        handleResponse(<a href="../../../../../../reference/org/apache/http/impl/client/RoutedRequest.html">RoutedRequest</a> roureq, <a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a> response, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Analyzes a response to check need for a followup.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>roureq</td>
+        <td>the request and route. </td>
+      </tr>
+    <tr>
+        <th>response</td>
+        <td>the response to analayze</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context used for the current request execution</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the followup request and route if there is a followup, or
+          <code>null</code> if the response should be returned as is</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td>in case of a problem</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of an IO problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="releaseConnection()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        releaseConnection()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the connection back to the connection manager
+ and prepares for retrieving a new connection during
+ the next request.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rewriteRequestURI(org.apache.http.impl.client.RequestWrapper, org.apache.http.conn.routing.HttpRoute)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        rewriteRequestURI(<a href="../../../../../../reference/org/apache/http/impl/client/RequestWrapper.html">RequestWrapper</a> request, <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/ProtocolException.html">ProtocolException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2611 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.net.DatagramSocketImpl - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/net/package-summary.html">java.net</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>java.net.DatagramSocketImpl</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.net.DatagramSocketImpl</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/java/net/SocketOptions.html">SocketOptions</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>The abstract superclass of datagram & multicast socket implementations.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-java.net.SocketOptions')" class="jd-expando-trigger"
+        ><img id="inherited-constants-java.net.SocketOptions-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/java/net/SocketOptions.html">java.net.SocketOptions</a>
+</h5>
+<div id="inherited-constants-java.net.SocketOptions">
+<div id="inherited-constants-java.net.SocketOptions-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_IF">IP_MULTICAST_IF</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_IF2">IP_MULTICAST_IF2</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_LOOP">IP_MULTICAST_LOOP</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#IP_TOS">IP_TOS</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_BINDADDR">SO_BINDADDR</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_BROADCAST">SO_BROADCAST</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_KEEPALIVE">SO_KEEPALIVE</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_LINGER">SO_LINGER</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_OOBINLINE">SO_OOBINLINE</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_RCVBUF">SO_RCVBUF</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_REUSEADDR">SO_REUSEADDR</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_SNDBUF">SO_SNDBUF</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#SO_TIMEOUT">SO_TIMEOUT</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#TCP_NODELAY">TCP_NODELAY</a>
+
+</div>
+<div id="inherited-constants-java.net.SocketOptions-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_IF">IP_MULTICAST_IF</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_IF2">IP_MULTICAST_IF2</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">31&nbsp;</td>
+            <td class="jd-valcol">0x0000001f&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#IP_MULTICAST_LOOP">IP_MULTICAST_LOOP</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">18&nbsp;</td>
+            <td class="jd-valcol">0x00000012&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#IP_TOS">IP_TOS</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_BINDADDR">SO_BINDADDR</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">15&nbsp;</td>
+            <td class="jd-valcol">0x0000000f&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_BROADCAST">SO_BROADCAST</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">32&nbsp;</td>
+            <td class="jd-valcol">0x00000020&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_KEEPALIVE">SO_KEEPALIVE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_LINGER">SO_LINGER</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">128&nbsp;</td>
+            <td class="jd-valcol">0x00000080&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_OOBINLINE">SO_OOBINLINE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">4099&nbsp;</td>
+            <td class="jd-valcol">0x00001003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_RCVBUF">SO_RCVBUF</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">4098&nbsp;</td>
+            <td class="jd-valcol">0x00001002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_REUSEADDR">SO_REUSEADDR</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_SNDBUF">SO_SNDBUF</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">4097&nbsp;</td>
+            <td class="jd-valcol">0x00001001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#SO_TIMEOUT">SO_TIMEOUT</a>&nbsp;</td>
+        <td class="jd-descrcol">Timeout for blocking operation.&nbsp;</td>
+        
+            <td class="jd-valcol">4102&nbsp;</td>
+            <td class="jd-valcol">0x00001006&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/SocketOptions.html#TCP_NODELAY">TCP_NODELAY</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/DatagramSocketImpl.html#fd">fd</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/net/DatagramSocketImpl.html#localPort">localPort</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#DatagramSocketImpl()">DatagramSocketImpl</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs an unbound datagram socket implementation.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#getOption(int)">getOption</a>(int optID)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Answer the nominated socket option.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#setOption(int, java.lang.Object)">setOption</a>(int optID, <a href="../../../reference/java/lang/Object.html">Object</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the nominated socket option.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#bind(int, java.net.InetAddress)">bind</a>(int port, <a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Bind the datagram socket to the nominated localhost/port.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close the socket.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#connect(java.net.InetAddress, int)">connect</a>(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> inetAddr, int port)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Connect the socket to the specified remote address and port.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#create()">create</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This method allocates the socket descriptor in the underlying operating
+ system.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#disconnect()">disconnect</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Disconnect the socket from the remote address and port.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#getFileDescriptor()">getFileDescriptor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Answer the FileDescriptor, which will be invalid if the socket is closed
+ or not bound.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#getLocalPort()">getLocalPort</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Answer the local port.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#getTTL()">getTTL</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">
+        <em>
+This method is deprecated.
+
+        Replaced by <a href="../../../reference/java/net/DatagramSocketImpl.html#getTimeToLive()">getTimeToLive()</a></em></td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#getTimeToLive()">getTimeToLive</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Answer the time-to-live (TTL) for multicast packets sent on this socket.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#join(java.net.InetAddress)">join</a>(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add this socket to the multicast group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#joinGroup(java.net.SocketAddress, java.net.NetworkInterface)">joinGroup</a>(<a href="../../../reference/java/net/SocketAddress.html">SocketAddress</a> addr, <a href="../../../reference/java/net/NetworkInterface.html">NetworkInterface</a> netInterface)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add this socket to the multicast group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#leave(java.net.InetAddress)">leave</a>(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the socket from the multicast group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#leaveGroup(java.net.SocketAddress, java.net.NetworkInterface)">leaveGroup</a>(<a href="../../../reference/java/net/SocketAddress.html">SocketAddress</a> addr, <a href="../../../reference/java/net/NetworkInterface.html">NetworkInterface</a> netInterface)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the socket from the multicast group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#peek(java.net.InetAddress)">peek</a>(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> sender)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Peek at the incoming packet to this socket and answer the sender's
+ address into <code>sender</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#peekData(java.net.DatagramPacket)">peekData</a>(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receive data into the supplied datagram packet by peeking.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#receive(java.net.DatagramPacket)">receive</a>(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receive data into the supplied datagram packet.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#send(java.net.DatagramPacket)">send</a>(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends the supplied datagram packet.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#setTTL(byte)">setTTL</a>(byte ttl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">
+        <em>
+This method is deprecated.
+
+        Replaced by <a href="../../../reference/java/net/DatagramSocketImpl.html#setTimeToLive(int)">setTimeToLive(int)</a></em></td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/DatagramSocketImpl.html#setTimeToLive(int)">setTimeToLive</a>(int ttl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the time-to-live (TTL) for multicast packets sent on this socket.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.net.SocketOptions')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.net.SocketOptions-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/net/SocketOptions.html">java.net.SocketOptions</a>
+</h5>
+<div id="inherited-methods-java.net.SocketOptions">
+<div id="inherited-methods-java.net.SocketOptions-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/net/SocketOptions.html#getOption(int)">getOption</a>,
+
+<a href="../../../reference/java/net/SocketOptions.html#setOption(int, java.lang.Object)">setOption</a>
+
+</div>
+<div id="inherited-methods-java.net.SocketOptions-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/SocketOptions.html#getOption(int)">getOption</a>(int optID)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Answer the declared socket option.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/net/SocketOptions.html#setOption(int, java.lang.Object)">setOption</a>(int optID, <a href="../../../reference/java/lang/Object.html">Object</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the declared socket option to the value.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="fd"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        <a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a>
+        fd
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="localPort"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        int
+        localPort
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="DatagramSocketImpl()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DatagramSocketImpl()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs an unbound datagram socket implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="getOption(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/java/lang/Object.html">Object</a>
+        getOption(int optID)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Answer the nominated socket option.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>optID</td>
+        <td>the socket option to retrieve</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Object the option value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/net/SocketException.html">SocketException</a></td>
+            <td>thrown if an error occurs while accessing the option
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setOption(int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setOption(int optID, <a href="../../../reference/java/lang/Object.html">Object</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the nominated socket option.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>optID</td>
+        <td>the socket option to set</td>
+      </tr>
+    <tr>
+        <th>val</td>
+        <td>the option value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/net/SocketException.html">SocketException</a></td>
+            <td>thrown if an error occurs while setting the option
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="bind(int, java.net.InetAddress)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        bind(int port, <a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bind the datagram socket to the nominated localhost/port. Sockets must be
+ bound prior to attempting to send or receive data.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>port</td>
+        <td>the port on the localhost to bind</td>
+      </tr>
+    <tr>
+        <th>addr</td>
+        <td>the address on the multihomed localhost to bind</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/net/SocketException.html">SocketException</a></td>
+            <td>if an error occurred during bind, such as if the port was
+                already bound
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Close the socket.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="connect(java.net.InetAddress, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        connect(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> inetAddr, int port)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Connect the socket to the specified remote address and port.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>inetAddr</td>
+        <td>the remote address</td>
+      </tr>
+    <tr>
+        <th>port</td>
+        <td>the remote port</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/net/SocketException.html">SocketException</a></td>
+            <td>possibly thrown, if the datagram socket cannot be
+                connected to the specified remote address and port
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="create()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        create()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This method allocates the socket descriptor in the underlying operating
+ system.
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/net/SocketException.html">SocketException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="disconnect()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        disconnect()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Disconnect the socket from the remote address and port.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFileDescriptor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a>
+        getFileDescriptor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Answer the FileDescriptor, which will be invalid if the socket is closed
+ or not bound.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>FileDescriptor the socket file descriptor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLocalPort()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        int
+        getLocalPort()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Answer the local port. If the socket was bound to any available port, as
+ flagged by a <code>localPort</code> value of -1, query the IP stack.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int the local port to which the socket is bound.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTTL()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        byte
+        getTTL()
+    </h4>
+    <div class="jd-details-descr">
+
+
+<p>
+<p class="warning jd-deprecated-warning">
+    <strong>
+This method is deprecated.
+</strong>
+    Replaced by <a href="../../../reference/java/net/DatagramSocketImpl.html#getTimeToLive()">getTimeToLive()</a>
+</p>
+
+
+Answer the time-to-live (TTL) for multicast packets sent on this socket.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>java.net.InetAddress</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>The exception description.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/net/DatagramSocketImpl.html#getTimeToLive()">getTimeToLive()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTimeToLive()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        int
+        getTimeToLive()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Answer the time-to-live (TTL) for multicast packets sent on this socket.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>The exception description.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="join(java.net.InetAddress)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        join(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add this socket to the multicast group. A socket must join a group before
+ data may be received. A socket may be a member of multiple groups but may
+ join any group once.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>addr</td>
+        <td>the multicast group to be joined</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>may be thrown while joining a group
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="joinGroup(java.net.SocketAddress, java.net.NetworkInterface)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        joinGroup(<a href="../../../reference/java/net/SocketAddress.html">SocketAddress</a> addr, <a href="../../../reference/java/net/NetworkInterface.html">NetworkInterface</a> netInterface)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add this socket to the multicast group. A socket must join a group before
+ data may be received. A socket may be a member of multiple groups but may
+ join any group once.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>addr</td>
+        <td>the multicast group to be joined</td>
+      </tr>
+    <tr>
+        <th>netInterface</td>
+        <td>the network interface on which the addresses should be dropped</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>may be thrown while joining a group
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="leave(java.net.InetAddress)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        leave(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> addr)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the socket from the multicast group.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>addr</td>
+        <td>the multicast group to be left</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>May be thrown while leaving the group
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="leaveGroup(java.net.SocketAddress, java.net.NetworkInterface)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        leaveGroup(<a href="../../../reference/java/net/SocketAddress.html">SocketAddress</a> addr, <a href="../../../reference/java/net/NetworkInterface.html">NetworkInterface</a> netInterface)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the socket from the multicast group.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>addr</td>
+        <td>the multicast group to be left</td>
+      </tr>
+    <tr>
+        <th>netInterface</td>
+        <td>the network interface on which the addresses should be dropped</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>May be thrown while leaving the group
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="peek(java.net.InetAddress)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        int
+        peek(<a href="../../../reference/java/net/InetAddress.html">InetAddress</a> sender)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Peek at the incoming packet to this socket and answer the sender's
+ address into <code>sender</code>. The method will block until a packet
+ is received or timeout expires and returns the sender's port.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if a read error or timeout occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="peekData(java.net.DatagramPacket)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        int
+        peekData(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Receive data into the supplied datagram packet by peeking. The data is
+ not removed and will be received by another peekData() or receive() call.
+ 
+ This call will block until either data is received or, if a timeout is
+ set, the timeout expires.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pack</td>
+        <td>the DatagramPacket used to store the data</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the port the packet was received from</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if an error occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="receive(java.net.DatagramPacket)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        receive(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Receive data into the supplied datagram packet. This call will block
+ until either data is received or, if a timeout is set, the timeout
+ expires. If the timeout expires, the InterruptedIOException is thrown.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if a read error or timeout occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="send(java.net.DatagramPacket)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        send(<a href="../../../reference/java/net/DatagramPacket.html">DatagramPacket</a> pack)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sends the supplied datagram packet. The packet contains the destination
+ host & port.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pack</td>
+        <td>DatagramPacket to send</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if a write error occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTTL(byte)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        setTTL(byte ttl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+<p>
+<p class="warning jd-deprecated-warning">
+    <strong>
+This method is deprecated.
+</strong>
+    Replaced by <a href="../../../reference/java/net/DatagramSocketImpl.html#setTimeToLive(int)">setTimeToLive(int)</a>
+</p>
+
+
+Set the time-to-live (TTL) for multicast packets sent on this socket.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ttl</td>
+        <td>the time-to-live, 0 &lt; ttl &lt;= 255</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>The exception thrown while setting the TTL</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/net/DatagramSocketImpl.html#setTimeToLive(int)">setTimeToLive(int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTimeToLive(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        setTimeToLive(int ttl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the time-to-live (TTL) for multicast packets sent on this socket.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ttl</td>
+        <td>the time-to-live, 0 &lt; ttl &lt;= 255</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>The exception thrown while setting the TTL
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

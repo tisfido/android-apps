@@ -1,0 +1,2812 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.telephony.PhoneNumberUtils - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/telephony/package-summary.html">android.telephony</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.telephony.PhoneNumberUtils</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.telephony.PhoneNumberUtils</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Various utilities for dealing with phone number strings.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#FORMAT_NANP">FORMAT_NANP</a>&nbsp;</td>
+        <td class="jd-descrcol">NANP formatting &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#FORMAT_UNKNOWN">FORMAT_UNKNOWN</a>&nbsp;</td>
+        <td class="jd-descrcol">The current locale is unknown, look for a country code or don't format &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">char&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#PAUSE">PAUSE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">44&nbsp;</td>
+            <td class="jd-valcol">0x0000002c&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#TOA_International">TOA_International</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">145&nbsp;</td>
+            <td class="jd-valcol">0x00000091&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#TOA_Unknown">TOA_Unknown</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">129&nbsp;</td>
+            <td class="jd-valcol">0x00000081&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">char&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#WAIT">WAIT</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">59&nbsp;</td>
+            <td class="jd-valcol">0x0000003b&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">char&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#WILD">WILD</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">78&nbsp;</td>
+            <td class="jd-valcol">0x0000004e&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#PhoneNumberUtils()">PhoneNumberUtils</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#calledPartyBCDFragmentToString(byte[], int, int)">calledPartyBCDFragmentToString</a>(byte[] bytes, int offset, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Like calledPartyBCDToString, but field does not start with a
+ TOA byte.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#calledPartyBCDToString(byte[], int, int)">calledPartyBCDToString</a>(byte[] bytes, int offset, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">3GPP TS 24.008 10.5.4.7
+  Called Party BCD Number
+
+  See Also TS 51.011 10.5.1 "dialing number/ssc string"</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#compare(java.lang.String, java.lang.String)">compare</a>(<a href="../../../reference/java/lang/String.html">String</a> a, <a href="../../../reference/java/lang/String.html">String</a> b)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compare phone numbers a and b, return true if they're identical
+ enough for caller ID purposes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#convertKeypadLettersToDigits(java.lang.String)">convertKeypadLettersToDigits</a>(<a href="../../../reference/java/lang/String.html">String</a> input)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Translates any alphabetic letters (i.e.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#extractNetworkPortion(java.lang.String)">extractNetworkPortion</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Extracts the network address portion and canonicalizes
+  (filters out separators.)
+  Network address portion is everything up to DTMF control digit
+  separators (pause or wait), but without non-dialable characters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#extractPostDialPortion(java.lang.String)">extractPostDialPortion</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Extracts the post-dial sequence of DTMF control digits, pauses, and
+ waits.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#formatNanpNumber(android.text.Editable)">formatNanpNumber</a>(<a href="../../../reference/android/text/Editable.html">Editable</a> text)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Formats a phone number in-place using the NANP formatting rules.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#formatNumber(android.text.Editable, int)">formatNumber</a>(<a href="../../../reference/android/text/Editable.html">Editable</a> text, int defaultFormattingType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Formats a phone number in-place.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#formatNumber(java.lang.String)">formatNumber</a>(<a href="../../../reference/java/lang/String.html">String</a> source)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Breaks the given number down and formats it according to the rules
+ for the country the number is from.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#getFormatTypeForLocale(java.util.Locale)">getFormatTypeForLocale</a>(<a href="../../../reference/java/util/Locale.html">Locale</a> locale)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the phone number formatting type for the given locale.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#getNumberFromIntent(android.content.Intent, android.content.Context)">getNumberFromIntent</a>(<a href="../../../reference/android/content/Intent.html">Intent</a> intent, <a href="../../../reference/android/content/Context.html">Context</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Extracts the phone number from an Intent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#getStrippedReversed(java.lang.String)">getStrippedReversed</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the network portion reversed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#is12Key(char)">is12Key</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">True if c is ISO-LATIN characters 0-9, *, # </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isDialable(char)">isDialable</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">True if c is ISO-LATIN characters 0-9, *, # , +, WILD  </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isEmergencyNumber(java.lang.String)">isEmergencyNumber</a>(<a href="../../../reference/java/lang/String.html">String</a> number)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">isEmergencyNumber: checks a given number against the list of
+   emergency numbers provided by the RIL and SIM card.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isGlobalPhoneNumber(java.lang.String)">isGlobalPhoneNumber</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isISODigit(char)">isISODigit</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">True if c is ISO-LATIN characters 0-9 </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isNonSeparator(char)">isNonSeparator</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">True if c is ISO-LATIN characters 0-9, *, # , +, WILD, WAIT, PAUSE   </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isReallyDialable(char)">isReallyDialable</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">True if c is ISO-LATIN characters 0-9, *, # , + (no WILD)  </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isStartsPostDial(char)">isStartsPostDial</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This any anything to the right of this char is part of the
+  post-dial string (eg this is PAUSE or WAIT)
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#isWellFormedSmsAddress(java.lang.String)">isWellFormedSmsAddress</a>(<a href="../../../reference/java/lang/String.html">String</a> address)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true iff the network portion of <code>address</code> is,
+ as far as we can tell on the device, suitable for use as an SMS
+ destination address.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#networkPortionToCalledPartyBCD(java.lang.String)">networkPortionToCalledPartyBCD</a>(<a href="../../../reference/java/lang/String.html">String</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Note: calls extractNetworkPortion(), so do not use for
+ SIM EF[ADN] style records
+
+ Exceptions thrown if extractNetworkPortion(s).length() == 0
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#networkPortionToCalledPartyBCDWithLength(java.lang.String)">networkPortionToCalledPartyBCDWithLength</a>(<a href="../../../reference/java/lang/String.html">String</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Same as <a href="../../../reference/android/telephony/PhoneNumberUtils.html#networkPortionToCalledPartyBCD(java.lang.String)">networkPortionToCalledPartyBCD(String)</a>, but includes a
+ one-byte length prefix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#numberToCalledPartyBCD(java.lang.String)">numberToCalledPartyBCD</a>(<a href="../../../reference/java/lang/String.html">String</a> number)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convert a dialing number to BCD byte array</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#stringFromStringAndTOA(java.lang.String, int)">stringFromStringAndTOA</a>(<a href="../../../reference/java/lang/String.html">String</a> s, int TOA)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Basically: makes sure there's a + in front of a
+ TOA_International number
+
+ Returns null if s == null
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#stripSeparators(java.lang.String)">stripSeparators</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Strips separators from a phone number string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#toCallerIDMinMatch(java.lang.String)">toCallerIDMinMatch</a>(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the rightmost MIN_MATCH (5) characters in the network portion
+ in *reversed* order
+
+ This can be used to do a database lookup against the column
+ that stores getStrippedReversed()
+
+ Returns null if phoneNumber == null
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/telephony/PhoneNumberUtils.html#toaFromString(java.lang.String)">toaFromString</a>(<a href="../../../reference/java/lang/String.html">String</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the TOA for the given dial string
+ Basically, returns TOA_International if there's a + prefix
+</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="FORMAT_NANP"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FORMAT_NANP
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+NANP formatting 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FORMAT_UNKNOWN"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FORMAT_UNKNOWN
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The current locale is unknown, look for a country code or don't format 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PAUSE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        char
+        PAUSE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                44
+                (0x0000002c)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TOA_International"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TOA_International
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                145
+                (0x00000091)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TOA_Unknown"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TOA_Unknown
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                129
+                (0x00000081)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="WAIT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        char
+        WAIT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                59
+                (0x0000003b)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="WILD"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        char
+        WILD
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                78
+                (0x0000004e)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="PhoneNumberUtils()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        PhoneNumberUtils()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="calledPartyBCDFragmentToString(byte[], int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        calledPartyBCDFragmentToString(byte[] bytes, int offset, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Like calledPartyBCDToString, but field does not start with a
+ TOA byte. For example: SIM ADN extension fields
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="calledPartyBCDToString(byte[], int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        calledPartyBCDToString(byte[] bytes, int offset, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+3GPP TS 24.008 10.5.4.7
+  Called Party BCD Number
+
+  See Also TS 51.011 10.5.1 "dialing number/ssc string"
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bytes</td>
+        <td>the data buffer</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>should point to the TOI/NPI octet after the length byte</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>is the number of bytes including TOA byte
+                and must be at least 2</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>partial string on invalid decode
+
+ FIXME(mkf) support alphanumeric address type
+  currently implemented in SMSMessage.getAddress()
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="compare(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        compare(<a href="../../../reference/java/lang/String.html">String</a> a, <a href="../../../reference/java/lang/String.html">String</a> b)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Compare phone numbers a and b, return true if they're identical
+ enough for caller ID purposes.
+
+ - Compares from right to left
+ - requires MIN_MATCH (5) characters to match
+ - handles common trunk prefixes and international prefixes
+   (basically, everything except the Russian trunk prefix)
+
+ Tolerates nulls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="convertKeypadLettersToDigits(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        convertKeypadLettersToDigits(<a href="../../../reference/java/lang/String.html">String</a> input)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Translates any alphabetic letters (i.e. [A-Za-z]) in the
+ specified phone number into the equivalent numeric digits,
+ according to the phone keypad letter mapping described in
+ ITU E.161 and ISO/IEC 9995-8.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the input string, with alpha letters converted to numeric
+         digits using the phone keypad letter mapping.  For example,
+         an input of "1-800-GOOG-411" will return "1-800-4664-411".
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="extractNetworkPortion(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        extractNetworkPortion(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Extracts the network address portion and canonicalizes
+  (filters out separators.)
+  Network address portion is everything up to DTMF control digit
+  separators (pause or wait), but without non-dialable characters.
+
+  Please note that the GSM wild character is allowed in the result.
+  This must be resolved before dialing.
+
+  Allows + only in the first  position in the result string.
+
+  Returns null if phoneNumber == null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="extractPostDialPortion(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        extractPostDialPortion(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Extracts the post-dial sequence of DTMF control digits, pauses, and
+ waits. Strips separators. This string may be empty, but will not be null
+ unless phoneNumber == null.
+
+ Returns null if phoneNumber == null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="formatNanpNumber(android.text.Editable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        formatNanpNumber(<a href="../../../reference/android/text/Editable.html">Editable</a> text)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Formats a phone number in-place using the NANP formatting rules. Numbers will be formatted
+ as:
+
+ <p><code>
+ xxx-xxxx
+ xxx-xxx-xxxx
+ 1-xxx-xxx-xxxx
+ +1-xxx-xxx-xxxx
+ </code></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>the number to be formatted, will be modified with the formatting
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="formatNumber(android.text.Editable, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        formatNumber(<a href="../../../reference/android/text/Editable.html">Editable</a> text, int defaultFormattingType)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Formats a phone number in-place. Currently only supports NANP formatting.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The number to be formatted, will be modified with the formatting</td>
+      </tr>
+    <tr>
+        <th>defaultFormattingType</td>
+        <td>The default formatting rules to apply if the number does
+ not begin with +<country_code>
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="formatNumber(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        formatNumber(<a href="../../../reference/java/lang/String.html">String</a> source)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Breaks the given number down and formats it according to the rules
+ for the country the number is from.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>source</td>
+        <td>the phone number to format</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a locally acceptable formatting of the input, or the raw input if
+  formatting rules aren't known for the number
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFormatTypeForLocale(java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        getFormatTypeForLocale(<a href="../../../reference/java/util/Locale.html">Locale</a> locale)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the phone number formatting type for the given locale.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>locale</td>
+        <td>The locale of interest, usually <a href="../../../reference/java/util/Locale.html#getDefault()">getDefault()</a></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the formatting type for the given locale, or FORMAT_UNKNOWN if the formatting
+ rules are not known for the given locale
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getNumberFromIntent(android.content.Intent, android.content.Context)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getNumberFromIntent(<a href="../../../reference/android/content/Intent.html">Intent</a> intent, <a href="../../../reference/android/content/Context.html">Context</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Extracts the phone number from an Intent.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>intent</td>
+        <td>the intent to get the number of</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>a context to use for database access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the phone number that would be called by the intent, or
+         <code>null</code> if the number cannot be found.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getStrippedReversed(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getStrippedReversed(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the network portion reversed.
+ This string is intended to go into an index column for a
+ database lookup.
+
+ Returns null if phoneNumber == null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="is12Key(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        is12Key(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+True if c is ISO-LATIN characters 0-9, *, # 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isDialable(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        isDialable(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+True if c is ISO-LATIN characters 0-9, *, # , +, WILD  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isEmergencyNumber(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isEmergencyNumber(<a href="../../../reference/java/lang/String.html">String</a> number)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+isEmergencyNumber: checks a given number against the list of
+   emergency numbers provided by the RIL and SIM card.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>number</td>
+        <td>the number to look up.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>if the number is in the list of emergency numbers
+ listed in the ril / sim, then return true, otherwise false.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isGlobalPhoneNumber(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isGlobalPhoneNumber(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isISODigit(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isISODigit(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+True if c is ISO-LATIN characters 0-9 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isNonSeparator(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        isNonSeparator(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+True if c is ISO-LATIN characters 0-9, *, # , +, WILD, WAIT, PAUSE   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isReallyDialable(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        isReallyDialable(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+True if c is ISO-LATIN characters 0-9, *, # , + (no WILD)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isStartsPostDial(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        isStartsPostDial(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This any anything to the right of this char is part of the
+  post-dial string (eg this is PAUSE or WAIT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isWellFormedSmsAddress(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isWellFormedSmsAddress(<a href="../../../reference/java/lang/String.html">String</a> address)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true iff the network portion of <code>address</code> is,
+ as far as we can tell on the device, suitable for use as an SMS
+ destination address.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="networkPortionToCalledPartyBCD(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        byte[]
+        networkPortionToCalledPartyBCD(<a href="../../../reference/java/lang/String.html">String</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Note: calls extractNetworkPortion(), so do not use for
+ SIM EF[ADN] style records
+
+ Exceptions thrown if extractNetworkPortion(s).length() == 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="networkPortionToCalledPartyBCDWithLength(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        byte[]
+        networkPortionToCalledPartyBCDWithLength(<a href="../../../reference/java/lang/String.html">String</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Same as <a href="../../../reference/android/telephony/PhoneNumberUtils.html#networkPortionToCalledPartyBCD(java.lang.String)">networkPortionToCalledPartyBCD(String)</a>, but includes a
+ one-byte length prefix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="numberToCalledPartyBCD(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        byte[]
+        numberToCalledPartyBCD(<a href="../../../reference/java/lang/String.html">String</a> number)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convert a dialing number to BCD byte array
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>number</td>
+        <td>dialing number string
+        if the dialing number starts with '+', set to internationl TOA</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>BCD byte array
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="stringFromStringAndTOA(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        stringFromStringAndTOA(<a href="../../../reference/java/lang/String.html">String</a> s, int TOA)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Basically: makes sure there's a + in front of a
+ TOA_International number
+
+ Returns null if s == null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="stripSeparators(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        stripSeparators(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Strips separators from a phone number string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>phoneNumber</td>
+        <td>phone number to strip.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>phone string stripped of separators.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toCallerIDMinMatch(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        toCallerIDMinMatch(<a href="../../../reference/java/lang/String.html">String</a> phoneNumber)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the rightmost MIN_MATCH (5) characters in the network portion
+ in *reversed* order
+
+ This can be used to do a database lookup against the column
+ that stores getStrippedReversed()
+
+ Returns null if phoneNumber == null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toaFromString(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        toaFromString(<a href="../../../reference/java/lang/String.html">String</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the TOA for the given dial string
+ Basically, returns TOA_International if there's a + prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

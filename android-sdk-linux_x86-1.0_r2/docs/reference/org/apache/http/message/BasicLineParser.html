@@ -1,0 +1,1976 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.message.BasicLineParser - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/style.css" />
+<script src="../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../')"
+            onchange="search_changed(event, false, '../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../reference/org/apache/http/message/package-summary.html">org.apache.http.message</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>org.apache.http.message.BasicLineParser</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.message.BasicLineParser</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Basic parser for lines in the head section of an HTTP message.
+ There are individual methods for parsing a request line, a
+ status line, or a header line.
+ The lines to parse are passed in memory, the parser does not depend
+ on any specific IO mechanism.
+ Instances of this class are stateless and thread-safe.
+ Derived classes MUST maintain these properties.
+
+ <p>
+ Note: This class was created by refactoring parsing code located in
+ various other classes. The author tags from those other classes have
+ been replicated here, although the association with the parsing code
+ taken from there has not been traced.
+ </p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html">BasicLineParser</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#DEFAULT">DEFAULT</a>&nbsp;</td>
+        <td class="jd-descrcol">A default instance of this class, for use as default or fallback.&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#protocol">protocol</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">A version of the protocol to parse.&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#BasicLineParser(org.apache.http.ProtocolVersion)">BasicLineParser</a>(<a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> proto)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new line parser for the given HTTP-like protocol.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#BasicLineParser()">BasicLineParser</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new line parser for HTTP.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#hasProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">hasProtocolVersion</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks whether there likely is a protocol version in a line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/Header.html">Header</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseHeader(org.apache.http.util.CharArrayBuffer)">parseHeader</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a header from a line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/Header.html">Header</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseHeader(java.lang.String, org.apache.http.message.LineParser)">parseHeader</a>(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseProtocolVersion</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses the textual representation of a protocol version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseProtocolVersion(java.lang.String, org.apache.http.message.LineParser)">parseProtocolVersion</a>(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseRequestLine(java.lang.String, org.apache.http.message.LineParser)">parseRequestLine</a>(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseRequestLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseRequestLine</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses a request line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseStatusLine(java.lang.String, org.apache.http.message.LineParser)">parseStatusLine</a>(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseStatusLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseStatusLine</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses a status line.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#createProtocolVersion(int, int)">createProtocolVersion</a>(int major, int minor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a protocol version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#createRequestLine(java.lang.String, java.lang.String, org.apache.http.ProtocolVersion)">createRequestLine</a>(<a href="../../../../../reference/java/lang/String.html">String</a> method, <a href="../../../../../reference/java/lang/String.html">String</a> uri, <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> ver)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Instantiates a new request line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#createStatusLine(org.apache.http.ProtocolVersion, int, java.lang.String)">createStatusLine</a>(<a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> ver, int status, <a href="../../../../../reference/java/lang/String.html">String</a> reason)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Instantiates a new status line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#skipWhitespace(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">skipWhitespace</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Helper to skip whitespace.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.message.LineParser')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.message.LineParser-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/org/apache/http/message/LineParser.html">org.apache.http.message.LineParser</a>
+</h5>
+<div id="inherited-methods-org.apache.http.message.LineParser">
+<div id="inherited-methods-org.apache.http.message.LineParser-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/org/apache/http/message/LineParser.html#hasProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">hasProtocolVersion</a>,
+
+<a href="../../../../../reference/org/apache/http/message/LineParser.html#parseHeader(org.apache.http.util.CharArrayBuffer)">parseHeader</a>,
+
+<a href="../../../../../reference/org/apache/http/message/LineParser.html#parseProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseProtocolVersion</a>,
+
+<a href="../../../../../reference/org/apache/http/message/LineParser.html#parseRequestLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseRequestLine</a>,
+
+<a href="../../../../../reference/org/apache/http/message/LineParser.html#parseStatusLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseStatusLine</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.message.LineParser-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/LineParser.html#hasProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">hasProtocolVersion</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks whether there likely is a protocol version in a line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/Header.html">Header</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/LineParser.html#parseHeader(org.apache.http.util.CharArrayBuffer)">parseHeader</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a header from a line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/LineParser.html#parseProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseProtocolVersion</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses the textual representation of a protocol version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/LineParser.html#parseRequestLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseRequestLine</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses a request line.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/message/LineParser.html#parseStatusLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseStatusLine</a>(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parses a status line.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="DEFAULT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../../reference/org/apache/http/message/BasicLineParser.html">BasicLineParser</a>
+        DEFAULT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A default instance of this class, for use as default or fallback.
+ Note that <a href="../../../../../reference/org/apache/http/message/BasicLineParser.html">BasicLineParser</a> is not a singleton, there can
+ be many instances of the class itself and of derived classes.
+ The instance here provides non-customized, default behavior.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="protocol"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>
+        protocol
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A version of the protocol to parse.
+ The version is typically not relevant, but the protocol name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="BasicLineParser(org.apache.http.ProtocolVersion)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        BasicLineParser(<a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> proto)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new line parser for the given HTTP-like protocol.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>proto</td>
+        <td>a version of the protocol to parse, or
+                  <code>null</code> for HTTP. The actual version
+                  is not relevant, only the protocol name.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="BasicLineParser()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        BasicLineParser()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new line parser for HTTP.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="hasProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        hasProtocolVersion(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Checks whether there likely is a protocol version in a line.
+ This method implements a <i>heuristic</i> to check for a
+ likely protocol version specification. It does <i>not</i>
+ guarantee that <a href="../../../../../reference/org/apache/http/message/LineParser.html#parseProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)">parseProtocolVersion(CharArrayBuffer, ParserCursor)</a> would not
+ detect a parse error.
+ This can be used to detect garbage lines before a request
+ or status line.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>a buffer holding the line to inspect</td>
+      </tr>
+    <tr>
+        <th>cursor</td>
+        <td>the cursor at which to check for a protocol version, or
+                  negative for "end of line". Whether the check tolerates
+                  whitespace before or after the protocol version is
+                  implementation dependent.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if there is a protocol version at the
+          argument index (possibly ignoring whitespace),
+          <code>false</code> otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseHeader(org.apache.http.util.CharArrayBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/Header.html">Header</a>
+        parseHeader(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a header from a line.
+ The full header line is expected here. Header continuation lines
+ must be joined by the caller before invoking this method.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>a buffer holding the full header line.
+                  This buffer MUST NOT be re-used afterwards, since
+                  the returned object may reference the contents later.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the header in the argument buffer.
+          The returned object MAY be a wrapper for the argument buffer.
+          The argument buffer MUST NOT be re-used or changed afterwards.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseHeader(java.lang.String, org.apache.http.message.LineParser)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../reference/org/apache/http/Header.html">Header</a>
+        parseHeader(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseProtocolVersion(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>
+        parseProtocolVersion(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parses the textual representation of a protocol version.
+ This is needed for parsing request lines (last element)
+ as well as status lines (first element).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>a buffer holding the protocol version to parse</td>
+      </tr>
+    <tr>
+        <th>cursor</td>
+        <td>the parser cursor containing the current position and 
+                  the bounds within the buffer for the parsing operation</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parsed protocol version</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseProtocolVersion(java.lang.String, org.apache.http.message.LineParser)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>
+        parseProtocolVersion(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseRequestLine(java.lang.String, org.apache.http.message.LineParser)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>
+        parseRequestLine(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseRequestLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>
+        parseRequestLine(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parses a request line.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>a buffer holding the line to parse</td>
+      </tr>
+    <tr>
+        <th>cursor</td>
+        <td>the parser cursor containing the current position and 
+                  the bounds within the buffer for the parsing operation</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parsed request line</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td>in case of a parse error
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseStatusLine(java.lang.String, org.apache.http.message.LineParser)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>
+        parseStatusLine(<a href="../../../../../reference/java/lang/String.html">String</a> value, <a href="../../../../../reference/org/apache/http/message/LineParser.html">LineParser</a> parser)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseStatusLine(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>
+        parseStatusLine(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parses a status line.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>a buffer holding the line to parse</td>
+      </tr>
+    <tr>
+        <th>cursor</td>
+        <td>the parser cursor containing the current position and 
+                  the bounds within the buffer for the parsing operation</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parsed status line</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/org/apache/http/ParseException.html">ParseException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="createProtocolVersion(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a>
+        createProtocolVersion(int major, int minor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a protocol version.
+ Called from <a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseProtocolVersion(java.lang.String, org.apache.http.message.LineParser)">parseProtocolVersion(String, LineParser)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>major</td>
+        <td>the major version number, for example 1 in HTTP/1.0</td>
+      </tr>
+    <tr>
+        <th>minor</td>
+        <td>the minor version number, for example 0 in HTTP/1.0</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the protocol version
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createRequestLine(java.lang.String, java.lang.String, org.apache.http.ProtocolVersion)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/RequestLine.html">RequestLine</a>
+        createRequestLine(<a href="../../../../../reference/java/lang/String.html">String</a> method, <a href="../../../../../reference/java/lang/String.html">String</a> uri, <a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> ver)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Instantiates a new request line.
+ Called from <a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseRequestLine(java.lang.String, org.apache.http.message.LineParser)">parseRequestLine(String, LineParser)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>method</td>
+        <td>the request method</td>
+      </tr>
+    <tr>
+        <th>uri</td>
+        <td>the requested URI</td>
+      </tr>
+    <tr>
+        <th>ver</td>
+        <td>the protocol version</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new status line with the given data
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStatusLine(org.apache.http.ProtocolVersion, int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/StatusLine.html">StatusLine</a>
+        createStatusLine(<a href="../../../../../reference/org/apache/http/ProtocolVersion.html">ProtocolVersion</a> ver, int status, <a href="../../../../../reference/java/lang/String.html">String</a> reason)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Instantiates a new status line.
+ Called from <a href="../../../../../reference/org/apache/http/message/BasicLineParser.html#parseStatusLine(java.lang.String, org.apache.http.message.LineParser)">parseStatusLine(String, LineParser)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ver</td>
+        <td>the protocol version</td>
+      </tr>
+    <tr>
+        <th>status</td>
+        <td>the status code</td>
+      </tr>
+    <tr>
+        <th>reason</td>
+        <td>the reason phrase</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new status line with the given data
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="skipWhitespace(org.apache.http.util.CharArrayBuffer, org.apache.http.message.ParserCursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        skipWhitespace(<a href="../../../../../reference/org/apache/http/util/CharArrayBuffer.html">CharArrayBuffer</a> buffer, <a href="../../../../../reference/org/apache/http/message/ParserCursor.html">ParserCursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Helper to skip whitespace.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

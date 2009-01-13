@@ -1,0 +1,1512 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.preference.PreferenceManager - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/preference/package-summary.html">android.preference</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.preference.PreferenceManager</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.preference.PreferenceManager</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>The <a href="../../../reference/android/preference/PreferenceManager.html">PreferenceManager</a> is used to help create preference hierarchies
+ from activities or XML.
+ <p>
+ In most cases, clients should use
+ <a href="../../../reference/android/preference/PreferenceActivity.html#addPreferencesFromIntent(android.content.Intent)">addPreferencesFromIntent(Intent)</a> or
+ <a href="../../../reference/android/preference/PreferenceActivity.html#addPreferencesFromResource(int)">addPreferencesFromResource(int)</a>.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/preference/PreferenceManager.OnActivityDestroyListener.html">PreferenceManager.OnActivityDestroyListener</a>,
+            
+                <a href="../../../reference/android/preference/PreferenceManager.OnActivityResultListener.html">PreferenceManager.OnActivityResultListener</a>,
+            
+                <a href="../../../reference/android/preference/PreferenceManager.OnActivityStopListener.html">PreferenceManager.OnActivityStopListener</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceManager.OnActivityDestroyListener.html">PreferenceManager.OnActivityDestroyListener</a></td>
+            <td class="jd-descrcol" width="100%">Interface definition for a class that will be called when the container's activity
+ is destroyed.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceManager.OnActivityResultListener.html">PreferenceManager.OnActivityResultListener</a></td>
+            <td class="jd-descrcol" width="100%">Interface definition for a class that will be called when the container's activity
+ receives an activity result.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceManager.OnActivityStopListener.html">PreferenceManager.OnActivityStopListener</a></td>
+            <td class="jd-descrcol" width="100%">Interface definition for a class that will be called when the container's activity
+ is stopped.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceManager.html#KEY_HAS_SET_DEFAULT_VALUES">KEY_HAS_SET_DEFAULT_VALUES</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"_has_set_default_values"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceManager.html#METADATA_KEY_PREFERENCES">METADATA_KEY_PREFERENCES</a>&nbsp;</td>
+        <td class="jd-descrcol">The Activity meta-data key for its XML preference hierarchy.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"android.preference"&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/preference/PreferenceScreen.html">PreferenceScreen</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#createPreferenceScreen(android.content.Context)">createPreferenceScreen</a>(<a href="../../../reference/android/content/Context.html">Context</a> context)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/preference/Preference.html">Preference</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#findPreference(java.lang.CharSequence)">findPreference</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Finds a <a href="../../../reference/android/preference/Preference.html">Preference</a> based on its key.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/content/SharedPreferences.html">SharedPreferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#getDefaultSharedPreferences(android.content.Context)">getDefaultSharedPreferences</a>(<a href="../../../reference/android/content/Context.html">Context</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets a SharedPreferences instance that points to the default file that is
+ used by the preference framework in the given context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/content/SharedPreferences.html">SharedPreferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#getSharedPreferences()">getSharedPreferences</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets a SharedPreferences instance that preferences managed by this will
+ use.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#getSharedPreferencesMode()">getSharedPreferencesMode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the current mode of the SharedPreferences file that preferences managed by
+ this will use.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#getSharedPreferencesName()">getSharedPreferencesName</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the current name of the SharedPreferences file that preferences managed by
+ this will use.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#setDefaultValues(android.content.Context, int, boolean)">setDefaultValues</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, int resId, boolean readAgain)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the default values from a preference hierarchy in XML.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#setDefaultValues(android.content.Context, java.lang.String, int, int, boolean)">setDefaultValues</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/String.html">String</a> sharedPreferencesName, int sharedPreferencesMode, int resId, boolean readAgain)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Similar to <a href="../../../reference/android/preference/PreferenceManager.html#setDefaultValues(android.content.Context, int, boolean)">setDefaultValues(Context, int, boolean)</a> but allows
+ the client to provide the filename and mode of the shared preferences
+ file.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#setSharedPreferencesMode(int)">setSharedPreferencesMode</a>(int sharedPreferencesMode)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the mode of the SharedPreferences file that preferences managed by this
+ will use.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/preference/PreferenceManager.html#setSharedPreferencesName(java.lang.String)">setSharedPreferencesName</a>(<a href="../../../reference/java/lang/String.html">String</a> sharedPreferencesName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the name of the SharedPreferences file that preferences managed by this
+ will use.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="KEY_HAS_SET_DEFAULT_VALUES"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/java/lang/String.html">String</a>
+        KEY_HAS_SET_DEFAULT_VALUES
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "_has_set_default_values"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="METADATA_KEY_PREFERENCES"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/java/lang/String.html">String</a>
+        METADATA_KEY_PREFERENCES
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The Activity meta-data key for its XML preference hierarchy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "android.preference"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="createPreferenceScreen(android.content.Context)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/preference/PreferenceScreen.html">PreferenceScreen</a>
+        createPreferenceScreen(<a href="../../../reference/android/content/Context.html">Context</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="findPreference(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/preference/Preference.html">Preference</a>
+        findPreference(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Finds a <a href="../../../reference/android/preference/Preference.html">Preference</a> based on its key.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>The key of the preference to retrieve.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The <a href="../../../reference/android/preference/Preference.html">Preference</a> with the key, or null.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/preference/PreferenceGroup.html#findPreference(java.lang.CharSequence)">findPreference(CharSequence)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDefaultSharedPreferences(android.content.Context)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/content/SharedPreferences.html">SharedPreferences</a>
+        getDefaultSharedPreferences(<a href="../../../reference/android/content/Context.html">Context</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets a SharedPreferences instance that points to the default file that is
+ used by the preference framework in the given context.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The context of the preferences whose values are wanted.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A SharedPreferences instance that can be used to retrieve and
+         listen to values of the preferences.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSharedPreferences()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/content/SharedPreferences.html">SharedPreferences</a>
+        getSharedPreferences()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets a SharedPreferences instance that preferences managed by this will
+ use.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A SharedPreferences instance pointing to the file that contains
+         the values of preferences that are managed by this.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSharedPreferencesMode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getSharedPreferencesMode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the current mode of the SharedPreferences file that preferences managed by
+ this will use.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The mode that can be passed to <a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a>.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSharedPreferencesName()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getSharedPreferencesName()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the current name of the SharedPreferences file that preferences managed by
+ this will use.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The name that can be passed to <a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a>.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDefaultValues(android.content.Context, int, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        setDefaultValues(<a href="../../../reference/android/content/Context.html">Context</a> context, int resId, boolean readAgain)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the default values from a preference hierarchy in XML. This should
+ be called by the application's main activity.
+ <p>
+ If <code class="Code prettyprint">readAgain</code> is false, this will only set the default values if this
+ method has never been called in the past (or the
+ <a href="../../../reference/android/preference/PreferenceManager.html#KEY_HAS_SET_DEFAULT_VALUES">KEY_HAS_SET_DEFAULT_VALUES</a> in the default value shared
+ preferences file is false). To attempt to set the default values again
+ bypassing this check, set <code class="Code prettyprint">readAgain</code> to true.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The context of the shared preferences.</td>
+      </tr>
+    <tr>
+        <th>resId</td>
+        <td>The resource ID of the preference hierarchy XML file.</td>
+      </tr>
+    <tr>
+        <th>readAgain</td>
+        <td>Whether to re-read the default values.
+            <p>
+            Note: this will NOT reset preferences back to their default
+            values. For that functionality, use
+            <a href="../../../reference/android/preference/PreferenceManager.html#getDefaultSharedPreferences(android.content.Context)">getDefaultSharedPreferences(Context)</a>
+            and clear it followed by a call to this method with this
+            parameter set to true.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDefaultValues(android.content.Context, java.lang.String, int, int, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        setDefaultValues(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/String.html">String</a> sharedPreferencesName, int sharedPreferencesMode, int resId, boolean readAgain)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Similar to <a href="../../../reference/android/preference/PreferenceManager.html#setDefaultValues(android.content.Context, int, boolean)">setDefaultValues(Context, int, boolean)</a> but allows
+ the client to provide the filename and mode of the shared preferences
+ file.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/preference/PreferenceManager.html#setDefaultValues(android.content.Context, int, boolean)">setDefaultValues(Context, int, boolean)</a></li>
+    <li><a href="../../../reference/android/preference/PreferenceManager.html#setSharedPreferencesName(java.lang.String)">setSharedPreferencesName(String)</a></li>
+    <li><a href="../../../reference/android/preference/PreferenceManager.html#setSharedPreferencesMode(int)">setSharedPreferencesMode(int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSharedPreferencesMode(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSharedPreferencesMode(int sharedPreferencesMode)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the mode of the SharedPreferences file that preferences managed by this
+ will use.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sharedPreferencesMode</td>
+        <td>The mode of the SharedPreferences file.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSharedPreferencesName(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSharedPreferencesName(<a href="../../../reference/java/lang/String.html">String</a> sharedPreferencesName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the name of the SharedPreferences file that preferences managed by this
+ will use.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sharedPreferencesName</td>
+        <td>The name of the SharedPreferences file.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/Context.html#getSharedPreferences(java.lang.String, int)">getSharedPreferences(String, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

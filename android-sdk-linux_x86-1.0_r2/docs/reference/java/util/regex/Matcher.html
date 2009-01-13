@@ -1,0 +1,2916 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.regex.Matcher - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/regex/package-summary.html">java.util.regex</a>
+<br/>
+    public 
+     
+    final 
+    
+    class
+</div>
+<h1>java.util.regex.Matcher</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.regex.Matcher</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/util/regex/MatchResult.html">MatchResult</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Provides a means of matching regular expressions against a given input,
+ finding occurrences of regular expressions in a given input, or replacing
+ parts of a given input. A <code class="Code prettyprint">Matcher</code> instance has an associated <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> instance and an input text. A typical use case is to
+ iteratively find all occurrences of the <code class="Code prettyprint">Pattern</code>, until the end of
+ the input is reached, as the following example illustrates:
+ 
+ <p/>
+ 
+ <pre>
+ Pattern p = Pattern.compile("[A-Za-z]+");
+  
+ Matcher m = p.matcher("Hello, Android!");
+ while (m.find()) {
+     System.out.println(m.group()); // prints "Hello" and "Android"
+ }
+ </pre>
+ 
+ <p/>
+ 
+ The <code class="Code prettyprint">Matcher</code> has a state that results from the previous operations.
+ For example, it knows whether the most recent attempt to find the
+ <code class="Code prettyprint">Pattern</code> was successful and at which position the next attempt would
+ resume the search. Depending on the application's needs, it may become
+ necessary to explicitly <a href="../../../../reference/java/util/regex/Matcher.html#reset()">reset()</a> this state from time to time.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#appendReplacement(java.lang.StringBuffer, java.lang.String)">appendReplacement</a>(<a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a> buffer, <a href="../../../../reference/java/lang/String.html">String</a> replacement)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Appends a literal part of the input plus a replacement for the current
+ match to a given <a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#appendTail(java.lang.StringBuffer)">appendTail</a>(<a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a> buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Appends the (unmatched) remainder of the input to the given
+ <a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#end()">end</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character following the text that matched
+ the whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#end(int)">end</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character following the text that matched
+ a given group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#find(int)">find</a>(int start)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the next occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the input.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#find()">find</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the next occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the input.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#group(int)">group</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the text that matched a given group of the regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#group()">group</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the text that matched the whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#groupCount()">groupCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the number of groups in the results, which is always equal to
+ the number of groups in the original regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#hasAnchoringBounds()">hasAnchoringBounds</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether this matcher has anchoring bounds enabled.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#hasTransparentBounds()">hasTransparentBounds</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether this matcher has transparent bounds enabled.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#hitEnd()">hitEnd</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether the last match hit the end of the input.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#lookingAt()">lookingAt</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Tries to match the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a>, starting from the beginning of the
+ region (or the beginning of the input, if no region has been set).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#matches()">matches</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Tries to match the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> against the entire region (or the
+ entire input, if no region has been set).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#pattern()">pattern</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> instance used inside this matcher.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#quoteReplacement(java.lang.String)">quoteReplacement</a>(<a href="../../../../reference/java/lang/String.html">String</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a replacement string for the given one that has all backslashes
+ and dollar signs escaped.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#region(int, int)">region</a>(int start, int end)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Resets this matcher and sets a region.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#regionEnd()">regionEnd</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns this matcher's region end, that is, the first character that is
+ not considered for a match.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#regionStart()">regionStart</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns this matcher's region start, that is, the first character that is
+ considered for a match.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#replaceAll(java.lang.String)">replaceAll</a>(<a href="../../../../reference/java/lang/String.html">String</a> replacement)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Replaces all occurrences of this matcher's pattern in the input with a
+ given string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#replaceFirst(java.lang.String)">replaceFirst</a>(<a href="../../../../reference/java/lang/String.html">String</a> replacement)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Replaces the first occurrence of this matcher's pattern in the input with
+ a given string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#requireEnd()">requireEnd</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether more input might change a successful match into an
+ unsuccessful one.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#reset()">reset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Resets the <code class="Code prettyprint">Matcher</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#reset(java.lang.CharSequence)">reset</a>(<a href="../../../../reference/java/lang/CharSequence.html">CharSequence</a> input)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Provides a new input and resets the <code class="Code prettyprint">Matcher</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#start(int)">start</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character of the text that matched a given
+ group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#start()">start</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character of the text that matched the
+ whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/MatchResult.html">MatchResult</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#toMatchResult()">toMatchResult</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Converts the current match into a separate <a href="../../../../reference/java/util/regex/MatchResult.html">MatchResult</a> instance
+ that is independent from this matcher.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#useAnchoringBounds(boolean)">useAnchoringBounds</a>(boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Determines whether this matcher has anchoring bounds enabled or not.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#usePattern(java.util.regex.Pattern)">usePattern</a>(<a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets a new pattern for the <code class="Code prettyprint">Matcher</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#useTransparentBounds(boolean)">useTransparentBounds</a>(boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Determines whether this matcher has transparent bounds enabled or not.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/Matcher.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.regex.MatchResult')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.regex.MatchResult-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/util/regex/MatchResult.html">java.util.regex.MatchResult</a>
+</h5>
+<div id="inherited-methods-java.util.regex.MatchResult">
+<div id="inherited-methods-java.util.regex.MatchResult-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#end()">end</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#end(int)">end</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#group()">group</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#group(int)">group</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#groupCount()">groupCount</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#start()">start</a>,
+
+<a href="../../../../reference/java/util/regex/MatchResult.html#start(int)">start</a>
+
+</div>
+<div id="inherited-methods-java.util.regex.MatchResult-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#end()">end</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character following the text that matched
+ the whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#end(int)">end</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character following the text that matched
+ a given group.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#group()">group</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the text that matched the whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#group(int)">group</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the text that matched a given group of the regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#groupCount()">groupCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the number of groups in the result, which is always equal to
+ the number of groups in the original regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#start()">start</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character of the text that matched
+ the whole regular expression.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/regex/MatchResult.html#start(int)">start</a>(int group)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the index of the first character of the text that matched a given
+ group.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="appendReplacement(java.lang.StringBuffer, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        appendReplacement(<a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a> buffer, <a href="../../../../reference/java/lang/String.html">String</a> replacement)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Appends a literal part of the input plus a replacement for the current
+ match to a given <a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>. The literal part is exactly the
+ part of the input between the previous match and the current match. The
+ method can be used in conjunction with <a href="../../../../reference/java/util/regex/Matcher.html#find()">find()</a> and
+ <a href="../../../../reference/java/util/regex/Matcher.html#appendTail(java.lang.StringBuffer)">appendTail(StringBuffer)</a> to walk through the input and replace
+ all occurrences of the <code class="Code prettyprint">Pattern</code> with something else.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>the <code class="Code prettyprint">StringBuffer</code> to append to.</td>
+      </tr>
+    <tr>
+        <th>replacement</td>
+        <td>the replacement text.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="appendTail(java.lang.StringBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>
+        appendTail(<a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a> buffer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Appends the (unmatched) remainder of the input to the given
+ <a href="../../../../reference/java/lang/StringBuffer.html">StringBuffer</a>. The method can be used in conjunction with
+ <a href="../../../../reference/java/util/regex/Matcher.html#find()">find()</a> and <a href="../../../../reference/java/util/regex/Matcher.html#appendReplacement(java.lang.StringBuffer, java.lang.String)">appendReplacement(StringBuffer, String)</a> to
+ walk through the input and replace all matches of the <code class="Code prettyprint">Pattern</code>
+ with something else.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>the <code class="Code prettyprint">StringBuffer</code> to append to.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">StringBuffer</code>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="end()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        end()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the index of the first character following the text that matched
+ the whole regular expression.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the character index.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="end(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        end(int group)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the index of the first character following the text that matched
+ a given group.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>group</td>
+        <td>the group, ranging from 0 to groupCount() - 1, with 0
+            representing the whole pattern.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the character index.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="find(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        find(int start)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the next occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the input. The
+ method starts the search from the given character in the input.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>start</td>
+        <td>The index in the input at which the find operation is to
+            begin. If this is less than the start of the region, it is
+            automatically adjusted to that value. If it is beyond the end
+            of the region, the method will fail.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) a match has been found.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="find()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        find()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the next occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the input. If a
+ previous match was successful, the method continues the search from the
+ first character following that match in the input. Otherwise it searches
+ either from the region start (if one has been set), or from position 0.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) a match has been found.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="group(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        group(int group)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the text that matched a given group of the regular expression.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>group</td>
+        <td>the group, ranging from 0 to groupCount() - 1, with 0
+            representing the whole pattern.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the text that matched the group.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="group()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        group()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the text that matched the whole regular expression.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the text.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="groupCount()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        groupCount()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the number of groups in the results, which is always equal to
+ the number of groups in the original regular expression.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of groups.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasAnchoringBounds()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        hasAnchoringBounds()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether this matcher has anchoring bounds enabled. When
+ anchoring bounds are enabled, the start and end of the input match the
+ '^' and '$' meta-characters, otherwise not. Anchoring bounds are enabled
+ by default.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) the <code class="Code prettyprint">Matcher</code> uses anchoring bounds.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasTransparentBounds()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        hasTransparentBounds()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether this matcher has transparent bounds enabled. When
+ transparent bounds are enabled, the parts of the input outside the region
+ are subject to lookahead and lookbehind, otherwise they are not.
+ Transparent bounds are disabled by default.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) the <code class="Code prettyprint">Matcher</code> uses anchoring bounds.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hitEnd()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        hitEnd()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether the last match hit the end of the input.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) the last match hit the end of the input.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lookingAt()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        lookingAt()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Tries to match the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a>, starting from the beginning of the
+ region (or the beginning of the input, if no region has been set).
+ Doesn't require the <code class="Code prettyprint">Pattern</code> to match against the whole region.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) the <code class="Code prettyprint">Pattern</code> matches.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="matches()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        matches()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Tries to match the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> against the entire region (or the
+ entire input, if no region has been set).
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) the <code class="Code prettyprint">Pattern</code> matches the entire
+         region.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="pattern()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a>
+        pattern()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> instance used inside this matcher.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Pattern</code> instance.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="quoteReplacement(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        quoteReplacement(<a href="../../../../reference/java/lang/String.html">String</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a replacement string for the given one that has all backslashes
+ and dollar signs escaped.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>s</td>
+        <td>the input string.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the input string, with all backslashes and dollar signs having
+         been escaped.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="region(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        region(int start, int end)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Resets this matcher and sets a region. Only characters inside the region
+ are considered for a match.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>start</td>
+        <td>the first character of the region.</td>
+      </tr>
+    <tr>
+        <th>end</td>
+        <td>the first character after the end of the region.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="regionEnd()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        regionEnd()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns this matcher's region end, that is, the first character that is
+ not considered for a match.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the end of the region.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="regionStart()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        regionStart()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns this matcher's region start, that is, the first character that is
+ considered for a match.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the start of the region.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replaceAll(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        replaceAll(<a href="../../../../reference/java/lang/String.html">String</a> replacement)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Replaces all occurrences of this matcher's pattern in the input with a
+ given string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>replacement</td>
+        <td>the replacement text.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the modified input string.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replaceFirst(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        replaceFirst(<a href="../../../../reference/java/lang/String.html">String</a> replacement)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Replaces the first occurrence of this matcher's pattern in the input with
+ a given string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>replacement</td>
+        <td>the replacement text.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the modified input string.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requireEnd()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        requireEnd()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether more input might change a successful match into an
+ unsuccessful one.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if (and only if) more input might change a successful match
+         into an unsuccessful one.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="reset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        reset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Resets the <code class="Code prettyprint">Matcher</code>. This results in the region being set to the
+ whole input. Results of a previous find get lost. The next attempt to
+ find an occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the string will start at the
+ beginning of the input.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="reset(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        reset(<a href="../../../../reference/java/lang/CharSequence.html">CharSequence</a> input)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Provides a new input and resets the <code class="Code prettyprint">Matcher</code>. This results in the
+ region being set to the whole input. Results of a previous find get lost.
+ The next attempt to find an occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> in the
+ string will start at the beginning of the input.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>input</td>
+        <td>the new input sequence.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="start(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        start(int group)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the index of the first character of the text that matched a given
+ group.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>group</td>
+        <td>the group, ranging from 0 to groupCount() - 1, with 0
+            representing the whole pattern.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the character index.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="start()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        start()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the index of the first character of the text that matched the
+ whole regular expression.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the character index.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toMatchResult()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/MatchResult.html">MatchResult</a>
+        toMatchResult()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Converts the current match into a separate <a href="../../../../reference/java/util/regex/MatchResult.html">MatchResult</a> instance
+ that is independent from this matcher. The new object is unaffected when
+ the state of this matcher changes.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the new <code class="Code prettyprint">MatchResult</code>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if no successful match has been made.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="useAnchoringBounds(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        useAnchoringBounds(boolean value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Determines whether this matcher has anchoring bounds enabled or not. When
+ anchoring bounds are enabled, the start and end of the input match the
+ '^' and '$' meta-characters, otherwise not. Anchoring bounds are enabled
+ by default.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>the new value for anchoring bounds.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="usePattern(java.util.regex.Pattern)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        usePattern(<a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets a new pattern for the <code class="Code prettyprint">Matcher</code>. Results of a previous find
+ get lost. The next attempt to find an occurrence of the <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a>
+ in the string will start at the beginning of the input.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pattern</td>
+        <td>the new <code class="Code prettyprint">Pattern</code>.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="useTransparentBounds(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/regex/Matcher.html">Matcher</a>
+        useTransparentBounds(boolean value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Determines whether this matcher has transparent bounds enabled or not.
+ When transparent bounds are enabled, the parts of the input outside the
+ region are subject to lookahead and lookbehind, otherwise they are not.
+ Transparent bounds are disabled by default.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>the new value for transparent bounds.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code class="Code prettyprint">Matcher</code> itself.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="finalize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        finalize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver. Subclasses can use this facility to guarantee
+ that any associated resources are cleaned up before the receiver is
+ garbage collected. Uncaught exceptions which are thrown during the
+ running of the method cause it to terminate immediately, but are
+ otherwise ignored.
+ <p>
+ Note: The virtual machine assumes that the implementation in class Object
+ is empty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

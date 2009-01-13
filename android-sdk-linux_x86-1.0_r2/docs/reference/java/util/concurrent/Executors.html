@@ -1,0 +1,2225 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.Executors - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/concurrent/package-summary.html">java.util.concurrent</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>java.util.concurrent.Executors</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.Executors</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Factory and utility methods for <a href="../../../../reference/java/util/concurrent/Executor.html">Executor</a>, <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>, <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>, <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>, and <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> classes defined in this
+ package. This class supports the following kinds of methods:
+ 
+ <ul>
+   <li> Methods that create and return an <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> 
+        set up with commonly useful configuration settings. 
+   <li> Methods that create and return a <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> 
+        set up with commonly useful configuration settings. 
+   <li> Methods that create and return a "wrapped" ExecutorService, that
+        disables reconfiguration by making implementation-specific methods
+        inaccessible.
+   <li> Methods that create and return a <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>
+        that sets newly created threads to a known state.
+   <li> Methods that create and return a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> 
+        out of other closure-like forms, so they can be used
+        in execution methods requiring <tt>Callable</tt>.
+ </ul></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#callable(java.lang.Runnable, T)">callable</a>(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task, T result)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given task and returns the given result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#callable(java.security.PrivilegedExceptionAction)">callable</a>(<a href="../../../../reference/java/security/PrivilegedExceptionAction.html">PrivilegedExceptionAction</a> action)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given privileged exception action and returns
+ its result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#callable(java.security.PrivilegedAction)">callable</a>(<a href="../../../../reference/java/security/PrivilegedAction.html">PrivilegedAction</a> action)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given privileged action and returns its result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#callable(java.lang.Runnable)">callable</a>(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given task and returns <tt>null</tt>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#defaultThreadFactory()">defaultThreadFactory</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a default thread factory used to create new threads.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newCachedThreadPool()">newCachedThreadPool</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that creates new threads as needed, but
+ will reuse previously constructed threads when they are
+ available.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newCachedThreadPool(java.util.concurrent.ThreadFactory)">newCachedThreadPool</a>(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that creates new threads as needed, but
+ will reuse previously constructed threads when they are
+ available, and uses the provided
+ ThreadFactory to create new threads when needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newFixedThreadPool(int)">newFixedThreadPool</a>(int nThreads)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that reuses a fixed set of threads
+ operating off a shared unbounded queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newFixedThreadPool(int, java.util.concurrent.ThreadFactory)">newFixedThreadPool</a>(int nThreads, <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that reuses a fixed set of threads
+ operating off a shared unbounded queue, using the provided
+ ThreadFactory to create new threads when needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newScheduledThreadPool(int)">newScheduledThreadPool</a>(int corePoolSize)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that can schedule commands to run after a 
+ given delay, or to execute periodically.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newScheduledThreadPool(int, java.util.concurrent.ThreadFactory)">newScheduledThreadPool</a>(int corePoolSize, <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a thread pool that can schedule commands to run after a 
+ given delay, or to execute periodically.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newSingleThreadExecutor(java.util.concurrent.ThreadFactory)">newSingleThreadExecutor</a>(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates an Executor that uses a single worker thread operating
+ off an unbounded queue, and uses the provided ThreadFactory to
+ create a new thread when needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newSingleThreadExecutor()">newSingleThreadExecutor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates an Executor that uses a single worker thread operating
+ off an unbounded queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newSingleThreadScheduledExecutor()">newSingleThreadScheduledExecutor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a single-threaded executor that can schedule commands
+ to run after a given delay, or to execute periodically.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#newSingleThreadScheduledExecutor(java.util.concurrent.ThreadFactory)">newSingleThreadScheduledExecutor</a>(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a single-threaded executor that can schedule commands
+ to run after a given delay, or to execute periodically.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#privilegedCallable(java.util.concurrent.Callable<T>)">privilegedCallable</a>(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; callable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that will, when
+ called, execute the given <tt>callable</tt> under the current
+ access control context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#privilegedCallableUsingCurrentClassLoader(java.util.concurrent.Callable<T>)">privilegedCallableUsingCurrentClassLoader</a>(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; callable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that will, when
+ called, execute the given <tt>callable</tt> under the current
+ access control context, with the current context class loader
+ as the context class loader.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#privilegedThreadFactory()">privilegedThreadFactory</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a thread factory used to create new threads that
+ have the same permissions as the current thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#unconfigurableExecutorService(java.util.concurrent.ExecutorService)">unconfigurableExecutorService</a>(<a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> executor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an object that delegates all defined <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> methods to the given executor, but not any
+ other methods that might otherwise be accessible using
+ casts.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executors.html#unconfigurableScheduledExecutorService(java.util.concurrent.ScheduledExecutorService)">unconfigurableScheduledExecutorService</a>(<a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> executor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an object that delegates all defined <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> methods to the given executor, but
+ not any other methods that might otherwise be accessible using
+ casts.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="callable(java.lang.Runnable, T)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;
+        callable(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task, T result)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given task and returns the given result.  This
+ can be useful when applying methods requiring a
+ <tt>Callable</tt> to an otherwise resultless action.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>task</td>
+        <td>the task to run</td>
+      </tr>
+    <tr>
+        <th>result</td>
+        <td>the result to return</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object
+</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if task null</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="callable(java.security.PrivilegedExceptionAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;
+        callable(<a href="../../../../reference/java/security/PrivilegedExceptionAction.html">PrivilegedExceptionAction</a> action)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given privileged exception action and returns
+ its result.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>action</td>
+        <td>the privileged exception action to run</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if action null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="callable(java.security.PrivilegedAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;
+        callable(<a href="../../../../reference/java/security/PrivilegedAction.html">PrivilegedAction</a> action)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given privileged action and returns its result.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>action</td>
+        <td>the privileged action to run</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if action null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="callable(java.lang.Runnable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;
+        callable(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that, when
+ called, runs the given task and returns <tt>null</tt>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>task</td>
+        <td>the task to run</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if task null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="defaultThreadFactory()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>
+        defaultThreadFactory()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a default thread factory used to create new threads.
+ This factory creates all new threads used by an Executor in the
+ same <a href="../../../../reference/java/lang/ThreadGroup.html">ThreadGroup</a>. If there is a <a href="../../../../reference/java/lang/SecurityManager.html">SecurityManager</a>, it uses the group of <a href="../../../../reference/java/lang/System.html#getSecurityManager()">getSecurityManager()</a>, else the group of the thread
+ invoking this <tt>defaultThreadFactory</tt> method. Each new
+ thread is created as a non-daemon thread with priority
+ <tt>Thread.NORM_PRIORITY</tt>. New threads have names
+ accessible via <a href="../../../../reference/java/lang/Thread.html#getName()">getName()</a> of
+ <em>pool-N-thread-M</em>, where <em>N</em> is the sequence
+ number of this factory, and <em>M</em> is the sequence number
+ of the thread created by this factory.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a thread factory
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newCachedThreadPool()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newCachedThreadPool()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that creates new threads as needed, but
+ will reuse previously constructed threads when they are
+ available.  These pools will typically improve the performance
+ of programs that execute many short-lived asynchronous tasks.
+ Calls to <tt>execute</tt> will reuse previously constructed
+ threads if available. If no existing thread is available, a new
+ thread will be created and added to the pool. Threads that have
+ not been used for sixty seconds are terminated and removed from
+ the cache. Thus, a pool that remains idle for long enough will
+ not consume any resources. Note that pools with similar
+ properties but different details (for example, timeout parameters)
+ may be created using <a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a> constructors.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newCachedThreadPool(java.util.concurrent.ThreadFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newCachedThreadPool(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that creates new threads as needed, but
+ will reuse previously constructed threads when they are
+ available, and uses the provided
+ ThreadFactory to create new threads when needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>threadFactory</td>
+        <td>the factory to use when creating new threads</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newFixedThreadPool(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newFixedThreadPool(int nThreads)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that reuses a fixed set of threads
+ operating off a shared unbounded queue. If any thread
+ terminates due to a failure during execution prior to shutdown,
+ a new one will take its place if needed to execute subsequent
+ tasks.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>nThreads</td>
+        <td>the number of threads in the pool</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newFixedThreadPool(int, java.util.concurrent.ThreadFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newFixedThreadPool(int nThreads, <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that reuses a fixed set of threads
+ operating off a shared unbounded queue, using the provided
+ ThreadFactory to create new threads when needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>nThreads</td>
+        <td>the number of threads in the pool</td>
+      </tr>
+    <tr>
+        <th>threadFactory</td>
+        <td>the factory to use when creating new threads</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newScheduledThreadPool(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>
+        newScheduledThreadPool(int corePoolSize)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that can schedule commands to run after a 
+ given delay, or to execute periodically.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>corePoolSize</td>
+        <td>the number of threads to keep in the pool,
+ even if they are idle.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a newly created scheduled thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newScheduledThreadPool(int, java.util.concurrent.ThreadFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>
+        newScheduledThreadPool(int corePoolSize, <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a thread pool that can schedule commands to run after a 
+ given delay, or to execute periodically.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>corePoolSize</td>
+        <td>the number of threads to keep in the pool,
+ even if they are idle.</td>
+      </tr>
+    <tr>
+        <th>threadFactory</td>
+        <td>the factory to use when the executor
+ creates a new thread. </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a newly created scheduled thread pool
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newSingleThreadExecutor(java.util.concurrent.ThreadFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newSingleThreadExecutor(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates an Executor that uses a single worker thread operating
+ off an unbounded queue, and uses the provided ThreadFactory to
+ create a new thread when needed. Unlike the otherwise
+ equivalent <tt>newFixedThreadPool(1, threadFactory)</tt> the returned executor
+ is guaranteed not to be reconfigurable to use additional
+ threads.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>threadFactory</td>
+        <td>the factory to use when creating new
+ threads</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created single-threaded Executor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newSingleThreadExecutor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        newSingleThreadExecutor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates an Executor that uses a single worker thread operating
+ off an unbounded queue. (Note however that if this single
+ thread terminates due to a failure during execution prior to
+ shutdown, a new one will take its place if needed to execute
+ subsequent tasks.)  Tasks are guaranteed to execute
+ sequentially, and no more than one task will be active at any
+ given time. Unlike the otherwise equivalent
+ <tt>newFixedThreadPool(1)</tt> the returned executor is
+ guaranteed not to be reconfigurable to use additional threads.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created single-threaded Executor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newSingleThreadScheduledExecutor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>
+        newSingleThreadScheduledExecutor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a single-threaded executor that can schedule commands
+ to run after a given delay, or to execute periodically.
+ (Note however that if this single
+ thread terminates due to a failure during execution prior to
+ shutdown, a new one will take its place if needed to execute
+ subsequent tasks.)  Tasks are guaranteed to execute
+ sequentially, and no more than one task will be active at any
+ given time. Unlike the otherwise equivalent
+ <tt>newScheduledThreadPool(1)</tt> the returned executor is
+ guaranteed not to be reconfigurable to use additional threads.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly created scheduled executor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="newSingleThreadScheduledExecutor(java.util.concurrent.ThreadFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>
+        newSingleThreadScheduledExecutor(<a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a> threadFactory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a single-threaded executor that can schedule commands
+ to run after a given delay, or to execute periodically.  (Note
+ however that if this single thread terminates due to a failure
+ during execution prior to shutdown, a new one will take its
+ place if needed to execute subsequent tasks.)  Tasks are
+ guaranteed to execute sequentially, and no more than one task
+ will be active at any given time. Unlike the otherwise
+ equivalent <tt>newScheduledThreadPool(1, threadFactory)</tt>
+ the returned executor is guaranteed not to be reconfigurable to
+ use additional threads.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>threadFactory</td>
+        <td>the factory to use when creating new
+ threads</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a newly created scheduled executor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="privilegedCallable(java.util.concurrent.Callable<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;
+        privilegedCallable(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; callable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that will, when
+ called, execute the given <tt>callable</tt> under the current
+ access control context. This method should normally be
+ invoked within an <a href="../../../../reference/java/security/AccessController.html#doPrivileged(java.security.PrivilegedAction<T>)">doPrivileged(PrivilegedAction<T>)</a> action
+ to create callables that will, if possible, execute under the
+ selected permission settings holding within that action; or if
+ not possible, throw an associated <a href="../../../../reference/java/security/AccessControlException.html">AccessControlException</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>callable</td>
+        <td>the underlying task</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if callable null
+
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="privilegedCallableUsingCurrentClassLoader(java.util.concurrent.Callable<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;
+        privilegedCallableUsingCurrentClassLoader(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; callable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> object that will, when
+ called, execute the given <tt>callable</tt> under the current
+ access control context, with the current context class loader
+ as the context class loader. This method should normally be
+ invoked within an <a href="../../../../reference/java/security/AccessController.html#doPrivileged(java.security.PrivilegedAction<T>)">doPrivileged(PrivilegedAction<T>)</a> action
+ to create callables that will, if possible, execute under the
+ selected permission settings holding within that action; or if
+ not possible, throw an associated <a href="../../../../reference/java/security/AccessControlException.html">AccessControlException</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>callable</td>
+        <td>the underlying task</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a callable object</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if callable null</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/security/AccessControlException.html">AccessControlException</a></td>
+            <td>if the current access control
+ context does not have permission to both set and get context
+ class loader.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="privilegedThreadFactory()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ThreadFactory.html">ThreadFactory</a>
+        privilegedThreadFactory()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a thread factory used to create new threads that
+ have the same permissions as the current thread.
+ This factory creates threads with the same settings as <a href="../../../../reference/java/util/concurrent/Executors.html#defaultThreadFactory()">defaultThreadFactory()</a>, additionally setting the
+ AccessControlContext and contextClassLoader of new threads to
+ be the same as the thread invoking this
+ <tt>privilegedThreadFactory</tt> method.  A new
+ <tt>privilegedThreadFactory</tt> can be created within an
+ <a href="../../../../reference/java/security/AccessController.html#doPrivileged(java.security.PrivilegedAction<T>)">doPrivileged(PrivilegedAction<T>)</a> action setting the
+ current thread's access control context to create threads with
+ the selected permission settings holding within that action.
+
+ <p> Note that while tasks running within such threads will have
+ the same access control and class loader settings as the
+ current thread, they need not have the same <a href="../../../../reference/java/lang/ThreadLocal.html">ThreadLocal</a> or <a href="../../../../reference/java/lang/InheritableThreadLocal.html">InheritableThreadLocal</a> values. If necessary,
+ particular values of thread locals can be set or reset before
+ any task runs in <a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a> subclasses using
+ <a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html#beforeExecute(java.lang.Thread, java.lang.Runnable)">beforeExecute(Thread, Runnable)</a>. Also, if it is
+ necessary to initialize worker threads to have the same
+ InheritableThreadLocal settings as some other designated
+ thread, you can create a custom ThreadFactory in which that
+ thread waits for and services requests to create others that
+ will inherit its values.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a thread factory</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/security/AccessControlException.html">AccessControlException</a></td>
+            <td>if the current access control
+ context does not have permission to both get and set context
+ class loader.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unconfigurableExecutorService(java.util.concurrent.ExecutorService)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+        unconfigurableExecutorService(<a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> executor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an object that delegates all defined <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> methods to the given executor, but not any
+ other methods that might otherwise be accessible using
+ casts. This provides a way to safely "freeze" configuration and
+ disallow tuning of a given concrete implementation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>executor</td>
+        <td>the underlying implementation</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an <tt>ExecutorService</tt> instance</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if executor null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unconfigurableScheduledExecutorService(java.util.concurrent.ScheduledExecutorService)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>
+        unconfigurableScheduledExecutorService(<a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> executor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an object that delegates all defined <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> methods to the given executor, but
+ not any other methods that might otherwise be accessible using
+ casts. This provides a way to safely "freeze" configuration and
+ disallow tuning of a given concrete implementation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>executor</td>
+        <td>the underlying implementation</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a <tt>ScheduledExecutorService</tt> instance</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if executor null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

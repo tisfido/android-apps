@@ -1,0 +1,1713 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.view.ViewParent - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/view/package-summary.html">android.view</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>android.view.ViewParent</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.view.ViewParent</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Defines the responsibilities for a class that will be a parent of a View.
+ This is the API that a view sees when it wants to interact with its parent.
+ 
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/android/widget/AbsListView.html">AbsListView</a>,
+            
+                <a href="../../../reference/android/widget/AbsSpinner.html">AbsSpinner</a>,
+            
+                <a href="../../../reference/android/widget/AbsoluteLayout.html">AbsoluteLayout</a>,
+            
+                <a href="../../../reference/android/widget/AdapterView.html">AdapterView</a>&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/widget/Adapter.html">Adapter</a>&gt;,
+            
+                <a href="../../../reference/android/widget/DatePicker.html">DatePicker</a>,
+            
+                <a href="../../../reference/android/widget/DialerFilter.html">DialerFilter</a>,
+            
+                <a href="../../../reference/android/widget/ExpandableListView.html">ExpandableListView</a>,
+            
+                <a href="../../../reference/android/widget/FrameLayout.html">FrameLayout</a>,
+            
+                <a href="../../../reference/android/widget/Gallery.html">Gallery</a>,
+            
+                <a href="../../../reference/android/widget/GridView.html">GridView</a>,
+            
+                <a href="../../../reference/android/widget/ImageSwitcher.html">ImageSwitcher</a>,
+            
+                <a href="../../../reference/android/widget/LinearLayout.html">LinearLayout</a>,
+            
+                <a href="../../../reference/android/widget/ListView.html">ListView</a>,
+            
+                <a href="../../../reference/com/google/android/maps/MapView.html">MapView</a>,
+            
+                <a href="../../../reference/android/widget/MediaController.html">MediaController</a>,
+            
+                <a href="../../../reference/android/widget/RadioGroup.html">RadioGroup</a>,
+            
+                <a href="../../../reference/android/widget/RelativeLayout.html">RelativeLayout</a>,
+            
+                <a href="../../../reference/android/widget/ScrollView.html">ScrollView</a>,
+            
+                <a href="../../../reference/android/widget/Spinner.html">Spinner</a>,
+            
+                <a href="../../../reference/android/widget/TabHost.html">TabHost</a>,
+            
+                <a href="../../../reference/android/widget/TabWidget.html">TabWidget</a>,
+            
+                <a href="../../../reference/android/widget/TableLayout.html">TableLayout</a>,
+            
+                <a href="../../../reference/android/widget/TableRow.html">TableRow</a>,
+            
+                <a href="../../../reference/android/widget/TextSwitcher.html">TextSwitcher</a>,
+            
+                <a href="../../../reference/android/widget/TimePicker.html">TimePicker</a>,
+            
+                <a href="../../../reference/android/widget/TwoLineListItem.html">TwoLineListItem</a>,
+            
+                <a href="../../../reference/android/widget/ViewAnimator.html">ViewAnimator</a>,
+            
+                <a href="../../../reference/android/widget/ViewFlipper.html">ViewFlipper</a>,
+            
+                <a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a>,
+            
+                <a href="../../../reference/android/widget/ViewSwitcher.html">ViewSwitcher</a>,
+            
+                <a href="../../../reference/android/webkit/WebView.html">WebView</a>,
+            
+                <a href="../../../reference/android/widget/ZoomControls.html">ZoomControls</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/AbsListView.html">AbsListView</a></td>
+            <td class="jd-descrcol" width="100%">Common code shared between ListView and GridView&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/AbsSpinner.html">AbsSpinner</a></td>
+            <td class="jd-descrcol" width="100%">An abstract base class for spinner widgets.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/AbsoluteLayout.html">AbsoluteLayout</a></td>
+            <td class="jd-descrcol" width="100%">A layout that lets you specify exact locations (x/y coordinates) of its
+ children.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/AdapterView.html">AdapterView</a>&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/widget/Adapter.html">Adapter</a>&gt;</td>
+            <td class="jd-descrcol" width="100%">An AdapterView is a view whose children are determined by an <a href="../../../reference/android/widget/Adapter.html">Adapter</a>.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/DatePicker.html">DatePicker</a></td>
+            <td class="jd-descrcol" width="100%">A view for selecting a month / year / day based on a calendar like layout.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/DialerFilter.html">DialerFilter</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ExpandableListView.html">ExpandableListView</a></td>
+            <td class="jd-descrcol" width="100%">A view that shows items in a vertically scrolling two-level list.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/FrameLayout.html">FrameLayout</a></td>
+            <td class="jd-descrcol" width="100%">FrameLayout is designed to block out an area on the screen to display
+ a single item.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/Gallery.html">Gallery</a></td>
+            <td class="jd-descrcol" width="100%">A view that shows items in a center-locked, horizontally scrolling list.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/GridView.html">GridView</a></td>
+            <td class="jd-descrcol" width="100%">A view that shows items in two-dimensional scrolling grid.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ImageSwitcher.html">ImageSwitcher</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/LinearLayout.html">LinearLayout</a></td>
+            <td class="jd-descrcol" width="100%">A Layout that arranges its children in a single column or a single row.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ListView.html">ListView</a></td>
+            <td class="jd-descrcol" width="100%">A view that shows items in a vertically scrolling list.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/com/google/android/maps/MapView.html">MapView</a></td>
+            <td class="jd-descrcol" width="100%">A View which displays a map (with data obtained from the Google Maps 
+ service).&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/MediaController.html">MediaController</a></td>
+            <td class="jd-descrcol" width="100%">A view containing controls for a MediaPlayer.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/RadioGroup.html">RadioGroup</a></td>
+            <td class="jd-descrcol" width="100%"><p>This class is used to create a multiple-exclusion scope for a set of radio
+ buttons.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/RelativeLayout.html">RelativeLayout</a></td>
+            <td class="jd-descrcol" width="100%">A Layout where the positions of the children can be described in relation to each other or to the
+ parent.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ScrollView.html">ScrollView</a></td>
+            <td class="jd-descrcol" width="100%">Layout container for a view hierarchy that can be scrolled by the user,
+ allowing it to be larger than the physical display.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/Spinner.html">Spinner</a></td>
+            <td class="jd-descrcol" width="100%">A view that displays one child at a time and lets the user pick among them.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TabHost.html">TabHost</a></td>
+            <td class="jd-descrcol" width="100%">Container for a tabbed window view.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TabWidget.html">TabWidget</a></td>
+            <td class="jd-descrcol" width="100%">Displays a list of tab labels representing each page in the parent's tab
+ collection.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TableLayout.html">TableLayout</a></td>
+            <td class="jd-descrcol" width="100%"><p>A layout that arranges its children into rows and columns.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TableRow.html">TableRow</a></td>
+            <td class="jd-descrcol" width="100%"><p>A layout that arranges its children horizontally.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TextSwitcher.html">TextSwitcher</a></td>
+            <td class="jd-descrcol" width="100%">Specialized <a href="../../../reference/android/widget/ViewSwitcher.html">ViewSwitcher</a> that contains
+ only children of type <a href="../../../reference/android/widget/TextView.html">TextView</a>.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TimePicker.html">TimePicker</a></td>
+            <td class="jd-descrcol" width="100%">A view for selecting the time of day, in either 24 hour or AM/PM mode.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/TwoLineListItem.html">TwoLineListItem</a></td>
+            <td class="jd-descrcol" width="100%"><p>A view group with two children, intended for use in ListViews.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ViewAnimator.html">ViewAnimator</a></td>
+            <td class="jd-descrcol" width="100%">Base class for a <a href="../../../reference/android/widget/FrameLayout.html">FrameLayout</a> container that will perform animations
+ when switching between its views.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ViewFlipper.html">ViewFlipper</a></td>
+            <td class="jd-descrcol" width="100%">Simple <a href="../../../reference/android/widget/ViewAnimator.html">ViewAnimator</a> that will animate between two or more views
+ that have been added to it.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a></td>
+            <td class="jd-descrcol" width="100%"><p>
+ A <code>ViewGroup</code> is a special view that can contain other views
+ (called children.) The view group is the base class for layouts and views
+ containers.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ViewSwitcher.html">ViewSwitcher</a></td>
+            <td class="jd-descrcol" width="100%"><a href="../../../reference/android/widget/ViewAnimator.html">ViewAnimator</a> that switches between two views, and has a factory
+ from which these views are created.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/webkit/WebView.html">WebView</a></td>
+            <td class="jd-descrcol" width="100%"><p>A View that displays web pages.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/widget/ZoomControls.html">ZoomControls</a></td>
+            <td class="jd-descrcol" width="100%">The <code class="Code prettyprint">ZoomControls</code> class displays a simple set of controls used for zooming and
+ provides callbacks to register for events.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#bringChildToFront(android.view.View)">bringChildToFront</a>(<a href="../../../reference/android/view/View.html">View</a> child)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the z order of the child so it's on top of all other children</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#childDrawableStateChanged(android.view.View)">childDrawableStateChanged</a>(<a href="../../../reference/android/view/View.html">View</a> child)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This method is called on the parent when a child's drawable state
+ has changed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#clearChildFocus(android.view.View)">clearChildFocus</a>(<a href="../../../reference/android/view/View.html">View</a> child)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a child of this parent is giving up focus</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#createContextMenu(android.view.ContextMenu)">createContextMenu</a>(<a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a> menu)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Have the parent populate the specified context menu if it has anything to
+ add (and then recurse on its parent).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#focusSearch(android.view.View, int)">focusSearch</a>(<a href="../../../reference/android/view/View.html">View</a> v, int direction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Find the nearest view in the specified direction that wants to take focus</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#focusableViewAvailable(android.view.View)">focusableViewAvailable</a>(<a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Tells the parent that a new focusable view has become available.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#getChildVisibleRect(android.view.View, android.graphics.Rect, android.graphics.Point)">getChildVisibleRect</a>(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r, <a href="../../../reference/android/graphics/Point.html">Point</a> offset)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/ViewParent.html">ViewParent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#getParent()">getParent</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the parent if it exists, or null.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#invalidateChild(android.view.View, android.graphics.Rect)">invalidateChild</a>(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">All or part of a child is dirty and needs to be redrawn.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/ViewParent.html">ViewParent</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#invalidateChildInParent(int[], android.graphics.Rect)">invalidateChildInParent</a>(int[] location, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">All or part of a child is dirty and needs to be redrawn.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#isLayoutRequested()">isLayoutRequested</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether layout was requested on this view parent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#recomputeViewAttributes(android.view.View)">recomputeViewAttributes</a>(<a href="../../../reference/android/view/View.html">View</a> child)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Tell view hierarchy that the global view attributes need to be
+ re-evaluated.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#requestChildFocus(android.view.View, android.view.View)">requestChildFocus</a>(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/view/View.html">View</a> focused)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a child of this parent wants focus</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#requestDisallowInterceptTouchEvent(boolean)">requestDisallowInterceptTouchEvent</a>(boolean disallowIntercept)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a child does not want this parent and its ancestors to
+ intercept touch events with
+ <a href="../../../reference/android/view/ViewGroup.html#onInterceptTouchEvent(android.view.MotionEvent)">onInterceptTouchEvent(MotionEvent)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#requestLayout()">requestLayout</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when something has changed which has invalidated the layout of a
+ child of this view parent.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#requestTransparentRegion(android.view.View)">requestTransparentRegion</a>(<a href="../../../reference/android/view/View.html">View</a> child)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a child wants the view hierarchy to gather and report
+ transparent regions to the window compositor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/ViewParent.html#showContextMenuForChild(android.view.View)">showContextMenuForChild</a>(<a href="../../../reference/android/view/View.html">View</a> originalView)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Bring up a context menu for the specified view or its ancestors.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="bringChildToFront(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        bringChildToFront(<a href="../../../reference/android/view/View.html">View</a> child)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the z order of the child so it's on top of all other children
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="childDrawableStateChanged(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        childDrawableStateChanged(<a href="../../../reference/android/view/View.html">View</a> child)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This method is called on the parent when a child's drawable state
+ has changed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>The child whose drawable state has changed.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearChildFocus(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearChildFocus(<a href="../../../reference/android/view/View.html">View</a> child)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a child of this parent is giving up focus
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>The view that is giving up focus
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createContextMenu(android.view.ContextMenu)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        createContextMenu(<a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a> menu)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Have the parent populate the specified context menu if it has anything to
+ add (and then recurse on its parent).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>menu</td>
+        <td>The menu to populate
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="focusSearch(android.view.View, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        focusSearch(<a href="../../../reference/android/view/View.html">View</a> v, int direction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Find the nearest view in the specified direction that wants to take focus
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>v</td>
+        <td>The view that currently has focus</td>
+      </tr>
+    <tr>
+        <th>direction</td>
+        <td>One of FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, and FOCUS_RIGHT
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="focusableViewAvailable(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        focusableViewAvailable(<a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Tells the parent that a new focusable view has become available. This is
+ to handle transitions from the case where there are no focusable views to
+ the case where the first focusable view appears.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>v</td>
+        <td>The view that has become newly focusable
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getChildVisibleRect(android.view.View, android.graphics.Rect, android.graphics.Point)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getChildVisibleRect(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r, <a href="../../../reference/android/graphics/Point.html">Point</a> offset)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getParent()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/ViewParent.html">ViewParent</a>
+        getParent()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the parent if it exists, or null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a ViewParent or null if this ViewParent does not have a parent
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invalidateChild(android.view.View, android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        invalidateChild(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+All or part of a child is dirty and needs to be redrawn.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>The child which is dirty</td>
+      </tr>
+    <tr>
+        <th>r</td>
+        <td>The area within the child that is invalid
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invalidateChildInParent(int[], android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/ViewParent.html">ViewParent</a>
+        invalidateChildInParent(int[] location, <a href="../../../reference/android/graphics/Rect.html">Rect</a> r)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+All or part of a child is dirty and needs to be redrawn.
+
+ The location array is an array of two int values which respectively
+ define the left and the top position of the dirty child.
+
+ This method must return the parent of this ViewParent if the specified
+ rectangle must be invalidated in the parent. If the specified rectangle
+ does not require invalidation in the parent or if the parent does not
+ exist, this method must return null.
+
+ When this method returns a non-null value, the location array must
+ have been updated with the left and top coordinates of this ViewParent.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>location</td>
+        <td>An array of 2 ints containing the left and top
+        coordinates of the child to invalidate</td>
+      </tr>
+    <tr>
+        <th>r</td>
+        <td>The area within the child that is invalid</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parent of this ViewParent or null
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isLayoutRequested()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isLayoutRequested()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether layout was requested on this view parent.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if layout was requested, false otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="recomputeViewAttributes(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        recomputeViewAttributes(<a href="../../../reference/android/view/View.html">View</a> child)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Tell view hierarchy that the global view attributes need to be
+ re-evaluated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>View whose attributes have changed.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestChildFocus(android.view.View, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        requestChildFocus(<a href="../../../reference/android/view/View.html">View</a> child, <a href="../../../reference/android/view/View.html">View</a> focused)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a child of this parent wants focus
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>The child of this ViewParent that wants focus. This view
+        will contain the focused view. It is not necessarily the view that
+        actually has focus.</td>
+      </tr>
+    <tr>
+        <th>focused</td>
+        <td>The view that is a descendant of child that actually has
+        focus
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestDisallowInterceptTouchEvent(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        requestDisallowInterceptTouchEvent(boolean disallowIntercept)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a child does not want this parent and its ancestors to
+ intercept touch events with
+ <a href="../../../reference/android/view/ViewGroup.html#onInterceptTouchEvent(android.view.MotionEvent)">onInterceptTouchEvent(MotionEvent)</a>.
+ <p>
+ This parent should pass this call onto its parents. This parent must obey
+ this request for the duration of the touch (that is, only clear the flag
+ after this parent has received an up or a cancel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>disallowIntercept</td>
+        <td>True if the child does not want the parent to
+            intercept touch events.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestLayout()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        requestLayout()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when something has changed which has invalidated the layout of a
+ child of this view parent. This will schedule a layout pass of the view
+ tree.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestTransparentRegion(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        requestTransparentRegion(<a href="../../../reference/android/view/View.html">View</a> child)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a child wants the view hierarchy to gather and report
+ transparent regions to the window compositor. Views that "punch" holes in
+ the view hierarchy, such as SurfaceView can use this API to improve
+ performance of the system. When no such a view is present in the
+ hierarchy, this optimization in unnecessary and might slightly reduce the
+ view hierarchy performance.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>child</td>
+        <td>the view requesting the transparent region computation
+ 
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="showContextMenuForChild(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        showContextMenuForChild(<a href="../../../reference/android/view/View.html">View</a> originalView)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bring up a context menu for the specified view or its ancestors.
+ <p>
+ In most cases, a subclass does not need to override this.  However, if
+ the subclass is added directly to the window manager (for example,
+ <a href="../../../reference/android/view/ViewManager.html#addView(android.view.View, android.view.ViewGroup.LayoutParams)">addView(View, android.view.ViewGroup.LayoutParams)</a>)
+ then it should override this and show the context menu.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>originalView</td>
+        <td>The source view where the context menu was first invoked</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if a context menu was displayed
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

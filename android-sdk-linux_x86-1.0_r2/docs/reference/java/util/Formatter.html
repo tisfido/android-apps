@@ -1,0 +1,2826 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.Formatter - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/util/package-summary.html">java.util</a>
+<br/>
+    public 
+     
+    final 
+    
+    class
+</div>
+<h1>java.util.Formatter</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.Formatter</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/java/io/Closeable.html">Closeable</a> <a href="../../../reference/java/io/Flushable.html">Flushable</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p><p>The Formatter class is a String-formatting utility that is designed
+ to work like the <code>printf</code> function of the C programming language. 
+ Its key methods are the <code>format</code> methods which create a formatted
+ String by replacing a set of placeholders (format tokens) with formatted 
+ values. The style used to format each value is determined by the format
+ token used.  For example, the call<br/>
+ <code>format("My decimal value is %d and my String is %s.", 3, "Hello");</code><br/>
+ returns the String<br/>
+ <code>My decimal value is 3 and my String is Hello.</code></p>
+ 
+<p>The format token consists of a percent sign, optionally followed 
+ by flags and precision arguments, and then a single character that 
+ indicates the type of value
+ being formatted.  If the type is a time/date, then the type character
+ <code>t</code> is followed by an additional character that indicates how the 
+ date is to be formatted. The two characters <code><$</code> immediately 
+ following the % sign indicate that the previous value should be used again
+ instead of moving on to the next value argument. A number <code>n</code>
+ and a dollar sign immediately following the % sign make n the next argument
+ to be used.</p>  
+ 
+ <p>The available choices are the following:</p>
+ 
+ <table BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Text value types</B></TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>s</code></td> 
+ <td width="10%">String</td> 
+ <td width="30%"><code>format("%s, %s", "hello", "Hello");</code></td> 
+ <td width="30%"><code>hello, Hello</code></td> 
+ </tr>  
+ <tr>
+ <td width="5%"><code>S</code>, <code>s</code></td> 
+ <td width="10%">String to capitals</td> 
+ <td width="30%"><code>format("%S, %S", "hello", "Hello");</code></td> 
+ <td width="30%"><code>HELLO, HELLO</code></td> 
+ </tr>  
+ <tr>
+ <td width="5%"><code>c</code></td> 
+ <td width="10%">Character</td> 
+ <td width="30%"><code>format("%c, %c", 'd', 0x65);</code></td> 
+ <td width="30%"><code>d, e</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>C</code></td> 
+ <td width="10%">Character to capitals</td> 
+ <td width="30%"><code>format("%C, %C", 'd', 0x65);</code></td> 
+ <td width="30%"><code>D, E</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Text option flags</B><br/>The value between the
+ option and the type character indicates the minimum width in
+ characters of the formatted value  </TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>-</code></td> 
+ <td width="10%">Left justify (width value is required)</td> 
+ <td width="30%"><code>format("%-3C, %3C", 'd', 0x65);</code></td> 
+ <td width="30%"><code>D  ,   E</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Integer types</B></TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>d</code></td> 
+ <td width="10%">int, formatted as decimal</td> 
+ <td width="30%"><code>format("%d, %d"1$, 35, 0x10);</code></td> 
+ <td width="30%"><code>35, 16</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>o</code></td> 
+ <td width="10%">int, formatted as octal</td> 
+ <td width="30%"><code>format("%o, %o", 8, 010);</code></td> 
+ <td width="30%"><code>10, 10</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>X</code>, <code>x</code></td> 
+ <td width="10%">int, formatted as hexidecimal</td> 
+ <td width="30%"><code>format("%x, %X", 10, 10);</code></td> 
+ <td width="30%"><code>a, A</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Integer option flags</B><br/>The value between the
+ option and the type character indicates the minimum width in
+ characters of the formatted value  </TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>+</code></td> 
+ <td width="10%">lead with the number's sign</td> 
+ <td width="30%"><code>format("%+d, %+4d", 5, 5);</code></td> 
+ <td width="30%"><code>+5,   +5</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>-</code></td> 
+ <td width="10%">Left justify (width value is required)</td> 
+ <td width="30%"><code>format("%-6dx", 5);</code></td> 
+ <td width="30%"><code>5      x</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>#</code></td> 
+ <td width="10%">Print the leading characters that indicate 
+ hexidecimal or octal (for use only with hex and octal types) </td> 
+ <td width="30%"><code>format("%#o", 010);</code></td> 
+ <td width="30%"><code>010</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code> </code></td> 
+ <td width="10%">A space indicates that non-negative numbers 
+ should have a leading space. </td> 
+ <td width="30%"><code>format("x% d% 5d", 4, 4);</code></td> 
+ <td width="30%"><code>x 4    4</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>0</code></td> 
+ <td width="10%">Pad the number with leading zeros (width value is required)</td> 
+ <td width="30%"><code>format("%07d, %03d", 4, 5555);</code></td> 
+ <td width="30%"><code>0000004, 5555</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>(</code></td> 
+ <td width="10%">Put parentheses around negative numbers (decimal only)</td> 
+ <td width="30%"><code>format("%(d, %(d, %(6d", 12, -12, -12);</code></td> 
+ <td width="30%"><code>12, (12),   (12)</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Float types</B><br/>A value immediately following the % symbol
+ gives the minimum width in characters of the formatted value; if it
+ is followed by a period and another integer, then the second value
+ gives the precision (6 by default).</TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>f</code></td> 
+ <td width="10%">float (or double) formatted as a decimal, where 
+ the precision indicates the number of digits after the decimal.</td> 
+ <td width="30%"><code>format("%f %<.1f %<1.5f %<10f %<6.0f", 123.456f);</code></td> 
+ <td width="30%"><code>123.456001 123.5 123.45600 123.456001    123</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>E</code>, <code>e</code></td> 
+ <td width="10%">float (or double) formatted in decimal exponential
+ notation, where the precision indicates the number of significant digits.</td> 
+ <td width="30%"><code>format("%E %<.1e %<1.5E %<10E %<6.0E", 123.456f);</code></td> 
+ <td width="30%"><code>1.234560E+02 1.2e+02 1.23456E+02 1.234560E+02  1E+02</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>G</code>, <code>g</code></td> 
+ <td width="10%">float (or double) formatted in decimal exponential
+ notation , where the precision indicates the maximum number of significant digits.</td> 
+ <td width="30%"><code>format("%G %<.1g %<1.5G %<10G %<6.0G", 123.456f);</code></td> 
+ <td width="30%"><code>123.456 1e+02 123.46    123.456  1E+02</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>A</code>, <code>a</code></td> 
+ <td width="10%">float (or double) formatted as a hexidecimal in exponential
+ notation, where the precision indicates the number of significant digits.</td> 
+ <td width="30%"><code>format("%A %<.1a %<1.5A %<10A %<6.0A", 123.456f);</code></td> 
+ <td width="30%"><code>0X1.EDD2F2P6 0x1.fp6 0X1.EDD2FP6 0X1.EDD2F2P6 0X1.FP6</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Float-type option flags</B><br/>See the Integer-type options.  
+ The options for float-types are the
+ same as for integer types with one addition: </TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>,</code></td> 
+ <td width="10%">Use a comma in place of a decimal if the locale
+ requires it. </td> 
+ <td width="30%"><code>format(new Locale("fr"), "%,7.2f", 6.03f);</code></td> 
+ <td width="30%"><code>   6,03</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Date types</B></TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>t</code>, <code>T</code></td> 
+ <td width="10%">Date</td> 
+ <td width="30%"><code>format(new Locale("fr"), "%tB %TB", Calendar.getInstance(), Calendar.getInstance());</code></td> 
+ <td width="30%"><code>avril AVRIL</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Date format precisions</B><br/>The format precision character 
+ follows the <code>t</code>. </TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>A</code>, <code>a</code></td> 
+ <td width="10%">The day of the week</td> 
+ <td width="30%"><code>format("%ta %tA", cal, cal);</code></td> 
+ <td width="30%"><code>Tue Tuesday</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>b</code>, <code>B</code>, <code>h</code></td> 
+ <td width="10%">The name of the month</td> 
+ <td width="30%"><code>format("%tb %<tB %<th", cal, cal, cal);</code></td> 
+ <td width="30%"><code>Apr April Apr</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>C</code></td> 
+ <td width="10%">The century</td> 
+ <td width="30%"><code>format("%tC\n", cal);</code></td> 
+ <td width="30%"><code>20</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>d</code>, <code>e</code></td> 
+ <td width="10%">The day of the month (with or without leading zeros)</td> 
+ <td width="30%"><code>format("%td %te", cal, cal);</code></td> 
+ <td width="30%"><code>01 1</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>F</code></td> 
+ <td width="10%">The complete date formatted as YYYY-MM-DD</td> 
+ <td width="30%"><code>format("%tF", cal);</code></td> 
+ <td width="30%"><code>2008-04-01</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>D</code></td> 
+ <td width="10%">The complete date formatted as MM/DD/YY 
+ (not corrected for locale) </td> 
+ <td width="30%"><code>format(new Locale("en_US"), "%tD", cal);<br/>format(new Locale("en_UK"), " %tD", cal);</code></td> 
+ <td width="30%"><code>04/01/08 04/01/08</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>j</code></td> 
+ <td width="10%">The number of the day (from the beginning of the year).</td> 
+ <td width="30%"><code>format("%tj\n", cal);</code></td> 
+ <td width="30%"><code>092</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>m</code></td> 
+ <td width="10%">The number of the month</td> 
+ <td width="30%"><code>format("%tm\n", cal);</code></td> 
+ <td width="30%"><code>04</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>y</code>, <code>Y</code></td> 
+ <td width="10%">The year</td> 
+ <td width="30%"><code>format("%ty %tY", cal, cal);</code></td> 
+ <td width="30%"><code>08 2008</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>H</code>, <code>I</code>, <code>k</code>, <code>l</code></td> 
+ <td width="10%">The hour of the day, in 12 or 24 hour format, with or
+ without a leading zero</td> 
+ <td width="30%"><code>format("%tH %tI %tk %tl", cal, cal, cal, cal);</code></td> 
+ <td width="30%"><code>16 04 16 4</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>p</code></td> 
+ <td width="10%">a.m. or p.m.</td> 
+ <td width="30%"><code>format("%tp %Tp", cal, cal);</code></td> 
+ <td width="30%"><code>pm PM</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>M</code>, <code>S</code>, <code>L</code>, <code>N</code></td> 
+ <td width="10%">The minutes, seconds, milliseconds, and nanoseconds</td> 
+ <td width="30%"><code>format("%tM %tS %tL %tN", cal, cal, cal, cal);</code></td> 
+ <td width="30%"><code>08 17 359 359000000</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>Z</code>, <code>z</code></td> 
+ <td width="10%">The time zone: its abbreviation or offset from GMT</td> 
+ <td width="30%"><code>format("%tZ %tz", cal, cal);</code></td> 
+ <td width="30%"><code>CEST +0100</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>R</code>, <code>r</code>, <code>T</code></td> 
+ <td width="10%">The complete time</td> 
+ <td width="30%"><code>format("%tR %tr %tT", cal, cal, cal);</code></td> 
+ <td width="30%"><code>16:15 04:15:32 PM 16:15:32</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>s</code>, <code>Q</code></td> 
+ <td width="10%">The number of seconds or milliseconds from "the epoch"
+ (1 January 1970 00:00:00 UTC) </td> 
+ <td width="30%"><code>format("%ts %tQ", cal, cal);</code></td> 
+ <td width="30%"><code>1207059412 1207059412656</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>c</code></td> 
+ <td width="10%">The complete time and date</td> 
+ <td width="30%"><code>format("%tc", cal);</code></td> 
+ <td width="30%"><code>Tue Apr 01 16:19:17 CEST 2008</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Other data types</B></TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>B</code>, <code>b</code></td> 
+ <td width="10%">Boolean</td> 
+ <td width="30%"><code>format("%b, %B", true, false);</code></td> 
+ <td width="30%"><code>true, FALSE</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>H</code>, <code>h</code></td> 
+ <td width="10%">Hashcode</td> 
+ <td width="30%"><code>format("%h, %H", obj, obj);</code></td> 
+ <td width="30%"><code>190d11, 190D11</code></td>
+ </tr>  
+ <tr>
+ <td width="5%"><code>n</code></td> 
+ <td width="10%">line separator</td> 
+ <td width="30%"><code>format("first%nsecond", "???");</code></td> 
+ <td width="30%"><code>first<br/>second</code></td>
+ </tr>  
+ <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+ <TD COLSPAN=4>
+ <B>Escape sequences</B></TD>
+ </tr>
+ <tr>
+ <td width="5%"><code>%</code></td> 
+ <td width="10%">Escape the % character</td> 
+ <td width="30%"><code>format("%d%%, %d", 50, 60);</code></td> 
+ <td width="30%"><code>50%, 60</code></td>
+ </tr>  
+ </table>   
+ 
+ <p>An instance of Formatter can be created to write the formatted
+ output to standard types of output streams.  Its functionality can 
+ also be accessed through the format methods of an output stream 
+ or of String:<br/>
+ <code>System.out.println(String.format("%ty\n", cal));</code><br/>
+ <code>System.out.format("%ty\n", cal);</code></p>
+ 
+ <p>The class is not multi-threaded safe. The user is responsible for 
+ maintaining a thread-safe design if a Formatter is
+ accessed by multiple threads. </p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/java/util/Formatter.BigDecimalLayoutForm.html">Formatter.BigDecimalLayoutForm</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/java/util/Formatter.BigDecimalLayoutForm.html">Formatter.BigDecimalLayoutForm</a></td>
+            <td class="jd-descrcol" width="100%">The enumeration giving the available styles
+ for formatting very large decimal numbers.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter()">Formatter</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.lang.Appendable)">Formatter</a>(<a href="../../../reference/java/lang/Appendable.html">Appendable</a> a)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.util.Locale)">Formatter</a>(<a href="../../../reference/java/util/Locale.html">Locale</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the locale is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.lang.Appendable, java.util.Locale)">Formatter</a>(<a href="../../../reference/java/lang/Appendable.html">Appendable</a> a, <a href="../../../reference/java/util/Locale.html">Locale</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output and locale is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.lang.String)">Formatter</a>(<a href="../../../reference/java/lang/String.html">String</a> fileName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the filename is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.lang.String, java.lang.String)">Formatter</a>(<a href="../../../reference/java/lang/String.html">String</a> fileName, <a href="../../../reference/java/lang/String.html">String</a> csn)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the filename and charset is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.lang.String, java.lang.String, java.util.Locale)">Formatter</a>(<a href="../../../reference/java/lang/String.html">String</a> fileName, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the filename, charset and locale is
+ denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.File)">Formatter</a>(<a href="../../../reference/java/io/File.html">File</a> file)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the file is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.File, java.lang.String)">Formatter</a>(<a href="../../../reference/java/io/File.html">File</a> file, <a href="../../../reference/java/lang/String.html">String</a> csn)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the file and charset is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.File, java.lang.String, java.util.Locale)">Formatter</a>(<a href="../../../reference/java/io/File.html">File</a> file, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the file, charset and locale is denoted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.OutputStream)">Formatter</a>(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output destination is specified.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.OutputStream, java.lang.String)">Formatter</a>(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os, <a href="../../../reference/java/lang/String.html">String</a> csn)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output destination and the charset is
+ specified.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.OutputStream, java.lang.String, java.util.Locale)">Formatter</a>(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output destination, the charset and
+ the locale is specified.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#Formatter(java.io.PrintStream)">Formatter</a>(<a href="../../../reference/java/io/PrintStream.html">PrintStream</a> ps)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a formatter of which the output destination is specified.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Closes the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flushes the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/Formatter.html">Formatter</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#format(java.util.Locale, java.lang.String, java.lang.Object...)">format</a>(<a href="../../../reference/java/util/Locale.html">Locale</a> l, <a href="../../../reference/java/lang/String.html">String</a> format, <a href="../../../reference/java/lang/Object.html">Object...</a> args)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a formatted string to the output destination of the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/Formatter.html">Formatter</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#format(java.lang.String, java.lang.Object...)">format</a>(<a href="../../../reference/java/lang/String.html">String</a> format, <a href="../../../reference/java/lang/Object.html">Object...</a> args)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a formatted string to the output destination of the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/IOException.html">IOException</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#ioException()">ioException</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the last IOException thrown out by the formatter's output
+ destination.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/Locale.html">Locale</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#locale()">locale</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the locale of the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Appendable.html">Appendable</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#out()">out</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the output destination of the formatter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/util/Formatter.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the content by calling the toString() method of the output
+ destination.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.Closeable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.Closeable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/Closeable.html">java.io.Closeable</a>
+</h5>
+<div id="inherited-methods-java.io.Closeable">
+<div id="inherited-methods-java.io.Closeable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/Closeable.html#close()">close</a>
+
+</div>
+<div id="inherited-methods-java.io.Closeable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/Closeable.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close the object and release any system resources it holds.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.Flushable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.Flushable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/Flushable.html">java.io.Flushable</a>
+</h5>
+<div id="inherited-methods-java.io.Flushable">
+<div id="inherited-methods-java.io.Flushable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/Flushable.html#flush()">flush</a>
+
+</div>
+<div id="inherited-methods-java.io.Flushable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/Flushable.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Flushes the object by writing out any buffered data to the underlying
+ output.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Formatter()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter.
+ 
+ The output is a StringBuilder which can be achieved by invoking the out
+ method and whose contents can be attained by calling the toString method.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.lang.Appendable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/lang/Appendable.html">Appendable</a> a)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output is denoted.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>a</td>
+        <td>The output of the formatter. If a is null, then a
+            StringBuilder will be used.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/util/Locale.html">Locale</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the locale is denoted.
+ 
+ The output destination is a StringBuilder which can be achieved by
+ invoking the out method and whose contents can be attained by calling the
+ toString method.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>l</td>
+        <td>The locale of the formatter. If l is null, then no
+            localization will be used.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.lang.Appendable, java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/lang/Appendable.html">Appendable</a> a, <a href="../../../reference/java/util/Locale.html">Locale</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output and locale is denoted.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>a</td>
+        <td>The output of the formatter. If a is null, then a
+            StringBuilder will be used.</td>
+      </tr>
+    <tr>
+        <th>l</td>
+        <td>The locale of the formatter. If l is null, then no
+            localization will be used.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/lang/String.html">String</a> fileName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the filename is denoted.
+ 
+ The charset of the formatter is the default charset of JVM.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>fileName</td>
+        <td>The filename of the file that is used as the output
+            destination for the formatter. The file will be truncated to
+            zero size if the file exists, or else a new file will be
+            created. The output of the formatter is buffered.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the filename does not denote a normal and writable file,
+             or a new file cannot be created or any error rises when
+             opening or creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/lang/String.html">String</a> fileName, <a href="../../../reference/java/lang/String.html">String</a> csn)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the filename and charset is denoted.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>fileName</td>
+        <td>The filename of the file that is used as the output
+            destination for the formatter. The file will be truncated to
+            zero size if the file exists, or else a new file will be
+            created. The output of the formatter is buffered.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the filename does not denote a normal and writable file,
+             or a new file cannot be created or any error rises when
+             opening or creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.lang.String, java.lang.String, java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/lang/String.html">String</a> fileName, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the filename, charset and locale is
+ denoted.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>fileName</td>
+        <td>The filename of the file that is used as the output
+            destination for the formatter. The file will be truncated to
+            zero size if the file exists, or else a new file will be
+            created. The output of the formatter is buffered.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    <tr>
+        <th>l</td>
+        <td>The locale of the formatter. If l is null, then no
+            localization will be used.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the filename does not denote a normal and writable file,
+             or a new file cannot be created or any error rises when
+             opening or creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+ 
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.File)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/File.html">File</a> file)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the file is denoted.
+ 
+ The charset of the formatter is the default charset of JVM.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>file</td>
+        <td>The file that is used as the output destination for the
+            formatter. The file will be truncated to zero size if the file
+            exists, or else a new file will be created. The output of the
+            formatter is buffered.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the file does not denote a normal and writable file, or a
+             new file cannot be created or any error rises when opening or
+             creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.File, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/File.html">File</a> file, <a href="../../../reference/java/lang/String.html">String</a> csn)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the file and charset is denoted.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>file</td>
+        <td>The file of the file that is used as the output destination
+            for the formatter. The file will be truncated to zero size if
+            the file exists, or else a new file will be created. The
+            output of the formatter is buffered.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the file does not denote a normal and writable file, or a
+             new file cannot be created or any error rises when opening or
+             creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.File, java.lang.String, java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/File.html">File</a> file, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the file, charset and locale is denoted.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>file</td>
+        <td>file that is used as the output destination for the formatter.
+            The file will be truncated to zero size if the file exists, or
+            else a new file will be created. The output of the formatter
+            is buffered.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    <tr>
+        <th>l</td>
+        <td>The locale of the formatter. If l is null, then no
+            localization will be used.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>If the file does not denote a normal and writable file, or a
+             new file cannot be created or any error rises when opening or
+             creating the file.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If there is a security manager and it denies writing to the
+             file in checkWrite(file.getPath()).</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output destination is specified.
+ 
+ The charset of the formatter is the default charset of JVM.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>os</td>
+        <td>The stream used as the destination of the formatter.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.OutputStream, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os, <a href="../../../reference/java/lang/String.html">String</a> csn)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output destination and the charset is
+ specified.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>os</td>
+        <td>The stream used as the destination of the formatter.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.OutputStream, java.lang.String, java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> os, <a href="../../../reference/java/lang/String.html">String</a> csn, <a href="../../../reference/java/util/Locale.html">Locale</a> l)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output destination, the charset and
+ the locale is specified.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>os</td>
+        <td>The stream used as the destination of the formatter.</td>
+      </tr>
+    <tr>
+        <th>csn</td>
+        <td>The name of the charset for the formatter.</td>
+      </tr>
+    <tr>
+        <th>l</td>
+        <td>The locale of the formatter. If l is null, then no
+            localization will be used.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+            <td>If the charset with the specified name is not supported.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Formatter(java.io.PrintStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Formatter(<a href="../../../reference/java/io/PrintStream.html">PrintStream</a> ps)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a formatter of which the output destination is specified.
+ 
+ The charset of the formatter is the default charset of JVM.
+ 
+ The locale for the formatter is the default locale of the JVM.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ps</td>
+        <td>The print stream used as destination of the formatter. If ps
+            is null, then NullPointerExcepiton will be thrown out.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Closes the formatter. If the output destination is <a href="../../../reference/java/io/Closeable.html">Closeable</a>,
+ then the method close() will be called on that destination.
+ 
+ If the formatter has been closed, then calling the close will have no
+ effect.
+ 
+ Any method but the ioException() that is called after the formatter has
+ been closed will raise a FormatterClosedException.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="flush()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        flush()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flushes the formatter. If the output destination is <a href="../../../reference/java/io/Flushable.html">Flushable</a>,
+ then the method flush() will be called on that destination.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="format(java.util.Locale, java.lang.String, java.lang.Object...)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/Formatter.html">Formatter</a>
+        format(<a href="../../../reference/java/util/Locale.html">Locale</a> l, <a href="../../../reference/java/lang/String.html">String</a> format, <a href="../../../reference/java/lang/Object.html">Object...</a> args)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes a formatted string to the output destination of the formatter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>l</td>
+        <td>The locale used in the method. If locale is null, then no
+            localization will be applied. This parameter does not
+            influence the locale specified during construction.</td>
+      </tr>
+    <tr>
+        <th>format</td>
+        <td>A format string.</td>
+      </tr>
+    <tr>
+        <th>args</td>
+        <td>The arguments list used in the format() method. If there are
+            more arguments than those specified by the format string, then
+            the additional arguments are ignored.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>This formatter.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/IllegalFormatException.html">IllegalFormatException</a></td>
+            <td>If the format string is illegal or incompatible with the
+             arguments or the arguments are less than those required by
+             the format string or any other illegal situation.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="format(java.lang.String, java.lang.Object...)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/Formatter.html">Formatter</a>
+        format(<a href="../../../reference/java/lang/String.html">String</a> format, <a href="../../../reference/java/lang/Object.html">Object...</a> args)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes a formatted string to the output destination of the formatter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>format</td>
+        <td>A format string.</td>
+      </tr>
+    <tr>
+        <th>args</td>
+        <td>The arguments list used in the format() method. If there are
+            more arguments than those specified by the format string, then
+            the additional arguments are ignored.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>This formatter.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/IllegalFormatException.html">IllegalFormatException</a></td>
+            <td>If the format string is illegal or incompatible with the
+             arguments or the arguments are less than those required by
+             the format string or any other illegal situation.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="ioException()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/io/IOException.html">IOException</a>
+        ioException()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the last IOException thrown out by the formatter's output
+ destination. If the append() method of the destination will not throw
+ IOException, the ioException() method will always return null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The last IOException thrown out by the formatter's output
+         destination.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="locale()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/Locale.html">Locale</a>
+        locale()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the locale of the formatter.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The locale for the formatter and null for no locale.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="out()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/Appendable.html">Appendable</a>
+        out()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the output destination of the formatter.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The output destination of the formatter.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the content by calling the toString() method of the output
+ destination.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The content by calling the toString() method of the output
+         destination.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/util/FormatterClosedException.html">FormatterClosedException</a></td>
+            <td>If the formatter has been closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

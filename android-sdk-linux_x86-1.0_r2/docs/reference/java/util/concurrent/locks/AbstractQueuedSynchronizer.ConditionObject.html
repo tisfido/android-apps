@@ -1,0 +1,1669 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/style.css" />
+<script src="../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../')"
+            onchange="search_changed(event, false, '../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../reference/java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../reference/java/io/Serializable.html">Serializable</a> <a href="../../../../../reference/java/util/concurrent/locks/Condition.html">Condition</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Condition implementation for a <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html">AbstractQueuedSynchronizer</a> serving as the basis of a <a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a> implementation.
+
+ <p> Method documentation for this class describes mechanics,
+ not behavioral specifications from the point of view of Lock
+ and Condition users. Exported versions of this class will in
+ general need to be accompanied by documentation describing
+ condition semantics that rely on those of the associated
+ <tt>AbstractQueuedSynchronizer</tt>.
+ 
+ <p> This class is Serializable, but all fields are transient,
+ so deserialized conditions have no waiters.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#AbstractQueuedSynchronizer.ConditionObject()">AbstractQueuedSynchronizer.ConditionObject</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new <tt>ConditionObject</tt> instance.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#await(long, java.util.concurrent.TimeUnit)">await</a>(long time, <a href="../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implements timed condition wait.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#await()">await</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implements interruptible condition wait.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#awaitNanos(long)">awaitNanos</a>(long nanosTimeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implements timed condition wait.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#awaitUninterruptibly()">awaitUninterruptibly</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implements uninterruptible condition wait.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#awaitUntil(java.util.Date)">awaitUntil</a>(<a href="../../../../../reference/java/util/Date.html">Date</a> deadline)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implements absolute timed condition wait.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#signal()">signal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves the longest-waiting thread, if one exists, from the
+ wait queue for this condition to the wait queue for the
+ owning lock.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#signalAll()">signalAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves all threads from the wait queue for this condition to
+ the wait queue for the owning lock.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#getWaitQueueLength()">getWaitQueueLength</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an estimate of the number of threads waiting on
+ this condition.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#getWaitingThreads()">getWaitingThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection containing those threads that may be
+ waiting on this Condition.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html#hasWaiters()">hasWaiters</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether any threads are waiting on this condition.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.concurrent.locks.Condition')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.concurrent.locks.Condition-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/java/util/concurrent/locks/Condition.html">java.util.concurrent.locks.Condition</a>
+</h5>
+<div id="inherited-methods-java.util.concurrent.locks.Condition">
+<div id="inherited-methods-java.util.concurrent.locks.Condition-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#await(long, java.util.concurrent.TimeUnit)">await</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#await()">await</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitNanos(long)">awaitNanos</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitUninterruptibly()">awaitUninterruptibly</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitUntil(java.util.Date)">awaitUntil</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#signal()">signal</a>,
+
+<a href="../../../../../reference/java/util/concurrent/locks/Condition.html#signalAll()">signalAll</a>
+
+</div>
+<div id="inherited-methods-java.util.concurrent.locks.Condition-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#await(long, java.util.concurrent.TimeUnit)">await</a>(long time, <a href="../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the current thread to wait until it is signalled or interrupted,
+ or the specified waiting time elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#await()">await</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the current thread to wait until it is signalled or 
+ <a href="../../../../../reference/java/lang/Thread.html#interrupt()">interrupted</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitNanos(long)">awaitNanos</a>(long nanosTimeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the current thread to wait until it is signalled or interrupted,
+ or the specified waiting time elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitUninterruptibly()">awaitUninterruptibly</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the current thread to wait until it is signalled.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#awaitUntil(java.util.Date)">awaitUntil</a>(<a href="../../../../../reference/java/util/Date.html">Date</a> deadline)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the current thread to wait until it is signalled or interrupted,
+ or the specified deadline elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#signal()">signal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Wakes up one waiting thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/Condition.html#signalAll()">signalAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Wakes up all waiting threads.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="AbstractQueuedSynchronizer.ConditionObject()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        AbstractQueuedSynchronizer.ConditionObject()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new <tt>ConditionObject</tt> instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="await(long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        await(long time, <a href="../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implements timed condition wait. 
+ <ol>
+ <li> If current thread is interrupted, throw InterruptedException
+ <li> Save lock state returned by <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> 
+ <li> Invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a> with 
+      saved state as argument, throwing 
+      IllegalMonitorStateException  if it fails.
+ <li> Block until signalled, interrupted, or timed out
+ <li> Reacquire by invoking specialized version of
+      <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a> with saved state as argument.
+ <li> If interrupted while blocked in step 4, throw InterruptedException
+ <li> If timed out while blocked in step 4, return false, else true
+ </ol>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>time</td>
+        <td>the maximum time to wait</td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>the time unit of the <tt>time</tt> argument.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>false</tt> if the waiting time detectably elapsed
+ before return from the method, else <tt>true</tt>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted (and
+ interruption of thread suspension is supported).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="await()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        await()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implements interruptible condition wait.
+ <ol>
+ <li> If current thread is interrupted, throw InterruptedException
+ <li> Save lock state returned by <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> 
+ <li> Invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a> with 
+      saved state as argument, throwing 
+      IllegalMonitorStateException  if it fails.
+ <li> Block until signalled or interrupted
+ <li> Reacquire by invoking specialized version of
+      <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a> with saved state as argument.
+ <li> If interrupted while blocked in step 4, throw exception
+ </ol>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted (and
+ interruption of thread suspension is supported).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="awaitNanos(long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        long
+        awaitNanos(long nanosTimeout)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implements timed condition wait.
+ <ol>
+ <li> If current thread is interrupted, throw InterruptedException
+ <li> Save lock state returned by <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> 
+ <li> Invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a> with 
+      saved state as argument, throwing 
+      IllegalMonitorStateException  if it fails.
+ <li> Block until signalled, interrupted, or timed out
+ <li> Reacquire by invoking specialized version of
+      <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a> with saved state as argument.
+ <li> If interrupted while blocked in step 4, throw InterruptedException
+ </ol>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>nanosTimeout</td>
+        <td>the maximum time to wait, in nanoseconds</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A value less than or equal to zero if the wait has
+ timed out; otherwise an estimate, that
+ is strictly less than the <tt>nanosTimeout</tt> argument,
+ of the time still remaining when this method returned.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted (and
+ interruption of thread suspension is supported).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="awaitUninterruptibly()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        awaitUninterruptibly()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implements uninterruptible condition wait.
+ <ol>
+ <li> Save lock state returned by <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> 
+ <li> Invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a> with 
+      saved state as argument, throwing 
+      IllegalMonitorStateException  if it fails.
+ <li> Block until signalled
+ <li> Reacquire by invoking specialized version of
+      <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a> with saved state as argument.
+ </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="awaitUntil(java.util.Date)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        awaitUntil(<a href="../../../../../reference/java/util/Date.html">Date</a> deadline)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implements absolute timed condition wait.
+ <ol>
+ <li> If current thread is interrupted, throw InterruptedException
+ <li> Save lock state returned by <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> 
+ <li> Invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a> with 
+      saved state as argument, throwing 
+      IllegalMonitorStateException  if it fails.
+ <li> Block until signalled, interrupted, or timed out
+ <li> Reacquire by invoking specialized version of
+      <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a> with saved state as argument.
+ <li> If interrupted while blocked in step 4, throw InterruptedException
+ <li> If timed out while blocked in step 4, return false, else true
+ </ol>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>deadline</td>
+        <td>the absolute time to wait until</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>false</tt> if the deadline has
+ elapsed upon return, else <tt>true</tt>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted (and
+ interruption of thread suspension is supported).
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="signal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        signal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Moves the longest-waiting thread, if one exists, from the
+ wait queue for this condition to the wait queue for the
+ owning lock.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+ returns false
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="signalAll()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        signalAll()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Moves all threads from the wait queue for this condition to
+ the wait queue for the owning lock.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+ returns false
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="getWaitQueueLength()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        int
+        getWaitQueueLength()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an estimate of the number of threads waiting on
+ this condition. 
+ Implements <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getWaitQueueLength(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">getWaitQueueLength(AbstractQueuedSynchronizer.ConditionObject)</a>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the estimated number of waiting threads.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+ returns false
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWaitingThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;
+        getWaitingThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a collection containing those threads that may be
+ waiting on this Condition.  
+ Implements <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getWaitingThreads(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">getWaitingThreads(AbstractQueuedSynchronizer.ConditionObject)</a>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collection of threads</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+ returns false
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasWaiters()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        boolean
+        hasWaiters()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Queries whether any threads are waiting on this condition.
+ Implements <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasWaiters(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">hasWaiters(AbstractQueuedSynchronizer.ConditionObject)</a>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if there are any waiting threads.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+ returns false
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

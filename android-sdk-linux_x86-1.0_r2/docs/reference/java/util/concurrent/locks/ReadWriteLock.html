@@ -1,0 +1,606 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.locks.ReadWriteLock - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/style.css" />
+<script src="../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../')"
+            onchange="search_changed(event, false, '../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../reference/java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.util.concurrent.locks.ReadWriteLock</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.locks.ReadWriteLock</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A <tt>ReadWriteLock</tt> maintains a pair of associated <a href="../../../../../reference/java/util/concurrent/locks/Lock.html">locks</a>, one for read-only operations and one for writing.
+ The <a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html#readLock()">read lock</a> may be held simultaneously by
+ multiple reader threads, so long as there are no writers.  The
+ <a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html#writeLock()">write lock</a> is exclusive.
+ 
+ <p>A read-write lock allows for a greater level of concurrency in
+ accessing shared data, than that permitted by a mutual exclusion lock.
+ It exploits the fact that while only a single thread at a time (a
+ <em>writer</em> thread) can modify the shared data, in many cases any 
+ number of threads can concurrently read the data (hence <em>reader</em>
+ threads).
+ In theory, the increase in concurrency permitted by the use of a read-write
+ lock will lead to performance improvements over the use of a mutual
+ exclusion lock. In practice this increase in concurrency will only be fully
+ realized on a multi-processor, and then only if the access patterns for
+ the shared data are suitable.
+
+ <p>Whether or not a read-write lock will improve performance over the use
+ of a mutual exclusion lock depends on the frequency that the data is
+ read compared to being modified, the duration of the read and write 
+ operations, and the contention for the data - that is, the number of
+ threads that will try to read or write the data at the same time.
+ For example, a collection that is initially populated with data and
+ thereafter infrequently modified, while being frequently searched
+ (such as a directory of some kind) is an ideal candidate for the use of
+ a read-write lock. However, if updates become frequent then the data
+ spends most of its time being exclusively locked and there is little, if any
+ increase in concurrency. Further, if the read operations are too short
+ the overhead of the read-write lock implementation (which is inherently
+ more complex than a mutual exclusion lock) can dominate the execution
+ cost, particularly as many read-write lock implementations still serialize
+ all threads through a small section of code. Ultimately, only profiling
+ and measurement will establish whether the use of a read-write lock is
+ suitable for your application.
+
+
+ <p>Although the basic operation of a read-write lock is straight-forward,
+ there are many policy decisions that an implementation must make, which
+ may affect the effectiveness of the read-write lock in a given application.
+ Examples of these policies include:
+ <ul>
+ <li>Determining whether to grant the read lock or the write lock, when
+ both readers and writers are waiting, at the time that a writer releases
+ the write lock. Writer preference is common, as writes are expected to be
+ short and infrequent. Reader preference is less common as it can lead to
+ lengthy delays for a write if the readers are frequent and long-lived as
+ expected. Fair, or &quot;in-order&quot; implementations are also possible.
+
+ <li>Determining whether readers that request the read lock while a 
+ reader is active and a writer is waiting, are granted the read lock.
+ Preference to the reader can delay the writer indefinitely, while
+ preference to the write can reduce the potential for concurrency.
+
+ <li>Determining whether the locks are reentrant: can a thread with the
+ write lock reacquire it? can it acquire a read lock while holding the
+ write lock? is the read lock itself reentrant?
+
+ <li>Can the write lock be downgraded to a read lock without allowing
+ an intervening writer? Can a read lock be upgraded to a write lock,
+ in preference to other waiting readers or writers?
+
+ </ul>
+ You should consider all of these things when evaluating the suitability
+ of a given implementation for your application.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../../reference/java/util/concurrent/locks/ReentrantReadWriteLock.html">ReentrantReadWriteLock</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/java/util/concurrent/locks/ReentrantReadWriteLock.html">ReentrantReadWriteLock</a></td>
+            <td class="jd-descrcol" width="100%">An implementation of <a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html">ReadWriteLock</a> supporting similar
+ semantics to <a href="../../../../../reference/java/util/concurrent/locks/ReentrantLock.html">ReentrantLock</a>.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../../reference/java/util/concurrent/locks/ReentrantReadWriteLock.html">ReentrantReadWriteLock</a></li>
+    <li><a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a></li>
+    <li><a href="../../../../../reference/java/util/concurrent/locks/ReentrantLock.html">ReentrantLock</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html#readLock()">readLock</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the lock used for reading.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html#writeLock()">writeLock</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the lock used for writing.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="readLock()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>
+        readLock()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the lock used for reading.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the lock used for reading.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeLock()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>
+        writeLock()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the lock used for writing.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the lock used for writing.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

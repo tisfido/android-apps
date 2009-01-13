@@ -1,0 +1,2712 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.text.TextUtils - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/text/package-summary.html">android.text</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.text.TextUtils</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.text.TextUtils</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/text/TextUtils.EllipsizeCallback.html">TextUtils.EllipsizeCallback</a>,
+            
+                <a href="../../../reference/android/text/TextUtils.SimpleStringSplitter.html">TextUtils.SimpleStringSplitter</a>,
+            
+                <a href="../../../reference/android/text/TextUtils.StringSplitter.html">TextUtils.StringSplitter</a>,
+            
+                <a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/text/TextUtils.EllipsizeCallback.html">TextUtils.EllipsizeCallback</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/text/TextUtils.SimpleStringSplitter.html">TextUtils.SimpleStringSplitter</a></td>
+            <td class="jd-descrcol" width="100%">A simple string splitter.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/text/TextUtils.StringSplitter.html">TextUtils.StringSplitter</a></td>
+            <td class="jd-descrcol" width="100%">An interface for splitting strings according to rules that are opaque to the user of this
+ interface.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/text/TextUtils.html#CHAR_SEQUENCE_CREATOR">CHAR_SEQUENCE_CREATOR</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#commaEllipsize(java.lang.CharSequence, android.text.TextPaint, float, java.lang.String, java.lang.String)">commaEllipsize</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/java/lang/String.html">String</a> oneMore, <a href="../../../reference/java/lang/String.html">String</a> more)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Converts a CharSequence of the comma-separated form "Andy, Bob,
+ Charles, David" that is too wide to fit into the specified width
+ into one like "Andy, Bob, 2 more".</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#concat(java.lang.CharSequence...)">concat</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence...</a> text)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a CharSequence concatenating the specified CharSequences,
+ retaining their spans if any.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#copySpansFrom(android.text.Spanned, int, int, java.lang.Class, android.text.Spannable, int)">copySpansFrom</a>(<a href="../../../reference/android/text/Spanned.html">Spanned</a> source, int start, int end, <a href="../../../reference/java/lang/Class.html">Class</a> kind, <a href="../../../reference/android/text/Spannable.html">Spannable</a> dest, int destoff)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#ellipsize(java.lang.CharSequence, android.text.TextPaint, float, android.text.TextUtils.TruncateAt, boolean, android.text.TextUtils.EllipsizeCallback)">ellipsize</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a> where, boolean preserveLength, <a href="../../../reference/android/text/TextUtils.EllipsizeCallback.html">TextUtils.EllipsizeCallback</a> callback)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the original text if it fits in the specified width
+ given the properties of the specified Paint,
+ or, if it does not fit, a copy with ellipsis character added 
+ at the specified edge or center.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#ellipsize(java.lang.CharSequence, android.text.TextPaint, float, android.text.TextUtils.TruncateAt)">ellipsize</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a> where)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the original text if it fits in the specified width
+ given the properties of the specified Paint,
+ or, if it does not fit, a truncated
+ copy with ellipsis character added at the specified edge or center.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#equals(java.lang.CharSequence, java.lang.CharSequence)">equals</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> a, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> b)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns true if a and b are equal, including if they are both null.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#expandTemplate(java.lang.CharSequence, java.lang.CharSequence...)">expandTemplate</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> template, <a href="../../../reference/java/lang/CharSequence.html">CharSequence...</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Replace instances of "^1", "^2", etc.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#getChars(java.lang.CharSequence, int, int, char[], int)">getChars</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, int start, int end, char[] dest, int destoff)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#getOffsetAfter(java.lang.CharSequence, int)">getOffsetAfter</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int offset)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#getOffsetBefore(java.lang.CharSequence, int)">getOffsetBefore</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int offset)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#getReverse(java.lang.CharSequence, int, int)">getReverse</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source, int start, int end)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#getTrimmedLength(java.lang.CharSequence)">getTrimmedLength</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the length that the specified CharSequence would have if
+ spaces and control characters were trimmed from the start and end,
+ as by <a href="../../../reference/java/lang/String.html#trim()">trim()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#htmlEncode(java.lang.String)">htmlEncode</a>(<a href="../../../reference/java/lang/String.html">String</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Html-encode the string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, java.lang.CharSequence)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, char, int, int)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start, int end)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, java.lang.CharSequence, int)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle, int start)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, java.lang.CharSequence, int, int)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle, int start, int end)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, char)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#indexOf(java.lang.CharSequence, char, int)">indexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#isDigitsOnly(java.lang.CharSequence)">isDigitsOnly</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the given CharSequence contains only digits.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#isEmpty(java.lang.CharSequence)">isEmpty</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns true if the string is null or 0-length.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#isGraphic(char)">isGraphic</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether this character is a printable character.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#isGraphic(java.lang.CharSequence)">isGraphic</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns whether the given CharSequence contains any printable characters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#join(java.lang.CharSequence, java.lang.Iterable)">join</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> delimiter, <a href="../../../reference/java/lang/Iterable.html">Iterable</a> tokens)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing the tokens joined by delimiters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#join(java.lang.CharSequence, java.lang.Object[])">join</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> delimiter, <a href="../../../reference/java/lang/Object.html">Object[]</a> tokens)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing the tokens joined by delimiters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#lastIndexOf(java.lang.CharSequence, char, int, int)">lastIndexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start, int last)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#lastIndexOf(java.lang.CharSequence, char, int)">lastIndexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int last)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#lastIndexOf(java.lang.CharSequence, char)">lastIndexOf</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#regionMatches(java.lang.CharSequence, int, java.lang.CharSequence, int, int)">regionMatches</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> one, int toffset, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> two, int ooffset, int len)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#replace(java.lang.CharSequence, java.lang.String[], java.lang.CharSequence[])">replace</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> template, <a href="../../../reference/java/lang/String.html">String[]</a> sources, <a href="../../../reference/java/lang/CharSequence.html">CharSequence[]</a> destinations)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a new CharSequence in which each of the source strings is
+ replaced by the corresponding element of the destinations.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#split(java.lang.String, java.util.regex.Pattern)">split</a>(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Splits a string on a pattern.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#split(java.lang.String, java.lang.String)">split</a>(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/java/lang/String.html">String</a> expression)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">String.split() returns [''] when the string to be split is empty.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#stringOrSpannedString(java.lang.CharSequence)">stringOrSpannedString</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#substring(java.lang.CharSequence, int, int)">substring</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source, int start, int end)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/text/TextUtils.html#writeToParcel(java.lang.CharSequence, android.os.Parcel, int)">writeToParcel</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> cs, <a href="../../../reference/android/os/Parcel.html">Parcel</a> p, int parcelableFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a CharSequence and whatever styles can be copied across processes
+ into the parcel.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CHAR_SEQUENCE_CREATOR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&gt;
+        CHAR_SEQUENCE_CREATOR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="commaEllipsize(java.lang.CharSequence, android.text.TextPaint, float, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        commaEllipsize(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/java/lang/String.html">String</a> oneMore, <a href="../../../reference/java/lang/String.html">String</a> more)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Converts a CharSequence of the comma-separated form "Andy, Bob,
+ Charles, David" that is too wide to fit into the specified width
+ into one like "Andy, Bob, 2 more".
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>the text to truncate</td>
+      </tr>
+    <tr>
+        <th>p</td>
+        <td>the Paint with which to measure the text</td>
+      </tr>
+    <tr>
+        <th>avail</td>
+        <td>the horizontal width available for the text</td>
+      </tr>
+    <tr>
+        <th>oneMore</td>
+        <td>the string for "1 more" in the current locale</td>
+      </tr>
+    <tr>
+        <th>more</td>
+        <td>the string for "%d more" in the current locale
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="concat(java.lang.CharSequence...)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        concat(<a href="../../../reference/java/lang/CharSequence.html">CharSequence...</a> text)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a CharSequence concatenating the specified CharSequences,
+ retaining their spans if any.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="copySpansFrom(android.text.Spanned, int, int, java.lang.Class, android.text.Spannable, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        copySpansFrom(<a href="../../../reference/android/text/Spanned.html">Spanned</a> source, int start, int end, <a href="../../../reference/java/lang/Class.html">Class</a> kind, <a href="../../../reference/android/text/Spannable.html">Spannable</a> dest, int destoff)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="ellipsize(java.lang.CharSequence, android.text.TextPaint, float, android.text.TextUtils.TruncateAt, boolean, android.text.TextUtils.EllipsizeCallback)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        ellipsize(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a> where, boolean preserveLength, <a href="../../../reference/android/text/TextUtils.EllipsizeCallback.html">TextUtils.EllipsizeCallback</a> callback)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the original text if it fits in the specified width
+ given the properties of the specified Paint,
+ or, if it does not fit, a copy with ellipsis character added 
+ at the specified edge or center.
+ If <code>preserveLength</code> is specified, the returned copy
+ will be padded with zero-width spaces to preserve the original
+ length and offsets instead of truncating.
+ If <code>callback</code> is non-null, it will be called to
+ report the start and end of the ellipsized range.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="ellipsize(java.lang.CharSequence, android.text.TextPaint, float, android.text.TextUtils.TruncateAt)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        ellipsize(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, <a href="../../../reference/android/text/TextPaint.html">TextPaint</a> p, float avail, <a href="../../../reference/android/text/TextUtils.TruncateAt.html">TextUtils.TruncateAt</a> where)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the original text if it fits in the specified width
+ given the properties of the specified Paint,
+ or, if it does not fit, a truncated
+ copy with ellipsis character added at the specified edge or center.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="equals(java.lang.CharSequence, java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        equals(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> a, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> b)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns true if a and b are equal, including if they are both null.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>a</td>
+        <td>first CharSequence to check</td>
+      </tr>
+    <tr>
+        <th>b</td>
+        <td>second CharSequence to check</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if a and b are equal
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="expandTemplate(java.lang.CharSequence, java.lang.CharSequence...)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        expandTemplate(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> template, <a href="../../../reference/java/lang/CharSequence.html">CharSequence...</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Replace instances of "^1", "^2", etc. in the
+ <code>template</code> CharSequence with the corresponding
+ <code>values</code>.  "^^" is used to produce a single caret in
+ the output.  Only up to 9 replacement values are supported,
+ "^10" will be produce the first replacement value followed by a
+ '0'.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>template</td>
+        <td>the input text containing "^1"-style
+ placeholder values.  This object is not modified; a copy is
+ returned.</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>CharSequences substituted into the template.  The
+ first is substituted for "^1", the second for "^2", and so on.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the new CharSequence produced by doing the replacement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the template requests a
+ value that was not provided, or if more than 9 values are
+ provided.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getChars(java.lang.CharSequence, int, int, char[], int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        getChars(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, int start, int end, char[] dest, int destoff)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getOffsetAfter(java.lang.CharSequence, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        getOffsetAfter(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int offset)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getOffsetBefore(java.lang.CharSequence, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        getOffsetBefore(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int offset)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getReverse(java.lang.CharSequence, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        getReverse(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source, int start, int end)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTrimmedLength(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        getTrimmedLength(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the length that the specified CharSequence would have if
+ spaces and control characters were trimmed from the start and end,
+ as by <a href="../../../reference/java/lang/String.html#trim()">trim()</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="htmlEncode(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        htmlEncode(<a href="../../../reference/java/lang/String.html">String</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Html-encode the string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>s</td>
+        <td>the string to be encoded</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the encoded string
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, char, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start, int end)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, java.lang.CharSequence, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle, int start)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, java.lang.CharSequence, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> needle, int start, int end)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="indexOf(java.lang.CharSequence, char, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        indexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isDigitsOnly(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isDigitsOnly(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns whether the given CharSequence contains only digits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isEmpty(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isEmpty(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns true if the string is null or 0-length.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>str</td>
+        <td>the string to be examined</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if str is null or zero length
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isGraphic(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isGraphic(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns whether this character is a printable character.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isGraphic(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        isGraphic(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> str)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns whether the given CharSequence contains any printable characters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="join(java.lang.CharSequence, java.lang.Iterable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        join(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> delimiter, <a href="../../../reference/java/lang/Iterable.html">Iterable</a> tokens)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing the tokens joined by delimiters.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tokens</td>
+        <td>an array objects to be joined. Strings will be formed from
+     the objects by calling object.toString().
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="join(java.lang.CharSequence, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        join(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> delimiter, <a href="../../../reference/java/lang/Object.html">Object[]</a> tokens)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing the tokens joined by delimiters.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tokens</td>
+        <td>an array objects to be joined. Strings will be formed from
+     the objects by calling object.toString().
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lastIndexOf(java.lang.CharSequence, char, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        lastIndexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int start, int last)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lastIndexOf(java.lang.CharSequence, char, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        lastIndexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch, int last)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lastIndexOf(java.lang.CharSequence, char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        lastIndexOf(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> s, char ch)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="regionMatches(java.lang.CharSequence, int, java.lang.CharSequence, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        boolean
+        regionMatches(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> one, int toffset, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> two, int ooffset, int len)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replace(java.lang.CharSequence, java.lang.String[], java.lang.CharSequence[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        replace(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> template, <a href="../../../reference/java/lang/String.html">String[]</a> sources, <a href="../../../reference/java/lang/CharSequence.html">CharSequence[]</a> destinations)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a new CharSequence in which each of the source strings is
+ replaced by the corresponding element of the destinations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="split(java.lang.String, java.util.regex.Pattern)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String[]</a>
+        split(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Splits a string on a pattern. String.split() returns [''] when the string to be
+ split is empty. This returns []. This does not remove any empty strings from the result.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>the string to split</td>
+      </tr>
+    <tr>
+        <th>pattern</td>
+        <td>the regular expression to match</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an array of strings. The array will be empty if text is empty</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if expression or text is null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="split(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String[]</a>
+        split(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/java/lang/String.html">String</a> expression)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+String.split() returns [''] when the string to be split is empty. This returns []. This does
+ not remove any empty strings from the result. For example split("a,", ","  ) returns {"a", ""}.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>the string to split</td>
+      </tr>
+    <tr>
+        <th>expression</td>
+        <td>the regular expression to match</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an array of strings. The array will be empty if text is empty</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if expression or text is null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="stringOrSpannedString(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        stringOrSpannedString(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="substring(java.lang.CharSequence, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        substring(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> source, int start, int end)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeToParcel(java.lang.CharSequence, android.os.Parcel, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        writeToParcel(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> cs, <a href="../../../reference/android/os/Parcel.html">Parcel</a> p, int parcelableFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a CharSequence and whatever styles can be copied across processes
+ into the parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

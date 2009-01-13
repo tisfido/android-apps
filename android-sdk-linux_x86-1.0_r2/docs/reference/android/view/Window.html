@@ -1,0 +1,5624 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.view.Window - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/view/package-summary.html">android.view</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>android.view.Window</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.view.Window</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Abstract base class for a top-level window look and behavior policy.  An
+ instance of this class should be used as the top-level view added to the
+ window manager. It provides standard UI policies such as a background, title
+ area, default key processing, etc.
+
+ <p>The only existing implementation of this abstract class is
+ android.policy.PhoneWindow, which you should instantiate when needing a
+ Window.  Eventually that class will be refactored and a factory method
+ added for creating Window instances without knowing about a particular
+ implementation.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a></td>
+            <td class="jd-descrcol" width="100%">API from a Window back to its caller.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#DEFAULT_FEATURES">DEFAULT_FEATURES</a>&nbsp;</td>
+        <td class="jd-descrcol">The default features enabled &nbsp;</td>
+        
+            <td class="jd-valcol">65&nbsp;</td>
+            <td class="jd-valcol">0x00000041&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_CONTEXT_MENU">FEATURE_CONTEXT_MENU</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for the context menu.&nbsp;</td>
+        
+            <td class="jd-valcol">6&nbsp;</td>
+            <td class="jd-valcol">0x00000006&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_CUSTOM_TITLE">FEATURE_CUSTOM_TITLE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for custom title.&nbsp;</td>
+        
+            <td class="jd-valcol">7&nbsp;</td>
+            <td class="jd-valcol">0x00000007&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_INDETERMINATE_PROGRESS">FEATURE_INDETERMINATE_PROGRESS</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for indeterminate progress &nbsp;</td>
+        
+            <td class="jd-valcol">5&nbsp;</td>
+            <td class="jd-valcol">0x00000005&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_LEFT_ICON">FEATURE_LEFT_ICON</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for having an icon on the left side of the title bar &nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_NO_TITLE">FEATURE_NO_TITLE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for the "no title" feature, turning off the title at the top
+  of the screen.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_OPTIONS_PANEL">FEATURE_OPTIONS_PANEL</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for the "options panel" feature.&nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_PROGRESS">FEATURE_PROGRESS</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for the progress indicator feature &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#FEATURE_RIGHT_ICON">FEATURE_RIGHT_ICON</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for having an icon on the right side of the title bar &nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#ID_ANDROID_CONTENT">ID_ANDROID_CONTENT</a>&nbsp;</td>
+        <td class="jd-descrcol">The ID that the main layout in the XML layout file should have.&nbsp;</td>
+        
+            <td class="jd-valcol">16908290&nbsp;</td>
+            <td class="jd-valcol">0x01020002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_END">PROGRESS_END</a>&nbsp;</td>
+        <td class="jd-descrcol">Ending value for the (primary) progress &nbsp;</td>
+        
+            <td class="jd-valcol">10000&nbsp;</td>
+            <td class="jd-valcol">0x00002710&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_INDETERMINATE_OFF">PROGRESS_INDETERMINATE_OFF</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for setting the progress bar's indeterminate mode off &nbsp;</td>
+        
+            <td class="jd-valcol">-4&nbsp;</td>
+            <td class="jd-valcol">0xfffffffc&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_INDETERMINATE_ON">PROGRESS_INDETERMINATE_ON</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for setting the progress bar's indeterminate mode on &nbsp;</td>
+        
+            <td class="jd-valcol">-3&nbsp;</td>
+            <td class="jd-valcol">0xfffffffd&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_SECONDARY_END">PROGRESS_SECONDARY_END</a>&nbsp;</td>
+        <td class="jd-descrcol">Highest possible value for the secondary progress &nbsp;</td>
+        
+            <td class="jd-valcol">30000&nbsp;</td>
+            <td class="jd-valcol">0x00007530&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_SECONDARY_START">PROGRESS_SECONDARY_START</a>&nbsp;</td>
+        <td class="jd-descrcol">Lowest possible value for the secondary progress &nbsp;</td>
+        
+            <td class="jd-valcol">20000&nbsp;</td>
+            <td class="jd-valcol">0x00004e20&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_START">PROGRESS_START</a>&nbsp;</td>
+        <td class="jd-descrcol">Starting value for the (primary) progress &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_VISIBILITY_OFF">PROGRESS_VISIBILITY_OFF</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for setting the progress bar's visibility to GONE &nbsp;</td>
+        
+            <td class="jd-valcol">-2&nbsp;</td>
+            <td class="jd-valcol">0xfffffffe&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Window.html#PROGRESS_VISIBILITY_ON">PROGRESS_VISIBILITY_ON</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for setting the progress bar's visibility to VISIBLE &nbsp;</td>
+        
+            <td class="jd-valcol">-1&nbsp;</td>
+            <td class="jd-valcol">0xffffffff&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#Window(android.content.Context)">Window</a>(<a href="../../../reference/android/content/Context.html">Context</a> context)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#addContentView(android.view.View, android.view.ViewGroup.LayoutParams)">addContentView</a>(<a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Variation on
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ to add an additional content view to the screen.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#addFlags(int)">addFlags</a>(int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience function to set the flag bits as specified in flags, as
+ per <a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#clearFlags(int)">clearFlags</a>(int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience function to clear the flag bits as specified in flags, as
+ per <a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#closeAllPanels()">closeAllPanels</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#closePanel(int)">closePanel</a>(int featureId)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#findViewById(int)">findViewById</a>(int id)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Finds a view that was identified by the id attribute from the XML that
+ was processed in <a href="../../../reference/android/app/Activity.html#onCreate(android.os.Bundle)">onCreate(Bundle)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getAttributes()">getAttributes</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current window attributes associated with this panel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getCallback()">getCallback</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the current Callback interface for this window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/Window.html">Window</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getContainer()">getContainer</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the container for this Window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/content/Context.html">Context</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getContext()">getContext</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the Context this window policy is running in, for retrieving
+ resources and other information.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getCurrentFocus()">getCurrentFocus</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the view in this Window that currently has focus, or null if
+ there are none.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the top-level window decor view (containing the standard
+ window frame/decorations and the client's content inside of that), which
+ can be added as a window to the window manager.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/LayoutInflater.html">LayoutInflater</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getLayoutInflater()">getLayoutInflater</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Quick access to the <a href="../../../reference/android/view/LayoutInflater.html">LayoutInflater</a> instance that this Window
+ retrieved from its Context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getVolumeControlStream()">getVolumeControlStream</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/WindowManager.html">WindowManager</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getWindowManager()">getWindowManager</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the window manager allowing this Window to display its own
+ windows.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/content/res/TypedArray.html">TypedArray</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getWindowStyle()">getWindowStyle</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the <a href="../../../reference/android/R.styleable.html#Window">Window</a> attributes from this
+ window's theme.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#hasChildren()">hasChildren</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#isActive()">isActive</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#isFloating()">isFloating</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return whether this window is being displayed with a floating style
+ (based on the <a href="../../../reference/android/R.attr.html#windowIsFloating">windowIsFloating</a> attribute in
+ the style/theme).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#isShortcutKey(int, android.view.KeyEvent)">isShortcutKey</a>(int keyCode, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Is a keypress one of the defined shortcut keys for this window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#makeActive()">makeActive</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#onConfigurationChanged(android.content.res.Configuration)">onConfigurationChanged</a>(<a href="../../../reference/android/content/res/Configuration.html">Configuration</a> newConfig)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Should be called when the configuration is changed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#openPanel(int, android.view.KeyEvent)">openPanel</a>(int featureId, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#peekDecorView()">peekDecorView</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current decor view, but only if it has already been created;
+ otherwise returns null.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#performContextMenuIdentifierAction(int, int)">performContextMenuIdentifierAction</a>(int id, int flags)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#performPanelIdentifierAction(int, int, int)">performPanelIdentifierAction</a>(int featureId, int id, int flags)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#performPanelShortcut(int, int, android.view.KeyEvent, int)">performPanelShortcut</a>(int featureId, int keyCode, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event, int flags)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#requestFeature(int)">requestFeature</a>(int featureId)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enable extended screen features.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#restoreHierarchyState(android.os.Bundle)">restoreHierarchyState</a>(<a href="../../../reference/android/os/Bundle.html">Bundle</a> savedInstanceState)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#saveHierarchyState()">saveHierarchyState</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setAttributes(android.view.WindowManager.LayoutParams)">setAttributes</a>(<a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a> a)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Specify custom window attributes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setBackgroundDrawable(android.graphics.drawable.Drawable)">setBackgroundDrawable</a>(<a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the background of this window to a custom Drawable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setBackgroundDrawableResource(int)">setBackgroundDrawableResource</a>(int resid)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the background of this window to a Drawable resource.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setCallback(android.view.Window.Callback)">setCallback</a>(<a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a> callback)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the Callback interface for this window, used to intercept key
+ events and other dynamic operations in the window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setChildDrawable(int, android.graphics.drawable.Drawable)">setChildDrawable</a>(int featureId, <a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setChildInt(int, int)">setChildInt</a>(int featureId, int value)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setContainer(android.view.Window)">setContainer</a>(<a href="../../../reference/android/view/Window.html">Window</a> container)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the container for this window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView</a>(<a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the screen content to an explicit view.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setContentView(android.view.View)">setContentView</a>(<a href="../../../reference/android/view/View.html">View</a> view)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience for
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ set the screen content to an explicit view.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setContentView(int)">setContentView</a>(int layoutResID)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience for
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ to set the screen content from a layout resource.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFeatureDrawable(int, android.graphics.drawable.Drawable)">setFeatureDrawable</a>(int featureId, <a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set an explicit Drawable value for feature of this window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFeatureDrawableAlpha(int, int)">setFeatureDrawableAlpha</a>(int featureId, int alpha)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set a custom alpha value for the given drawale feature, controlling how
+ much the background is visible through it.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFeatureDrawableResource(int, int)">setFeatureDrawableResource</a>(int featureId, int resId)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value for a drawable feature of this window, from a resource
+ identifier.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFeatureDrawableUri(int, android.net.Uri)">setFeatureDrawableUri</a>(int featureId, <a href="../../../reference/android/net/Uri.html">Uri</a> uri)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value for a drawable feature of this window, from a URI.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFeatureInt(int, int)">setFeatureInt</a>(int featureId, int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the integer value for a feature.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags</a>(int flags, int mask)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the flags of the window, as per the
+ <a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a>
+ flags.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setFormat(int)">setFormat</a>(int format)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the format of window, as per the PixelFormat types.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setGravity(int)">setGravity</a>(int gravity)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the gravity of the window, as per the Gravity constants.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setLayout(int, int)">setLayout</a>(int width, int height)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the width and height layout parameters of the window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setTitle(java.lang.CharSequence)">setTitle</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> title)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setTitleColor(int)">setTitleColor</a>(int textColor)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setType(int)">setType</a>(int type)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the type of the window, as per the WindowManager.LayoutParams
+ types.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setVolumeControlStream(int)">setVolumeControlStream</a>(int streamType)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setWindowManager(android.view.WindowManager, android.os.IBinder, java.lang.String)">setWindowManager</a>(<a href="../../../reference/android/view/WindowManager.html">WindowManager</a> wm, <a href="../../../reference/android/os/IBinder.html">IBinder</a> appToken, <a href="../../../reference/java/lang/String.html">String</a> appName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the window manager for use by this Window to, for example,
+ display panels.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#superDispatchKeyEvent(android.view.KeyEvent)">superDispatchKeyEvent</a>(<a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Used by custom windows, such as Dialog, to pass the key press event
+ further down the view hierarchy.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#superDispatchTouchEvent(android.view.MotionEvent)">superDispatchTouchEvent</a>(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Used by custom windows, such as Dialog, to pass the touch screen event
+ further down the view hierarchy.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#superDispatchTrackballEvent(android.view.MotionEvent)">superDispatchTrackballEvent</a>(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Used by custom windows, such as Dialog, to pass the trackball event
+ further down the view hierarchy.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#takeKeyEvents(boolean)">takeKeyEvents</a>(boolean get)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Request that key events come to this activity.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#togglePanel(int, android.view.KeyEvent)">togglePanel</a>(int featureId, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getFeatures()">getFeatures</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the feature bits that are enabled.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getForcedWindowFlags()">getForcedWindowFlags</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the window flags that have been explicitly set by the client,
+ so will not be modified by <a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#getLocalFeatures()">getLocalFeatures</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the feature bits that are being implemented by this Window.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#onActive()">onActive</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.html#setDefaultWindowFormat(int)">setDefaultWindowFormat</a>(int format)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the default format of window, as per the PixelFormat types.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="DEFAULT_FEATURES"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+        static 
+        final 
+        int
+        DEFAULT_FEATURES
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The default features enabled 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                65
+                (0x00000041)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_CONTEXT_MENU"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_CONTEXT_MENU
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for the context menu.  This is enabled by default. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                6
+                (0x00000006)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_CUSTOM_TITLE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_CUSTOM_TITLE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for custom title. You cannot combine this feature with other title features. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                7
+                (0x00000007)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_INDETERMINATE_PROGRESS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_INDETERMINATE_PROGRESS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for indeterminate progress 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                5
+                (0x00000005)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_LEFT_ICON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_LEFT_ICON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for having an icon on the left side of the title bar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_NO_TITLE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_NO_TITLE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for the "no title" feature, turning off the title at the top
+  of the screen. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_OPTIONS_PANEL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_OPTIONS_PANEL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for the "options panel" feature.  This is enabled by default. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_PROGRESS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_PROGRESS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for the progress indicator feature 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FEATURE_RIGHT_ICON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FEATURE_RIGHT_ICON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for having an icon on the right side of the title bar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="ID_ANDROID_CONTENT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        ID_ANDROID_CONTENT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The ID that the main layout in the XML layout file should have.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16908290
+                (0x01020002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_END"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_END
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Ending value for the (primary) progress 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                10000
+                (0x00002710)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_INDETERMINATE_OFF"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_INDETERMINATE_OFF
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for setting the progress bar's indeterminate mode off 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -4
+                (0xfffffffc)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_INDETERMINATE_ON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_INDETERMINATE_ON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for setting the progress bar's indeterminate mode on 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -3
+                (0xfffffffd)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_SECONDARY_END"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_SECONDARY_END
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Highest possible value for the secondary progress 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                30000
+                (0x00007530)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_SECONDARY_START"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_SECONDARY_START
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Lowest possible value for the secondary progress 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                20000
+                (0x00004e20)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_START"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_START
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Starting value for the (primary) progress 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_VISIBILITY_OFF"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_VISIBILITY_OFF
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for setting the progress bar's visibility to GONE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -2
+                (0xfffffffe)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS_VISIBILITY_ON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PROGRESS_VISIBILITY_ON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for setting the progress bar's visibility to VISIBLE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -1
+                (0xffffffff)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Window(android.content.Context)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Window(<a href="../../../reference/android/content/Context.html">Context</a> context)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addContentView(android.view.View, android.view.ViewGroup.LayoutParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        addContentView(<a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Variation on
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ to add an additional content view to the screen.  Added after any existing
+ ones in the screen -- existing views are NOT removed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>view</td>
+        <td>The desired content to display.</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>Layout parameters for the view.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addFlags(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addFlags(int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience function to set the flag bits as specified in flags, as
+ per <a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>flags</td>
+        <td>The flag bits to be set.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearFlags(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearFlags(int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience function to clear the flag bits as specified in flags, as
+ per <a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>flags</td>
+        <td>The flag bits to be cleared.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="closeAllPanels()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        closeAllPanels()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="closePanel(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        closePanel(int featureId)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="findViewById(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        findViewById(int id)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Finds a view that was identified by the id attribute from the XML that
+ was processed in <a href="../../../reference/android/app/Activity.html#onCreate(android.os.Bundle)">onCreate(Bundle)</a>.  This will
+ implicitly call <a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView()</a> for you, with all of the
+ associated side-effects.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The view if found or null otherwise.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAttributes()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a>
+        getAttributes()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current window attributes associated with this panel.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>WindowManager.LayoutParams Either the existing window
+         attributes object, or a freshly created one if there is none.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCallback()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a>
+        getCallback()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the current Callback interface for this window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getContainer()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/view/Window.html">Window</a>
+        getContainer()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the container for this Window.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Window The containing window, or null if this is a
+         top-level window.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getContext()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/content/Context.html">Context</a>
+        getContext()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the Context this window policy is running in, for retrieving
+ resources and other information.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Context The Context that was supplied to the constructor.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCurrentFocus()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        getCurrentFocus()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the view in this Window that currently has focus, or null if
+ there are none.  Note that this does not look in any containing
+ Window.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>View The current View with focus or null.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDecorView()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        getDecorView()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the top-level window decor view (containing the standard
+ window frame/decorations and the client's content inside of that), which
+ can be added as a window to the window manager.
+ 
+ <p><em>Note that calling this function for the first time "locks in"
+ various window characteristics as described in
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>.</em></p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns the top-level window decor view.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLayoutInflater()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/view/LayoutInflater.html">LayoutInflater</a>
+        getLayoutInflater()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Quick access to the <a href="../../../reference/android/view/LayoutInflater.html">LayoutInflater</a> instance that this Window
+ retrieved from its Context.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>LayoutInflater The shared LayoutInflater.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getVolumeControlStream()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        int
+        getVolumeControlStream()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Activity.html#getVolumeControlStream()">getVolumeControlStream()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWindowManager()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/WindowManager.html">WindowManager</a>
+        getWindowManager()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the window manager allowing this Window to display its own
+ windows.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>WindowManager The ViewManager.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWindowStyle()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/content/res/TypedArray.html">TypedArray</a>
+        getWindowStyle()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the <a href="../../../reference/android/R.styleable.html#Window">Window</a> attributes from this
+ window's theme.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasChildren()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasChildren()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isActive()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        isActive()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isFloating()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        isFloating()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return whether this window is being displayed with a floating style
+ (based on the <a href="../../../reference/android/R.attr.html#windowIsFloating">windowIsFloating</a> attribute in
+ the style/theme).
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the window is configured to be displayed floating
+ on top of whatever is behind it.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isShortcutKey(int, android.view.KeyEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        isShortcutKey(int keyCode, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Is a keypress one of the defined shortcut keys for this window.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>keyCode</td>
+        <td>the key code from <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> to check.</td>
+      </tr>
+    <tr>
+        <th>event</td>
+        <td>the <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> to use to help check.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="makeActive()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        makeActive()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onConfigurationChanged(android.content.res.Configuration)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        onConfigurationChanged(<a href="../../../reference/android/content/res/Configuration.html">Configuration</a> newConfig)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Should be called when the configuration is changed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newConfig</td>
+        <td>The new configuration.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openPanel(int, android.view.KeyEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        openPanel(int featureId, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="peekDecorView()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        peekDecorView()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current decor view, but only if it has already been created;
+ otherwise returns null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns the top-level window decor or null.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="performContextMenuIdentifierAction(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        performContextMenuIdentifierAction(int id, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="performPanelIdentifierAction(int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        performPanelIdentifierAction(int featureId, int id, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="performPanelShortcut(int, int, android.view.KeyEvent, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        performPanelShortcut(int featureId, int keyCode, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestFeature(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        requestFeature(int featureId)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enable extended screen features.  This must be called before
+ setContentView().  May be called as many times as desired as long as it
+ is before setContentView().  If not called, no extended features
+ will be available.  You can not turn off a feature once it is requested.
+ You canot use other title features with <a href="../../../reference/android/view/Window.html#FEATURE_CUSTOM_TITLE">FEATURE_CUSTOM_TITLE</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired features, defined as constants by Window.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The features that are now set.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="restoreHierarchyState(android.os.Bundle)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        restoreHierarchyState(<a href="../../../reference/android/os/Bundle.html">Bundle</a> savedInstanceState)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="saveHierarchyState()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/os/Bundle.html">Bundle</a>
+        saveHierarchyState()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setAttributes(android.view.WindowManager.LayoutParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setAttributes(<a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a> a)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Specify custom window attributes.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>a</td>
+        <td>The new window attributes, which will completely override any
+          current values.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBackgroundDrawable(android.graphics.drawable.Drawable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setBackgroundDrawable(<a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the background of this window to a custom Drawable. Setting the
+ background to null will make the window be opaque. To make the window
+ transparent, you can use an empty drawable (for instance a ColorDrawable
+ with the color 0 or the system drawable android:drawable/empty.)
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>drawable</td>
+        <td>The new Drawable to use for this window's background.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBackgroundDrawableResource(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBackgroundDrawableResource(int resid)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the background of this window to a Drawable resource. Setting the
+ background to null will make the window be opaque. To make the window
+ transparent, you can use an empty drawable (for instance a ColorDrawable
+ with the color 0 or the system drawable android:drawable/empty.)
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>resid</td>
+        <td>The resource identifier of a drawable resource which will be
+              installed as the new background.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCallback(android.view.Window.Callback)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCallback(<a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a> callback)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the Callback interface for this window, used to intercept key
+ events and other dynamic operations in the window.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>callback</td>
+        <td>The desired Callback interface.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setChildDrawable(int, android.graphics.drawable.Drawable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setChildDrawable(int featureId, <a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setChildInt(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setChildInt(int featureId, int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setContainer(android.view.Window)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setContainer(<a href="../../../reference/android/view/Window.html">Window</a> container)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the container for this window.  If not set, the DecorWindow
+ operates as a top-level window; otherwise, it negotiates with the
+ container to display itself appropriately.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>container</td>
+        <td>The desired containing Window.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setContentView(android.view.View, android.view.ViewGroup.LayoutParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setContentView(<a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the screen content to an explicit view.  This view is placed
+ directly into the screen's view hierarchy.  It can itself be a complex
+ view hierarchy.
+
+ <p>Note that calling this function "locks in" various characteristics
+ of the window that can not, from this point forward, be changed: the
+ features that have been requested with <a href="../../../reference/android/view/Window.html#requestFeature(int)">requestFeature(int)</a>,
+ and certain window flags as described in <a href="../../../reference/android/view/Window.html#setFlags(int, int)">setFlags(int, int)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>view</td>
+        <td>The desired content to display.</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>Layout parameters for the view.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setContentView(android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setContentView(<a href="../../../reference/android/view/View.html">View</a> view)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience for
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ set the screen content to an explicit view.  This view is placed
+ directly into the screen's view hierarchy.  It can itself be a complex
+ view hierarhcy.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>view</td>
+        <td>The desired content to display.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setContentView(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setContentView(int layoutResID)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience for
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a>
+ to set the screen content from a layout resource.  The resource will be
+ inflated, adding all top-level views to the screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>layoutResID</td>
+        <td>Resource ID to be inflated.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFeatureDrawable(int, android.graphics.drawable.Drawable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setFeatureDrawable(int featureId, <a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a> drawable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set an explicit Drawable value for feature of this window. You must
+ have called requestFeature(featureId) before calling this function.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired drawable feature to change.
+ Features are constants defined by Window.</td>
+      </tr>
+    <tr>
+        <th>drawable</td>
+        <td>A Drawable object to display.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFeatureDrawableAlpha(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setFeatureDrawableAlpha(int featureId, int alpha)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set a custom alpha value for the given drawale feature, controlling how
+ much the background is visible through it.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired drawable feature to change.
+ Features are constants defined by Window.</td>
+      </tr>
+    <tr>
+        <th>alpha</td>
+        <td>The alpha amount, 0 is completely transparent and 255 is
+              completely opaque.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFeatureDrawableResource(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setFeatureDrawableResource(int featureId, int resId)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value for a drawable feature of this window, from a resource
+ identifier.  You must have called requestFeauture(featureId) before
+ calling this function.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired drawable feature to change, defined as a
+ constant by Window.</td>
+      </tr>
+    <tr>
+        <th>resId</td>
+        <td>Resource identifier of the desired image.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/res/Resources.html#getDrawable(int)">getDrawable(int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFeatureDrawableUri(int, android.net.Uri)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setFeatureDrawableUri(int featureId, <a href="../../../reference/android/net/Uri.html">Uri</a> uri)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value for a drawable feature of this window, from a URI. You
+ must have called requestFeature(featureId) before calling this
+ function.
+
+ <p>The only URI currently supported is "content:", specifying an image
+ in a content provider.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired drawable feature to change. Features are
+ constants defined by Window.</td>
+      </tr>
+    <tr>
+        <th>uri</td>
+        <td>The desired URI.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/widget/ImageView.html#setImageURI(android.net.Uri)">setImageURI(Uri)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFeatureInt(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setFeatureInt(int featureId, int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the integer value for a feature.  The range of the value depends on
+ the feature being set.  For FEATURE_PROGRESSS, it should go from 0 to
+ 10000. At 10000 the progress is complete and the indicator hidden.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The desired feature to change.
+ Features are constants defined by Window.</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>The value for the feature.  The interpretation of this
+              value is feature-specific.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFlags(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFlags(int flags, int mask)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the flags of the window, as per the
+ <a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a>
+ flags.
+ 
+ <p>Note that some flags must be set before the window decoration is
+ created (by the first call to
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">setContentView(View, android.view.ViewGroup.LayoutParams)</a> or
+ <a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView()</a>:
+ <a href="../../../reference/android/view/WindowManager.LayoutParams.html#FLAG_LAYOUT_IN_SCREEN">FLAG_LAYOUT_IN_SCREEN</a> and
+ <a href="../../../reference/android/view/WindowManager.LayoutParams.html#FLAG_LAYOUT_INSET_DECOR">FLAG_LAYOUT_INSET_DECOR</a>.  These
+ will be set for you based on the <a href="../../../reference/android/R.attr.html#windowIsFloating">windowIsFloating</a>
+ attribute.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>flags</td>
+        <td>The new window flags (see WindowManager.LayoutParams).</td>
+      </tr>
+    <tr>
+        <th>mask</td>
+        <td>Which of the window flag bits to modify.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFormat(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFormat(int format)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the format of window, as per the PixelFormat types.  This overrides
+ the default format that is selected by the Window based on its
+ window decorations.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>format</td>
+        <td>The new window format (see PixelFormat).  Use
+               PixelFormat.UNKNOWN to allow the Window to select
+               the format.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/graphics/PixelFormat.html">PixelFormat</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setGravity(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setGravity(int gravity)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the gravity of the window, as per the Gravity constants.  This
+ controls how the window manager is positioned in the overall window; it
+ is only useful when using WRAP_CONTENT for the layout width or height.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>gravity</td>
+        <td>The desired gravity constant.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Gravity.html">Gravity</a></li>
+    <li><a href="../../../reference/android/view/Window.html#setLayout(int, int)">setLayout(int, int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLayout(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLayout(int width, int height)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the width and height layout parameters of the window.  The default
+ for both of these is FILL_PARENT; you can change them to WRAP_CONTENT to
+ make a window that is not full-screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>width</td>
+        <td>The desired layout width of the window.</td>
+      </tr>
+    <tr>
+        <th>height</td>
+        <td>The desired layout height of the window.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTitle(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setTitle(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> title)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTitleColor(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setTitleColor(int textColor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setType(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setType(int type)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the type of the window, as per the WindowManager.LayoutParams
+ types.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>type</td>
+        <td>The new window type (see WindowManager.LayoutParams).
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setVolumeControlStream(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        setVolumeControlStream(int streamType)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Activity.html#setVolumeControlStream(int)">setVolumeControlStream(int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setWindowManager(android.view.WindowManager, android.os.IBinder, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setWindowManager(<a href="../../../reference/android/view/WindowManager.html">WindowManager</a> wm, <a href="../../../reference/android/os/IBinder.html">IBinder</a> appToken, <a href="../../../reference/java/lang/String.html">String</a> appName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the window manager for use by this Window to, for example,
+ display panels.  This is <em>not</em> used for displaying the
+ Window itself -- that must be done by the client.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>wm</td>
+        <td>The ViewManager for adding new windows.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="superDispatchKeyEvent(android.view.KeyEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        superDispatchKeyEvent(<a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Used by custom windows, such as Dialog, to pass the key press event
+ further down the view hierarchy. Application developers should
+ not need to implement or call this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="superDispatchTouchEvent(android.view.MotionEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        superDispatchTouchEvent(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Used by custom windows, such as Dialog, to pass the touch screen event
+ further down the view hierarchy. Application developers should
+ not need to implement or call this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="superDispatchTrackballEvent(android.view.MotionEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        superDispatchTrackballEvent(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Used by custom windows, such as Dialog, to pass the trackball event
+ further down the view hierarchy. Application developers should
+ not need to implement or call this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="takeKeyEvents(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        takeKeyEvents(boolean get)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Request that key events come to this activity. Use this if your
+ activity has no views with focus, but the activity still wants
+ a chance to process key events.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="togglePanel(int, android.view.KeyEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        togglePanel(int featureId, <a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="getFeatures()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        int
+        getFeatures()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the feature bits that are enabled.  This is the set of features
+ that were given to requestFeature(), and are being handled by this
+ Window itself or its container.  That is, it is the set of
+ requested features that you can actually use.
+
+ <p>To do: add a public version of this API that allows you to check for
+ features by their feature ID.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int The feature bits.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getForcedWindowFlags()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        int
+        getForcedWindowFlags()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the window flags that have been explicitly set by the client,
+ so will not be modified by <a href="../../../reference/android/view/Window.html#getDecorView()">getDecorView()</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLocalFeatures()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        int
+        getLocalFeatures()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the feature bits that are being implemented by this Window.
+ This is the set of features that were given to requestFeature(), and are
+ being handled by only this Window itself, not by its containers.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int The feature bits.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onActive()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        onActive()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDefaultWindowFormat(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        setDefaultWindowFormat(int format)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the default format of window, as per the PixelFormat types.  This
+ is the format that will be used unless the client specifies in explicit
+ format with setFormat();
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>format</td>
+        <td>The new window format (see PixelFormat).</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.html#setFormat(int)">setFormat(int)</a></li>
+    <li><a href="../../../reference/android/graphics/PixelFormat.html">PixelFormat</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

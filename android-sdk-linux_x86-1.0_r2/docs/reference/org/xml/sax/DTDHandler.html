@@ -1,0 +1,703 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.xml.sax.DTDHandler - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/org/xml/sax/package-summary.html">org.xml.sax</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>org.xml.sax.DTDHandler</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.xml.sax.DTDHandler</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Receive notification of basic DTD-related events.
+
+ <blockquote>
+ <em>This module, both source code and documentation, is in the
+ Public Domain, and comes with <strong>NO WARRANTY</strong>.</em>
+ See <a href='http://www.saxproject.org'>http://www.saxproject.org</a>
+ for further information.
+ </blockquote>
+
+ <p>If a SAX application needs information about notations and
+ unparsed entities, then the application implements this 
+ interface and registers an instance with the SAX parser using 
+ the parser's setDTDHandler method.  The parser uses the 
+ instance to report notation and unparsed entity declarations to 
+ the application.</p>
+
+ <p>Note that this interface includes only those DTD events that
+ the XML recommendation <em>requires</em> processors to report:
+ notation and unparsed entity declarations.</p>
+
+ <p>The SAX parser may report these events in any order, regardless
+ of the order in which the notations and unparsed entities were
+ declared; however, all DTD events must be reported after the
+ document handler's startDocument event, and before the first
+ startElement event.
+ (If the <a href="../../../../reference/org/xml/sax/ext/LexicalHandler.html">LexicalHandler</a> is
+ used, these events must also be reported before the endDTD event.)
+ </p>
+
+ <p>It is up to the application to store the information for 
+ future use (perhaps in a hash table or object tree).
+ If the application encounters attributes of type "NOTATION",
+ "ENTITY", or "ENTITIES", it can use the information that it
+ obtained through this interface to find the entity and/or
+ notation corresponding with the attribute value.</p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../reference/org/xml/sax/helpers/DefaultHandler.html">DefaultHandler</a>,
+            
+                <a href="../../../../reference/org/xml/sax/ext/DefaultHandler2.html">DefaultHandler2</a>,
+            
+                <a href="../../../../reference/org/xml/sax/HandlerBase.html">HandlerBase</a>,
+            
+                <a href="../../../../reference/org/xml/sax/helpers/XMLFilterImpl.html">XMLFilterImpl</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/org/xml/sax/helpers/DefaultHandler.html">DefaultHandler</a></td>
+            <td class="jd-descrcol" width="100%">Default base class for SAX2 event handlers.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/org/xml/sax/ext/DefaultHandler2.html">DefaultHandler2</a></td>
+            <td class="jd-descrcol" width="100%">This class extends the SAX2 base handler class to support the
+ SAX2 <a href="../../../../reference/org/xml/sax/ext/LexicalHandler.html">LexicalHandler</a>, <a href="../../../../reference/org/xml/sax/ext/DeclHandler.html">DeclHandler</a>, and
+ <a href="../../../../reference/org/xml/sax/ext/EntityResolver2.html">EntityResolver2</a> extensions.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/org/xml/sax/HandlerBase.html">HandlerBase</a></td>
+            <td class="jd-descrcol" width="100%">
+        <em>
+This class is deprecated.
+
+        This class works with the deprecated
+             <a href="../../../../reference/org/xml/sax/DocumentHandler.html">DocumentHandler</a>
+             interface.  It has been replaced by the SAX2
+             <a href="../../../../reference/org/xml/sax/helpers/DefaultHandler.html">DefaultHandler</a>
+             class.</em>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/org/xml/sax/helpers/XMLFilterImpl.html">XMLFilterImpl</a></td>
+            <td class="jd-descrcol" width="100%">Base class for deriving an XML filter.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/org/xml/sax/XMLReader.html#setDTDHandler(org.xml.sax.DTDHandler)">setDTDHandler(DTDHandler)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/org/xml/sax/DTDHandler.html#notationDecl(java.lang.String, java.lang.String, java.lang.String)">notationDecl</a>(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> publicId, <a href="../../../../reference/java/lang/String.html">String</a> systemId)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receive notification of a notation declaration event.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/org/xml/sax/DTDHandler.html#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">unparsedEntityDecl</a>(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> publicId, <a href="../../../../reference/java/lang/String.html">String</a> systemId, <a href="../../../../reference/java/lang/String.html">String</a> notationName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receive notification of an unparsed entity declaration event.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="notationDecl(java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        notationDecl(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> publicId, <a href="../../../../reference/java/lang/String.html">String</a> systemId)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Receive notification of a notation declaration event.
+
+ <p>It is up to the application to record the notation for later
+ reference, if necessary;
+ notations may appear as attribute values and in unparsed entity
+ declarations, and are sometime used with processing instruction
+ target names.</p>
+
+ <p>At least one of publicId and systemId must be non-null.
+ If a system identifier is present, and it is a URL, the SAX
+ parser must resolve it fully before passing it to the
+ application through this event.</p>
+
+ <p>There is no guarantee that the notation declaration will be
+ reported before any unparsed entities that use it.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>The notation name.</td>
+      </tr>
+    <tr>
+        <th>publicId</td>
+        <td>The notation's public identifier, or null if
+        none was given.</td>
+      </tr>
+    <tr>
+        <th>systemId</td>
+        <td>The notation's system identifier, or null if
+        none was given.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/org/xml/sax/SAXException.html">SAXException</a></td>
+            <td>Any SAX exception, possibly
+            wrapping another exception.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/org/xml/sax/DTDHandler.html#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">unparsedEntityDecl(String, String, String, String)</a></li>
+    <li><a href="../../../../reference/org/xml/sax/Attributes.html">Attributes</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        unparsedEntityDecl(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> publicId, <a href="../../../../reference/java/lang/String.html">String</a> systemId, <a href="../../../../reference/java/lang/String.html">String</a> notationName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Receive notification of an unparsed entity declaration event.
+
+ <p>Note that the notation name corresponds to a notation
+ reported by the <a href="../../../../reference/org/xml/sax/DTDHandler.html#notationDecl(java.lang.String, java.lang.String, java.lang.String)">notationDecl</a> event.  
+ It is up to the application to record the entity for later 
+ reference, if necessary;
+ unparsed entities may appear as attribute values. 
+ </p>
+
+ <p>If the system identifier is a URL, the parser must resolve it
+ fully before passing it to the application.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>The unparsed entity's name.</td>
+      </tr>
+    <tr>
+        <th>publicId</td>
+        <td>The entity's public identifier, or null if none
+        was given.</td>
+      </tr>
+    <tr>
+        <th>systemId</td>
+        <td>The entity's system identifier.</td>
+      </tr>
+    <tr>
+        <th>notationName</td>
+        <td>The name of the associated notation.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/org/xml/sax/SAXException.html">SAXException</a></td>
+            <td>Any SAX exception, possibly
+            wrapping another exception.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/org/xml/sax/DTDHandler.html#notationDecl(java.lang.String, java.lang.String, java.lang.String)">notationDecl(String, String, String)</a></li>
+    <li><a href="../../../../reference/org/xml/sax/Attributes.html">Attributes</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

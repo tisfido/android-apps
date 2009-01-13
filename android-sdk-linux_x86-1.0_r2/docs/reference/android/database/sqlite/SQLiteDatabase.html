@@ -1,0 +1,4376 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.database.sqlite.SQLiteDatabase - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/android/database/sqlite/package-summary.html">android.database.sqlite</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.database.sqlite.SQLiteDatabase</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html">android.database.sqlite.SQLiteClosable</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.database.sqlite.SQLiteDatabase</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Exposes methods to manage a SQLite database.
+ <p>SQLiteDatabase has methods to create, delete, execute SQL commands, and
+ perform other common database management tasks.
+ <p>See the Notepad sample application in the SDK for an example of creating
+ and managing a database.
+ <p> Database names must be unique within an application, not across all
+ applications.
+
+ <h3>Localized Collation - ORDER BY</h3>
+ <p>In addition to SQLite's default <code>BINARY</code> collator, Android supplies
+ two more, <code>LOCALIZED</code>, which changes with the system's current locale
+ if you wire it up correctly (XXX a link needed!), and <code>UNICODE</code>, which
+ is the Unicode Collation Algorithm and not tailored to the current locale.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a></td>
+            <td class="jd-descrcol" width="100%">Used to allow returning sub-classes of <a href="../../../../reference/android/database/Cursor.html">Cursor</a> when calling query.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#CREATE_IF_NECESSARY">CREATE_IF_NECESSARY</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to create the database file if it does not already exist.&nbsp;</td>
+        
+            <td class="jd-valcol">268435456&nbsp;</td>
+            <td class="jd-valcol">0x10000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#NO_LOCALIZED_COLLATORS">NO_LOCALIZED_COLLATORS</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database without support for localized collators.
+
+ &nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READONLY">OPEN_READONLY</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database for reading only.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READWRITE">OPEN_READWRITE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database for reading and writing.
+ If the disk is full, this may fail even before you actually write anything.
+
+ &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#SQLITE_MAX_LIKE_PATTERN_LENGTH">SQLITE_MAX_LIKE_PATTERN_LENGTH</a>&nbsp;</td>
+        <td class="jd-descrcol">Maximum Length Of A LIKE Or GLOB Pattern
+ The pattern matching algorithm used in the default LIKE and GLOB implementation
+ of SQLite can exhibit O(N^2) performance (where N is the number of characters in
+ the pattern) for certain pathological cases.&nbsp;</td>
+        
+            <td class="jd-valcol">50000&nbsp;</td>
+            <td class="jd-valcol">0x0000c350&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#beginTransaction()">beginTransaction</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Begins a transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#compileStatement(java.lang.String)">compileStatement</a>(<a href="../../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compiles an SQL statement into a reusable pre-compiled statement object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#create(android.database.sqlite.SQLiteDatabase.CursorFactory)">create</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Create a memory backed SQLite database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#delete(java.lang.String, java.lang.String, java.lang.String[])">delete</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> whereClause, <a href="../../../../reference/java/lang/String.html">String[]</a> whereArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for deleting rows in the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#endTransaction()">endTransaction</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">End a transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#execSQL(java.lang.String, java.lang.Object[])">execSQL</a>(<a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/Object.html">Object[]</a> bindArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Execute a single SQL statement that is not a query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#execSQL(java.lang.String)">execSQL</a>(<a href="../../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Execute a single SQL statement that is not a query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#findEditTable(java.lang.String)">findEditTable</a>(<a href="../../../../reference/java/lang/String.html">String</a> tables)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Finds the name of the first table, which is editable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#getMaximumSize()">getMaximumSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the maximum size the database may grow to.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#getPageSize()">getPageSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the maximum size the database may grow to.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#getPath()">getPath</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Getter for the path to the database file.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#getSyncedTables()">getSyncedTables</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#getVersion()">getVersion</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the database version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#inTransaction()">inTransaction</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">return true if there is a transaction pending
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#insert(java.lang.String, java.lang.String, android.content.ContentValues)">insert</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for inserting a row into the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#insertOrThrow(java.lang.String, java.lang.String, android.content.ContentValues)">insertOrThrow</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for inserting a row into the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#isDbLockedByCurrentThread()">isDbLockedByCurrentThread</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks if the database lock is held by this thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#isDbLockedByOtherThreads()">isDbLockedByOtherThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks if the database is locked by another thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#isOpen()">isOpen</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#isReadOnly()">isReadOnly</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">return whether the DB is opened as read only.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#markTableSyncable(java.lang.String, java.lang.String)">markTableSyncable</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> deletedTable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Mark this table as syncable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#markTableSyncable(java.lang.String, java.lang.String, java.lang.String)">markTableSyncable</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> foreignKey, <a href="../../../../reference/java/lang/String.html">String</a> updateTable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Mark this table as syncable, with the _sync_dirty residing in another
+ table.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#needUpgrade(int)">needUpgrade</a>(int newVersion)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase</a>(<a href="../../../../reference/java/lang/String.html">String</a> path, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Open the database according to the flags <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READWRITE">OPEN_READWRITE</a>
+ <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READONLY">OPEN_READONLY</a> <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#CREATE_IF_NECESSARY">CREATE_IF_NECESSARY</a> and/or <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#NO_LOCALIZED_COLLATORS">NO_LOCALIZED_COLLATORS</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openOrCreateDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory)">openOrCreateDatabase</a>(<a href="../../../../reference/java/lang/String.html">String</a> path, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openOrCreateDatabase(java.io.File, android.database.sqlite.SQLiteDatabase.CursorFactory)">openOrCreateDatabase</a>(<a href="../../../../reference/java/io/File.html">File</a> file, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Equivalent to openDatabase(file.getPath(), factory, CREATE_IF_NECESSARY).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">query</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Query the given table, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#query(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">query</a>(boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Query the given URL, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)">query</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Query the given table, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#queryWithFactory(android.database.sqlite.SQLiteDatabase.CursorFactory, boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">queryWithFactory</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> cursorFactory, boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Query the given URL, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#rawQuery(java.lang.String, java.lang.String[])">rawQuery</a>(<a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Runs the provided SQL and returns a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#rawQueryWithFactory(android.database.sqlite.SQLiteDatabase.CursorFactory, java.lang.String, java.lang.String[], java.lang.String)">rawQueryWithFactory</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> cursorFactory, <a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> editTable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Runs the provided SQL and returns a cursor over the result set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#releaseMemory()">releaseMemory</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to release memory that SQLite holds but does not require to
+ operate properly.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#replace(java.lang.String, java.lang.String, android.content.ContentValues)">replace</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> initialValues)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for replacing a row in the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#replaceOrThrow(java.lang.String, java.lang.String, android.content.ContentValues)">replaceOrThrow</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> initialValues)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for replacing a row in the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setLocale(java.util.Locale)">setLocale</a>(<a href="../../../../reference/java/util/Locale.html">Locale</a> locale)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the locale for this database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setLockingEnabled(boolean)">setLockingEnabled</a>(boolean lockingEnabled)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Control whether or not the SQLiteDatabase is made thread-safe by using locks
+ around critical sections.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setMaximumSize(long)">setMaximumSize</a>(long numBytes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the maximum size the database will grow to.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setPageSize(long)">setPageSize</a>(long numBytes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the database page size.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setTransactionSuccessful()">setTransactionSuccessful</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Marks the current transaction as successful.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setVersion(int)">setVersion</a>(int version)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the database version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#update(java.lang.String, android.content.ContentValues, java.lang.String, java.lang.String[])">update</a>(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../../reference/java/lang/String.html">String</a> whereClause, <a href="../../../../reference/java/lang/String.html">String[]</a> whereArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for updating rows in the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#yieldIfContended()">yieldIfContended</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Temporarily end the transaction to let other threads run.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#onAllReferencesReleased()">onAllReferencesReleased</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.database.sqlite.SQLiteClosable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.database.sqlite.SQLiteClosable-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/android/database/sqlite/SQLiteClosable.html">android.database.sqlite.SQLiteClosable</a>
+</h5>
+<div id="inherited-methods-android.database.sqlite.SQLiteClosable">
+<div id="inherited-methods-android.database.sqlite.SQLiteClosable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#acquireReference()">acquireReference</a>,
+
+<a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#onAllReferencesReleased()">onAllReferencesReleased</a>,
+
+<a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#onAllReferencesReleasedFromContainer()">onAllReferencesReleasedFromContainer</a>,
+
+<a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#releaseReference()">releaseReference</a>,
+
+<a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#releaseReferenceFromContainer()">releaseReferenceFromContainer</a>
+
+</div>
+<div id="inherited-methods-android.database.sqlite.SQLiteClosable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#acquireReference()">acquireReference</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#onAllReferencesReleased()">onAllReferencesReleased</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#onAllReferencesReleasedFromContainer()">onAllReferencesReleasedFromContainer</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#releaseReference()">releaseReference</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteClosable.html#releaseReferenceFromContainer()">releaseReferenceFromContainer</a>()</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CREATE_IF_NECESSARY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        CREATE_IF_NECESSARY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to create the database file if it does not already exist.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                268435456
+                (0x10000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="NO_LOCALIZED_COLLATORS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        NO_LOCALIZED_COLLATORS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database without support for localized collators.
+
+ <p> This causes the collator <code>LOCALIZED</code> not to be created.
+ You must be consistent when using this flag to use the setting the database was
+ created with.  If this is set, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setLocale(java.util.Locale)">setLocale(Locale)</a> will do nothing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="OPEN_READONLY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        OPEN_READONLY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database for reading only.
+ This is the only reliable way to open a database if the disk may be full.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="OPEN_READWRITE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        OPEN_READWRITE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flag for <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)">openDatabase(String, SQLiteDatabase.CursorFactory, int)</a> to open the database for reading and writing.
+ If the disk is full, this may fail even before you actually write anything.
+
+ <p> Note that the value of this flag is 0, so it is the default.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SQLITE_MAX_LIKE_PATTERN_LENGTH"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SQLITE_MAX_LIKE_PATTERN_LENGTH
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Maximum Length Of A LIKE Or GLOB Pattern
+ The pattern matching algorithm used in the default LIKE and GLOB implementation
+ of SQLite can exhibit O(N^2) performance (where N is the number of characters in
+ the pattern) for certain pathological cases. To avoid denial-of-service attacks
+ the length of the LIKE or GLOB pattern is limited to SQLITE_MAX_LIKE_PATTERN_LENGTH bytes.
+ The default value of this limit is 50000. A modern workstation can evaluate
+ even a pathological LIKE or GLOB pattern of 50000 bytes relatively quickly.
+ The denial of service problem only comes into play when the pattern length gets
+ into millions of bytes. Nevertheless, since most useful LIKE or GLOB patterns
+ are at most a few dozen bytes in length, paranoid application developers may
+ want to reduce this parameter to something in the range of a few hundred
+ if they know that external users are able to generate arbitrary patterns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                50000
+                (0x0000c350)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="beginTransaction()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        beginTransaction()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Begins a transaction. Transactions can be nested. When the outer transaction is ended all of
+ the work done in that transaction and all of the nested transactions will be committed or
+ rolled back. The changes will be rolled back if any transaction is ended without being
+ marked as clean (by calling setTransactionSuccessful). Otherwise they will be committed.
+
+ <p>Here is the standard idiom for transactions:
+
+ <pre>
+   db.beginTransaction();
+   try {
+     ...
+     db.setTransactionSuccessful();
+   } finally {
+     db.endTransaction();
+   }
+ </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Close the database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="compileStatement(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a>
+        compileStatement(<a href="../../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Compiles an SQL statement into a reusable pre-compiled statement object.
+ The parameters are identical to <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#execSQL(java.lang.String)">execSQL(String)</a>. You may put ?s in the
+ statement and fill in those values with <a href="../../../../reference/android/database/sqlite/SQLiteProgram.html#bindString(int, java.lang.String)">bindString(int, String)</a>
+ and <a href="../../../../reference/android/database/sqlite/SQLiteProgram.html#bindLong(int, long)">bindLong(int, long)</a> each time you want to run the
+ statement. Statements may not return result sets larger than 1x1.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>The raw SQL statement, may contain ? for unknown values to be
+            bound later.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a pre-compiled statement object.
+</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="create(android.database.sqlite.SQLiteDatabase.CursorFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>
+        create(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Create a memory backed SQLite database.  Its contents will be destroyed
+ when the database is closed.
+
+ <p>Sets the locale of the database to the  the system's current locale.
+ Call <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setLocale(java.util.Locale)">setLocale(Locale)</a> if you would like something else.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>factory</td>
+        <td>an optional factory class that is called to instantiate a
+            cursor when query is called</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a SQLiteDatabase object, or null if the database can't be created
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="delete(java.lang.String, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        delete(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> whereClause, <a href="../../../../reference/java/lang/String.html">String[]</a> whereArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for deleting rows in the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table to delete from</td>
+      </tr>
+    <tr>
+        <th>whereClause</td>
+        <td>the optional WHERE clause to apply when deleting.
+            Passing null will delete all rows.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of rows affected if a whereClause is passed in, 0
+         otherwise. To remove all rows and get a count pass "1" as the
+         whereClause.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="endTransaction()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        endTransaction()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+End a transaction. See beginTransaction for notes about how to use this and when transactions
+ are committed and rolled back.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execSQL(java.lang.String, java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        execSQL(<a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/Object.html">Object[]</a> bindArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Execute a single SQL statement that is not a query. For example, CREATE
+ TABLE, DELETE, INSERT, etc. Multiple statements separated by ;s are not
+ supported. it takes a write lock,
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bindArgs</td>
+        <td>only byte[], String, Long and Double are supported in bindArgs.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td>If the SQL string is invalid for some reason
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execSQL(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        execSQL(<a href="../../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Execute a single SQL statement that is not a query. For example, CREATE
+ TABLE, DELETE, INSERT, etc. Multiple statements separated by ;s are not
+ supported. it takes a write lock
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td>If the SQL string is invalid for some reason
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="findEditTable(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        findEditTable(<a href="../../../../reference/java/lang/String.html">String</a> tables)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Finds the name of the first table, which is editable.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tables</td>
+        <td>a list of tables</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the first table listed
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMaximumSize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        getMaximumSize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the maximum size the database may grow to.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the new maximum database size
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPageSize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        getPageSize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the maximum size the database may grow to.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the new maximum database size
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPath()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getPath()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Getter for the path to the database file.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the path to our database file.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSyncedTables()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt;
+        getSyncedTables()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getVersion()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getVersion()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the database version.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the database version
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="inTransaction()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        inTransaction()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+return true if there is a transaction pending
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="insert(java.lang.String, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        insert(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for inserting a row into the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table to insert the row into</td>
+      </tr>
+    <tr>
+        <th>nullColumnHack</td>
+        <td>SQL doesn't allow inserting a completely empty row,
+            so if initialValues is empty this column will explicitly be
+            assigned a NULL value</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>this map contains the initial column values for the
+            row. The keys should be the column names and the values the
+            column values</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the row ID of the newly inserted row, or -1 if an error occurred
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="insertOrThrow(java.lang.String, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        insertOrThrow(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for inserting a row into the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table to insert the row into</td>
+      </tr>
+    <tr>
+        <th>nullColumnHack</td>
+        <td>SQL doesn't allow inserting a completely empty row,
+            so if initialValues is empty this column will explicitly be
+            assigned a NULL value</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>this map contains the initial column values for the
+            row. The keys should be the column names and the values the
+            column values</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the row ID of the newly inserted row, or -1 if an error occurred
+</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th></td>
+            <td>SQLException</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isDbLockedByCurrentThread()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isDbLockedByCurrentThread()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Checks if the database lock is held by this thread.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true, if this thread is holding the database lock.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isDbLockedByOtherThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isDbLockedByOtherThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Checks if the database is locked by another thread. This is
+ just an estimate, since this status can change at any time,
+ including after the call is made but before the result has
+ been acted upon.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true, if the database is locked by another thread
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isOpen()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isOpen()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the DB is currently open (has not been closed)
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isReadOnly()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isReadOnly()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+return whether the DB is opened as read only.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if DB is opened as read only
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="markTableSyncable(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        markTableSyncable(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> deletedTable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Mark this table as syncable. When an update occurs in this table the
+ _sync_dirty field will be set to ensure proper syncing operation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table to mark as syncable</td>
+      </tr>
+    <tr>
+        <th>deletedTable</td>
+        <td>The deleted table that corresponds to the
+          syncable table
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="markTableSyncable(java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        markTableSyncable(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> foreignKey, <a href="../../../../reference/java/lang/String.html">String</a> updateTable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Mark this table as syncable, with the _sync_dirty residing in another
+ table. When an update occurs in this table the _sync_dirty field of the
+ row in updateTable with the _id in foreignKey will be set to
+ ensure proper syncing operation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>an update on this table will trigger a sync time removal</td>
+      </tr>
+    <tr>
+        <th>foreignKey</td>
+        <td>this is the column in table whose value is an _id in
+          updateTable</td>
+      </tr>
+    <tr>
+        <th>updateTable</td>
+        <td>this is the table that will have its _sync_dirty
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="needUpgrade(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        needUpgrade(int newVersion)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>
+        openDatabase(<a href="../../../../reference/java/lang/String.html">String</a> path, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Open the database according to the flags <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READWRITE">OPEN_READWRITE</a>
+ <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#OPEN_READONLY">OPEN_READONLY</a> <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#CREATE_IF_NECESSARY">CREATE_IF_NECESSARY</a> and/or <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#NO_LOCALIZED_COLLATORS">NO_LOCALIZED_COLLATORS</a>.
+
+ <p>Sets the locale of the database to the  the system's current locale.
+ Call <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html#setLocale(java.util.Locale)">setLocale(Locale)</a> if you would like something else.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>path</td>
+        <td>to database file to open and/or create</td>
+      </tr>
+    <tr>
+        <th>factory</td>
+        <td>an optional factory class that is called to instantiate a
+            cursor when query is called, or null for default</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>to control database access mode</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the newly opened database</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/android/database/sqlite/SQLiteException.html">SQLiteException</a></td>
+            <td>if the database cannot be opened
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openOrCreateDatabase(java.lang.String, android.database.sqlite.SQLiteDatabase.CursorFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>
+        openOrCreateDatabase(<a href="../../../../reference/java/lang/String.html">String</a> path, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openOrCreateDatabase(java.io.File, android.database.sqlite.SQLiteDatabase.CursorFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>
+        openOrCreateDatabase(<a href="../../../../reference/java/io/File.html">File</a> file, <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Equivalent to openDatabase(file.getPath(), factory, CREATE_IF_NECESSARY).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        query(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Query the given table, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>The table name to compile the query against.</td>
+      </tr>
+    <tr>
+        <th>columns</td>
+        <td>A list of which columns to return. Passing null will
+            return all columns, which is discouraged to prevent reading
+            data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return, formatted as an
+            SQL WHERE clause (excluding the WHERE itself). Passing null
+            will return all rows for the given table.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which will be
+         replaced by the values from selectionArgs, in order that they
+         appear in the selection. The values will be bound as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted as an SQL
+            GROUP BY clause (excluding the GROUP BY itself). Passing null
+            will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in the cursor,
+            if row grouping is being used, formatted as an SQL HAVING
+            clause (excluding the HAVING itself). Passing null will cause
+            all row groups to be included, and is required when row
+            grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>orderBy</td>
+        <td>How to order the rows, formatted as an SQL ORDER BY clause
+            (excluding the ORDER BY itself). Passing null will use the
+            default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+            formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A <a href="../../../../reference/android/database/Cursor.html">Cursor</a> object, which is positioned before the first entry</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/database/Cursor.html">Cursor</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        query(boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Query the given URL, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>distinct</td>
+        <td>true if you want each row to be unique, false otherwise.</td>
+      </tr>
+    <tr>
+        <th>table</td>
+        <td>The table name to compile the query against.</td>
+      </tr>
+    <tr>
+        <th>columns</td>
+        <td>A list of which columns to return. Passing null will
+            return all columns, which is discouraged to prevent reading
+            data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return, formatted as an
+            SQL WHERE clause (excluding the WHERE itself). Passing null
+            will return all rows for the given table.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which will be
+         replaced by the values from selectionArgs, in order that they
+         appear in the selection. The values will be bound as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted as an SQL
+            GROUP BY clause (excluding the GROUP BY itself). Passing null
+            will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in the cursor,
+            if row grouping is being used, formatted as an SQL HAVING
+            clause (excluding the HAVING itself). Passing null will cause
+            all row groups to be included, and is required when row
+            grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>orderBy</td>
+        <td>How to order the rows, formatted as an SQL ORDER BY clause
+            (excluding the ORDER BY itself). Passing null will use the
+            default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+            formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Cursor object, which is positioned before the first entry</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/database/Cursor.html">Cursor</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        query(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Query the given table, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>The table name to compile the query against.</td>
+      </tr>
+    <tr>
+        <th>columns</td>
+        <td>A list of which columns to return. Passing null will
+            return all columns, which is discouraged to prevent reading
+            data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return, formatted as an
+            SQL WHERE clause (excluding the WHERE itself). Passing null
+            will return all rows for the given table.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which will be
+         replaced by the values from selectionArgs, in order that they
+         appear in the selection. The values will be bound as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted as an SQL
+            GROUP BY clause (excluding the GROUP BY itself). Passing null
+            will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in the cursor,
+            if row grouping is being used, formatted as an SQL HAVING
+            clause (excluding the HAVING itself). Passing null will cause
+            all row groups to be included, and is required when row
+            grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>orderBy</td>
+        <td>How to order the rows, formatted as an SQL ORDER BY clause
+            (excluding the ORDER BY itself). Passing null will use the
+            default sort order, which may be unordered.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A <a href="../../../../reference/android/database/Cursor.html">Cursor</a> object, which is positioned before the first entry</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/database/Cursor.html">Cursor</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="queryWithFactory(android.database.sqlite.SQLiteDatabase.CursorFactory, boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        queryWithFactory(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> cursorFactory, boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Query the given URL, returning a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursorFactory</td>
+        <td>the cursor factory to use, or null for the default factory</td>
+      </tr>
+    <tr>
+        <th>distinct</td>
+        <td>true if you want each row to be unique, false otherwise.</td>
+      </tr>
+    <tr>
+        <th>table</td>
+        <td>The table name to compile the query against.</td>
+      </tr>
+    <tr>
+        <th>columns</td>
+        <td>A list of which columns to return. Passing null will
+            return all columns, which is discouraged to prevent reading
+            data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return, formatted as an
+            SQL WHERE clause (excluding the WHERE itself). Passing null
+            will return all rows for the given table.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which will be
+         replaced by the values from selectionArgs, in order that they
+         appear in the selection. The values will be bound as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted as an SQL
+            GROUP BY clause (excluding the GROUP BY itself). Passing null
+            will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in the cursor,
+            if row grouping is being used, formatted as an SQL HAVING
+            clause (excluding the HAVING itself). Passing null will cause
+            all row groups to be included, and is required when row
+            grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>orderBy</td>
+        <td>How to order the rows, formatted as an SQL ORDER BY clause
+            (excluding the ORDER BY itself). Passing null will use the
+            default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+            formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Cursor object, which is positioned before the first entry</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/database/Cursor.html">Cursor</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="rawQuery(java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        rawQuery(<a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Runs the provided SQL and returns a <a href="../../../../reference/android/database/Cursor.html">Cursor</a> over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL query. The SQL string must not be ; terminated</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in where clause in the query,
+     which will be replaced by the values from selectionArgs. The
+     values will be bound as Strings.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A <a href="../../../../reference/android/database/Cursor.html">Cursor</a> object, which is positioned before the first entry
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rawQueryWithFactory(android.database.sqlite.SQLiteDatabase.CursorFactory, java.lang.String, java.lang.String[], java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        rawQueryWithFactory(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> cursorFactory, <a href="../../../../reference/java/lang/String.html">String</a> sql, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> editTable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Runs the provided SQL and returns a cursor over the result set.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursorFactory</td>
+        <td>the cursor factory to use, or null for the default factory</td>
+      </tr>
+    <tr>
+        <th>sql</td>
+        <td>the SQL query. The SQL string must not be ; terminated</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in where clause in the query,
+     which will be replaced by the values from selectionArgs. The
+     values will be bound as Strings.</td>
+      </tr>
+    <tr>
+        <th>editTable</td>
+        <td>the name of the first table, which is editable</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A <a href="../../../../reference/android/database/Cursor.html">Cursor</a> object, which is positioned before the first entry
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="releaseMemory()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        releaseMemory()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to release memory that SQLite holds but does not require to
+ operate properly. Typically this memory will come from the page cache.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of bytes actually released
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replace(java.lang.String, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        replace(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> initialValues)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for replacing a row in the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table in which to replace the row</td>
+      </tr>
+    <tr>
+        <th>nullColumnHack</td>
+        <td>SQL doesn't allow inserting a completely empty row,
+            so if initialValues is empty this row will explicitly be
+            assigned a NULL value</td>
+      </tr>
+    <tr>
+        <th>initialValues</td>
+        <td>this map contains the initial column values for
+   the row. The key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the row ID of the newly inserted row, or -1 if an error occurred
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replaceOrThrow(java.lang.String, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        replaceOrThrow(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/java/lang/String.html">String</a> nullColumnHack, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> initialValues)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for replacing a row in the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table in which to replace the row</td>
+      </tr>
+    <tr>
+        <th>nullColumnHack</td>
+        <td>SQL doesn't allow inserting a completely empty row,
+            so if initialValues is empty this row will explicitly be
+            assigned a NULL value</td>
+      </tr>
+    <tr>
+        <th>initialValues</td>
+        <td>this map contains the initial column values for
+   the row. The key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the row ID of the newly inserted row, or -1 if an error occurred
+</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th></td>
+            <td>SQLException</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLocale(java.util.Locale)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLocale(<a href="../../../../reference/java/util/Locale.html">Locale</a> locale)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the locale for this database.  Does nothing if this database has
+ the NO_LOCALIZED_COLLATORS flag set or was opened read only.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td>if the locale could not be set.  The most common reason
+ for this is that there is no collator available for the locale you requested.
+ In this case the database remains unchanged.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLockingEnabled(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLockingEnabled(boolean lockingEnabled)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Control whether or not the SQLiteDatabase is made thread-safe by using locks
+ around critical sections. This is pretty expensive, so if you know that your
+ DB will only be used by a single thread then you should set this to false.
+ The default is true.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>lockingEnabled</td>
+        <td>set to true to enable locks, false otherwise
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setMaximumSize(long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        setMaximumSize(long numBytes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the maximum size the database will grow to. The maximum size cannot
+ be set below the current size.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>numBytes</td>
+        <td>the maximum database size, in bytes</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the new maximum database size
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setPageSize(long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setPageSize(long numBytes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the database page size. The page size must be a power of two. This
+ method does not work if any data has been written to the database file,
+ and must be called right after the database has been created.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>numBytes</td>
+        <td>the database page size, in bytes
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTransactionSuccessful()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTransactionSuccessful()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Marks the current transaction as successful. Do not do any more database work between
+ calling this and calling endTransaction. Do as little non-database work as possible in that
+ situation too. If any errors are encountered between this and endTransaction the transaction
+ will still be committed.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if the current thread is not in a transaction or the
+ transaction is already marked as successful.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setVersion(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setVersion(int version)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the database version.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>version</td>
+        <td>the new database version
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="update(java.lang.String, android.content.ContentValues, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        update(<a href="../../../../reference/java/lang/String.html">String</a> table, <a href="../../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../../reference/java/lang/String.html">String</a> whereClause, <a href="../../../../reference/java/lang/String.html">String[]</a> whereArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience method for updating rows in the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>table</td>
+        <td>the table to update in</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>a map from column names to new column values. null is a
+            valid value that will be translated to NULL.</td>
+      </tr>
+    <tr>
+        <th>whereClause</td>
+        <td>the optional WHERE clause to apply when updating.
+            Passing null will update all rows.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of rows affected
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="yieldIfContended()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        yieldIfContended()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Temporarily end the transaction to let other threads run. The transaction is assumed to be
+ successful so far. Do not call setTransactionSuccessful before calling this. When this
+ returns a new transaction will have been created but not marked as successful.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the transaction was yielded
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="finalize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        finalize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver. Subclasses can use this facility to guarantee
+ that any associated resources are cleaned up before the receiver is
+ garbage collected. Uncaught exceptions which are thrown during the
+ running of the method cause it to terminate immediately, but are
+ otherwise ignored.
+ <p>
+ Note: The virtual machine assumes that the implementation in class Object
+ is empty.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onAllReferencesReleased()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        onAllReferencesReleased()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

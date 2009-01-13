@@ -1,0 +1,2712 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.os.Handler - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/os/package-summary.html">android.os</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.os.Handler</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.os.Handler</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A Handler allows you to send and process <a href="../../../reference/android/os/Message.html">Message</a> and Runnable
+ objects associated with a thread's <a href="../../../reference/android/os/MessageQueue.html">MessageQueue</a>.  Each Handler
+ instance is associated with a single thread and that thread's message
+ queue.  When you create a new Handler, it is bound to the thread /
+ message queue of the thread that is creating it -- from that point on,
+ it will deliver messages and runnables to that message queue and execute
+ them as they come out of the message queue.
+ 
+ <p>There are two main uses for a Handler: (1) to schedule messages and
+ runnables to be executed as some point in the future; and (2) to enqueue
+ an action to be performed on a different thread than your own.
+ 
+ <p>Scheduling messages is accomplished with the
+ <a href="../../../reference/android/os/Handler.html#post(java.lang.Runnable)">post(Runnable)</a>, <a href="../../../reference/android/os/Handler.html#postAtTime(java.lang.Runnable, long)">postAtTime(Runnable, long)</a>,
+ <a href="../../../reference/android/os/Handler.html#postDelayed(java.lang.Runnable, long)">postDelayed(Runnable, long)</a>, <a href="../../../reference/android/os/Handler.html#sendEmptyMessage(int)">sendEmptyMessage(int)</a>,
+ <a href="../../../reference/android/os/Handler.html#sendMessage(android.os.Message)">sendMessage(Message)</a>, <a href="../../../reference/android/os/Handler.html#sendMessageAtTime(android.os.Message, long)">sendMessageAtTime(Message, long)</a>, and
+ <a href="../../../reference/android/os/Handler.html#sendMessageDelayed(android.os.Message, long)">sendMessageDelayed(Message, long)</a> methods.  The <em>post</em> versions allow
+ you to enqueue Runnable objects to be called by the message queue when
+ they are received; the <em>sendMessage</em> versions allow you to enqueue
+ a <a href="../../../reference/android/os/Message.html">Message</a> object containing a bundle of data that will be
+ processed by the Handler's <a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage(Message)</a> method (requiring that
+ you implement a subclass of Handler).
+ 
+ <p>When posting or sending to a Handler, you can either
+ allow the item to be processed as soon as the message queue is ready
+ to do so, or specify a delay before it gets processed or absolute time for
+ it to be processed.  The latter two allow you to implement timeouts,
+ ticks, and other timing-based behavior.
+ 
+ <p>When a
+ process is created for your application, its main thread is dedicated to
+ running a message queue that takes care of managing the top-level
+ application objects (activities, intent receivers, etc) and any windows
+ they create.  You can create your own threads, and communicate back with
+ the main application thread through a Handler.  This is done by calling
+ the same <em>post</em> or <em>sendMessage</em> methods as before, but from
+ your new thread.  The given Runnable or Message will than be scheduled
+ in the Handler's message queue and processed when appropriate.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-direct')" class="jd-expando-trigger"
+        ><img id="subclasses-direct-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Direct Subclasses</h5>
+
+    <div id="subclasses-direct">
+        <div id="subclasses-direct-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/android/content/AsyncQueryHandler.html">AsyncQueryHandler</a>,
+            
+                <a href="../../../reference/android/content/AsyncQueryHandler.WorkerHandler.html">AsyncQueryHandler.WorkerHandler</a>,
+            
+                <a href="../../../reference/android/webkit/HttpAuthHandler.html">HttpAuthHandler</a>,
+            
+                <a href="../../../reference/android/webkit/SslErrorHandler.html">SslErrorHandler</a>
+            
+        </div>
+        <div id="subclasses-direct-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/content/AsyncQueryHandler.html">AsyncQueryHandler</a></td>
+            <td class="jd-descrcol" width="100%">A helper class to help make handling asynchronous <a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a>
+ queries easier.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/content/AsyncQueryHandler.WorkerHandler.html">AsyncQueryHandler.WorkerHandler</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/webkit/HttpAuthHandler.html">HttpAuthHandler</a></td>
+            <td class="jd-descrcol" width="100%">HTTP authentication handler: local handler that takes care
+ of HTTP authentication requests.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/webkit/SslErrorHandler.html">SslErrorHandler</a></td>
+            <td class="jd-descrcol" width="100%">SslErrorHandler: class responsible for handling SSL errors.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#Handler()">Handler</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default constructor associates this handler with the queue for the
+ current thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#Handler(android.os.Looper)">Handler</a>(<a href="../../../reference/android/os/Looper.html">Looper</a> looper)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Use the provided queue instead of the default one.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#dispatchMessage(android.os.Message)">dispatchMessage</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Handle system messages here.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#dump(android.util.Printer, java.lang.String)">dump</a>(<a href="../../../reference/android/util/Printer.html">Printer</a> pw, <a href="../../../reference/java/lang/String.html">String</a> prefix)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Looper.html">Looper</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#getLooper()">getLooper</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Subclasses must implement this to receive messages.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#hasMessages(int)">hasMessages</a>(int what)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check if there are any pending posts of messages with code 'what' in
+ the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#hasMessages(int, java.lang.Object)">hasMessages</a>(int what, <a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check if there are any pending posts of messages with code 'what' and
+ whose obj is 'object' in the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Message.html">Message</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#obtainMessage(int, java.lang.Object)">obtainMessage</a>(int what, <a href="../../../reference/java/lang/Object.html">Object</a> obj)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what and obj members 
+ of the returned Message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Message.html">Message</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#obtainMessage(int, int, int, java.lang.Object)">obtainMessage</a>(int what, int arg1, int arg2, <a href="../../../reference/java/lang/Object.html">Object</a> obj)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what, obj, arg1,and arg2 values on the 
+ returned Message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Message.html">Message</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#obtainMessage(int, int, int)">obtainMessage</a>(int what, int arg1, int arg2)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what, arg1 and arg2 members of the returned
+ Message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Message.html">Message</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new <a href="../../../reference/android/os/Message.html">Message</a> from the global message pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Message.html">Message</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#obtainMessage(int)">obtainMessage</a>(int what)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what member of the returned Message.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#post(java.lang.Runnable)">post</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the Runnable r to be added to the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#postAtFrontOfQueue(java.lang.Runnable)">postAtFrontOfQueue</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Posts a message to an object that implements Runnable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#postAtTime(java.lang.Runnable, java.lang.Object, long)">postAtTime</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, <a href="../../../reference/java/lang/Object.html">Object</a> token, long uptimeMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the Runnable r to be added to the message queue, to be run
+ at a specific time given by <var>uptimeMillis</var>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#postAtTime(java.lang.Runnable, long)">postAtTime</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, long uptimeMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the Runnable r to be added to the message queue, to be run
+ at a specific time given by <var>uptimeMillis</var>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#postDelayed(java.lang.Runnable, long)">postDelayed</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, long delayMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the Runnable r to be added to the message queue, to be run
+ after the specified amount of time elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#removeCallbacks(java.lang.Runnable, java.lang.Object)">removeCallbacks</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, <a href="../../../reference/java/lang/Object.html">Object</a> token)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove any pending posts of Runnable <var>r</var> with Object
+ <var>token</var> that are in the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#removeCallbacks(java.lang.Runnable)">removeCallbacks</a>(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove any pending posts of Runnable r that are in the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#removeCallbacksAndMessages(java.lang.Object)">removeCallbacksAndMessages</a>(<a href="../../../reference/java/lang/Object.html">Object</a> token)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove any pending posts of callbacks and sent messages whose
+ <var>obj</var> is <var>token</var>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#removeMessages(int)">removeMessages</a>(int what)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove any pending posts of messages with code 'what' that are in the
+ message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#removeMessages(int, java.lang.Object)">removeMessages</a>(int what, <a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove any pending posts of messages with code 'what' and whose obj is
+ 'object' that are in the message queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendEmptyMessage(int)">sendEmptyMessage</a>(int what)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends a Message containing only the what value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendEmptyMessageAtTime(int, long)">sendEmptyMessageAtTime</a>(int what, long uptimeMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends a Message containing only the what value, to be delivered 
+ at a specific time.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendEmptyMessageDelayed(int, long)">sendEmptyMessageDelayed</a>(int what, long delayMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends a Message containing only the what value, to be delivered
+ after the specified amount of time elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendMessage(android.os.Message)">sendMessage</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Pushes a message onto the end of the message queue after all pending messages
+ before the current time.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendMessageAtFrontOfQueue(android.os.Message)">sendMessageAtFrontOfQueue</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enqueue a message at the front of the message queue, to be processed on
+ the next iteration of the message loop.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendMessageAtTime(android.os.Message, long)">sendMessageAtTime</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg, long uptimeMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enqueue a message into the message queue after all pending messages
+ before the absolute time (in milliseconds) <var>uptimeMillis</var>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#sendMessageDelayed(android.os.Message, long)">sendMessageDelayed</a>(<a href="../../../reference/android/os/Message.html">Message</a> msg, long delayMillis)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enqueue a message into the message queue after all pending messages
+ before (current time + delayMillis).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Handler.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Handler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Handler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Default constructor associates this handler with the queue for the
+ current thread.
+
+ If there isn't one, this handler won't be able to receive messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Handler(android.os.Looper)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Handler(<a href="../../../reference/android/os/Looper.html">Looper</a> looper)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use the provided queue instead of the default one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="dispatchMessage(android.os.Message)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        dispatchMessage(<a href="../../../reference/android/os/Message.html">Message</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Handle system messages here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dump(android.util.Printer, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        dump(<a href="../../../reference/android/util/Printer.html">Printer</a> pw, <a href="../../../reference/java/lang/String.html">String</a> prefix)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLooper()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Looper.html">Looper</a>
+        getLooper()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="handleMessage(android.os.Message)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        handleMessage(<a href="../../../reference/android/os/Message.html">Message</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Subclasses must implement this to receive messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasMessages(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasMessages(int what)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Check if there are any pending posts of messages with code 'what' in
+ the message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasMessages(int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasMessages(int what, <a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Check if there are any pending posts of messages with code 'what' and
+ whose obj is 'object' in the message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtainMessage(int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Message.html">Message</a>
+        obtainMessage(int what, <a href="../../../reference/java/lang/Object.html">Object</a> obj)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what and obj members 
+ of the returned Message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>what</td>
+        <td>Value to assign to the returned Message.what field.</td>
+      </tr>
+    <tr>
+        <th>obj</td>
+        <td>Value to assign to the returned Message.obj field.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Message from the global message pool.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtainMessage(int, int, int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Message.html">Message</a>
+        obtainMessage(int what, int arg1, int arg2, <a href="../../../reference/java/lang/Object.html">Object</a> obj)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what, obj, arg1,and arg2 values on the 
+ returned Message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>what</td>
+        <td>Value to assign to the returned Message.what field.</td>
+      </tr>
+    <tr>
+        <th>arg1</td>
+        <td>Value to assign to the returned Message.arg1 field.</td>
+      </tr>
+    <tr>
+        <th>arg2</td>
+        <td>Value to assign to the returned Message.arg2 field.</td>
+      </tr>
+    <tr>
+        <th>obj</td>
+        <td>Value to assign to the returned Message.obj field.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Message from the global message pool.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtainMessage(int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Message.html">Message</a>
+        obtainMessage(int what, int arg1, int arg2)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what, arg1 and arg2 members of the returned
+ Message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>what</td>
+        <td>Value to assign to the returned Message.what field.</td>
+      </tr>
+    <tr>
+        <th>arg1</td>
+        <td>Value to assign to the returned Message.arg1 field.</td>
+      </tr>
+    <tr>
+        <th>arg2</td>
+        <td>Value to assign to the returned Message.arg2 field.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Message from the global message pool.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtainMessage()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Message.html">Message</a>
+        obtainMessage()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new <a href="../../../reference/android/os/Message.html">Message</a> from the global message pool. More efficient than
+ creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).
+  If you don't want that facility, just call Message.obtain() instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtainMessage(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Message.html">Message</a>
+        obtainMessage(int what)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Same as <a href="../../../reference/android/os/Handler.html#obtainMessage()">obtainMessage()</a>, except that it also sets the what member of the returned Message.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>what</td>
+        <td>Value to assign to the returned Message.what field.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A Message from the global message pool.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="post(java.lang.Runnable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        post(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Causes the Runnable r to be added to the message queue.
+ The runnable will be run on the thread to which this handler is 
+ attached. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The Runnable that will be executed.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the Runnable was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="postAtFrontOfQueue(java.lang.Runnable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        postAtFrontOfQueue(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Posts a message to an object that implements Runnable.
+ Causes the Runnable r to executed on the next iteration through the
+ message queue. The runnable will be run on the thread to which this
+ handler is attached.
+ <b>This method is only for use in very special circumstances -- it
+ can easily starve the message queue, cause ordering problems, or have
+ other unexpected side-effects.</b>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The Runnable that will be executed.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="postAtTime(java.lang.Runnable, java.lang.Object, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        postAtTime(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, <a href="../../../reference/java/lang/Object.html">Object</a> token, long uptimeMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Causes the Runnable r to be added to the message queue, to be run
+ at a specific time given by <var>uptimeMillis</var>.
+ <b>The time-base is <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a>.</b>
+ The runnable will be run on the thread to which this handler is attached.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The Runnable that will be executed.</td>
+      </tr>
+    <tr>
+        <th>uptimeMillis</td>
+        <td>The absolute time at which the callback should run,
+         using the <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a> time-base.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the Runnable was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.  Note that a
+         result of true does not mean the Runnable will be processed -- if
+         the looper is quit before the delivery time of the message
+         occurs then the message will be dropped.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="postAtTime(java.lang.Runnable, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        postAtTime(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, long uptimeMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Causes the Runnable r to be added to the message queue, to be run
+ at a specific time given by <var>uptimeMillis</var>.
+ <b>The time-base is <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a>.</b>
+ The runnable will be run on the thread to which this handler is attached.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The Runnable that will be executed.</td>
+      </tr>
+    <tr>
+        <th>uptimeMillis</td>
+        <td>The absolute time at which the callback should run,
+         using the <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a> time-base.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the Runnable was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.  Note that a
+         result of true does not mean the Runnable will be processed -- if
+         the looper is quit before the delivery time of the message
+         occurs then the message will be dropped.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="postDelayed(java.lang.Runnable, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        postDelayed(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, long delayMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Causes the Runnable r to be added to the message queue, to be run
+ after the specified amount of time elapses.
+ The runnable will be run on the thread to which this handler
+ is attached.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The Runnable that will be executed.</td>
+      </tr>
+    <tr>
+        <th>delayMillis</td>
+        <td>The delay (in milliseconds) until the Runnable
+        will be executed.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the Runnable was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.  Note that a
+         result of true does not mean the Runnable will be processed --
+         if the looper is quit before the delivery time of the message
+         occurs then the message will be dropped.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeCallbacks(java.lang.Runnable, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        removeCallbacks(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r, <a href="../../../reference/java/lang/Object.html">Object</a> token)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove any pending posts of Runnable <var>r</var> with Object
+ <var>token</var> that are in the message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeCallbacks(java.lang.Runnable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        removeCallbacks(<a href="../../../reference/java/lang/Runnable.html">Runnable</a> r)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove any pending posts of Runnable r that are in the message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeCallbacksAndMessages(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        removeCallbacksAndMessages(<a href="../../../reference/java/lang/Object.html">Object</a> token)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove any pending posts of callbacks and sent messages whose
+ <var>obj</var> is <var>token</var>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeMessages(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        removeMessages(int what)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove any pending posts of messages with code 'what' that are in the
+ message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeMessages(int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        removeMessages(int what, <a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove any pending posts of messages with code 'what' and whose obj is
+ 'object' that are in the message queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendEmptyMessage(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendEmptyMessage(int what)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sends a Message containing only the what value.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendEmptyMessageAtTime(int, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendEmptyMessageAtTime(int what, long uptimeMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sends a Message containing only the what value, to be delivered 
+ at a specific time.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Handler.html#sendMessageAtTime(android.os.Message, long)">sendMessageAtTime(android.os.Message, long)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendEmptyMessageDelayed(int, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendEmptyMessageDelayed(int what, long delayMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sends a Message containing only the what value, to be delivered
+ after the specified amount of time elapses.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Handler.html#sendMessageDelayed(android.os.Message, long)">sendMessageDelayed(android.os.Message, long)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendMessage(android.os.Message)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendMessage(<a href="../../../reference/android/os/Message.html">Message</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Pushes a message onto the end of the message queue after all pending messages
+ before the current time. It will be received in <a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage(Message)</a>,
+ in the thread attached to this handler.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendMessageAtFrontOfQueue(android.os.Message)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendMessageAtFrontOfQueue(<a href="../../../reference/android/os/Message.html">Message</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enqueue a message at the front of the message queue, to be processed on
+ the next iteration of the message loop.  You will receive it in
+ <a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage(Message)</a>, in the thread attached to this handler.
+ <b>This method is only for use in very special circumstances -- it
+ can easily starve the message queue, cause ordering problems, or have
+ other unexpected side-effects.</b>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendMessageAtTime(android.os.Message, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        sendMessageAtTime(<a href="../../../reference/android/os/Message.html">Message</a> msg, long uptimeMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enqueue a message into the message queue after all pending messages
+ before the absolute time (in milliseconds) <var>uptimeMillis</var>.
+ <b>The time-base is <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a>.</b>
+ You will receive it in <a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage(Message)</a>, in the thread attached
+ to this handler.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uptimeMillis</td>
+        <td>The absolute time at which the message should be
+         delivered, using the
+         <a href="../../../reference/android/os/SystemClock.html#uptimeMillis()">uptimeMillis()</a> time-base.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.  Note that a
+         result of true does not mean the message will be processed -- if
+         the looper is quit before the delivery time of the message
+         occurs then the message will be dropped.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sendMessageDelayed(android.os.Message, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        sendMessageDelayed(<a href="../../../reference/android/os/Message.html">Message</a> msg, long delayMillis)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enqueue a message into the message queue after all pending messages
+ before (current time + delayMillis). You will receive it in
+ <a href="../../../reference/android/os/Handler.html#handleMessage(android.os.Message)">handleMessage(Message)</a>, in the thread attached to this handler.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns true if the message was successfully placed in to the 
+         message queue.  Returns false on failure, usually because the
+         looper processing the message queue is exiting.  Note that a
+         result of true does not mean the message will be processed -- if
+         the looper is quit before the delivery time of the message
+         occurs then the message will be dropped.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing a concise, human-readable description of the
+ receiver.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>String a printable representation for the receiver.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

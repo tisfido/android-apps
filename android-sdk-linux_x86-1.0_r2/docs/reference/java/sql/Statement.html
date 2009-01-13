@@ -1,0 +1,3719 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.sql.Statement - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/sql/package-summary.html">java.sql</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.sql.Statement</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.sql.Statement</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Interface used for executing static SQL statements and returning their
+ results.
+ 
+ By default, an object implementing the Statement interface can returns
+ results as ResultSets. For any given Statement object, only one ResultSet can
+ be open at one time. A call to any of the execution methods of Statement will
+ cause any previously created ResultSet object for that Statement to be closed
+ implicitly.
+ <p>
+ To have multiple ResultSet objects open concurrently, multiple Statement
+ objects must be used.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>,
+            
+                <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a></td>
+            <td class="jd-descrcol" width="100%">An interface used to call Stored Procedures.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a></td>
+            <td class="jd-descrcol" width="100%">An interface for a Precompiled SQL Statement.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#CLOSE_ALL_RESULTS">CLOSE_ALL_RESULTS</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that all ResultSet
+ objects previously kept open should be closed.&nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#CLOSE_CURRENT_RESULT">CLOSE_CURRENT_RESULT</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that the current
+ ResultSet object should be closed
+&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#EXECUTE_FAILED">EXECUTE_FAILED</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that an error was encountered during execution of a batch
+ statement.&nbsp;</td>
+        
+            <td class="jd-valcol">-3&nbsp;</td>
+            <td class="jd-valcol">0xfffffffd&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#KEEP_CURRENT_RESULT">KEEP_CURRENT_RESULT</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that the current
+ ResultSet object should not be closed.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#NO_GENERATED_KEYS">NO_GENERATED_KEYS</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that generated keys should not be accessible for retrieval.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#RETURN_GENERATED_KEYS">RETURN_GENERATED_KEYS</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that generated keys should be accessible for retrieval.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#SUCCESS_NO_INFO">SUCCESS_NO_INFO</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that a batch statement was executed with a successful result,
+ but a count of the number of rows it affected is unavailable.&nbsp;</td>
+        
+            <td class="jd-valcol">-2&nbsp;</td>
+            <td class="jd-valcol">0xfffffffe&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#addBatch(java.lang.String)">addBatch</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Adds a specified SQL commands to the list of commands for this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#cancel()">cancel</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Cancels this Statement execution if both the database and the JDBC driver
+ support aborting an SQL statement in flight.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#clearBatch()">clearBatch</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clears the current list of SQL commands for this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#clearWarnings()">clearWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clears all SQLWarnings from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases this Statement's database and JDBC driver resources.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, java.lang.String[])">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String)">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int)">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int[])">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeBatch()">executeBatch</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Submits a batch of SQL commands to the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeQuery(java.lang.String)">executeQuery</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int[])">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String)">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, java.lang.String[])">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int)">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Connection.html">Connection</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getConnection()">getConnection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the Connection that produced this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getFetchDirection()">getFetchDirection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the default direction for fetching rows for ResultSets generated
+ from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getFetchSize()">getFetchSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the default number of rows for a fetch for the ResultSet objects
+ returned from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getGeneratedKeys()">getGeneratedKeys</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns auto generated keys created by executing this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMaxFieldSize()">getMaxFieldSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the maximum number of bytes which can be returned for values from
+ Character and Binary values in a ResultSet derived from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMaxRows()">getMaxRows</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the maximum number of rows that a ResultSet can contain when
+ produced from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMoreResults(int)">getMoreResults</a>(int current)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves to this Statement's next result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMoreResults()">getMoreResults</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves to this Statement's next result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getQueryTimeout()">getQueryTimeout</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the timeout value for Statement execution.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSet()">getResultSet</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the current result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetConcurrency()">getResultSetConcurrency</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the concurrency setting for ResultSet objects generated by this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetHoldability()">getResultSetHoldability</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the cursor hold setting for ResultSet objects generated by this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetType()">getResultSetType</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the ResultSet type setting for ResultSets derived from this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getUpdateCount()">getUpdateCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets an update count for the current result if it is not a ResultSet.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/SQLWarning.html">SQLWarning</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getWarnings()">getWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieves the first SQLWarning reported by calls on this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setCursorName(java.lang.String)">setCursorName</a>(<a href="../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the SQL cursor name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setEscapeProcessing(boolean)">setEscapeProcessing</a>(boolean enable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets Escape Processing mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setFetchDirection(int)">setFetchDirection</a>(int direction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the fetch direction - a hint to the JDBC driver about the direction
+ of processing of rows in ResultSets created by this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setFetchSize(int)">setFetchSize</a>(int rows)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the fetch size.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setMaxFieldSize(int)">setMaxFieldSize</a>(int max)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the maximum number of bytes for ResultSet columns that contain
+ character or binary values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setMaxRows(int)">setMaxRows</a>(int max)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the maximum number of rows that any ResultSet can contain.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setQueryTimeout(int)">setQueryTimeout</a>(int seconds)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the timeout, in seconds, for queries - how long the driver will
+ allow for completion of a Statement execution.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CLOSE_ALL_RESULTS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        CLOSE_ALL_RESULTS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Passing this constant to getMoreResults implies that all ResultSet
+ objects previously kept open should be closed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="CLOSE_CURRENT_RESULT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        CLOSE_CURRENT_RESULT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Passing this constant to getMoreResults implies that the current
+ ResultSet object should be closed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="EXECUTE_FAILED"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        EXECUTE_FAILED
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that an error was encountered during execution of a batch
+ statement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -3
+                (0xfffffffd)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="KEEP_CURRENT_RESULT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        KEEP_CURRENT_RESULT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Passing this constant to getMoreResults implies that the current
+ ResultSet object should not be closed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="NO_GENERATED_KEYS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        NO_GENERATED_KEYS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that generated keys should not be accessible for retrieval.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="RETURN_GENERATED_KEYS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        RETURN_GENERATED_KEYS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that generated keys should be accessible for retrieval.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SUCCESS_NO_INFO"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SUCCESS_NO_INFO
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that a batch statement was executed with a successful result,
+ but a count of the number of rows it affected is unavailable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -2
+                (0xfffffffe)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addBatch(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addBatch(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Adds a specified SQL commands to the list of commands for this Statement.
+ <p>
+ The list of commands is executed by invoking the
+ <code>executeBatch</code> method.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL command as a String. Typically an INSERT or UPDATE
+            statement.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or the database
+             does not support batch updates
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cancel()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        cancel()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Cancels this Statement execution if both the database and the JDBC driver
+ support aborting an SQL statement in flight. This method can be used by
+ one thread to stop a Statement that is being executed on another thread.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearBatch()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearBatch()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Clears the current list of SQL commands for this Statement.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or the database
+             does not support batch updates
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearWarnings()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearWarnings()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Clears all SQLWarnings from this Statement.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Releases this Statement's database and JDBC driver resources.
+ <p>
+ Using this method to release these resources as soon as possible is
+ strongly recommended. It is not a good idea to rely on these resources
+ being released when the Statement object is finalized during garbage
+ collection. Doing so can result in unpredictable performance
+ characteristics for the application.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execute(java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        execute(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. This may return multiple ResultSets.
+ This method allows retrieval of auto generated keys specified by the
+ supplied array of column indexes, if the SQL statement is an INSERT
+ statement.
+ <p>
+ Use the <code>getResultSet</code> or <code>getUpdateCount</code>
+ methods to get the first result and <code>getMoreResults</code> to get
+ any subsequent results.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement to execute</td>
+      </tr>
+    <tr>
+        <th>columnNames</td>
+        <td>an array of column names in the inserted row which should be
+            made available for retrieval via the
+            <code>getGeneratedKeys</code> method.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the first result is a ResultSet, false if the first
+         result is an update count or if there is no result</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execute(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        execute(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes a supplied SQL statement. This may return multiple ResultSets.
+ <p>
+ Use the <code>getResultSet</code> or <code>getUpdateCount</code>
+ methods to get the first result and <code>getMoreResults</code> to get
+ any subsequent results.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement to execute</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the first result is a ResultSet, false if the first
+         result is an update count or if there is no result</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execute(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        execute(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes a supplied SQL statement. This may return multiple ResultSets.
+ This method allows control of whether auto-generated Keys should be made
+ available for retrieval, if the SQL statement is an INSERT statement.
+ <p>
+ Use the <code>getResultSet</code> or <code>getUpdateCount</code>
+ methods to get the first result and <code>getMoreResults</code> to get
+ any subsequent results.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement to execute</td>
+      </tr>
+    <tr>
+        <th>autoGeneratedKeys</td>
+        <td>a flag indicating whether to make auto generated keys
+            available for retrieval. This parameter must be one of
+            Statement.NO_GENERATED_KEYS or Statement.RETURN_GENERATED_KEYS</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if results exists and the first result is a ResultSet, false
+         if the first result is an update count or if there is no result</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execute(java.lang.String, int[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        execute(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. This may return multiple ResultSets.
+ This method allows retrieval of auto generated keys specified by the
+ supplied array of column indexes, if the SQL statement is an INSERT
+ statement.
+ <p>
+ Use the <code>getResultSet</code> or <code>getUpdateCount</code>
+ methods to get the first result and <code>getMoreResults</code> to get
+ any subsequent results.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement to execute</td>
+      </tr>
+    <tr>
+        <th>columnIndexes</td>
+        <td>an array of indexes of the columns in the inserted row which
+            should be made available for retrieval via the
+            <code>getGeneratedKeys</code> method.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the first result is a ResultSet, false if the first
+         result is an update count or if there is no result</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeBatch()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int[]
+        executeBatch()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Submits a batch of SQL commands to the database. Returns an array of
+ update counts, if all the commands execute successfully.
+ <p>
+ If one of the commands in the batch fails, this method can throw a
+ BatchUpdateException and the JDBC driver may or may not process the
+ remaining commands. The JDBC driver must behave consistently with the
+ underlying database, either always continuing or never continuing. If the
+ driver continues processing, the array of results returned contains the
+ same number of elements as there are commands in the batch, with a
+ minimum of one of the elements having the EXECUTE_FAILED value.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an array of update counts, with one entry for each command in the
+         batch. The elements are ordered according to the order in which
+         the commands were added to the batch.
+         <p>
+         <ol>
+         <li> If the value of an element is >=0, the corresponding command
+         completed successfully and the value is the update count for that
+         command, which is the number of rows in the database affected by
+         the command.</li>
+         <li> If the value is SUCCESS_NO_INFO, the command completed
+         successfully but the number of rows affected is unknown.
+         <li>
+         <li> If the value is EXECUTE_FAILED, the command failed.
+         </ol></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeQuery(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>
+        executeQuery(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes a supplied SQL statement. Returns a single ResultSet.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>an SQL statement to execute. Typically a SELECT statement</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a ResultSet containing the data produced by the SQL statement.
+         Never null.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if the statement
+             produces anything other than a single ResultSet
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeUpdate(java.lang.String, int[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        executeUpdate(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. This method allows retrieval of auto
+ generated keys specified by the supplied array of column indexes.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>an SQL statement to execute - an SQL INSERT, UPDATE, DELETE or
+            a statement which returns nothing</td>
+      </tr>
+    <tr>
+        <th>columnIndexes</td>
+        <td>an array of indexes of the columns in the inserted row which
+            should be made available for retrieval via the
+            <code>getGeneratedKeys</code> method.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the count of updated rows, or 0 for a statement that returns
+         nothing.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if the statement
+             produces a ResultSet
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeUpdate(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        executeUpdate(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. The statement may be an INSERT,
+ UPDATE or DELETE statement or a statement which returns nothing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>an SQL statement to execute - an SQL INSERT, UPDATE, DELETE or
+            a statement which returns nothing</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the count of updated rows, or 0 for a statement that returns
+         nothing.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if the statement
+             produces a ResultSet
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeUpdate(java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        executeUpdate(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. This method allows retrieval of auto
+ generated keys specified by the supplied array of column names.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>an SQL statement to execute - an SQL INSERT, UPDATE, DELETE or
+            a statement which returns nothing</td>
+      </tr>
+    <tr>
+        <th>columnNames</td>
+        <td>an array of column names in the inserted row which should be
+            made available for retrieval via the
+            <code>getGeneratedKeys</code> method.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the count of updated rows, or 0 for a statement that returns
+         nothing.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if the statement
+             produces a ResultSet
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeUpdate(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        executeUpdate(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the supplied SQL statement. This method allows control of
+ whether auto-generated Keys should be made available for retrieval.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>an SQL statement to execute - an SQL INSERT, UPDATE, DELETE or
+            a statement which does not return anything.</td>
+      </tr>
+    <tr>
+        <th>autoGeneratedKeys</td>
+        <td>a flag that indicates whether to allow retrieval of auto
+            generated keys. Parameter must be one of
+            Statement.RETURN_GENERATED_KEYS or Statement.NO_GENERATED_KEYS</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of updated rows, or 0 if the statement returns
+         nothing.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if the statement
+             produces a ResultSet
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getConnection()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Connection.html">Connection</a>
+        getConnection()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the Connection that produced this Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the Connection</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFetchDirection()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getFetchDirection()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the default direction for fetching rows for ResultSets generated
+ from this Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an integer describing the default fetch direction, one of:
+         ResultSet.FETCH_FORWARD, ResultSet.FETCH_REVERSE,
+         ResultSet.FETCH_UNKNOWN</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFetchSize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getFetchSize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the default number of rows for a fetch for the ResultSet objects
+ returned from this Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the default fetch size for ResultSets produced by this Statement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getGeneratedKeys()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>
+        getGeneratedKeys()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns auto generated keys created by executing this Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a ResultSet containing the auto generated keys - empty if no keys
+         were generated by the Statement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMaxFieldSize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getMaxFieldSize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the maximum number of bytes which can be returned for values from
+ Character and Binary values in a ResultSet derived from this Statement.
+ This limit applies to BINARY, VARBINARY, LONGVARBINARY, CHAR, VARCHAR,
+ and LONGVARCHAR types. Any data exceeding the maximum size is abandoned
+ without announcement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the current size limit, where 0 means that there is no limit</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMaxRows()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getMaxRows()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the maximum number of rows that a ResultSet can contain when
+ produced from this Statement. If the limit is exceeded, the excess rows
+ are discarded silently.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the current row limit, where 0 means that there is no limit.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMoreResults(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getMoreResults(int current)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Moves to this Statement's next result. Returns true if the next result is
+ a ResultSet. Any current ResultSet objects previously obtained with
+ <code>getResultSet()</code> are handled as indicated by a supplied Flag
+ parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>current</td>
+        <td>a flag indicating what to do with existing ResultSets. This
+            parameter must be one of Statement.CLOSE_ALL_RESULTS,
+            Statement.CLOSE_CURRENT_RESULT or
+            Statement.KEEP_CURRENT_RESULT.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the next result exists and is a ResultSet, false if the
+         next result is not a ResultSet or if there are no more results.
+         Note that if there is no more data, this method will return false
+         and <code>getUpdateCount</code> will return -1.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMoreResults()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getMoreResults()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Moves to this Statement's next result. Returns true if it is a ResultSet.
+ Any current ResultSet objects previously obtained with
+ <code>getResultSet()</code> are closed implicitly.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the next result is a ResultSet, false if the next result
+         is not a ResultSet or if there are no more results. Note that if
+         there is no more data, this method will return false and
+         <code>getUpdateCount</code> will return -1.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getQueryTimeout()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getQueryTimeout()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the timeout value for Statement execution. The JDBC driver will wait
+ up to this value for the execution to complete - after the limit is
+ exceeded an SQL Exception is thrown.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the current Query Timeout value, where 0 indicates that there is
+         no current timeout.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultSet()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>
+        getResultSet()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the current result. Should only be called once per result.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the ResultSet for the current result. null if the result is an
+         update count or if there are no more results.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultSetConcurrency()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getResultSetConcurrency()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the concurrency setting for ResultSet objects generated by this
+ Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>ResultSet.CONCUR_READ_ONLY or ResultSet.CONCUR_UPDATABLE</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultSetHoldability()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getResultSetHoldability()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the cursor hold setting for ResultSet objects generated by this
+ Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>ResultSet.HOLD_CURSORS_OVER_COMMIT or
+         ResultSet.CLOSE_CURSORS_AT_COMMIT</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is an error while accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultSetType()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getResultSetType()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the ResultSet type setting for ResultSets derived from this
+ Statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>ResultSet.TYPE_FORWARD_ONLY for a ResultSet where the cursor can
+         only move forward, ResultSet.TYPE_SCROLL_INSENSITIVE for a
+         ResultSet which is Scrollable but is not sensitive to changes
+         made by others, ResultSet.TYPE_SCROLL_SENSITIVE for a ResultSet
+         which is Scrollable but is sensitive to changes made by others</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is an error accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getUpdateCount()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getUpdateCount()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets an update count for the current result if it is not a ResultSet.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the current result as an update count. -1 if the current result
+         is a ResultSet or if there are no more results</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWarnings()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/SQLWarning.html">SQLWarning</a>
+        getWarnings()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieves the first SQLWarning reported by calls on this Statement.
+ <p>
+ If there are multiple warnings, subsequent warnings are chained to the
+ first one.
+ <p>
+ The chain or warnings is cleared each time the Statement is executed.
+ <p>
+ Warnings associated with reads from the ResultSet returned from executing
+ a Statement will be attached to the ResultSet, not the Statement object.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>an SQLWarning, null if there are no warnings</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCursorName(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCursorName(<a href="../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the SQL cursor name. This name is used by subsequent Statement
+ execute methods.
+ <p>
+ Cursor names must be unique within one Connection.
+ <p>
+ With the Cursor name set, it can then be utilized in SQL positioned
+ update or delete statements to determine the current row in a ResultSet
+ generated from this Statement. The positioned update or delete must be
+ done with a different Statement than this one.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the Cursor name as a String,</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setEscapeProcessing(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setEscapeProcessing(boolean enable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets Escape Processing mode.
+ <p>
+ If Escape Processing is on, the JDBC driver will do escape substitution
+ on an SQL statement before sending it for execution. This does not apply
+ to PreparedStatements since they are processed when created, before this
+ method can be called.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>enable</td>
+        <td>true to set escape processing mode on, false to turn it off.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFetchDirection(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFetchDirection(int direction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the fetch direction - a hint to the JDBC driver about the direction
+ of processing of rows in ResultSets created by this Statement. The
+ default fetch direction is FETCH_FORWARD.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>direction</td>
+        <td>which fetch direction to use. This parameter should be one of
+            ResultSet.FETCH_UNKNOWN, ResultSet.FETCH_FORWARD or
+            ResultSet.FETCH_REVERSE</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is an error while accessing the database or if the
+             fetch direction is unrecognized
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFetchSize(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFetchSize(int rows)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the fetch size. This is a hint to the JDBC driver about how many
+ rows should be fetched from the database when more are required by
+ application processing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rows</td>
+        <td>the number of rows that should be fetched. 0 tells the driver
+            to ignore the hint. Should be less than
+            <code>getMaxRows</code> for this statement. Should not be
+            negative.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database, or if the rows
+             parameter is out of range.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setMaxFieldSize(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setMaxFieldSize(int max)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the maximum number of bytes for ResultSet columns that contain
+ character or binary values. This applies to BINARY, VARBINARY,
+ LONGVARBINARY, CHAR, VARCHAR, and LONGVARCHAR fields. Any data exceeding
+ the maximum size is abandoned without announcement.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>max</td>
+        <td>the maximum field size in bytes. O means "no limit".</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or the max value is
+             <0.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setMaxRows(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setMaxRows(int max)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the maximum number of rows that any ResultSet can contain. If the
+ number of rows exceeds this value, the additional rows are silently
+ discarded.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>max</td>
+        <td>the maximum number of rows. 0 means "no limit".</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if max <0.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setQueryTimeout(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setQueryTimeout(int seconds)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the timeout, in seconds, for queries - how long the driver will
+ allow for completion of a Statement execution. If the timeout is
+ exceeded, the query will throw an SQLException.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>seconds</td>
+        <td>timeout in seconds. 0 means no timeout ("wait forever")</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if an error occurs accessing the database or if seconds <0.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

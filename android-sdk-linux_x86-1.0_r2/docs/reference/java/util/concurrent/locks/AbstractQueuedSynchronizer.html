@@ -1,0 +1,3246 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.locks.AbstractQueuedSynchronizer - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/style.css" />
+<script src="../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../')"
+            onchange="search_changed(event, false, '../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../reference/java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>java.util.concurrent.locks.AbstractQueuedSynchronizer</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.locks.AbstractQueuedSynchronizer</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../reference/java/io/Serializable.html">Serializable</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Provides a framework for implementing blocking locks and related
+ synchronizers (semaphores, events, etc) that rely on
+ first-in-first-out (FIFO) wait queues.  This class is designed to
+ be a useful basis for most kinds of synchronizers that rely on a
+ single atomic <tt>int</tt> value to represent state. Subclasses
+ must define the protected methods that change this state, and which
+ define what that state means in terms of this object being acquired
+ or released.  Given these, the other methods in this class carry
+ out all queuing and blocking mechanics. Subclasses can maintain
+ other state fields, but only the atomically updated <tt>int</tt>
+ value manipulated using methods <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a>, <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#setState(int)">setState(int)</a> and <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#compareAndSetState(int, int)">compareAndSetState(int, int)</a> is tracked with respect
+ to synchronization.
+
+ <p>Subclasses should be defined as non-public internal helper
+ classes that are used to implement the synchronization properties
+ of their enclosing class.  Class
+ <tt>AbstractQueuedSynchronizer</tt> does not implement any
+ synchronization interface.  Instead it defines methods such as
+ <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquireInterruptibly(int)">acquireInterruptibly(int)</a> that can be invoked as
+ appropriate by concrete locks and related synchronizers to
+ implement their public methods. 
+
+ <p>This class supports either or both a default <em>exclusive</em>
+ mode and a <em>shared</em> mode. When acquired in exclusive mode,
+ attempted acquires by other threads cannot succeed. Shared mode
+ acquires by multiple threads may (but need not) succeed. This class
+ does not &quot;understand&quot; these differences except in the
+ mechanical sense that when a shared mode acquire succeeds, the next
+ waiting thread (if one exists) must also determine whether it can
+ acquire as well. Threads waiting in the different modes share the
+ same FIFO queue. Usually, implementation subclasses support only
+ one of these modes, but both can come into play for example in a
+ <a href="../../../../../reference/java/util/concurrent/locks/ReadWriteLock.html">ReadWriteLock</a>. Subclasses that support only exclusive or
+ only shared modes need not define the methods supporting the unused mode.
+
+ <p>This class defines a nested <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> class that
+ can be used as a <a href="../../../../../reference/java/util/concurrent/locks/Condition.html">Condition</a> implementation by subclasses
+ supporting exclusive mode for which method <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a> reports whether synchronization is exclusively
+ held with respect to the current thread, method <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a>
+ invoked with the current <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a> value fully releases
+ this object, and <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire(int)</a>, given this saved state value,
+ eventually restores this object to its previous acquired state.  No
+ <tt>AbstractQueuedSynchronizer</tt> method otherwise creates such a
+ condition, so if this constraint cannot be met, do not use it.  The
+ behavior of <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> depends of course on the
+ semantics of its synchronizer implementation.
+ 
+ <p> This class provides inspection, instrumentation, and monitoring
+ methods for the internal queue, as well as similar methods for
+ condition objects. These can be exported as desired into classes
+ using an <tt>AbstractQueuedSynchronizer</tt> for their
+ synchronization mechanics.
+
+ <p> Serialization of this class stores only the underlying atomic
+ integer maintaining state, so deserialized objects have empty
+ thread queues. Typical subclasses requiring serializability will
+ define a <tt>readObject</tt> method that restores this to a known
+ initial state upon deserialization.
+
+ <h3>Usage</h3>
+
+ <p> To use this class as the basis of a synchronizer, redefine the
+ following methods, as applicable, by inspecting and/or modifying
+ the synchronization state using <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a>, <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#setState(int)">setState(int)</a> and/or <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#compareAndSetState(int, int)">compareAndSetState(int, int)</a>: 
+
+ <ul>
+ <li> <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a>
+ <li> <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryRelease(int)">tryRelease(int)</a>
+ <li> <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a>
+ <li> <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryReleaseShared(int)">tryReleaseShared(int)</a>
+ <li> <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively()</a>
+</ul>
+
+ Each of these methods by default throws <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>.  Implementations of these methods
+ must be internally thread-safe, and should in general be short and
+ not block. Defining these methods is the <em>only</em> supported
+ means of using this class. All other methods are declared
+ <tt>final</tt> because they cannot be independently varied.
+
+ <p> Even though this class is based on an internal FIFO queue, it
+ does not automatically enforce FIFO acquisition policies.  The core
+ of exclusive synchronization takes the form:
+
+ <pre>
+ Acquire:
+     while (!tryAcquire(arg)) {
+        <em>enqueue thread if it is not already queued</em>;
+        <em>possibly block current thread</em>;
+     }
+
+ Release:
+     if (tryRelease(arg))
+        <em>unblock the first queued thread</em>;
+ </pre>
+
+ (Shared mode is similar but may involve cascading signals.)
+
+ <p> Because checks in acquire are invoked before enqueuing, a newly
+ acquiring thread may <em>barge</em> ahead of others that are
+ blocked and queued. However, you can, if desired, define
+ <tt>tryAcquire</tt> and/or <tt>tryAcquireShared</tt> to disable
+ barging by internally invoking one or more of the inspection
+ methods. In particular, a strict FIFO lock can define
+ <tt>tryAcquire</tt> to immediately return <tt>false</tt> if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getFirstQueuedThread()">getFirstQueuedThread()</a> does not return the current thread.  A
+ normally preferable non-strict fair version can immediately return
+ <tt>false</tt> only if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasQueuedThreads()">hasQueuedThreads()</a> returns
+ <tt>true</tt> and <tt>getFirstQueuedThread</tt> is not the current
+ thread; or equivalently, that <tt>getFirstQueuedThread</tt> is both
+ non-null and not the current thread.  Further variations are
+ possible.
+
+ <p> Throughput and scalability are generally highest for the
+ default barging (also known as <em>greedy</em>,
+ <em>renouncement</em>, and <em>convoy-avoidance</em>) strategy.
+ While this is not guaranteed to be fair or starvation-free, earlier
+ queued threads are allowed to recontend before later queued
+ threads, and each recontention has an unbiased chance to succeed
+ against incoming threads.  Also, while acquires do not
+ &quot;spin&quot; in the usual sense, they may perform multiple
+ invocations of <tt>tryAcquire</tt> interspersed with other
+ computations before blocking.  This gives most of the benefits of
+ spins when exclusive synchronization is only briefly held, without
+ most of the liabilities when it isn't. If so desired, you can
+ augment this by preceding calls to acquire methods with
+ "fast-path" checks, possibly prechecking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasContended()">hasContended()</a>
+ and/or <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasQueuedThreads()">hasQueuedThreads()</a> to only do so if the synchronizer
+ is likely not to be contended.
+
+ <p> This class provides an efficient and scalable basis for
+ synchronization in part by specializing its range of use to
+ synchronizers that can rely on <tt>int</tt> state, acquire, and
+ release parameters, and an internal FIFO wait queue. When this does
+ not suffice, you can build synchronizers from a lower level using
+ <a href="../../../../../reference/java/util/concurrent/atomic/package-summary.html">atomic</a> classes, your own custom
+ <a href="../../../../../reference/java/util/Queue.html">Queue</a> classes, and <a href="../../../../../reference/java/util/concurrent/locks/LockSupport.html">LockSupport</a> blocking
+ support.
+ 
+ <h3>Usage Examples</h3>
+
+ <p>Here is a non-reentrant mutual exclusion lock class that uses
+ the value zero to represent the unlocked state, and one to
+ represent the locked state. It also supports conditions and exposes
+ one of the instrumentation methods:
+
+ <pre>
+ class Mutex implements Lock, java.io.Serializable {
+
+    // Our internal helper class
+    private static class Sync extends AbstractQueuedSynchronizer {
+      // Report whether in locked state
+      protected boolean isHeldExclusively() { 
+        return getState() == 1; 
+      }
+
+      // Acquire the lock if state is zero
+      public boolean tryAcquire(int acquires) {
+        assert acquires == 1; // Otherwise unused
+        return compareAndSetState(0, 1);
+      }
+
+      // Release the lock by setting state to zero
+      protected boolean tryRelease(int releases) {
+        assert releases == 1; // Otherwise unused
+        if (getState() == 0) throw new IllegalMonitorStateException();
+        setState(0);
+        return true;
+      }
+       
+      // Provide a Condition
+      Condition newCondition() { return new ConditionObject(); }
+
+      // Deserialize properly
+      private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        s.defaultReadObject();
+        setState(0); // reset to unlocked state
+      }
+    }
+
+    // The sync object does all the hard work. We just forward to it.
+    private final Sync sync = new Sync();
+
+    public void lock()                { sync.acquire(1); }
+    public boolean tryLock()          { return sync.tryAcquire(1); }
+    public void unlock()              { sync.release(1); }
+    public Condition newCondition()   { return sync.newCondition(); }
+    public boolean isLocked()         { return sync.isHeldExclusively(); }
+    public boolean hasQueuedThreads() { return sync.hasQueuedThreads(); }
+    public void lockInterruptibly() throws InterruptedException { 
+      sync.acquireInterruptibly(1);
+    }
+    public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
+      return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+    }
+ }
+ </pre>
+
+ <p> Here is a latch class that is like a <a href="../../../../../reference/java/util/concurrent/CountDownLatch.html">CountDownLatch</a>
+ except that it only requires a single <tt>signal</tt> to
+ fire. Because a latch is non-exclusive, it uses the <tt>shared</tt>
+ acquire and release methods.
+
+ <pre>
+ class BooleanLatch {
+
+    private static class Sync extends AbstractQueuedSynchronizer {
+      boolean isSignalled() { return getState() != 0; }
+
+      protected int tryAcquireShared(int ignore) {
+        return isSignalled()? 1 : -1;
+      }
+        
+      protected boolean tryReleaseShared(int ignore) {
+        setState(1);
+        return true;
+      }
+    }
+
+    private final Sync sync = new Sync();
+    public boolean isSignalled() { return sync.isSignalled(); }
+    public void signal()         { sync.releaseShared(1); }
+    public void await() throws InterruptedException {
+      sync.acquireSharedInterruptibly(1);
+    }
+ }
+
+ </pre></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a></td>
+            <td class="jd-descrcol" width="100%">Condition implementation for a <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html">AbstractQueuedSynchronizer</a> serving as the basis of a <a href="../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a> implementation.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#AbstractQueuedSynchronizer()">AbstractQueuedSynchronizer</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new <tt>AbstractQueuedSynchronizer</tt> instance
+ with initial synchronization state of zero.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquire(int)">acquire</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Acquires in exclusive mode, ignoring interrupts.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquireInterruptibly(int)">acquireInterruptibly</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Acquires in exclusive mode, aborting if interrupted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquireShared(int)">acquireShared</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Acquires in shared mode, ignoring interrupts.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#acquireSharedInterruptibly(int)">acquireSharedInterruptibly</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Acquires in shared mode, aborting if interrupted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getExclusiveQueuedThreads()">getExclusiveQueuedThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection containing threads that may be waiting to
+ acquire in exclusive mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Thread.html">Thread</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getFirstQueuedThread()">getFirstQueuedThread</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the first (longest-waiting) thread in the queue, or
+ <tt>null</tt> if no threads are currently queued.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getQueueLength()">getQueueLength</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an estimate of the number of threads waiting to
+ acquire.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getQueuedThreads()">getQueuedThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection containing threads that may be waiting to
+ acquire.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getSharedQueuedThreads()">getSharedQueuedThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection containing threads that may be waiting to
+ acquire in shared mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getWaitQueueLength(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">getWaitQueueLength</a>(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an estimate of the number of threads waiting on the
+ given condition associated with this synchronizer.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getWaitingThreads(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">getWaitingThreads</a>(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection containing those threads that may be
+ waiting on the given condition associated with this
+ synchronizer.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasContended()">hasContended</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether any threads have ever contended to acquire this
+ synchronizer; that is if an acquire method has ever blocked.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasQueuedThreads()">hasQueuedThreads</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether any threads are waiting to acquire.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#hasWaiters(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">hasWaiters</a>(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether any threads are waiting on the given condition
+ associated with this synchronizer.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isQueued(java.lang.Thread)">isQueued</a>(<a href="../../../../../reference/java/lang/Thread.html">Thread</a> thread)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns true if the given thread is currently queued.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#owns(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)">owns</a>(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether the given ConditionObject 
+ uses this synchronizer as its lock.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases in exclusive mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#releaseShared(int)">releaseShared</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases in shared mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string identifying this synchronizer, as well as its
+ state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireNanos(int, long)">tryAcquireNanos</a>(int arg, long nanosTimeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to acquire in exclusive mode, aborting if interrupted,
+ and failing if the given timeout elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireSharedNanos(int, long)">tryAcquireSharedNanos</a>(int arg, long nanosTimeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to acquire in shared mode, aborting if interrupted, and
+ failing if the given timeout elapses.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#compareAndSetState(int, int)">compareAndSetState</a>(int expect, int update)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Atomically sets synchronization state to the given updated
+ value if the current state value equals the expected value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the current value of synchronization state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#isHeldExclusively()">isHeldExclusively</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns true if synchronization is held exclusively with respect
+ to the current (calling) thread.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#setState(int)">setState</a>(int newState)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of synchronization state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to acquire in exclusive mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to acquire in shared mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryRelease(int)">tryRelease</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to set the state to reflect a release in exclusive
+ mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryReleaseShared(int)">tryReleaseShared</a>(int arg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to set the state to reflect a release in shared mode.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="AbstractQueuedSynchronizer()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        AbstractQueuedSynchronizer()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new <tt>AbstractQueuedSynchronizer</tt> instance
+ with initial synchronization state of zero.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="acquire(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        acquire(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Acquires in exclusive mode, ignoring interrupts.  Implemented
+ by invoking at least once <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a>,
+ returning on success.  Otherwise the thread is queued, possibly
+ repeatedly blocking and unblocking, invoking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a> until success.  This method can be used
+ to implement method <a href="../../../../../reference/java/util/concurrent/locks/Lock.html#lock()">lock()</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="acquireInterruptibly(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        acquireInterruptibly(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Acquires in exclusive mode, aborting if interrupted.
+ Implemented by first checking interrupt status, then invoking
+ at least once <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a>, returning on
+ success.  Otherwise the thread is queued, possibly repeatedly
+ blocking and unblocking, invoking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a>
+ until success or the thread is interrupted.  This method can be
+ used to implement method <a href="../../../../../reference/java/util/concurrent/locks/Lock.html#lockInterruptibly()">lockInterruptibly()</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="acquireShared(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        acquireShared(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Acquires in shared mode, ignoring interrupts.  Implemented by
+ first invoking at least once <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a>,
+ returning on success.  Otherwise the thread is queued, possibly
+ repeatedly blocking and unblocking, invoking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> until success.  
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="acquireSharedInterruptibly(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        acquireSharedInterruptibly(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Acquires in shared mode, aborting if interrupted.  Implemented
+ by first checking interrupt status, then invoking at least once
+ <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a>, returning on success.  Otherwise the
+ thread is queued, possibly repeatedly blocking and unblocking,
+ invoking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> until success or the thread
+ is interrupted.  
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getExclusiveQueuedThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;
+        getExclusiveQueuedThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a collection containing threads that may be waiting to
+ acquire in exclusive mode. This has the same properties
+ as <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getQueuedThreads()">getQueuedThreads()</a> except that it only returns
+ those threads waiting due to an exclusive acquire.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collection of threads
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFirstQueuedThread()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/lang/Thread.html">Thread</a>
+        getFirstQueuedThread()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the first (longest-waiting) thread in the queue, or
+ <tt>null</tt> if no threads are currently queued.
+
+ <p> In this implementation, this operation normally returns in
+ constant time, but may iterate upon contention if other threads are
+ concurrently modifying the queue.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the first (longest-waiting) thread in the queue, or
+ <tt>null</tt> if no threads are currently queued.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getQueueLength()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        getQueueLength()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an estimate of the number of threads waiting to
+ acquire.  The value is only an estimate because the number of
+ threads may change dynamically while this method traverses
+ internal data structures.  This method is designed for use in
+ monitoring system state, not for synchronization
+ control.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the estimated number of threads waiting for this lock
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getQueuedThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;
+        getQueuedThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a collection containing threads that may be waiting to
+ acquire.  Because the actual set of threads may change
+ dynamically while constructing this result, the returned
+ collection is only a best-effort estimate.  The elements of the
+ returned collection are in no particular order.  This method is
+ designed to facilitate construction of subclasses that provide
+ more extensive monitoring facilities.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collection of threads
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSharedQueuedThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;
+        getSharedQueuedThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a collection containing threads that may be waiting to
+ acquire in shared mode. This has the same properties
+ as <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getQueuedThreads()">getQueuedThreads()</a> except that it only returns
+ those threads waiting due to a shared acquire.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collection of threads
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWaitQueueLength(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        getWaitQueueLength(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an estimate of the number of threads waiting on the
+ given condition associated with this synchronizer. Note that
+ because timeouts and interrupts may occur at any time, the
+ estimate serves only as an upper bound on the actual number of
+ waiters.  This method is designed for use in monitoring of the
+ system state, not for synchronization control.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>condition</td>
+        <td>the condition</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the estimated number of waiting threads.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if exclusive synchronization 
+ is not held</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given condition is
+ not associated with this synchronizer</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if condition null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWaitingThreads(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../../reference/java/lang/Thread.html">Thread</a>&gt;
+        getWaitingThreads(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a collection containing those threads that may be
+ waiting on the given condition associated with this
+ synchronizer.  Because the actual set of threads may change
+ dynamically while constructing this result, the returned
+ collection is only a best-effort estimate. The elements of the
+ returned collection are in no particular order.  
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>condition</td>
+        <td>the condition</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collection of threads</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if exclusive synchronization 
+ is not held</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given condition is
+ not associated with this synchronizer</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if condition null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasContended()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasContended()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Queries whether any threads have ever contended to acquire this
+ synchronizer; that is if an acquire method has ever blocked.
+
+ <p> In this implementation, this operation returns in
+ constant time.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if there has ever been contention
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasQueuedThreads()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasQueuedThreads()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Queries whether any threads are waiting to acquire. Note that
+ because cancellations due to interrupts and timeouts may occur
+ at any time, a <tt>true</tt> return does not guarantee that any
+ other thread will ever acquire.
+
+ <p> In this implementation, this operation returns in
+ constant time.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if there may be other threads waiting to acquire
+ the lock.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasWaiters(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasWaiters(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Queries whether any threads are waiting on the given condition
+ associated with this synchronizer. Note that because timeouts
+ and interrupts may occur at any time, a <tt>true</tt> return
+ does not guarantee that a future <tt>signal</tt> will awaken
+ any threads.  This method is designed primarily for use in
+ monitoring of the system state.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>condition</td>
+        <td>the condition</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if there are any waiting threads.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if exclusive synchronization 
+ is not held</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given condition is
+ not associated with this synchronizer</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if condition null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isQueued(java.lang.Thread)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        isQueued(<a href="../../../../../reference/java/lang/Thread.html">Thread</a> thread)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns true if the given thread is currently queued. 
+
+ <p> This implementation traverses the queue to determine
+ presence of the given thread.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>thread</td>
+        <td>the thread</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the given thread in on the queue</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if thread null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="owns(java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        owns(<a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> condition)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Queries whether the given ConditionObject 
+ uses this synchronizer as its lock.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>condition</td>
+        <td>the condition</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if owned</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if condition null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="release(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        release(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Releases in exclusive mode.  Implemented by unblocking one or
+ more threads if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryRelease(int)">tryRelease(int)</a> returns true.
+ This method can be used to implement method <a href="../../../../../reference/java/util/concurrent/locks/Lock.html#unlock()">unlock()</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the release argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryRelease(int)">tryRelease(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the value returned from <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryRelease(int)">tryRelease(int)</a> 
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="releaseShared(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        releaseShared(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Releases in shared mode.  Implemented by unblocking one or more
+ threads if <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryReleaseShared(int)">tryReleaseShared(int)</a> returns true. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the release argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryReleaseShared(int)">tryReleaseShared(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the value returned from <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryReleaseShared(int)">tryReleaseShared(int)</a> 
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string identifying this synchronizer, as well as its
+ state.  The state, in brackets, includes the String &quot;State
+ =&quot; followed by the current value of <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#getState()">getState()</a>, and
+ either &quot;nonempty&quot; or &quot;empty&quot; depending on
+ whether the queue is empty.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a string identifying this synchronizer, as well as its state.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryAcquireNanos(int, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        tryAcquireNanos(int arg, long nanosTimeout)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to acquire in exclusive mode, aborting if interrupted,
+ and failing if the given timeout elapses.  Implemented by first
+ checking interrupt status, then invoking at least once <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a>, returning on success.  Otherwise, the thread is
+ queued, possibly repeatedly blocking and unblocking, invoking
+ <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a> until success or the thread is interrupted
+ or the timeout elapses.  This method can be used to implement
+ method <a href="../../../../../reference/java/util/concurrent/locks/Lock.html#tryLock(long, java.util.concurrent.TimeUnit)">tryLock(long, TimeUnit)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquire(int)">tryAcquire(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    <tr>
+        <th>nanosTimeout</td>
+        <td>the maximum number of nanoseconds to wait</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if acquired; false if timed out</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryAcquireSharedNanos(int, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        tryAcquireSharedNanos(int arg, long nanosTimeout)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to acquire in shared mode, aborting if interrupted, and
+ failing if the given timeout elapses.  Implemented by first
+ checking interrupt status, then invoking at least once <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a>, returning on success.  Otherwise, the
+ thread is queued, possibly repeatedly blocking and unblocking,
+ invoking <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> until success or the thread
+ is interrupted or the timeout elapses.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument.
+ This value is conveyed to <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#tryAcquireShared(int)">tryAcquireShared(int)</a> but is
+ otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    <tr>
+        <th>nanosTimeout</td>
+        <td>the maximum number of nanoseconds to wait</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if acquired; false if timed out</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the current thread is interrupted
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="compareAndSetState(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        boolean
+        compareAndSetState(int expect, int update)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Atomically sets synchronization state to the given updated
+ value if the current state value equals the expected value.
+ This operation has memory semantics of a <tt>volatile</tt> read
+ and write.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>expect</td>
+        <td>the expected value</td>
+      </tr>
+    <tr>
+        <th>update</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if successful. False return indicates that
+ the actual value was not equal to the expected value.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getState()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        int
+        getState()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the current value of synchronization state.
+ This operation has memory semantics of a <tt>volatile</tt> read.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>current state value
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isHeldExclusively()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        isHeldExclusively()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns true if synchronization is held exclusively with respect
+ to the current (calling) thread.  This method is invoked
+ upon each call to a non-waiting <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> method.
+ (Waiting methods instead invoke <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.html#release(int)">release(int)</a>.)
+ <p>The default implementation throws <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>. This method is invoked
+ internally only within <a href="../../../../../reference/java/util/concurrent/locks/AbstractQueuedSynchronizer.ConditionObject.html">AbstractQueuedSynchronizer.ConditionObject</a> methods, so need
+ not be defined if conditions are not used.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if synchronization is held exclusively;
+ else false</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if conditions are not supported
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setState(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        void
+        setState(int newState)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of synchronization state.
+ This operation has memory semantics of a <tt>volatile</tt> write.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newState</td>
+        <td>the new state value
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryAcquire(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        tryAcquire(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to acquire in exclusive mode. This method should query
+ if the state of the object permits it to be acquired in the
+ exclusive mode, and if so to acquire it.
+
+ <p>This method is always invoked by the thread performing
+ acquire.  If this method reports failure, the acquire method
+ may queue the thread, if it is not already queued, until it is
+ signalled by a release from some other thread. This can be used
+ to implement method <a href="../../../../../reference/java/util/concurrent/locks/Lock.html#tryLock()">tryLock()</a>. 
+
+ <p>The default
+ implementation throws <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument. This value
+ is always the one passed to an acquire method,
+ or is the value saved on entry to a condition wait.
+ The value is otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if successful. Upon success, this object has been
+ acquired.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if acquiring would place
+ this synchronizer in an illegal state. This exception must be
+ thrown in a consistent fashion for synchronization to work
+ correctly.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if exclusive mode is not supported
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryAcquireShared(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        int
+        tryAcquireShared(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to acquire in shared mode. This method should query if
+ the state of the object permits it to be acquired in the shared
+ mode, and if so to acquire it.  
+
+ <p>This method is always invoked by the thread performing
+ acquire.  If this method reports failure, the acquire method
+ may queue the thread, if it is not already queued, until it is
+ signalled by a release from some other thread.
+
+ <p>The default implementation throws <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the acquire argument. This value
+ is always the one passed to an acquire method,
+ or is the value saved on entry to a condition wait.
+ The value is otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a negative value on failure, zero on exclusive success,
+ and a positive value if non-exclusively successful, in which
+ case a subsequent waiting thread must check
+ availability. (Support for three different return values
+ enables this method to be used in contexts where acquires only
+ sometimes act exclusively.)  Upon success, this object has been
+ acquired.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if acquiring would place
+ this synchronizer in an illegal state. This exception must be
+ thrown in a consistent fashion for synchronization to work
+ correctly.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if shared mode is not supported
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryRelease(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        tryRelease(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to set the state to reflect a release in exclusive
+ mode.  <p>This method is always invoked by the thread
+ performing release.
+
+ <p>The default implementation throws
+ <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the release argument. This value
+ is always the one passed to a release method,
+ or the current state value upon entry to a condition wait.
+ The value is otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if this object is now in a fully released state, 
+ so that any waiting threads may attempt to acquire; and <tt>false</tt>
+ otherwise.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if releasing would place
+ this synchronizer in an illegal state. This exception must be
+ thrown in a consistent fashion for synchronization to work
+ correctly.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if exclusive mode is not supported
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tryReleaseShared(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        tryReleaseShared(int arg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to set the state to reflect a release in shared mode.
+ <p>This method is always invoked by the thread performing release.
+ <p> The default implementation throws 
+ <a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>arg</td>
+        <td>the release argument. This value
+ is always the one passed to a release method,
+ or the current state value upon entry to a condition wait.
+ The value is otherwise uninterpreted and can represent anything
+ you like.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if this object is now in a fully released state, 
+ so that any waiting threads may attempt to acquire; and <tt>false</tt>
+ otherwise.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/lang/IllegalMonitorStateException.html">IllegalMonitorStateException</a></td>
+            <td>if releasing would place
+ this synchronizer in an illegal state. This exception must be
+ thrown in a consistent fashion for synchronization to work
+ correctly.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if shared mode is not supported
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

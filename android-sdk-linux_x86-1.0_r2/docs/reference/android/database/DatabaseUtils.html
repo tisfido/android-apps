@@ -1,0 +1,2945 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.database.DatabaseUtils - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/database/package-summary.html">android.database</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.database.DatabaseUtils</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.database.DatabaseUtils</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Static utility methods for dealing with databases and <a href="../../../reference/android/database/Cursor.html">Cursor</a>s.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/database/DatabaseUtils.InsertHelper.html">DatabaseUtils.InsertHelper</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/database/DatabaseUtils.InsertHelper.html">DatabaseUtils.InsertHelper</a></td>
+            <td class="jd-descrcol" width="100%">This class allows users to do multiple inserts into a table but
+ compile the SQL insert statement only once, which may increase
+ performance.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#DatabaseUtils()">DatabaseUtils</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#appendEscapedSQLString(java.lang.StringBuilder, java.lang.String)">appendEscapedSQLString</a>(<a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb, <a href="../../../reference/java/lang/String.html">String</a> sqlString)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Appends an SQL string to the given StringBuilder, including the opening
+ and closing single quotes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#appendValueToSql(java.lang.StringBuilder, java.lang.Object)">appendValueToSql</a>(<a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sql, <a href="../../../reference/java/lang/Object.html">Object</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Appends an Object to an SQL string with the proper escaping, etc.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#bindObjectToProgram(android.database.sqlite.SQLiteProgram, int, java.lang.Object)">bindObjectToProgram</a>(<a href="../../../reference/android/database/sqlite/SQLiteProgram.html">SQLiteProgram</a> prog, int index, <a href="../../../reference/java/lang/Object.html">Object</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Binds the given Object to the given SQLiteProgram using the proper
+ typing.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#createDbFromSqlStatements(android.content.Context, java.lang.String, int, java.lang.String)">createDbFromSqlStatements</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/String.html">String</a> dbName, int dbVersion, <a href="../../../reference/java/lang/String.html">String</a> sqlStatements)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a db and populates it with the sql statements in sqlStatements.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorDoubleToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)">cursorDoubleToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a Double out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorDoubleToCursorValues(android.database.Cursor, java.lang.String, android.content.ContentValues)">cursorDoubleToCursorValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a Double out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorIntToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)">cursorIntToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a Integer out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorIntToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)">cursorIntToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads an Integer out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorLongToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)">cursorLongToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a Long out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorLongToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)">cursorLongToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a Long out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorRowToContentValues(android.database.Cursor, android.content.ContentValues)">cursorRowToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read the entire contents of a cursor row and store them in a ContentValues.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorStringToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)">cursorStringToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a String out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorStringToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)">cursorStringToContentValues</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a String out of a field in a Cursor and writes it to a Map.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#cursorStringToInsertHelper(android.database.Cursor, java.lang.String, android.database.DatabaseUtils.InsertHelper, int)">cursorStringToInsertHelper</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/database/DatabaseUtils.InsertHelper.html">DatabaseUtils.InsertHelper</a> inserter, int index)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reads a String out of a field in a Cursor and writes it to an InsertHelper.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCurrentRow(android.database.Cursor, java.io.PrintStream)">dumpCurrentRow</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/io/PrintStream.html">PrintStream</a> stream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor's current row to a PrintSteam.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCurrentRow(android.database.Cursor, java.lang.StringBuilder)">dumpCurrentRow</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor's current row to a StringBuilder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCurrentRow(android.database.Cursor)">dumpCurrentRow</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor's current row to System.out.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCurrentRowToString(android.database.Cursor)">dumpCurrentRowToString</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Dump the contents of a Cursor's current row to a String.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCursor(android.database.Cursor, java.io.PrintStream)">dumpCursor</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/io/PrintStream.html">PrintStream</a> stream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor to a PrintSteam.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCursor(android.database.Cursor)">dumpCursor</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor to System.out.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCursor(android.database.Cursor, java.lang.StringBuilder)">dumpCursor</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor to a StringBuilder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#dumpCursorToString(android.database.Cursor)">dumpCursorToString</a>(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prints the contents of a Cursor to a String.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#getCollationKey(java.lang.String)">getCollationKey</a>(<a href="../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">return the collation key </td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#getHexCollationKey(java.lang.String)">getHexCollationKey</a>(<a href="../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">return the collation key in hex format</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#longForQuery(android.database.sqlite.SQLiteStatement, java.lang.String[])">longForQuery</a>(<a href="../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a> prog, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Utility method to run the pre-compiled query and return the value in the
+ first column of the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#longForQuery(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String[])">longForQuery</a>(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> query, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Utility method to run the query on the db and return the value in the
+ first column of the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#queryNumEntries(android.database.sqlite.SQLiteDatabase, java.lang.String)">queryNumEntries</a>(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> table)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Query the table for the number of rows in the table.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#readExceptionFromParcel(android.os.Parcel)">readExceptionFromParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Special function for reading an exception result from the header of
+ a parcel, to be used after receiving the result of a transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#readExceptionWithFileNotFoundExceptionFromParcel(android.os.Parcel)">readExceptionWithFileNotFoundExceptionFromParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#sqlEscapeString(java.lang.String)">sqlEscapeString</a>(<a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">SQL-escape a string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#stringForQuery(android.database.sqlite.SQLiteStatement, java.lang.String[])">stringForQuery</a>(<a href="../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a> prog, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Utility method to run the pre-compiled query and return the value in the
+ first column of the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#stringForQuery(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String[])">stringForQuery</a>(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> query, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Utility method to run the query on the db and return the value in the
+ first column of the first row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/database/DatabaseUtils.html#writeExceptionToParcel(android.os.Parcel, java.lang.Exception)">writeExceptionToParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, <a href="../../../reference/java/lang/Exception.html">Exception</a> e)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Special function for writing an exception result at the header of
+ a parcel, to be used when returning an exception from a transaction.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="DatabaseUtils()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DatabaseUtils()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="appendEscapedSQLString(java.lang.StringBuilder, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        appendEscapedSQLString(<a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb, <a href="../../../reference/java/lang/String.html">String</a> sqlString)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Appends an SQL string to the given StringBuilder, including the opening
+ and closing single quotes. Any single quotes internal to sqlString will
+ be escaped.
+
+ This method is deprecated because we want to encourage everyone
+ to use the "?" binding form.  However, when implementing a
+ ContentProvider, one may want to add WHERE clauses that were
+ not provided by the caller.  Since "?" is a positional form,
+ using it in this case could break the caller because the
+ indexes would be shifted to accomodate the ContentProvider's
+ internal bindings.  In that case, it may be necessary to
+ construct a WHERE clause manually.  This method is useful for
+ those cases.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sb</td>
+        <td>the StringBuilder that the SQL string will be appended to</td>
+      </tr>
+    <tr>
+        <th>sqlString</td>
+        <td>the raw string to be appended, which may contain single
+                  quotes
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="appendValueToSql(java.lang.StringBuilder, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        void
+        appendValueToSql(<a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sql, <a href="../../../reference/java/lang/Object.html">Object</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Appends an Object to an SQL string with the proper escaping, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="bindObjectToProgram(android.database.sqlite.SQLiteProgram, int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        bindObjectToProgram(<a href="../../../reference/android/database/sqlite/SQLiteProgram.html">SQLiteProgram</a> prog, int index, <a href="../../../reference/java/lang/Object.html">Object</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Binds the given Object to the given SQLiteProgram using the proper
+ typing. For example, bind numbers as longs/doubles, and everything else
+ as a string by call toString() on it.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>prog</td>
+        <td>the program to bind the object to</td>
+      </tr>
+    <tr>
+        <th>index</td>
+        <td>the 1-based index to bind at</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the value to bind
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createDbFromSqlStatements(android.content.Context, java.lang.String, int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        createDbFromSqlStatements(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/String.html">String</a> dbName, int dbVersion, <a href="../../../reference/java/lang/String.html">String</a> sqlStatements)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a db and populates it with the sql statements in sqlStatements.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>the context to use to create the db</td>
+      </tr>
+    <tr>
+        <th>dbName</td>
+        <td>the name of the db to create</td>
+      </tr>
+    <tr>
+        <th>dbVersion</td>
+        <td>the version to set on the db</td>
+      </tr>
+    <tr>
+        <th>sqlStatements</td>
+        <td>the statements to use to populate the db. This should be a single string
+   of the form returned by sqlite3's <tt>.dump</tt> command (statements separated by
+   semicolons)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorDoubleToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorDoubleToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a Double out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The REAL field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into</td>
+      </tr>
+    <tr>
+        <th>key</td>
+        <td>The key to store the value with in the map
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorDoubleToCursorValues(android.database.Cursor, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorDoubleToCursorValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a Double out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The REAL field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorIntToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorIntToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a Integer out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The INTEGER field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into, with the field as the key</td>
+      </tr>
+    <tr>
+        <th>key</td>
+        <td>The key to store the value with in the map
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorIntToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorIntToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads an Integer out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The INTEGER field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into, with the field as the key
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorLongToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorLongToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a Long out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The INTEGER field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into, with the field as the key
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorLongToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorLongToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a Long out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The INTEGER field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into</td>
+      </tr>
+    <tr>
+        <th>key</td>
+        <td>The key to store the value with in the map
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorRowToContentValues(android.database.Cursor, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorRowToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read the entire contents of a cursor row and store them in a ContentValues.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to read from.</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>the <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the row into.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorStringToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorStringToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a String out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The TEXT field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into, with the field as the key
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorStringToContentValues(android.database.Cursor, java.lang.String, android.content.ContentValues, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorStringToContentValues(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a String out of a field in a Cursor and writes it to a Map.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The TEXT field to read</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>The <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> to put the value into, with the field as the key</td>
+      </tr>
+    <tr>
+        <th>key</td>
+        <td>The key to store the value with in the map
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="cursorStringToInsertHelper(android.database.Cursor, java.lang.String, android.database.DatabaseUtils.InsertHelper, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        cursorStringToInsertHelper(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/String.html">String</a> field, <a href="../../../reference/android/database/DatabaseUtils.InsertHelper.html">DatabaseUtils.InsertHelper</a> inserter, int index)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reads a String out of a field in a Cursor and writes it to an InsertHelper.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>The cursor to read from</td>
+      </tr>
+    <tr>
+        <th>field</td>
+        <td>The TEXT field to read</td>
+      </tr>
+    <tr>
+        <th>inserter</td>
+        <td>The InsertHelper to bind into</td>
+      </tr>
+    <tr>
+        <th>index</td>
+        <td>the index of the bind entry in the InsertHelper
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCurrentRow(android.database.Cursor, java.io.PrintStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCurrentRow(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/io/PrintStream.html">PrintStream</a> stream)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor's current row to a PrintSteam.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    <tr>
+        <th>stream</td>
+        <td>the stream to print to
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCurrentRow(android.database.Cursor, java.lang.StringBuilder)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCurrentRow(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor's current row to a StringBuilder.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    <tr>
+        <th>sb</td>
+        <td>the StringBuilder to print to
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCurrentRow(android.database.Cursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCurrentRow(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor's current row to System.out.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print from
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCurrentRowToString(android.database.Cursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        dumpCurrentRowToString(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Dump the contents of a Cursor's current row to a String.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a String that contains the dumped cursor row
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCursor(android.database.Cursor, java.io.PrintStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCursor(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/io/PrintStream.html">PrintStream</a> stream)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor to a PrintSteam. The position is restored
+ after printing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    <tr>
+        <th>stream</td>
+        <td>the stream to print to
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCursor(android.database.Cursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCursor(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor to System.out. The position is restored
+ after printing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCursor(android.database.Cursor, java.lang.StringBuilder)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dumpCursor(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor, <a href="../../../reference/java/lang/StringBuilder.html">StringBuilder</a> sb)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor to a StringBuilder. The position
+ is restored after printing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    <tr>
+        <th>sb</td>
+        <td>the StringBuilder to print to
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dumpCursorToString(android.database.Cursor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        dumpCursorToString(<a href="../../../reference/android/database/Cursor.html">Cursor</a> cursor)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prints the contents of a Cursor to a String. The position is restored
+ after printing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cursor</td>
+        <td>the cursor to print</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a String that contains the dumped cursor
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCollationKey(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getCollationKey(<a href="../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+return the collation key 
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collation key
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getHexCollationKey(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getHexCollationKey(<a href="../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+return the collation key in hex format
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the collation key in hex format
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="longForQuery(android.database.sqlite.SQLiteStatement, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        long
+        longForQuery(<a href="../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a> prog, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Utility method to run the pre-compiled query and return the value in the
+ first column of the first row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="longForQuery(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        long
+        longForQuery(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> query, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Utility method to run the query on the db and return the value in the
+ first column of the first row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="queryNumEntries(android.database.sqlite.SQLiteDatabase, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        long
+        queryNumEntries(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> table)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Query the table for the number of rows in the table.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>db</td>
+        <td>the database the table is in</td>
+      </tr>
+    <tr>
+        <th>table</td>
+        <td>the name of the table to query</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of rows in the table
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readExceptionFromParcel(android.os.Parcel)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        void
+        readExceptionFromParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Special function for reading an exception result from the header of
+ a parcel, to be used after receiving the result of a transaction.  This
+ will throw the exception for you if it had been written to the Parcel,
+ otherwise return and let you read the normal result data from the Parcel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>reply</td>
+        <td>Parcel to read from</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeNoException()">writeNoException()</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readException()">readException()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="readExceptionWithFileNotFoundExceptionFromParcel(android.os.Parcel)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        readExceptionWithFileNotFoundExceptionFromParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sqlEscapeString(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        sqlEscapeString(<a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+SQL-escape a string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="stringForQuery(android.database.sqlite.SQLiteStatement, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        stringForQuery(<a href="../../../reference/android/database/sqlite/SQLiteStatement.html">SQLiteStatement</a> prog, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Utility method to run the pre-compiled query and return the value in the
+ first column of the first row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="stringForQuery(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        stringForQuery(<a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../reference/java/lang/String.html">String</a> query, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Utility method to run the query on the db and return the value in the
+ first column of the first row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeExceptionToParcel(android.os.Parcel, java.lang.Exception)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        void
+        writeExceptionToParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, <a href="../../../reference/java/lang/Exception.html">Exception</a> e)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Special function for writing an exception result at the header of
+ a parcel, to be used when returning an exception from a transaction.
+ exception will be re-thrown by the function in another process
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>reply</td>
+        <td>Parcel to write to</td>
+      </tr>
+    <tr>
+        <th>e</td>
+        <td>The Exception to be written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeNoException()">writeNoException()</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#writeException(java.lang.Exception)">writeException(Exception)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

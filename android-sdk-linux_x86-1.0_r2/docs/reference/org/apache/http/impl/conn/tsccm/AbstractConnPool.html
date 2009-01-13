@@ -1,0 +1,1780 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.impl.conn.tsccm.AbstractConnPool - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../../assets/style.css" />
+<script src="../../../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../../../')"
+            onchange="search_changed(event, false, '../../../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/package-summary.html">org.apache.http.impl.conn.tsccm</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>org.apache.http.impl.conn.tsccm.AbstractConnPool</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.impl.conn.tsccm.AbstractConnPool</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/RefQueueHandler.html">RefQueueHandler</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>An abstract connection pool.
+ It is used by the <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager.html">ThreadSafeClientConnManager</a>.
+ The abstract pool includes a <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#poolLock">poolLock</a>, which is used to
+ synchronize access to the internal pool datastructures.
+ Don't use <code>synchronized</code> for that purpose!
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-direct')" class="jd-expando-trigger"
+        ><img id="subclasses-direct-trigger"
+        src="../../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Direct Subclasses</h5>
+
+    <div id="subclasses-direct">
+        <div id="subclasses-direct-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/ConnPoolByRoute.html">ConnPoolByRoute</a>
+            
+        </div>
+        <div id="subclasses-direct-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/ConnPoolByRoute.html">ConnPoolByRoute</a></td>
+            <td class="jd-descrcol" width="100%">A connection pool that maintains connections by route.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/IdleConnectionHandler.html">IdleConnectionHandler</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#idleConnHandler">idleConnHandler</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The handler for idle connections.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#isShutDown">isShutDown</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Indicates whether this pool is shut down.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntryRef.html">BasicPoolEntryRef</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#issuedConnections">issuedConnections</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">References to issued connections.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#numConnections">numConnections</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The current total number of connections.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#poolLock">poolLock</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The global lock for this pool.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/lang/ref/ReferenceQueue.html">ReferenceQueue</a>&lt;<a href="../../../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#refQueue">refQueue</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">A reference queue to track loss of pool entries to GC.&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#AbstractConnPool()">AbstractConnPool</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new connection pool.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#closeExpiredConnections()">closeExpiredConnections</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#closeIdleConnections(long, java.util.concurrent.TimeUnit)">closeIdleConnections</a>(long idletime, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> tunit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Closes idle connections.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#deleteClosedConnections()">deleteClosedConnections</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Deletes all entries for closed connections.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#enableConnectionGC()">enableConnectionGC</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enables connection garbage collection (GC).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#freeEntry(org.apache.http.impl.conn.tsccm.BasicPoolEntry, boolean, long, java.util.concurrent.TimeUnit)">freeEntry</a>(<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a> entry, boolean reusable, long validDuration, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> timeUnit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an entry into the pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#getEntry(org.apache.http.conn.routing.HttpRoute, java.lang.Object, long, java.util.concurrent.TimeUnit)">getEntry</a>(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../../reference/java/lang/Object.html">Object</a> state, long timeout, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> tunit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains a pool entry with a connection within the given timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#handleReference(java.lang.ref.Reference)">handleReference</a>(<a href="../../../../../../../reference/java/lang/ref/Reference.html">Reference</a> ref)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/PoolEntryRequest.html">PoolEntryRequest</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#requestPoolEntry(org.apache.http.conn.routing.HttpRoute, java.lang.Object)">requestPoolEntry</a>(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../../reference/java/lang/Object.html">Object</a> state)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/PoolEntryRequest.html">PoolEntryRequest</a>, from which a <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a>
+ can be obtained, or the request can be aborted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#shutdown()">shutdown</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Shuts down this pool and all associated resources.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#closeConnection(org.apache.http.conn.OperatedClientConnection)">closeConnection</a>(<a href="../../../../../../../reference/org/apache/http/conn/OperatedClientConnection.html">OperatedClientConnection</a> conn)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Closes a connection from this pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/AbstractConnPool.html#handleLostEntry(org.apache.http.conn.routing.HttpRoute)">handleLostEntry</a>(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Handles cleaning up for a lost pool entry with the given route.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.impl.conn.tsccm.RefQueueHandler')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.impl.conn.tsccm.RefQueueHandler-trigger"
+        src="../../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/RefQueueHandler.html">org.apache.http.impl.conn.tsccm.RefQueueHandler</a>
+</h5>
+<div id="inherited-methods-org.apache.http.impl.conn.tsccm.RefQueueHandler">
+<div id="inherited-methods-org.apache.http.impl.conn.tsccm.RefQueueHandler-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/RefQueueHandler.html#handleReference(java.lang.ref.Reference<?>)">handleReference</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.impl.conn.tsccm.RefQueueHandler-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/RefQueueHandler.html#handleReference(java.lang.ref.Reference<?>)">handleReference</a>(<a href="../../../../../../../reference/java/lang/ref/Reference.html">Reference</a>&lt;?&gt; ref)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Invoked when a reference is found on the queue.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="idleConnHandler"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        <a href="../../../../../../../reference/org/apache/http/impl/conn/IdleConnectionHandler.html">IdleConnectionHandler</a>
+        idleConnHandler
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The handler for idle connections. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="isShutDown"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        boolean
+        isShutDown
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether this pool is shut down. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="issuedConnections"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        <a href="../../../../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntryRef.html">BasicPoolEntryRef</a>&gt;
+        issuedConnections
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+References to issued connections.
+ Objects in this set are of class
+ <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntryRef.html">BasicPoolEntryRef</a>,
+ and point to the pool entry for the issued connection.
+ GCed connections are detected by the missing pool entries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="numConnections"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        int
+        numConnections
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The current total number of connections. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="poolLock"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../../../../reference/java/util/concurrent/locks/Lock.html">Lock</a>
+        poolLock
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The global lock for this pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="refQueue"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        <a href="../../../../../../../reference/java/lang/ref/ReferenceQueue.html">ReferenceQueue</a>&lt;<a href="../../../../../../../reference/java/lang/Object.html">Object</a>&gt;
+        refQueue
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A reference queue to track loss of pool entries to GC.
+ The same queue is used to track loss of the connection manager,
+ so we cannot specialize the type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="AbstractConnPool()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        AbstractConnPool()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new connection pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="closeExpiredConnections()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        closeExpiredConnections()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="closeIdleConnections(long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        closeIdleConnections(long idletime, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> tunit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Closes idle connections.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>idletime</td>
+        <td>the time the connections should have been idle
+                  in order to be closed now</td>
+      </tr>
+    <tr>
+        <th>tunit</td>
+        <td>the unit for the <code>idletime</code>
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="deleteClosedConnections()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        deleteClosedConnections()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Deletes all entries for closed connections.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="enableConnectionGC()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        enableConnectionGC()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enables connection garbage collection (GC).
+ This method must be called immediately after creating the
+ connection pool. It is not possible to enable connection GC
+ after pool entries have been created. Neither is it possible
+ to disable connection GC.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if connection GC is already enabled, or if it cannot be
+         enabled because there already are pool entries
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="freeEntry(org.apache.http.impl.conn.tsccm.BasicPoolEntry, boolean, long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        freeEntry(<a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a> entry, boolean reusable, long validDuration, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> timeUnit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an entry into the pool.
+ The connection of the entry is expected to be in a suitable state,
+ either open and re-usable, or closed. The pool will not make any
+ attempt to determine whether it can be re-used or not.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>entry</td>
+        <td>the entry for the connection to release</td>
+      </tr>
+    <tr>
+        <th>reusable</td>
+        <td><code>true</code> if the entry is deemed 
+                  reusable, <code>false</code> otherwise.</td>
+      </tr>
+    <tr>
+        <th>validDuration</td>
+        <td>The duration that the entry should remain free and reusable.</td>
+      </tr>
+    <tr>
+        <th>timeUnit</td>
+        <td>The unit of time the duration is measured in.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getEntry(org.apache.http.conn.routing.HttpRoute, java.lang.Object, long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a>
+        getEntry(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../../reference/java/lang/Object.html">Object</a> state, long timeout, <a href="../../../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> tunit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Obtains a pool entry with a connection within the given timeout.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route for which to get the connection</td>
+      </tr>
+    <tr>
+        <th>timeout</td>
+        <td>the timeout, 0 or negative for no timeout</td>
+      </tr>
+    <tr>
+        <th>tunit</td>
+        <td>the unit for the <code>timeout</code>,
+                  may be <code>null</code> only if there is no timeout</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>pool entry holding a connection for the route</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../../reference/org/apache/http/conn/ConnectionPoolTimeoutException.html">ConnectionPoolTimeoutException</a></td>
+            <td>if the timeout expired</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if the calling thread was interrupted
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="handleReference(java.lang.ref.Reference)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        handleReference(<a href="../../../../../../../reference/java/lang/ref/Reference.html">Reference</a> ref)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="requestPoolEntry(org.apache.http.conn.routing.HttpRoute, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/PoolEntryRequest.html">PoolEntryRequest</a>
+        requestPoolEntry(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../../../reference/java/lang/Object.html">Object</a> state)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/PoolEntryRequest.html">PoolEntryRequest</a>, from which a <a href="../../../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPoolEntry.html">BasicPoolEntry</a>
+ can be obtained, or the request can be aborted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="shutdown()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        shutdown()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Shuts down this pool and all associated resources.
+ Overriding methods MUST call the implementation here!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="closeConnection(org.apache.http.conn.OperatedClientConnection)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        closeConnection(<a href="../../../../../../../reference/org/apache/http/conn/OperatedClientConnection.html">OperatedClientConnection</a> conn)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Closes a connection from this pool.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>conn</td>
+        <td>the connection to close, or <code>null</code>
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="handleLostEntry(org.apache.http.conn.routing.HttpRoute)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        handleLostEntry(<a href="../../../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Handles cleaning up for a lost pool entry with the given route.
+ A lost pool entry corresponds to a connection that was
+ garbage collected instead of being properly released.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route of the pool entry that was lost
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

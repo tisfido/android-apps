@@ -1,0 +1,3634 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.lang.reflect.Field - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/lang/reflect/package-summary.html">java.lang.reflect</a>
+<br/>
+    public 
+     
+    final 
+    
+    class
+</div>
+<h1>java.lang.reflect.Field</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html">java.lang.reflect.AccessibleObject</a></td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/lang/reflect/AnnotatedElement.html">AnnotatedElement</a> 
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.lang.reflect.Field</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/lang/reflect/Member.html">Member</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>This class must be implemented by the VM vendor. This class models a field.
+ Information about the field can be accessed, and the field's value can be
+ accessed dynamically.
+ 
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-java.lang.reflect.Member')" class="jd-expando-trigger"
+        ><img id="inherited-constants-java.lang.reflect.Member-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../../reference/java/lang/reflect/Member.html">java.lang.reflect.Member</a>
+</h5>
+<div id="inherited-constants-java.lang.reflect.Member">
+<div id="inherited-constants-java.lang.reflect.Member-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/reflect/Member.html#DECLARED">DECLARED</a>,
+
+<a href="../../../../reference/java/lang/reflect/Member.html#PUBLIC">PUBLIC</a>
+
+</div>
+<div id="inherited-constants-java.lang.reflect.Member-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/lang/reflect/Member.html#DECLARED">DECLARED</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/lang/reflect/Member.html#PUBLIC">PUBLIC</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the specified object to this Field and answer if they are equal.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#get(java.lang.Object)">get</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getBoolean(java.lang.Object)">getBoolean</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a boolean.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getByte(java.lang.Object)">getByte</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a byte.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">char&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getChar(java.lang.Object)">getChar</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a char.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getDeclaredAnnotations()">getDeclaredAnnotations</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s that are explicitly declared by this
+ element (not inherited).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getDeclaringClass()">getDeclaringClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the <a href="../../../../reference/java/lang/Class.html">Class</a> associated with the class that defined this
+ field.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getDouble(java.lang.Object)">getDouble</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a double.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getFloat(java.lang.Object)">getFloat</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a float.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/reflect/Type.html">Type</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getGenericType()">getGenericType</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Gets the declared type of this field.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getInt(java.lang.Object)">getInt</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as an int.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getLong(java.lang.Object)">getLong</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a long.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getModifiers()">getModifiers</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the modifiers for the modeled field.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getName()">getName</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the name of the modeled field.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">short&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getShort(java.lang.Object)">getShort</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the value of the field in the specified object as a short.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#getType()">getType</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the <a href="../../../../reference/java/lang/Class.html">Class</a> associated with the type of this field.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#isEnumConstant()">isEnumConstant</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Indicates whether or not this field is an enumeration constant.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#isSynthetic()">isSynthetic</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Indicates whether or not this field is synthetic.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#set(java.lang.Object, java.lang.Object)">set</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, <a href="../../../../reference/java/lang/Object.html">Object</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the boolean value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setBoolean(java.lang.Object, boolean)">setBoolean</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the boolean value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setByte(java.lang.Object, byte)">setByte</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, byte value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the byte value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setChar(java.lang.Object, char)">setChar</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, char value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the char value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setDouble(java.lang.Object, double)">setDouble</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, double value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the double value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setFloat(java.lang.Object, float)">setFloat</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, float value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the float value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setInt(java.lang.Object, int)">setInt</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the int value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setLong(java.lang.Object, long)">setLong</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, long value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the long value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#setShort(java.lang.Object, short)">setShort</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object, short value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value of the field in the specified object to the short value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#toGenericString()">toGenericString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Returns the String representation of the field's declaration, including
+ the type parameters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Field.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.reflect.AccessibleObject')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.reflect.AccessibleObject-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/reflect/AccessibleObject.html">java.lang.reflect.AccessibleObject</a>
+</h5>
+<div id="inherited-methods-java.lang.reflect.AccessibleObject">
+<div id="inherited-methods-java.lang.reflect.AccessibleObject-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getAnnotation(java.lang.Class<T>)">getAnnotation</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getAnnotations()">getAnnotations</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getDeclaredAnnotations()">getDeclaredAnnotations</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#isAccessible()">isAccessible</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>)">isAnnotationPresent</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#setAccessible(boolean)">setAccessible</a>,
+
+<a href="../../../../reference/java/lang/reflect/AccessibleObject.html#setAccessible(java.lang.reflect.AccessibleObject[], boolean)">setAccessible</a>
+
+</div>
+<div id="inherited-methods-java.lang.reflect.AccessibleObject-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getAnnotation(java.lang.Class<T>)">getAnnotation</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;T&gt; annotationType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a> for this element for the annotation type
+ passed, if it exists.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getAnnotations()">getAnnotations</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s for this element.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#getDeclaredAnnotations()">getDeclaredAnnotations</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s that are explicitly declared by this
+ element (not inherited).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#isAccessible()">isAccessible</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the value of the accessible flag.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>)">isAnnotationPresent</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>&gt; annotationType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Queries whether a given Annotation is present on the AccessibleObject.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#setAccessible(boolean)">setAccessible</a>(boolean flag)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to set the value of the accessible flag.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AccessibleObject.html#setAccessible(java.lang.reflect.AccessibleObject[], boolean)">setAccessible</a>(<a href="../../../../reference/java/lang/reflect/AccessibleObject.html">AccessibleObject[]</a> objects, boolean flag)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to set the value of the accessible flag for all the objects in
+ the array provided.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.reflect.AnnotatedElement')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.reflect.AnnotatedElement-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/lang/reflect/AnnotatedElement.html">java.lang.reflect.AnnotatedElement</a>
+</h5>
+<div id="inherited-methods-java.lang.reflect.AnnotatedElement">
+<div id="inherited-methods-java.lang.reflect.AnnotatedElement-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getAnnotation(java.lang.Class<T>)">getAnnotation</a>,
+
+<a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getAnnotations()">getAnnotations</a>,
+
+<a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getDeclaredAnnotations()">getDeclaredAnnotations</a>,
+
+<a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>)">isAnnotationPresent</a>
+
+</div>
+<div id="inherited-methods-java.lang.reflect.AnnotatedElement-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getAnnotation(java.lang.Class<T>)">getAnnotation</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;T&gt; annotationType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a> for this element for the annotation type
+ passed, if it exists.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getAnnotations()">getAnnotations</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s for this element.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#getDeclaredAnnotations()">getDeclaredAnnotations</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s that are explicitly declared by this
+ element (not inherited).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/AnnotatedElement.html#isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>)">isAnnotationPresent</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>&gt; annotationType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Determines if this element has an annotation for the annotation type
+ passed.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.reflect.Member')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.reflect.Member-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/lang/reflect/Member.html">java.lang.reflect.Member</a>
+</h5>
+<div id="inherited-methods-java.lang.reflect.Member">
+<div id="inherited-methods-java.lang.reflect.Member-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/reflect/Member.html#getDeclaringClass()">getDeclaringClass</a>,
+
+<a href="../../../../reference/java/lang/reflect/Member.html#getModifiers()">getModifiers</a>,
+
+<a href="../../../../reference/java/lang/reflect/Member.html#getName()">getName</a>,
+
+<a href="../../../../reference/java/lang/reflect/Member.html#isSynthetic()">isSynthetic</a>
+
+</div>
+<div id="inherited-methods-java.lang.reflect.Member-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Member.html#getDeclaringClass()">getDeclaringClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the <a href="../../../../reference/java/lang/Class.html">Class</a> associated with the class that defined this
+ member.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Member.html#getModifiers()">getModifiers</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the modifiers for the member.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Member.html#getName()">getName</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the name of the member.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/reflect/Member.html#isSynthetic()">isSynthetic</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether or not this member is synthetic (artificially
+ introduced by the compiler).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="equals(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        equals(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Compares the specified object to this Field and answer if they are equal.
+ The object must be an instance of Field with the same defining class and
+ name.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to compare</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the specified object is equal to this Field, false
+         otherwise</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/lang/reflect/Field.html#hashCode()">hashCode()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="get(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/Object.html">Object</a>
+        get(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object. This reproduces
+ the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ The value of the field is returned. If the type of this field is a base
+ type, the field value is automatically wrapped.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value, possibly wrapped</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getBoolean(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getBoolean(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a boolean. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getByte(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte
+        getByte(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a byte. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getChar(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        char
+        getChar(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a char. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDeclaredAnnotations()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation[]</a>
+        getDeclaredAnnotations()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets all <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s that are explicitly declared by this
+ element (not inherited).
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>An array of <a href="../../../../reference/java/lang/annotation/Annotation.html">Annotation</a>s, which may be empty, but never
+         <code>null</code>.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDeclaringClass()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;
+        getDeclaringClass()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the <a href="../../../../reference/java/lang/Class.html">Class</a> associated with the class that defined this
+ field.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the declaring class
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDouble(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        double
+        getDouble(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a double. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFloat(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        float
+        getFloat(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a float. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getGenericType()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/reflect/Type.html">Type</a>
+        getGenericType()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+<p>
+ Gets the declared type of this field.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>An instance of <a href="../../../../reference/java/lang/reflect/Type.html">Type</a>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/reflect/GenericSignatureFormatError.html">GenericSignatureFormatError</a></td>
+            <td>if the generic method signature is
+         invalid.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/TypeNotPresentException.html">TypeNotPresentException</a></td>
+            <td>if the component type points to a missing
+         type.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/reflect/MalformedParameterizedTypeException.html">MalformedParameterizedTypeException</a></td>
+            <td>if the component type points
+         to a type that can't be instantiated for some reason.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getInt(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getInt(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as an int. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLong(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        getLong(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a long. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getModifiers()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getModifiers()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the modifiers for the modeled field. The Modifier class should be
+ used to decode the result.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the modifiers</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/lang/reflect/Modifier.html">Modifier</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getName()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getName()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the name of the modeled field.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the name
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getShort(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        short
+        getShort(<a href="../../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the value of the field in the specified object as a short. This
+ reproduces the effect of <code>object.fieldName</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the field value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getType()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;
+        getType()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the <a href="../../../../reference/java/lang/Class.html">Class</a> associated with the type of this field.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the type
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hashCode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        hashCode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns an integer hash code for the receiver. Objects which are equal
+ answer the same value for this method.
+ <p>
+ The hash code for a Field is the hash code of the field's name.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the receiver's hash</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/lang/reflect/Field.html#equals(java.lang.Object)">equals(Object)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="isEnumConstant()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isEnumConstant()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+<p>
+ Indicates whether or not this field is an enumeration constant.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A value of <code>true</code> if this field is an enumeration
+         constant, otherwise <code>false</code>.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isSynthetic()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isSynthetic()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+<p>
+ Indicates whether or not this field is synthetic.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A value of <code>true</code> if this field is synthetic,
+         otherwise <code>false</code>.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="set(java.lang.Object, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        set(<a href="../../../../reference/java/lang/Object.html">Object</a> object, <a href="../../../../reference/java/lang/Object.html">Object</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the boolean value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the field type is a base type, the value is automatically unwrapped.
+ If the unwrap fails, an IllegalArgumentException is thrown. If the value
+ cannot be converted to the field type via a widening conversion, an
+ IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBoolean(java.lang.Object, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBoolean(<a href="../../../../reference/java/lang/Object.html">Object</a> object, boolean value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the boolean value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setByte(java.lang.Object, byte)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setByte(<a href="../../../../reference/java/lang/Object.html">Object</a> object, byte value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the byte value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setChar(java.lang.Object, char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setChar(<a href="../../../../reference/java/lang/Object.html">Object</a> object, char value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the char value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDouble(java.lang.Object, double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDouble(<a href="../../../../reference/java/lang/Object.html">Object</a> object, double value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the double value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFloat(java.lang.Object, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFloat(<a href="../../../../reference/java/lang/Object.html">Object</a> object, float value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the float value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setInt(java.lang.Object, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setInt(<a href="../../../../reference/java/lang/Object.html">Object</a> object, int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the int value. This
+ reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLong(java.lang.Object, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLong(<a href="../../../../reference/java/lang/Object.html">Object</a> object, long value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the long value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setShort(java.lang.Object, short)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setShort(<a href="../../../../reference/java/lang/Object.html">Object</a> object, short value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value of the field in the specified object to the short value.
+ This reproduces the effect of <code>object.fieldName = value</code>
+ <p>
+ If the modeled field is static, the object argument is ignored.
+ Otherwise, if the object is null, a NullPointerException is thrown. If
+ the object is not an instance of the declaring class of the method, an
+ IllegalArgumentException is thrown.
+ <p>
+ If this Field object is enforcing access control (see AccessibleObject)
+ and the modeled field is not accessible from the current context, an
+ IllegalAccessException is thrown.
+ <p>
+ If the value cannot be converted to the field type via a widening
+ conversion, an IllegalArgumentException is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object to access</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the new value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the object is null and the field is non-static</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the object is not compatible with the declaring class</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalAccessException.html">IllegalAccessException</a></td>
+            <td>if modeled field is not accessible
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toGenericString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        toGenericString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+<p>
+ Returns the String representation of the field's declaration, including
+ the type parameters.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>An instance of String.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing a concise, human-readable description of the
+ receiver.
+ <p>
+ The format of the string is:
+ <ul>
+ <li>modifiers (if any)
+ <li>return type
+ <li>declaring class name
+ <li>'.'
+ <li>field name
+ </ul>
+ <p>
+ For example:
+ <code>public static java.io.InputStream java.lang.System.in</code>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a printable representation for the receiver
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

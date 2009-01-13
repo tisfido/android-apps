@@ -1,0 +1,2805 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.impl.client.DefaultHttpClient - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/style.css" />
+<script src="../../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../../')"
+            onchange="search_changed(event, false, '../../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../../reference/org/apache/http/impl/client/package-summary.html">org.apache.http.impl.client</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>org.apache.http.impl.client.DefaultHttpClient</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html">org.apache.http.impl.client.AbstractHttpClient</a></td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html">HttpClient</a> 
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.impl.client.DefaultHttpClient</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Default implementation of an HTTP client.
+ <br/>
+ This class replaces <code>HttpClient</code> in HttpClient 3.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#DefaultHttpClient(org.apache.http.conn.ClientConnectionManager, org.apache.http.params.HttpParams)">DefaultHttpClient</a>(<a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a> conman, <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a new HTTP client from parameters and a connection manager.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#DefaultHttpClient(org.apache.http.params.HttpParams)">DefaultHttpClient</a>(<a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#DefaultHttpClient()">DefaultHttpClient</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/auth/AuthSchemeRegistry.html">AuthSchemeRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createAuthSchemeRegistry()">createAuthSchemeRegistry</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createClientConnectionManager()">createClientConnectionManager</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createConnectionKeepAliveStrategy()">createConnectionKeepAliveStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createConnectionReuseStrategy()">createConnectionReuseStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/cookie/CookieSpecRegistry.html">CookieSpecRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createCookieSpecRegistry()">createCookieSpecRegistry</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CookieStore.html">CookieStore</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createCookieStore()">createCookieStore</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CredentialsProvider.html">CredentialsProvider</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createCredentialsProvider()">createCredentialsProvider</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createHttpContext()">createHttpContext</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createHttpParams()">createHttpParams</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/BasicHttpProcessor.html">BasicHttpProcessor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createHttpProcessor()">createHttpProcessor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createHttpRequestRetryHandler()">createHttpRequestRetryHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createHttpRoutePlanner()">createHttpRoutePlanner</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createProxyAuthenticationHandler()">createProxyAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createRedirectHandler()">createRedirectHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createRequestExecutor()">createRequestExecutor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createTargetAuthenticationHandler()">createTargetAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/DefaultHttpClient.html#createUserTokenHandler()">createUserTokenHandler</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.impl.client.AbstractHttpClient')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.impl.client.AbstractHttpClient-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html">org.apache.http.impl.client.AbstractHttpClient</a>
+</h5>
+<div id="inherited-methods-org.apache.http.impl.client.AbstractHttpClient">
+<div id="inherited-methods-org.apache.http.impl.client.AbstractHttpClient-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addRequestInterceptor(org.apache.http.HttpRequestInterceptor)">addRequestInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addRequestInterceptor(org.apache.http.HttpRequestInterceptor, int)">addRequestInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addResponseInterceptor(org.apache.http.HttpResponseInterceptor, int)">addResponseInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addResponseInterceptor(org.apache.http.HttpResponseInterceptor)">addResponseInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#clearRequestInterceptors()">clearRequestInterceptors</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#clearResponseInterceptors()">clearResponseInterceptors</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createAuthSchemeRegistry()">createAuthSchemeRegistry</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createClientConnectionManager()">createClientConnectionManager</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createClientRequestDirector(org.apache.http.protocol.HttpRequestExecutor, org.apache.http.conn.ClientConnectionManager, org.apache.http.ConnectionReuseStrategy, org.apache.http.conn.ConnectionKeepAliveStrategy, org.apache.http.conn.routing.HttpRoutePlanner, org.apache.http.protocol.HttpProcessor, org.apache.http.client.HttpRequestRetryHandler, org.apache.http.client.RedirectHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.UserTokenHandler, org.apache.http.params.HttpParams)">createClientRequestDirector</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createConnectionKeepAliveStrategy()">createConnectionKeepAliveStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createConnectionReuseStrategy()">createConnectionReuseStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCookieSpecRegistry()">createCookieSpecRegistry</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCookieStore()">createCookieStore</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCredentialsProvider()">createCredentialsProvider</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpContext()">createHttpContext</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpParams()">createHttpParams</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpProcessor()">createHttpProcessor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpRequestRetryHandler()">createHttpRequestRetryHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpRoutePlanner()">createHttpRoutePlanner</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createProxyAuthenticationHandler()">createProxyAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createRedirectHandler()">createRedirectHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createRequestExecutor()">createRequestExecutor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createTargetAuthenticationHandler()">createTargetAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createUserTokenHandler()">createUserTokenHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#determineParams(org.apache.http.HttpRequest)">determineParams</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getAuthSchemes()">getAuthSchemes</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionKeepAliveStrategy()">getConnectionKeepAliveStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionManager()">getConnectionManager</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionReuseStrategy()">getConnectionReuseStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCookieSpecs()">getCookieSpecs</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCookieStore()">getCookieStore</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCredentialsProvider()">getCredentialsProvider</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getHttpProcessor()">getHttpProcessor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getHttpRequestRetryHandler()">getHttpRequestRetryHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getParams()">getParams</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getProxyAuthenticationHandler()">getProxyAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRedirectHandler()">getRedirectHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestExecutor()">getRequestExecutor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestInterceptor(int)">getRequestInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestInterceptorCount()">getRequestInterceptorCount</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getResponseInterceptor(int)">getResponseInterceptor</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getResponseInterceptorCount()">getResponseInterceptorCount</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRoutePlanner()">getRoutePlanner</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getTargetAuthenticationHandler()">getTargetAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getUserTokenHandler()">getUserTokenHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#removeRequestInterceptorByClass(java.lang.Class<? extends org.apache.http.HttpRequestInterceptor>)">removeRequestInterceptorByClass</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#removeResponseInterceptorByClass(java.lang.Class<? extends org.apache.http.HttpResponseInterceptor>)">removeResponseInterceptorByClass</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setAuthSchemes(org.apache.http.auth.AuthSchemeRegistry)">setAuthSchemes</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCookieSpecs(org.apache.http.cookie.CookieSpecRegistry)">setCookieSpecs</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCookieStore(org.apache.http.client.CookieStore)">setCookieStore</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCredentialsProvider(org.apache.http.client.CredentialsProvider)">setCredentialsProvider</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setHttpRequestRetryHandler(org.apache.http.client.HttpRequestRetryHandler)">setHttpRequestRetryHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setKeepAliveStrategy(org.apache.http.conn.ConnectionKeepAliveStrategy)">setKeepAliveStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setParams(org.apache.http.params.HttpParams)">setParams</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setProxyAuthenticationHandler(org.apache.http.client.AuthenticationHandler)">setProxyAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setRedirectHandler(org.apache.http.client.RedirectHandler)">setRedirectHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setReuseStrategy(org.apache.http.ConnectionReuseStrategy)">setReuseStrategy</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setRoutePlanner(org.apache.http.conn.routing.HttpRoutePlanner)">setRoutePlanner</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setTargetAuthenticationHandler(org.apache.http.client.AuthenticationHandler)">setTargetAuthenticationHandler</a>,
+
+<a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setUserTokenHandler(org.apache.http.client.UserTokenHandler)">setUserTokenHandler</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.impl.client.AbstractHttpClient-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addRequestInterceptor(org.apache.http.HttpRequestInterceptor)">addRequestInterceptor</a>(<a href="../../../../../../reference/org/apache/http/HttpRequestInterceptor.html">HttpRequestInterceptor</a> itcp)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addRequestInterceptor(org.apache.http.HttpRequestInterceptor, int)">addRequestInterceptor</a>(<a href="../../../../../../reference/org/apache/http/HttpRequestInterceptor.html">HttpRequestInterceptor</a> itcp, int index)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addResponseInterceptor(org.apache.http.HttpResponseInterceptor, int)">addResponseInterceptor</a>(<a href="../../../../../../reference/org/apache/http/HttpResponseInterceptor.html">HttpResponseInterceptor</a> itcp, int index)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#addResponseInterceptor(org.apache.http.HttpResponseInterceptor)">addResponseInterceptor</a>(<a href="../../../../../../reference/org/apache/http/HttpResponseInterceptor.html">HttpResponseInterceptor</a> itcp)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#clearRequestInterceptors()">clearRequestInterceptors</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#clearResponseInterceptors()">clearResponseInterceptors</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/auth/AuthSchemeRegistry.html">AuthSchemeRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createAuthSchemeRegistry()">createAuthSchemeRegistry</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createClientConnectionManager()">createClientConnectionManager</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/RequestDirector.html">RequestDirector</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createClientRequestDirector(org.apache.http.protocol.HttpRequestExecutor, org.apache.http.conn.ClientConnectionManager, org.apache.http.ConnectionReuseStrategy, org.apache.http.conn.ConnectionKeepAliveStrategy, org.apache.http.conn.routing.HttpRoutePlanner, org.apache.http.protocol.HttpProcessor, org.apache.http.client.HttpRequestRetryHandler, org.apache.http.client.RedirectHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.AuthenticationHandler, org.apache.http.client.UserTokenHandler, org.apache.http.params.HttpParams)">createClientRequestDirector</a>(<a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a> requestExec, <a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a> conman, <a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a> reustrat, <a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a> kastrat, <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a> rouplan, <a href="../../../../../../reference/org/apache/http/protocol/HttpProcessor.html">HttpProcessor</a> httpProcessor, <a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a> retryHandler, <a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a> redirectHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> targetAuthHandler, <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> proxyAuthHandler, <a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a> stateHandler, <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createConnectionKeepAliveStrategy()">createConnectionKeepAliveStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createConnectionReuseStrategy()">createConnectionReuseStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/cookie/CookieSpecRegistry.html">CookieSpecRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCookieSpecRegistry()">createCookieSpecRegistry</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CookieStore.html">CookieStore</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCookieStore()">createCookieStore</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CredentialsProvider.html">CredentialsProvider</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createCredentialsProvider()">createCredentialsProvider</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpContext()">createHttpContext</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpParams()">createHttpParams</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/BasicHttpProcessor.html">BasicHttpProcessor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpProcessor()">createHttpProcessor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpRequestRetryHandler()">createHttpRequestRetryHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createHttpRoutePlanner()">createHttpRoutePlanner</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createProxyAuthenticationHandler()">createProxyAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createRedirectHandler()">createRedirectHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createRequestExecutor()">createRequestExecutor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createTargetAuthenticationHandler()">createTargetAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#createUserTokenHandler()">createUserTokenHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#determineParams(org.apache.http.HttpRequest)">determineParams</a>(<a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> req)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains parameters for executing a request.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Maps to <a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute(target, request, context)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the given context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the default context and processes the
+ response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the given context and 
+ processes the response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the default context and 
+ processes the response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the default context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the default context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the given context and processes the
+ response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/auth/AuthSchemeRegistry.html">AuthSchemeRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getAuthSchemes()">getAuthSchemes</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionKeepAliveStrategy()">getConnectionKeepAliveStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionManager()">getConnectionManager</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the connection manager used by this client.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getConnectionReuseStrategy()">getConnectionReuseStrategy</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/cookie/CookieSpecRegistry.html">CookieSpecRegistry</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCookieSpecs()">getCookieSpecs</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CookieStore.html">CookieStore</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCookieStore()">getCookieStore</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/CredentialsProvider.html">CredentialsProvider</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getCredentialsProvider()">getCredentialsProvider</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/BasicHttpProcessor.html">BasicHttpProcessor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getHttpProcessor()">getHttpProcessor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getHttpRequestRetryHandler()">getHttpRequestRetryHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getParams()">getParams</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the parameters for this client.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getProxyAuthenticationHandler()">getProxyAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRedirectHandler()">getRedirectHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestExecutor()">getRequestExecutor</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpRequestInterceptor.html">HttpRequestInterceptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestInterceptor(int)">getRequestInterceptor</a>(int index)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRequestInterceptorCount()">getRequestInterceptorCount</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponseInterceptor.html">HttpResponseInterceptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getResponseInterceptor(int)">getResponseInterceptor</a>(int index)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getResponseInterceptorCount()">getResponseInterceptorCount</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getRoutePlanner()">getRoutePlanner</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getTargetAuthenticationHandler()">getTargetAuthenticationHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#getUserTokenHandler()">getUserTokenHandler</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#removeRequestInterceptorByClass(java.lang.Class<? extends org.apache.http.HttpRequestInterceptor>)">removeRequestInterceptorByClass</a>(<a href="../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../reference/org/apache/http/HttpRequestInterceptor.html">HttpRequestInterceptor</a>&gt; clazz)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#removeResponseInterceptorByClass(java.lang.Class<? extends org.apache.http.HttpResponseInterceptor>)">removeResponseInterceptorByClass</a>(<a href="../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../reference/org/apache/http/HttpResponseInterceptor.html">HttpResponseInterceptor</a>&gt; clazz)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setAuthSchemes(org.apache.http.auth.AuthSchemeRegistry)">setAuthSchemes</a>(<a href="../../../../../../reference/org/apache/http/auth/AuthSchemeRegistry.html">AuthSchemeRegistry</a> authSchemeRegistry)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCookieSpecs(org.apache.http.cookie.CookieSpecRegistry)">setCookieSpecs</a>(<a href="../../../../../../reference/org/apache/http/cookie/CookieSpecRegistry.html">CookieSpecRegistry</a> cookieSpecRegistry)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCookieStore(org.apache.http.client.CookieStore)">setCookieStore</a>(<a href="../../../../../../reference/org/apache/http/client/CookieStore.html">CookieStore</a> cookieStore)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setCredentialsProvider(org.apache.http.client.CredentialsProvider)">setCredentialsProvider</a>(<a href="../../../../../../reference/org/apache/http/client/CredentialsProvider.html">CredentialsProvider</a> credsProvider)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setHttpRequestRetryHandler(org.apache.http.client.HttpRequestRetryHandler)">setHttpRequestRetryHandler</a>(<a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a> retryHandler)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setKeepAliveStrategy(org.apache.http.conn.ConnectionKeepAliveStrategy)">setKeepAliveStrategy</a>(<a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a> keepAliveStrategy)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setParams(org.apache.http.params.HttpParams)">setParams</a>(<a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Replaces the parameters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setProxyAuthenticationHandler(org.apache.http.client.AuthenticationHandler)">setProxyAuthenticationHandler</a>(<a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> proxyAuthHandler)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setRedirectHandler(org.apache.http.client.RedirectHandler)">setRedirectHandler</a>(<a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a> redirectHandler)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setReuseStrategy(org.apache.http.ConnectionReuseStrategy)">setReuseStrategy</a>(<a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a> reuseStrategy)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setRoutePlanner(org.apache.http.conn.routing.HttpRoutePlanner)">setRoutePlanner</a>(<a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a> routePlanner)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setTargetAuthenticationHandler(org.apache.http.client.AuthenticationHandler)">setTargetAuthenticationHandler</a>(<a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a> targetAuthHandler)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">synchronized&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/client/AbstractHttpClient.html#setUserTokenHandler(org.apache.http.client.UserTokenHandler)">setUserTokenHandler</a>(<a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a> userTokenHandler)</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.client.HttpClient')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.client.HttpClient-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../../reference/org/apache/http/client/HttpClient.html">org.apache.http.client.HttpClient</a>
+</h5>
+<div id="inherited-methods-org.apache.http.client.HttpClient">
+<div id="inherited-methods-org.apache.http.client.HttpClient-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest)">execute</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#getConnectionManager()">getConnectionManager</a>,
+
+<a href="../../../../../../reference/org/apache/http/client/HttpClient.html#getParams()">getParams</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.client.HttpClient-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the given context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the default context and 
+ processes the response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the default context and processes the
+ response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the given context and 
+ processes the response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the given context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the default context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler<? extends T>, org.apache.http.protocol.HttpContext)">execute</a>(<a href="../../../../../../reference/org/apache/http/client/methods/HttpUriRequest.html">HttpUriRequest</a> request, <a href="../../../../../../reference/org/apache/http/client/ResponseHandler.html">ResponseHandler</a>&lt;?&nbsp;extends&nbsp;T&gt; responseHandler, <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request using the given context and processes the
+ response using the given response handler.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#execute(org.apache.http.HttpHost, org.apache.http.HttpRequest)">execute</a>(<a href="../../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> target, <a href="../../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a request to the target using the default context.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#getConnectionManager()">getConnectionManager</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the connection manager used by this client.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/client/HttpClient.html#getParams()">getParams</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the parameters for this client.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="DefaultHttpClient(org.apache.http.conn.ClientConnectionManager, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DefaultHttpClient(<a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a> conman, <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a new HTTP client from parameters and a connection manager.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>conman</td>
+        <td>the connection manager
+</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameters</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="DefaultHttpClient(org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DefaultHttpClient(<a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="DefaultHttpClient()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        DefaultHttpClient()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="createAuthSchemeRegistry()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/auth/AuthSchemeRegistry.html">AuthSchemeRegistry</a>
+        createAuthSchemeRegistry()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createClientConnectionManager()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/conn/ClientConnectionManager.html">ClientConnectionManager</a>
+        createClientConnectionManager()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createConnectionKeepAliveStrategy()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/conn/ConnectionKeepAliveStrategy.html">ConnectionKeepAliveStrategy</a>
+        createConnectionKeepAliveStrategy()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createConnectionReuseStrategy()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">ConnectionReuseStrategy</a>
+        createConnectionReuseStrategy()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createCookieSpecRegistry()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/cookie/CookieSpecRegistry.html">CookieSpecRegistry</a>
+        createCookieSpecRegistry()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createCookieStore()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/CookieStore.html">CookieStore</a>
+        createCookieStore()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createCredentialsProvider()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/CredentialsProvider.html">CredentialsProvider</a>
+        createCredentialsProvider()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createHttpContext()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a>
+        createHttpContext()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createHttpParams()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a>
+        createHttpParams()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createHttpProcessor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/protocol/BasicHttpProcessor.html">BasicHttpProcessor</a>
+        createHttpProcessor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createHttpRequestRetryHandler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/HttpRequestRetryHandler.html">HttpRequestRetryHandler</a>
+        createHttpRequestRetryHandler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createHttpRoutePlanner()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/conn/routing/HttpRoutePlanner.html">HttpRoutePlanner</a>
+        createHttpRoutePlanner()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createProxyAuthenticationHandler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>
+        createProxyAuthenticationHandler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createRedirectHandler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/RedirectHandler.html">RedirectHandler</a>
+        createRedirectHandler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createRequestExecutor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/protocol/HttpRequestExecutor.html">HttpRequestExecutor</a>
+        createRequestExecutor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createTargetAuthenticationHandler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/AuthenticationHandler.html">AuthenticationHandler</a>
+        createTargetAuthenticationHandler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createUserTokenHandler()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../reference/org/apache/http/client/UserTokenHandler.html">UserTokenHandler</a>
+        createUserTokenHandler()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

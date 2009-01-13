@@ -1,0 +1,1571 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.view.SurfaceHolder - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/view/package-summary.html">android.view</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>android.view.SurfaceHolder</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.view.SurfaceHolder</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Abstract interface to someone holding a display surface.  Allows you to
+ control the surface size and format, edit the pixels in the surface, and
+ monitor changes to the surface.  This interface is typically available
+ through the <a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a> class.
+ 
+ <p>When using this interface from a thread different than the one running
+ its <a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a>, you will want to carefully read the
+ <a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a> and <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceCreated(android.view.SurfaceHolder)">Callback.surfaceCreated</a>.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/view/SurfaceHolder.BadSurfaceTypeException.html">SurfaceHolder.BadSurfaceTypeException</a>,
+            
+                <a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.BadSurfaceTypeException.html">SurfaceHolder.BadSurfaceTypeException</a></td>
+            <td class="jd-descrcol" width="100%">Exception that is thrown from <a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a> when called on a Surface
+ whose is SURFACE_TYPE_PUSH_BUFFERS.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a></td>
+            <td class="jd-descrcol" width="100%">A client may implement this interface to receive information about
+ changes to the surface.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.html#SURFACE_TYPE_GPU">SURFACE_TYPE_GPU</a>&nbsp;</td>
+        <td class="jd-descrcol">Surface type: creates a surface suited to be used with the GPU &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.html#SURFACE_TYPE_HARDWARE">SURFACE_TYPE_HARDWARE</a>&nbsp;</td>
+        <td class="jd-descrcol">Surface type: creates a suited to be used with DMA engines and
+ hardware accelerators.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.html#SURFACE_TYPE_NORMAL">SURFACE_TYPE_NORMAL</a>&nbsp;</td>
+        <td class="jd-descrcol">Surface type: creates a regular surface, usually in main, non
+ contiguous, cached/buffered RAM.&nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/SurfaceHolder.html#SURFACE_TYPE_PUSH_BUFFERS">SURFACE_TYPE_PUSH_BUFFERS</a>&nbsp;</td>
+        <td class="jd-descrcol">Surface type: creates a "push" surface, that is a surface that 
+ doesn't owns its buffers.&nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#addCallback(android.view.SurfaceHolder.Callback)">addCallback</a>(<a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a> callback)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add a Callback interface for this holder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/Surface.html">Surface</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#getSurface()">getSurface</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Direct access to the surface object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/Rect.html">Rect</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#getSurfaceFrame()">getSurfaceFrame</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current size of the surface.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#isCreating()">isCreating</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Use this method to find out if the surface is in the process of being
+ created from Callback methods.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/Canvas.html">Canvas</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Start editing the pixels in the surface.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/Canvas.html">Canvas</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas(android.graphics.Rect)">lockCanvas</a>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> dirty)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Just like <a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a> but allows to specify a dirty rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#removeCallback(android.view.SurfaceHolder.Callback)">removeCallback</a>(<a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a> callback)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes a previously added Callback interface from this holder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#setFixedSize(int, int)">setFixedSize</a>(int width, int height)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Make the surface a fixed size.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#setFormat(int)">setFormat</a>(int format)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the desired PixelFormat of the surface.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#setKeepScreenOn(boolean)">setKeepScreenOn</a>(boolean screenOn)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enable or disable option to keep the screen turned on while this
+ surface is displayed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#setSizeFromLayout()">setSizeFromLayout</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Allow the surface to resized based on layout of its container (this is
+ the default).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#setType(int)">setType</a>(int type)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the surface's type.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/SurfaceHolder.html#unlockCanvasAndPost(android.graphics.Canvas)">unlockCanvasAndPost</a>(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Finish editing pixels in the surface.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="SURFACE_TYPE_GPU"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SURFACE_TYPE_GPU
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Surface type: creates a surface suited to be used with the GPU 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SURFACE_TYPE_HARDWARE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SURFACE_TYPE_HARDWARE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Surface type: creates a suited to be used with DMA engines and
+ hardware accelerators. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SURFACE_TYPE_NORMAL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SURFACE_TYPE_NORMAL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Surface type: creates a regular surface, usually in main, non
+ contiguous, cached/buffered RAM. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SURFACE_TYPE_PUSH_BUFFERS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SURFACE_TYPE_PUSH_BUFFERS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Surface type: creates a "push" surface, that is a surface that 
+ doesn't owns its buffers. With such a surface lockCanvas will fail. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addCallback(android.view.SurfaceHolder.Callback)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addCallback(<a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a> callback)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add a Callback interface for this holder.  There can several Callback
+ interfaces associated to a holder.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>callback</td>
+        <td>The new Callback interface.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSurface()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/Surface.html">Surface</a>
+        getSurface()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Direct access to the surface object.  The Surface may not always be
+ available -- for example when using a <a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a> the holder's
+ Surface is not created until the view has been attached to the window
+ manager and performed a layout in order to determine the dimensions
+ and screen position of the Surface.    You will thus usually need
+ to implement <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceCreated(android.view.SurfaceHolder)">Callback.surfaceCreated</a>
+ to find out when the Surface is available for use.
+ 
+ <p>Note that if you directly access the Surface from another thread,
+ it is critical that you correctly implement
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceCreated(android.view.SurfaceHolder)">Callback.surfaceCreated</a> and
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceDestroyed(android.view.SurfaceHolder)">Callback.surfaceDestroyed</a> to ensure
+ that thread only accesses the Surface while it is valid, and that the
+ Surface does not get destroyed while the thread is using it.
+ 
+ <p>This method is intended to be used by frameworks which often need
+ direct access to the Surface object (usually to pass it to native code).
+ When designing APIs always use SurfaceHolder to pass surfaces around
+ as opposed to the Surface object itself. A rule of thumb is that
+ application code should never have to call this method.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Surface The surface.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSurfaceFrame()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/graphics/Rect.html">Rect</a>
+        getSurfaceFrame()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current size of the surface.  Note: do not modify the
+ returned Rect.  This is only safe to call from the thread of
+ <a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a>'s window, or while inside of
+ <a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a>.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Rect The surface's dimensions.  The left and top are always 0.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isCreating()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isCreating()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use this method to find out if the surface is in the process of being
+ created from Callback methods. This is intended to be used with
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceChanged(android.view.SurfaceHolder, int, int, int)">surfaceChanged(SurfaceHolder, int, int, int)</a>.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the surface is in the process of being created.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lockCanvas()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/graphics/Canvas.html">Canvas</a>
+        lockCanvas()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Start editing the pixels in the surface.  The returned Canvas can be used
+ to draw into the surface's bitmap.  A null is returned if the surface has
+ not been created or otherwise can not be edited.  You will usually need
+ to implement <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceCreated(android.view.SurfaceHolder)">Callback.surfaceCreated</a>
+ to find out when the Surface is available for use.
+ 
+ <p>The content of the Surface is never preserved between unlockCanvas() and
+ lockCanvas(), for this reason, every pixel within the Surface area
+ must be written. The only exception to this rule is when a dirty
+ rectangle is specified, in which case, non dirty pixels will be
+ preserved.
+ 
+ <p>If you call this repeatedly when the Surface is not ready (before
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceCreated(android.view.SurfaceHolder)">Callback.surfaceCreated</a> or after
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceDestroyed(android.view.SurfaceHolder)">Callback.surfaceDestroyed</a>), your calls
+ will be throttled to a slow rate in order to avoid consuming CPU.
+ 
+ <p>If null is not returned, this function internally holds a lock until
+ the corresponding <a href="../../../reference/android/view/SurfaceHolder.html#unlockCanvasAndPost(android.graphics.Canvas)">unlockCanvasAndPost(Canvas)</a> call, preventing
+ <a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a> from creating, destroying, or modifying the surface
+ while it is being drawn.  This can be more convenience than accessing
+ the Surface directly, as you do not need to do special synchronization
+ with a drawing thread in <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceDestroyed(android.view.SurfaceHolder)">Callback.surfaceDestroyed</a>.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Canvas Use to draw into the surface.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="lockCanvas(android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/graphics/Canvas.html">Canvas</a>
+        lockCanvas(<a href="../../../reference/android/graphics/Rect.html">Rect</a> dirty)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Just like <a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a> but allows to specify a dirty rectangle.
+ Every
+ pixel within that rectangle must be written; however pixels outside
+ the dirty rectangle will be preserved by the next call to lockCanvas().
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>dirty</td>
+        <td>Area of the Surface that will be modified.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Canvas Use to draw into the surface.
+</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/SurfaceHolder.html#lockCanvas()">lockCanvas()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeCallback(android.view.SurfaceHolder.Callback)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        removeCallback(<a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a> callback)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Removes a previously added Callback interface from this holder.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>callback</td>
+        <td>The Callback interface to remove.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFixedSize(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFixedSize(int width, int height)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Make the surface a fixed size.  It will never change from this size.
+ When working with a {link SurfaceView}, this must be called from the
+ same thread running the SurfaceView's window.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>width</td>
+        <td>The surface's width.</td>
+      </tr>
+    <tr>
+        <th>height</td>
+        <td>The surface's height.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFormat(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFormat(int format)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the desired PixelFormat of the surface.  The default is OPAQUE.
+ When working with a {link SurfaceView}, this must be called from the
+ same thread running the SurfaceView's window.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>format</td>
+        <td>A constant from PixelFormat.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/graphics/PixelFormat.html">PixelFormat</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setKeepScreenOn(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setKeepScreenOn(boolean screenOn)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enable or disable option to keep the screen turned on while this
+ surface is displayed.  The default is false, allowing it to turn off.
+ Enabling the option effectivelty.
+ This is safe to call from any thread.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>screenOn</td>
+        <td>Supply to true to force the screen to stay on, false
+ to allow it to turn off.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSizeFromLayout()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setSizeFromLayout()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Allow the surface to resized based on layout of its container (this is
+ the default).  When this is enabled, you should monitor
+ <a href="../../../reference/android/view/SurfaceHolder.Callback.html#surfaceChanged(android.view.SurfaceHolder, int, int, int)">surfaceChanged(SurfaceHolder, int, int, int)</a> for changes to the size of the surface.
+ When working with a {link SurfaceView}, this must be called from the
+ same thread running the SurfaceView's window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setType(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setType(int type)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the surface's type. Surfaces intended to be used with OpenGL ES
+ should be of SURFACE_TYPE_GPU, surfaces accessed by DMA engines and
+ hardware accelerators should be of type SURFACE_TYPE_HARDWARE.
+ Failing to set the surface's type appropriately could result in 
+ degraded performance or failure. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>type</td>
+        <td>The surface's memory type.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unlockCanvasAndPost(android.graphics.Canvas)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        unlockCanvasAndPost(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Finish editing pixels in the surface.  After this call, the surface's
+ current pixels will be shown on the screen, but its content is lost,
+ in particular there is no guarantee that the content of the Surface
+ will remain unchanged when lockCanvas() is called again.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>canvas</td>
+        <td>The Canvas previously returned by lockCanvas().
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../">ERROR(/android.view.SurfaceHolder.lockCanvas)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

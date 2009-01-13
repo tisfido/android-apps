@@ -1,0 +1,1646 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.text.util.Linkify - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/android/text/util/package-summary.html">android.text.util</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.text.util.Linkify</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.text.util.Linkify</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Linkify take a piece of text and a regular expression and turns all of the
+  regex matches in the text into clickable links.  This is particularly
+  useful for matching things like email addresses, web urls, etc. and making
+  them actionable.
+
+  Alone with the pattern that is to be matched, a url scheme prefix is also
+  required.  Any pattern match that does not begin with the supplied scheme
+  will have the scheme prepended to the matched text when the clickable url
+  is created.  For instance, if you are matching web urls you would supply
+  the scheme <code>http://</code>.  If the pattern matches example.com, which
+  does not have a url scheme prefix, the supplied scheme will be prepended to
+  create <code>http://example.com</code> when the clickable url link is
+  created.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a>,
+            
+                <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a></td>
+            <td class="jd-descrcol" width="100%">MatchFilter enables client code to have more control over
+  what is allowed to match and become a link, and what is not.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a></td>
+            <td class="jd-descrcol" width="100%">TransformFilter enables client code to have more control over
+  how matched patterns are represented as URLs.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#ALL">ALL</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit mask indicating that all available patterns should be matched in
+  methods that take an options mask
+&nbsp;</td>
+        
+            <td class="jd-valcol">15&nbsp;</td>
+            <td class="jd-valcol">0x0000000f&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#EMAIL_ADDRESSES">EMAIL_ADDRESSES</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit field indicating that email addresses should be matched in methods
+  that take an options mask
+&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#MAP_ADDRESSES">MAP_ADDRESSES</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit field indicating that phone numbers should be matched in methods that
+  take an options mask
+&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#PHONE_NUMBERS">PHONE_NUMBERS</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit field indicating that phone numbers should be matched in methods that
+  take an options mask
+&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#WEB_URLS">WEB_URLS</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit field indicating that web URLs should be matched in methods that
+  take an options mask
+&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#sPhoneNumberMatchFilter">sPhoneNumberMatchFilter</a>&nbsp;</td>
+        <td class="jd-descrcol">Filters out URL matches that don't have enough digits to be a
+  phone number.&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#sPhoneNumberTransformFilter">sPhoneNumberTransformFilter</a>&nbsp;</td>
+        <td class="jd-descrcol">Transforms matched phone number text into something suitable
+  to be used in a tel: URL.&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/android/text/util/Linkify.html#sUrlMatchFilter">sUrlMatchFilter</a>&nbsp;</td>
+        <td class="jd-descrcol">Filters out web URL matches that occur after an at-sign (@).&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#Linkify()">Linkify</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.widget.TextView, int)">addLinks</a>(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, int mask)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Scans the text of the provided TextView and turns all occurrences of
+  the link types indicated in the mask into clickable links.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.widget.TextView, java.util.regex.Pattern, java.lang.String, android.text.util.Linkify.MatchFilter, android.text.util.Linkify.TransformFilter)">addLinks</a>(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> p, <a href="../../../../reference/java/lang/String.html">String</a> scheme, <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a> matchFilter, <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a> transformFilter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Applies a regex to the text of a TextView turning the matches into
+  links.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.widget.TextView, java.util.regex.Pattern, java.lang.String)">addLinks</a>(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern, <a href="../../../../reference/java/lang/String.html">String</a> scheme)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Applies a regex to the text of a TextView turning the matches into
+  links.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.text.Spannable, int)">addLinks</a>(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> text, int mask)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Scans the text of the provided Spannable and turns all occurrences
+  of the link types indicated in the mask into clickable links.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.text.Spannable, java.util.regex.Pattern, java.lang.String)">addLinks</a>(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern, <a href="../../../../reference/java/lang/String.html">String</a> scheme)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Applies a regex to a Spannable turning the matches into
+  links.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/text/util/Linkify.html#addLinks(android.text.Spannable, java.util.regex.Pattern, java.lang.String, android.text.util.Linkify.MatchFilter, android.text.util.Linkify.TransformFilter)">addLinks</a>(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> s, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> p, <a href="../../../../reference/java/lang/String.html">String</a> scheme, <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a> matchFilter, <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a> transformFilter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Applies a regex to a Spannable turning the matches into
+  links.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="ALL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        ALL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit mask indicating that all available patterns should be matched in
+  methods that take an options mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                15
+                (0x0000000f)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="EMAIL_ADDRESSES"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        EMAIL_ADDRESSES
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit field indicating that email addresses should be matched in methods
+  that take an options mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="MAP_ADDRESSES"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        MAP_ADDRESSES
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit field indicating that phone numbers should be matched in methods that
+  take an options mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8
+                (0x00000008)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PHONE_NUMBERS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        PHONE_NUMBERS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit field indicating that phone numbers should be matched in methods that
+  take an options mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="WEB_URLS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        WEB_URLS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit field indicating that web URLs should be matched in methods that
+  take an options mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="sPhoneNumberMatchFilter"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a>
+        sPhoneNumberMatchFilter
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Filters out URL matches that don't have enough digits to be a
+  phone number.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="sPhoneNumberTransformFilter"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a>
+        sPhoneNumberTransformFilter
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Transforms matched phone number text into something suitable
+  to be used in a tel: URL.  It does this by removing everything
+  but the digits and plus signs.  For instance:
+  &apos;+1 (919) 555-1212&apos;
+  becomes &apos;+19195551212&apos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="sUrlMatchFilter"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a>
+        sUrlMatchFilter
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Filters out web URL matches that occur after an at-sign (@).  This is
+  to prevent turning the domain name in an email address into a web link.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Linkify()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Linkify()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addLinks(android.widget.TextView, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        addLinks(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, int mask)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Scans the text of the provided TextView and turns all occurrences of
+  the link types indicated in the mask into clickable links.  If matches
+  are found the movement method for the TextView is set to
+  LinkMovementMethod.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addLinks(android.widget.TextView, java.util.regex.Pattern, java.lang.String, android.text.util.Linkify.MatchFilter, android.text.util.Linkify.TransformFilter)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        void
+        addLinks(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> p, <a href="../../../../reference/java/lang/String.html">String</a> scheme, <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a> matchFilter, <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a> transformFilter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Applies a regex to the text of a TextView turning the matches into
+  links.  If links are found then UrlSpans are applied to the link
+  text match areas, and the movement method for the text is changed
+  to LinkMovementMethod.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>TextView whose text is to be marked-up with links</td>
+      </tr>
+    <tr>
+        <th>p</td>
+        <td>Regex pattern to be used for finding links</td>
+      </tr>
+    <tr>
+        <th>scheme</td>
+        <td>Url scheme string (eg <code>http://</code> to be
+                      prepended to the url of links that do not have
+                      a scheme specified in the link text</td>
+      </tr>
+    <tr>
+        <th>matchFilter</td>
+        <td>The filter that is used to allow the client code
+                      additional control over which pattern matches are
+                      to be converted into links.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addLinks(android.widget.TextView, java.util.regex.Pattern, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        void
+        addLinks(<a href="../../../../reference/android/widget/TextView.html">TextView</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern, <a href="../../../../reference/java/lang/String.html">String</a> scheme)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Applies a regex to the text of a TextView turning the matches into
+  links.  If links are found then UrlSpans are applied to the link
+  text match areas, and the movement method for the text is changed
+  to LinkMovementMethod.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>TextView whose text is to be marked-up with links</td>
+      </tr>
+    <tr>
+        <th>pattern</td>
+        <td>Regex pattern to be used for finding links</td>
+      </tr>
+    <tr>
+        <th>scheme</td>
+        <td>Url scheme string (eg <code>http://</code> to be
+                      prepended to the url of links that do not have
+                      a scheme specified in the link text
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addLinks(android.text.Spannable, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        addLinks(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> text, int mask)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Scans the text of the provided Spannable and turns all occurrences
+  of the link types indicated in the mask into clickable links.
+  If the mask is nonzero, it also removes any existing URLSpans
+  attached to the Spannable, to avoid problems if you call it
+  repeatedly on the same text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addLinks(android.text.Spannable, java.util.regex.Pattern, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        addLinks(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> text, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> pattern, <a href="../../../../reference/java/lang/String.html">String</a> scheme)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Applies a regex to a Spannable turning the matches into
+  links.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>Spannable whose text is to be marked-up with
+                      links</td>
+      </tr>
+    <tr>
+        <th>pattern</td>
+        <td>Regex pattern to be used for finding links</td>
+      </tr>
+    <tr>
+        <th>scheme</td>
+        <td>Url scheme string (eg <code>http://</code> to be
+                      prepended to the url of links that do not have
+                      a scheme specified in the link text
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addLinks(android.text.Spannable, java.util.regex.Pattern, java.lang.String, android.text.util.Linkify.MatchFilter, android.text.util.Linkify.TransformFilter)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        boolean
+        addLinks(<a href="../../../../reference/android/text/Spannable.html">Spannable</a> s, <a href="../../../../reference/java/util/regex/Pattern.html">Pattern</a> p, <a href="../../../../reference/java/lang/String.html">String</a> scheme, <a href="../../../../reference/android/text/util/Linkify.MatchFilter.html">Linkify.MatchFilter</a> matchFilter, <a href="../../../../reference/android/text/util/Linkify.TransformFilter.html">Linkify.TransformFilter</a> transformFilter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Applies a regex to a Spannable turning the matches into
+  links.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>s</td>
+        <td>Spannable whose text is to be marked-up with
+                      links</td>
+      </tr>
+    <tr>
+        <th>p</td>
+        <td>Regex pattern to be used for finding links</td>
+      </tr>
+    <tr>
+        <th>scheme</td>
+        <td>Url scheme string (eg <code>http://</code> to be
+                      prepended to the url of links that do not have
+                      a scheme specified in the link text</td>
+      </tr>
+    <tr>
+        <th>matchFilter</td>
+        <td>The filter that is used to allow the client code
+                      additional control over which pattern matches are
+                      to be converted into links.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

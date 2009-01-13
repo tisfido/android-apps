@@ -1,0 +1,4660 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.hardware.SensorManager - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/hardware/package-summary.html">android.hardware</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.hardware.SensorManager</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/android/os/Binder.html">android.os.Binder</a></td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/os/IBinder.html">IBinder</a> 
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.hardware.SensorManager</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/os/IInterface.html">IInterface</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Class that lets you access the device's sensors. Get an instance of this
+ class by calling <a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">Context.getSystemService()</a> with an argument of <a href="../../../reference/android/content/Context.html#SENSOR_SERVICE">SENSOR_SERVICE</a>.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#DATA_X">DATA_X</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#DATA_Y">DATA_Y</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the Y value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#DATA_Z">DATA_Z</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the Z value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_DEATH_STAR_I">GRAVITY_DEATH_STAR_I</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">3.5303614E-7&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_EARTH">GRAVITY_EARTH</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">9.80665&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_JUPITER">GRAVITY_JUPITER</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">23.12&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_MARS">GRAVITY_MARS</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">3.71&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_MERCURY">GRAVITY_MERCURY</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">3.7&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_MOON">GRAVITY_MOON</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">1.6&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_NEPTUNE">GRAVITY_NEPTUNE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">11.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_PLUTO">GRAVITY_PLUTO</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">0.6&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_SATURN">GRAVITY_SATURN</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">8.96&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_SUN">GRAVITY_SUN</a>&nbsp;</td>
+        <td class="jd-descrcol">values returned by the accelerometer in various locations in the universe.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">275.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_THE_ISLAND">GRAVITY_THE_ISLAND</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">4.815162&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_URANUS">GRAVITY_URANUS</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">8.69&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#GRAVITY_VENUS">GRAVITY_VENUS</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">8.87&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_CLOUDY">LIGHT_CLOUDY</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">100.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_FULLMOON">LIGHT_FULLMOON</a>&nbsp;</td>
+        <td class="jd-descrcol">Various luminance values during the night (lux) &nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">0.25&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_NO_MOON">LIGHT_NO_MOON</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">0.0010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_OVERCAST">LIGHT_OVERCAST</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">10000.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_SHADE">LIGHT_SHADE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">20000.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_SUNLIGHT">LIGHT_SUNLIGHT</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">110000.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_SUNLIGHT_MAX">LIGHT_SUNLIGHT_MAX</a>&nbsp;</td>
+        <td class="jd-descrcol">Various luminance values during the day (lux) &nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">120000.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#LIGHT_SUNRISE">LIGHT_SUNRISE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">400.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#MAGNETIC_FIELD_EARTH_MAX">MAGNETIC_FIELD_EARTH_MAX</a>&nbsp;</td>
+        <td class="jd-descrcol">Maximum magnetic field on Earth's surface &nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">60.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#MAGNETIC_FIELD_EARTH_MIN">MAGNETIC_FIELD_EARTH_MIN</a>&nbsp;</td>
+        <td class="jd-descrcol">Minimum magnetic field on Earth's surface &nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">30.0&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#RAW_DATA_INDEX">RAW_DATA_INDEX</a>&nbsp;</td>
+        <td class="jd-descrcol">Offset to the raw values in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#RAW_DATA_X">RAW_DATA_X</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#RAW_DATA_Y">RAW_DATA_Y</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#RAW_DATA_Z">RAW_DATA_Z</a>&nbsp;</td>
+        <td class="jd-descrcol">Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> &nbsp;</td>
+        
+            <td class="jd-valcol">5&nbsp;</td>
+            <td class="jd-valcol">0x00000005&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_ACCELEROMETER">SENSOR_ACCELEROMETER</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing an accelerometer.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_ALL">SENSOR_ALL</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant that includes all sensors &nbsp;</td>
+        
+            <td class="jd-valcol">127&nbsp;</td>
+            <td class="jd-valcol">0x0000007f&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_DELAY_FASTEST">SENSOR_DELAY_FASTEST</a>&nbsp;</td>
+        <td class="jd-descrcol">get sensor data as fast as possible &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_DELAY_GAME">SENSOR_DELAY_GAME</a>&nbsp;</td>
+        <td class="jd-descrcol">rate suitable for games &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_DELAY_NORMAL">SENSOR_DELAY_NORMAL</a>&nbsp;</td>
+        <td class="jd-descrcol">rate (default) suitable for screen orientation changes &nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_DELAY_UI">SENSOR_DELAY_UI</a>&nbsp;</td>
+        <td class="jd-descrcol">rate suitable for the user interface  &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_LIGHT">SENSOR_LIGHT</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing an ambient light sensor
+ Only the first value is defined for this sensor and it contains
+ the ambient light measure in lux.&nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_MAGNETIC_FIELD">SENSOR_MAGNETIC_FIELD</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing a magnetic sensor
+ See <a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> for more details.&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_MAX">SENSOR_MAX</a>&nbsp;</td>
+        <td class="jd-descrcol">Largest sensor ID &nbsp;</td>
+        
+            <td class="jd-valcol">64&nbsp;</td>
+            <td class="jd-valcol">0x00000040&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_MIN">SENSOR_MIN</a>&nbsp;</td>
+        <td class="jd-descrcol">Smallest sensor ID &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_ORIENTATION">SENSOR_ORIENTATION</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing an orientation sensor.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_ORIENTATION_RAW">SENSOR_ORIENTATION_RAW</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing an orientation sensor.&nbsp;</td>
+        
+            <td class="jd-valcol">128&nbsp;</td>
+            <td class="jd-valcol">0x00000080&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_PROXIMITY">SENSOR_PROXIMITY</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing a proximity sensor
+ Only the first value is defined for this sensor and it contains
+ the distance between the sensor and the object in meters (m)
+&nbsp;</td>
+        
+            <td class="jd-valcol">32&nbsp;</td>
+            <td class="jd-valcol">0x00000020&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_HIGH">SENSOR_STATUS_ACCURACY_HIGH</a>&nbsp;</td>
+        <td class="jd-descrcol">This sensor is reporting data with maximum accuracy &nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_LOW">SENSOR_STATUS_ACCURACY_LOW</a>&nbsp;</td>
+        <td class="jd-descrcol">This sensor is reporting data with low accuracy, calibration with the
+ environment is needed &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_STATUS_ACCURACY_MEDIUM">SENSOR_STATUS_ACCURACY_MEDIUM</a>&nbsp;</td>
+        <td class="jd-descrcol">This sensor is reporting data with an average level of accuracy, 
+ calibration with the environment may improve the readings &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_STATUS_UNRELIABLE">SENSOR_STATUS_UNRELIABLE</a>&nbsp;</td>
+        <td class="jd-descrcol">The values returned by this sensor cannot be trusted, calibration
+ is needed or the environment doesn't allow readings &nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_TEMPERATURE">SENSOR_TEMPERATURE</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing a temperature sensor
+ Only the first value is defined for this sensor and it
+ contains the ambient temperature in degree centigrade.&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#SENSOR_TRICORDER">SENSOR_TRICORDER</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant describing a Tricorder
+ When this sensor is available and enabled, the device can be
+ used as a fully functional Tricorder.&nbsp;</td>
+        
+            <td class="jd-valcol">64&nbsp;</td>
+            <td class="jd-valcol">0x00000040&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/hardware/SensorManager.html#STANDARD_GRAVITY">STANDARD_GRAVITY</a>&nbsp;</td>
+        <td class="jd-descrcol">Standard gravity (g) on Earth.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">9.80665&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-android.os.IBinder')" class="jd-expando-trigger"
+        ><img id="inherited-constants-android.os.IBinder-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/android/os/IBinder.html">android.os.IBinder</a>
+</h5>
+<div id="inherited-constants-android.os.IBinder">
+<div id="inherited-constants-android.os.IBinder-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/IBinder.html#DUMP_TRANSACTION">DUMP_TRANSACTION</a>,
+
+<a href="../../../reference/android/os/IBinder.html#FIRST_CALL_TRANSACTION">FIRST_CALL_TRANSACTION</a>,
+
+<a href="../../../reference/android/os/IBinder.html#FLAG_ONEWAY">FLAG_ONEWAY</a>,
+
+<a href="../../../reference/android/os/IBinder.html#INTERFACE_TRANSACTION">INTERFACE_TRANSACTION</a>,
+
+<a href="../../../reference/android/os/IBinder.html#LAST_CALL_TRANSACTION">LAST_CALL_TRANSACTION</a>,
+
+<a href="../../../reference/android/os/IBinder.html#PING_TRANSACTION">PING_TRANSACTION</a>
+
+</div>
+<div id="inherited-constants-android.os.IBinder-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#DUMP_TRANSACTION">DUMP_TRANSACTION</a>&nbsp;</td>
+        <td class="jd-descrcol">IBinder protocol transaction code: dump internal state.&nbsp;</td>
+        
+            <td class="jd-valcol">1598311760&nbsp;</td>
+            <td class="jd-valcol">0x5f444d50&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#FIRST_CALL_TRANSACTION">FIRST_CALL_TRANSACTION</a>&nbsp;</td>
+        <td class="jd-descrcol">The first transaction code available for user commands.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#FLAG_ONEWAY">FLAG_ONEWAY</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag to <a href="../../../reference/android/os/IBinder.html#transact(int, android.os.Parcel, android.os.Parcel, int)">transact(int, Parcel, Parcel, int)</a>: this is a one-way call, meaning that the
+ caller returns immediately, without waiting for a result from the
+ callee.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#INTERFACE_TRANSACTION">INTERFACE_TRANSACTION</a>&nbsp;</td>
+        <td class="jd-descrcol">IBinder protocol transaction code: interrogate the recipient side
+ of the transaction for its canonical interface descriptor.&nbsp;</td>
+        
+            <td class="jd-valcol">1598968902&nbsp;</td>
+            <td class="jd-valcol">0x5f4e5446&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#LAST_CALL_TRANSACTION">LAST_CALL_TRANSACTION</a>&nbsp;</td>
+        <td class="jd-descrcol">The last transaction code available for user commands.&nbsp;</td>
+        
+            <td class="jd-valcol">16777215&nbsp;</td>
+            <td class="jd-valcol">0x00ffffff&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/IBinder.html#PING_TRANSACTION">PING_TRANSACTION</a>&nbsp;</td>
+        <td class="jd-descrcol">IBinder protocol transaction code: pingBinder().&nbsp;</td>
+        
+            <td class="jd-valcol">1599098439&nbsp;</td>
+            <td class="jd-valcol">0x5f504e47&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IBinder.html">IBinder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#asBinder()">asBinder</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the Binder object associated with this interface.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/IRotationWatcher.html">IRotationWatcher</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#asInterface(android.os.IBinder)">asInterface</a>(<a href="../../../reference/android/os/IBinder.html">IBinder</a> obj)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Cast an IBinder object into an IRotationWatcher interface,
+ generating a proxy if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#getSensors()">getSensors</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#onRotationChanged(int)">onRotationChanged</a>(int rotation)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#onTransact(int, android.os.Parcel, android.os.Parcel, int)">onTransact</a>(int code, <a href="../../../reference/android/os/Parcel.html">Parcel</a> data, <a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default implementation is a stub that returns false.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#registerListener(android.hardware.SensorListener, int)">registerListener</a>(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Registers a listener for given sensors.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#registerListener(android.hardware.SensorListener, int, int)">registerListener</a>(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors, int rate)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Registers a listener for given sensors.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#unregisterListener(android.hardware.SensorListener, int)">unregisterListener</a>(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unregisters a listener for the sensors with which it is registered.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/hardware/SensorManager.html#unregisterListener(android.hardware.SensorListener)">unregisterListener</a>(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unregisters a listener for all sensors.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.os.Binder')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.os.Binder-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/android/os/Binder.html">android.os.Binder</a>
+</h5>
+<div id="inherited-methods-android.os.Binder">
+<div id="inherited-methods-android.os.Binder-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/Binder.html#attachInterface(android.os.IInterface, java.lang.String)">attachInterface</a>,
+
+<a href="../../../reference/android/os/Binder.html#clearCallingIdentity()">clearCallingIdentity</a>,
+
+<a href="../../../reference/android/os/Binder.html#dump(java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[])">dump</a>,
+
+<a href="../../../reference/android/os/Binder.html#finalize()">finalize</a>,
+
+<a href="../../../reference/android/os/Binder.html#flushPendingCommands()">flushPendingCommands</a>,
+
+<a href="../../../reference/android/os/Binder.html#getCallingPid()">getCallingPid</a>,
+
+<a href="../../../reference/android/os/Binder.html#getCallingUid()">getCallingUid</a>,
+
+<a href="../../../reference/android/os/Binder.html#getInterfaceDescriptor()">getInterfaceDescriptor</a>,
+
+<a href="../../../reference/android/os/Binder.html#isBinderAlive()">isBinderAlive</a>,
+
+<a href="../../../reference/android/os/Binder.html#joinThreadPool()">joinThreadPool</a>,
+
+<a href="../../../reference/android/os/Binder.html#linkToDeath(android.os.IBinder.DeathRecipient, int)">linkToDeath</a>,
+
+<a href="../../../reference/android/os/Binder.html#onTransact(int, android.os.Parcel, android.os.Parcel, int)">onTransact</a>,
+
+<a href="../../../reference/android/os/Binder.html#pingBinder()">pingBinder</a>,
+
+<a href="../../../reference/android/os/Binder.html#queryLocalInterface(java.lang.String)">queryLocalInterface</a>,
+
+<a href="../../../reference/android/os/Binder.html#restoreCallingIdentity(long)">restoreCallingIdentity</a>,
+
+<a href="../../../reference/android/os/Binder.html#transact(int, android.os.Parcel, android.os.Parcel, int)">transact</a>,
+
+<a href="../../../reference/android/os/Binder.html#unlinkToDeath(android.os.IBinder.DeathRecipient, int)">unlinkToDeath</a>
+
+</div>
+<div id="inherited-methods-android.os.Binder-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#attachInterface(android.os.IInterface, java.lang.String)">attachInterface</a>(<a href="../../../reference/android/os/IInterface.html">IInterface</a> owner, <a href="../../../reference/java/lang/String.html">String</a> descriptor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience method for associating a specific interface with the Binder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#clearCallingIdentity()">clearCallingIdentity</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reset the identity of the incoming IPC to the local process.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#dump(java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[])">dump</a>(<a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a> fd, <a href="../../../reference/java/io/PrintWriter.html">PrintWriter</a> fout, <a href="../../../reference/java/lang/String.html">String[]</a> args)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Print the object's state into the given stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#flushPendingCommands()">flushPendingCommands</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush any Binder commands pending in the current thread to the kernel
+ driver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#getCallingPid()">getCallingPid</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the ID of the process that sent you the current transaction
+ that is being processed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#getCallingUid()">getCallingUid</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the ID of the user assigned to the process that sent you the
+ current transaction that is being processed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#getInterfaceDescriptor()">getInterfaceDescriptor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default implementation returns an empty interface name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#isBinderAlive()">isBinderAlive</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check to see if the process that the binder is in is still alive.
+
+ Note that if you're calling on a local binder, this always returns true
+ because your process is alive if you're calling it.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#joinThreadPool()">joinThreadPool</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add the calling thread to the IPC thread pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#linkToDeath(android.os.IBinder.DeathRecipient, int)">linkToDeath</a>(<a href="../../../reference/android/os/IBinder.DeathRecipient.html">IBinder.DeathRecipient</a> recipient, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Local implementation is a no-op.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#onTransact(int, android.os.Parcel, android.os.Parcel, int)">onTransact</a>(int code, <a href="../../../reference/android/os/Parcel.html">Parcel</a> data, <a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default implementation is a stub that returns false.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#pingBinder()">pingBinder</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default implementation always returns true -- if you got here,
+ the object is alive.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IInterface.html">IInterface</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#queryLocalInterface(java.lang.String)">queryLocalInterface</a>(<a href="../../../reference/java/lang/String.html">String</a> descriptor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Use information supplied to attachInterface() to return the
+ associated IInterface if it matches the requested
+ descriptor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#restoreCallingIdentity(long)">restoreCallingIdentity</a>(long token)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Restore the identity of the incoming IPC back to a previously identity
+ that was returned by <a href="../../../reference/android/os/Binder.html#clearCallingIdentity()">clearCallingIdentity()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#transact(int, android.os.Parcel, android.os.Parcel, int)">transact</a>(int code, <a href="../../../reference/android/os/Parcel.html">Parcel</a> data, <a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default implementation rewinds the parcels and calls onTransact.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Binder.html#unlinkToDeath(android.os.IBinder.DeathRecipient, int)">unlinkToDeath</a>(<a href="../../../reference/android/os/IBinder.DeathRecipient.html">IBinder.DeathRecipient</a> recipient, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Local implementation is a no-op.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.os.IBinder')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.os.IBinder-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/os/IBinder.html">android.os.IBinder</a>
+</h5>
+<div id="inherited-methods-android.os.IBinder">
+<div id="inherited-methods-android.os.IBinder-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/IBinder.html#getInterfaceDescriptor()">getInterfaceDescriptor</a>,
+
+<a href="../../../reference/android/os/IBinder.html#isBinderAlive()">isBinderAlive</a>,
+
+<a href="../../../reference/android/os/IBinder.html#linkToDeath(android.os.IBinder.DeathRecipient, int)">linkToDeath</a>,
+
+<a href="../../../reference/android/os/IBinder.html#pingBinder()">pingBinder</a>,
+
+<a href="../../../reference/android/os/IBinder.html#queryLocalInterface(java.lang.String)">queryLocalInterface</a>,
+
+<a href="../../../reference/android/os/IBinder.html#transact(int, android.os.Parcel, android.os.Parcel, int)">transact</a>,
+
+<a href="../../../reference/android/os/IBinder.html#unlinkToDeath(android.os.IBinder.DeathRecipient, int)">unlinkToDeath</a>
+
+</div>
+<div id="inherited-methods-android.os.IBinder-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#getInterfaceDescriptor()">getInterfaceDescriptor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the canonical name of the interface supported by this binder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#isBinderAlive()">isBinderAlive</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check to see if the process that the binder is in is still alive.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#linkToDeath(android.os.IBinder.DeathRecipient, int)">linkToDeath</a>(<a href="../../../reference/android/os/IBinder.DeathRecipient.html">IBinder.DeathRecipient</a> recipient, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register the recipient for a notification if this binder
+ goes away.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#pingBinder()">pingBinder</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check to see if the object still exists.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IInterface.html">IInterface</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#queryLocalInterface(java.lang.String)">queryLocalInterface</a>(<a href="../../../reference/java/lang/String.html">String</a> descriptor)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempt to retrieve a local implementation of an interface
+ for this Binder object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#transact(int, android.os.Parcel, android.os.Parcel, int)">transact</a>(int code, <a href="../../../reference/android/os/Parcel.html">Parcel</a> data, <a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform a generic operation with the object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IBinder.html#unlinkToDeath(android.os.IBinder.DeathRecipient, int)">unlinkToDeath</a>(<a href="../../../reference/android/os/IBinder.DeathRecipient.html">IBinder.DeathRecipient</a> recipient, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove a previously registered death notification.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.os.IInterface')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.os.IInterface-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/os/IInterface.html">android.os.IInterface</a>
+</h5>
+<div id="inherited-methods-android.os.IInterface">
+<div id="inherited-methods-android.os.IInterface-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/IInterface.html#asBinder()">asBinder</a>
+
+</div>
+<div id="inherited-methods-android.os.IInterface-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IBinder.html">IBinder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/IInterface.html#asBinder()">asBinder</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the Binder object associated with this interface.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="DATA_X"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DATA_X
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DATA_Y"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DATA_Y
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the Y value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DATA_Z"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DATA_Z
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the Z value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_DEATH_STAR_I"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_DEATH_STAR_I
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3.5303614E-7
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_EARTH"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_EARTH
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                9.80665
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_JUPITER"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_JUPITER
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                23.12
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_MARS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_MARS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3.71
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_MERCURY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_MERCURY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3.7
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_MOON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_MOON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1.6
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_NEPTUNE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_NEPTUNE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                11.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_PLUTO"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_PLUTO
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0.6
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_SATURN"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_SATURN
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8.96
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_SUN"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_SUN
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+values returned by the accelerometer in various locations in the universe.
+ all values are in SI units (m/s^2) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                275.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_THE_ISLAND"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_THE_ISLAND
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4.815162
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_URANUS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_URANUS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8.69
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="GRAVITY_VENUS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        GRAVITY_VENUS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8.87
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_CLOUDY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_CLOUDY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                100.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_FULLMOON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_FULLMOON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Various luminance values during the night (lux) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0.25
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_NO_MOON"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_NO_MOON
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0.0010
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_OVERCAST"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_OVERCAST
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                10000.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_SHADE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_SHADE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                20000.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_SUNLIGHT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_SUNLIGHT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                110000.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_SUNLIGHT_MAX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_SUNLIGHT_MAX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Various luminance values during the day (lux) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                120000.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LIGHT_SUNRISE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        LIGHT_SUNRISE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                400.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="MAGNETIC_FIELD_EARTH_MAX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        MAGNETIC_FIELD_EARTH_MAX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Maximum magnetic field on Earth's surface 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                60.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="MAGNETIC_FIELD_EARTH_MIN"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        MAGNETIC_FIELD_EARTH_MIN
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Minimum magnetic field on Earth's surface 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                30.0
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="RAW_DATA_INDEX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        RAW_DATA_INDEX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Offset to the raw values in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="RAW_DATA_X"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        RAW_DATA_X
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="RAW_DATA_Y"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        RAW_DATA_Y
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="RAW_DATA_Z"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        RAW_DATA_Z
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Index of the raw X value in the array returned by 
+ <a href="../../../reference/android/hardware/SensorListener.html#onSensorChanged(int, float[])">onSensorChanged(int, float[])</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                5
+                (0x00000005)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_ACCELEROMETER"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_ACCELEROMETER
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing an accelerometer.
+ See <a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> for more details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_ALL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_ALL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant that includes all sensors 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                127
+                (0x0000007f)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_DELAY_FASTEST"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_DELAY_FASTEST
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+get sensor data as fast as possible 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_DELAY_GAME"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_DELAY_GAME
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+rate suitable for games 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_DELAY_NORMAL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_DELAY_NORMAL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+rate (default) suitable for screen orientation changes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_DELAY_UI"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_DELAY_UI
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+rate suitable for the user interface  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_LIGHT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_LIGHT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing an ambient light sensor
+ Only the first value is defined for this sensor and it contains
+ the ambient light measure in lux.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_MAGNETIC_FIELD"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_MAGNETIC_FIELD
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing a magnetic sensor
+ See <a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> for more details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8
+                (0x00000008)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_MAX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_MAX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Largest sensor ID 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                64
+                (0x00000040)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_MIN"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_MIN
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Smallest sensor ID 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_ORIENTATION"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_ORIENTATION
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing an orientation sensor.
+ See <a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> for more details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_ORIENTATION_RAW"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_ORIENTATION_RAW
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing an orientation sensor.
+ See <a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> for more details.
+ 
+ <p>This is similar to SENSOR_ORIENTATION except the data is not 
+ smoothed or filtered in any way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                128
+                (0x00000080)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_PROXIMITY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_PROXIMITY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing a proximity sensor
+ Only the first value is defined for this sensor and it contains
+ the distance between the sensor and the object in meters (m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                32
+                (0x00000020)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_STATUS_ACCURACY_HIGH"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_STATUS_ACCURACY_HIGH
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This sensor is reporting data with maximum accuracy 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_STATUS_ACCURACY_LOW"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_STATUS_ACCURACY_LOW
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This sensor is reporting data with low accuracy, calibration with the
+ environment is needed 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_STATUS_ACCURACY_MEDIUM"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_STATUS_ACCURACY_MEDIUM
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This sensor is reporting data with an average level of accuracy, 
+ calibration with the environment may improve the readings 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_STATUS_UNRELIABLE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_STATUS_UNRELIABLE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The values returned by this sensor cannot be trusted, calibration
+ is needed or the environment doesn't allow readings 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_TEMPERATURE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_TEMPERATURE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing a temperature sensor
+ Only the first value is defined for this sensor and it
+ contains the ambient temperature in degree centigrade.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SENSOR_TRICORDER"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        SENSOR_TRICORDER
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant describing a Tricorder
+ When this sensor is available and enabled, the device can be
+ used as a fully functional Tricorder. All values are returned in 
+ SI units.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                64
+                (0x00000040)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="STANDARD_GRAVITY"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        float
+        STANDARD_GRAVITY
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Standard gravity (g) on Earth. This value is equivalent to 1G 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                9.80665
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="asBinder()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/os/IBinder.html">IBinder</a>
+        asBinder()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the Binder object associated with this interface.
+ You must use this instead of a plain cast, so that proxy objects
+ can return the correct result.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="asInterface(android.os.IBinder)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/view/IRotationWatcher.html">IRotationWatcher</a>
+        asInterface(<a href="../../../reference/android/os/IBinder.html">IBinder</a> obj)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Cast an IBinder object into an IRotationWatcher interface,
+ generating a proxy if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSensors()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getSensors()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>available sensors </li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onRotationChanged(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onRotationChanged(int rotation)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/os/RemoteException.html">RemoteException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onTransact(int, android.os.Parcel, android.os.Parcel, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onTransact(int code, <a href="../../../reference/android/os/Parcel.html">Parcel</a> data, <a href="../../../reference/android/os/Parcel.html">Parcel</a> reply, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Default implementation is a stub that returns false.  You will want
+ to override this to do the appropriate unmarshalling of transactions.
+
+ <p>If you want to call this, call transact().
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/os/RemoteException.html">RemoteException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="registerListener(android.hardware.SensorListener, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        registerListener(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Registers a listener for given sensors.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>listener</td>
+        <td>sensor listener object</td>
+      </tr>
+    <tr>
+        <th>sensors</td>
+        <td>a bit masks of the sensors to register to</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the sensor is supported and successfully enabled
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="registerListener(android.hardware.SensorListener, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        registerListener(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors, int rate)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Registers a listener for given sensors.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>listener</td>
+        <td>sensor listener object</td>
+      </tr>
+    <tr>
+        <th>sensors</td>
+        <td>a bit masks of the sensors to register to</td>
+      </tr>
+    <tr>
+        <th>rate</td>
+        <td>rate of events. This is only a hint to the system. events
+ may be received faster or slower than the specified rate. Usually events
+ are received faster.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the sensor is supported and successfully enabled
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unregisterListener(android.hardware.SensorListener, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        unregisterListener(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener, int sensors)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Unregisters a listener for the sensors with which it is registered.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>listener</td>
+        <td>a SensorListener object</td>
+      </tr>
+    <tr>
+        <th>sensors</td>
+        <td>a bit masks of the sensors to unregister from
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unregisterListener(android.hardware.SensorListener)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        unregisterListener(<a href="../../../reference/android/hardware/SensorListener.html">SensorListener</a> listener)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Unregisters a listener for all sensors.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>listener</td>
+        <td>a SensorListener object
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

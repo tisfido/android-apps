@@ -1,0 +1,1659 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.jar.Pack200.Packer - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/jar/package-summary.html">java.util.jar</a>
+<br/>
+    public 
+    static 
+     
+    
+    interface
+</div>
+<h1>java.util.jar.Pack200.Packer</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.jar.Pack200.Packer</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>interface of Packer
+ 
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#CLASS_ATTRIBUTE_PFX">CLASS_ATTRIBUTE_PFX</a>&nbsp;</td>
+        <td class="jd-descrcol">the format of a class attribute name
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.class.attribute."&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#CODE_ATTRIBUTE_PFX">CODE_ATTRIBUTE_PFX</a>&nbsp;</td>
+        <td class="jd-descrcol">the format of a code attribute name
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.code.attribute."&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#DEFLATE_HINT">DEFLATE_HINT</a>&nbsp;</td>
+        <td class="jd-descrcol">the deflation hint to set in the output archive
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.deflate.hint"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#EFFORT">EFFORT</a>&nbsp;</td>
+        <td class="jd-descrcol">the indicated amount of effort to use in compressing the archive.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.effort"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#ERROR">ERROR</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of error
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"error"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#FALSE">FALSE</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of false
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"false"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#FIELD_ATTRIBUTE_PFX">FIELD_ATTRIBUTE_PFX</a>&nbsp;</td>
+        <td class="jd-descrcol">the format of a field attribute name
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.field.attribute."&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#KEEP">KEEP</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of keep
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"keep"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#KEEP_FILE_ORDER">KEEP_FILE_ORDER</a>&nbsp;</td>
+        <td class="jd-descrcol">decide if all elements shall transmit in their original order
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.keep.file.order"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#LATEST">LATEST</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of latest
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"latest"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#METHOD_ATTRIBUTE_PFX">METHOD_ATTRIBUTE_PFX</a>&nbsp;</td>
+        <td class="jd-descrcol">the format of a method attribute name
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.method.attribute."&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#MODIFICATION_TIME">MODIFICATION_TIME</a>&nbsp;</td>
+        <td class="jd-descrcol">Packer shall attempt to determine the latest modification time if
+ this is set to LASTEST
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.modification.time"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#PASS">PASS</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of pass
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pass"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#PASS_FILE_PFX">PASS_FILE_PFX</a>&nbsp;</td>
+        <td class="jd-descrcol">the file that will not be compressed.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.pass.file."&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#PROGRESS">PROGRESS</a>&nbsp;</td>
+        <td class="jd-descrcol">packer progress as a percentage
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.progress"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#SEGMENT_LIMIT">SEGMENT_LIMIT</a>&nbsp;</td>
+        <td class="jd-descrcol">The number of bytes of each archive segment.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.segment.limit"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#STRIP">STRIP</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of strip
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"strip"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#TRUE">TRUE</a>&nbsp;</td>
+        <td class="jd-descrcol">a String of true
+&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"true"&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#UNKNOWN_ATTRIBUTE">UNKNOWN_ATTRIBUTE</a>&nbsp;</td>
+        <td class="jd-descrcol">the action to take if an unknown attribute is encountered.&nbsp;</td>
+        
+            <td class="jd-valcol" colspan="2">"pack.unknown.attribute"&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#pack(java.util.jar.JarInputStream, java.io.OutputStream)">pack</a>(<a href="../../../../reference/java/util/jar/JarInputStream.html">JarInputStream</a> in, <a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Pack jarStream with pack arithmetic</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#pack(java.util.jar.JarFile, java.io.OutputStream)">pack</a>(<a href="../../../../reference/java/util/jar/JarFile.html">JarFile</a> in, <a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Pack jarfile with pack arithmetic</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/SortedMap.html">SortedMap</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/jar/Pack200.Packer.html#properties()">properties</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CLASS_ATTRIBUTE_PFX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        CLASS_ATTRIBUTE_PFX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the format of a class attribute name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.class.attribute."
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="CODE_ATTRIBUTE_PFX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        CODE_ATTRIBUTE_PFX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the format of a code attribute name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.code.attribute."
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DEFLATE_HINT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        DEFLATE_HINT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the deflation hint to set in the output archive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.deflate.hint"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="EFFORT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        EFFORT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the indicated amount of effort to use in compressing the archive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.effort"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="ERROR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        ERROR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "error"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FALSE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        FALSE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "false"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FIELD_ATTRIBUTE_PFX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        FIELD_ATTRIBUTE_PFX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the format of a field attribute name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.field.attribute."
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="KEEP"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        KEEP
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of keep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "keep"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="KEEP_FILE_ORDER"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        KEEP_FILE_ORDER
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+decide if all elements shall transmit in their original order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.keep.file.order"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="LATEST"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        LATEST
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of latest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "latest"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="METHOD_ATTRIBUTE_PFX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        METHOD_ATTRIBUTE_PFX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the format of a method attribute name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.method.attribute."
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="MODIFICATION_TIME"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        MODIFICATION_TIME
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Packer shall attempt to determine the latest modification time if
+ this is set to LASTEST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.modification.time"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PASS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        PASS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pass"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PASS_FILE_PFX"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        PASS_FILE_PFX
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the file that will not be compressed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.pass.file."
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="PROGRESS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        PROGRESS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+packer progress as a percentage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.progress"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="SEGMENT_LIMIT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        SEGMENT_LIMIT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The number of bytes of each archive segment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.segment.limit"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="STRIP"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        STRIP
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of strip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "strip"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TRUE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        TRUE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+a String of true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "true"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="UNKNOWN_ATTRIBUTE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        UNKNOWN_ATTRIBUTE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the action to take if an unknown attribute is encountered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pack.unknown.attribute"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="pack(java.util.jar.JarInputStream, java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        pack(<a href="../../../../reference/java/util/jar/JarInputStream.html">JarInputStream</a> in, <a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Pack jarStream with pack arithmetic
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>stream of uncompact jar data</td>
+      </tr>
+    <tr>
+        <th>out</td>
+        <td>stream of compact data</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if I/O exception occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="pack(java.util.jar.JarFile, java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        pack(<a href="../../../../reference/java/util/jar/JarFile.html">JarFile</a> in, <a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Pack jarfile with pack arithmetic
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>jarfile to be compact</td>
+      </tr>
+    <tr>
+        <th>out</td>
+        <td>stream of compact data</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>if I/O exception occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="properties()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/SortedMap.html">SortedMap</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt;
+        properties()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the properties of packer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

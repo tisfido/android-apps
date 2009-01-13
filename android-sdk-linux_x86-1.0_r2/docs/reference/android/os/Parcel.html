@@ -1,0 +1,6566 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.os.Parcel - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/os/package-summary.html">android.os</a>
+<br/>
+    public 
+     
+    final 
+    
+    class
+</div>
+<h1>android.os.Parcel</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.os.Parcel</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Container for a message (data and object references) that can
+ be sent through an IBinder.  A Parcel can contain both flattened data
+ that will be unflattened on the other side of the IPC (using the various
+ methods here for writing specific types, or the general
+ <a href="../../../reference/android/os/Parcelable.html">Parcelable</a> interface), and references to live <a href="../../../reference/android/os/IBinder.html">IBinder</a>
+ objects that will result in the other side receiving a proxy IBinder
+ connected with the original IBinder in the Parcel.
+
+ <p class="note">Parcel is <strong>not</strong> a general-purpose
+ serialization mechanism.  This class (and the corresponding
+ <a href="../../../reference/android/os/Parcelable.html">Parcelable</a> API for placing arbitrary objects into a Parcel) is
+ designed as a high-performance IPC transport.  As such, it is not
+ appropriate to place any Parcel data in to persistent storage: changes
+ in the underlying implementation of any of the data in the Parcel can
+ render older data unreadable.</p>
+ 
+ <p>The bulk of the Parcel API revolves around reading and writing data
+ of various types.  There are six major classes of such functions available.</p>
+ 
+ <h3>Primitives</h3>
+ 
+ <p>The most basic data functions are for writing and reading Java primitive
+ data types: <a href="../../../reference/android/os/Parcel.html#writeByte(byte)">writeByte(byte)</a>, <a href="../../../reference/android/os/Parcel.html#readByte()">readByte()</a>, <a href="../../../reference/android/os/Parcel.html#writeDouble(double)">writeDouble(double)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readDouble()">readDouble()</a>, <a href="../../../reference/android/os/Parcel.html#writeFloat(float)">writeFloat(float)</a>, <a href="../../../reference/android/os/Parcel.html#readFloat()">readFloat()</a>, <a href="../../../reference/android/os/Parcel.html#writeInt(int)">writeInt(int)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readInt()">readInt()</a>, <a href="../../../reference/android/os/Parcel.html#writeLong(long)">writeLong(long)</a>, <a href="../../../reference/android/os/Parcel.html#readLong()">readLong()</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeString(java.lang.String)">writeString(String)</a>, <a href="../../../reference/android/os/Parcel.html#readString()">readString()</a>.  Most other
+ data operations are built on top of these.  The given data is written and
+ read using the endianess of the host CPU.</p>
+ 
+ <h3>Primitive Arrays</h3>
+ 
+ <p>There are a variety of methods for reading and writing raw Java arrays
+ of primitive objects, which generally result in writing a 4-byte length
+ followed by the primitive data items.  The methods for reading can either
+ read the data into an existing array, or create and return a new array.
+ These available types are:</p>
+ 
+ <ul>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeBooleanArray(boolean[])">writeBooleanArray(boolean[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#readBooleanArray(boolean[])">readBooleanArray(boolean[])</a>, <a href="../../../reference/android/os/Parcel.html#createBooleanArray()">createBooleanArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeByteArray(byte[])">writeByteArray(byte[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeByteArray(byte[], int, int)">writeByteArray(byte[], int, int)</a>, <a href="../../../reference/android/os/Parcel.html#readByteArray(byte[])">readByteArray(byte[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createByteArray()">createByteArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeCharArray(char[])">writeCharArray(char[])</a>, <a href="../../../reference/android/os/Parcel.html#readCharArray(char[])">readCharArray(char[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createCharArray()">createCharArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeDoubleArray(double[])">writeDoubleArray(double[])</a>, <a href="../../../reference/android/os/Parcel.html#readDoubleArray(double[])">readDoubleArray(double[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createDoubleArray()">createDoubleArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeFloatArray(float[])">writeFloatArray(float[])</a>, <a href="../../../reference/android/os/Parcel.html#readFloatArray(float[])">readFloatArray(float[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createFloatArray()">createFloatArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeIntArray(int[])">writeIntArray(int[])</a>, <a href="../../../reference/android/os/Parcel.html#readIntArray(int[])">readIntArray(int[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createIntArray()">createIntArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeLongArray(long[])">writeLongArray(long[])</a>, <a href="../../../reference/android/os/Parcel.html#readLongArray(long[])">readLongArray(long[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createLongArray()">createLongArray()</a>
+ <li> <a href="../../../reference/android/os/Parcel.html#writeStringArray(java.lang.String[])">writeStringArray(String[])</a>, <a href="../../../reference/android/os/Parcel.html#readStringArray(java.lang.String[])">readStringArray(String[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createStringArray()">createStringArray()</a>.
+ <li> <a href="../../../reference/android/os/Parcel.html#writeSparseBooleanArray(android.util.SparseBooleanArray)">writeSparseBooleanArray(SparseBooleanArray)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readSparseBooleanArray()">readSparseBooleanArray()</a>.
+ </ul>
+ 
+ <h3>Parcelables</h3>
+ 
+ <p>The <a href="../../../reference/android/os/Parcelable.html">Parcelable</a> protocol provides an extremely efficient (but
+ low-level) protocol for objects to write and read themselves from Parcels.
+ You can use the direct methods <a href="../../../reference/android/os/Parcel.html#writeParcelable(android.os.Parcelable, int)">writeParcelable(Parcelable, int)</a>
+ and <a href="../../../reference/android/os/Parcel.html#readParcelable(java.lang.ClassLoader)">readParcelable(ClassLoader)</a> or
+ <a href="../../../reference/android/os/Parcel.html#writeParcelableArray(T[], int)">writeParcelableArray(T[], int)</a> and
+ <a href="../../../reference/android/os/Parcel.html#readParcelableArray(java.lang.ClassLoader)">readParcelableArray(ClassLoader)</a> to write or read.  These
+ methods write both the class type and its data to the Parcel, allowing
+ that class to be reconstructed from the appropriate class loader when
+ later reading.</p>
+ 
+ <p>There are also some methods that provide a more efficient way to work
+ with Parcelables: <a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray(T[], int)</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readTypedArray(T[], android.os.Parcelable.Creator<T>)">readTypedArray(T[], Parcelable.Creator<T>)</a> and <a href="../../../reference/android/os/Parcel.html#readTypedList(java.util.List<T>, android.os.Parcelable.Creator<T>)">readTypedList(List<T>, Parcelable.Creator<T>)</a>.  These methods
+ do not write the class information of the original object: instead, the
+ caller of the read function must know what type to expect and pass in the
+ appropriate <a href="../../../reference/android/os/Parcelable.Creator.html">Parcelable.Creator</a> instead to
+ properly construct the new object and read its data.  (To more efficient
+ write and read a single Parceable object, you can directly call
+ <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">Parcelable.writeToParcel</a> and
+ <a href="../../../reference/android/os/Parcelable.Creator.html#createFromParcel(android.os.Parcel)">Parcelable.Creator.createFromParcel</a>
+ yourself.)</p>
+ 
+ <h3>Bundles</h3>
+ 
+ <p>A special type-safe container, called <a href="../../../reference/android/os/Bundle.html">Bundle</a>, is available
+ for key/value maps of heterogeneous values.  This has many optimizations
+ for improved performance when reading and writing data, and its type-safe
+ API avoids difficult to debug type errors when finally marshalling the
+ data contents into a Parcel.  The methods to use are
+ <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a>, <a href="../../../reference/android/os/Parcel.html#readBundle()">readBundle()</a>, and
+ <a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle(ClassLoader)</a>.
+ 
+ <h3>Active Objects</h3>
+ 
+ <p>An unusual feature of Parcel is the ability to read and write active
+ objects.  For these objects the actual contents of the object is not
+ written, rather a special token referencing the object is written.  When
+ reading the object back from the Parcel, you do not get a new instance of
+ the object, but rather a handle that operates on the exact same object that
+ was originally written.  There are two forms of active objects available.</p>
+ 
+ <p><a href="../../../reference/android/os/Binder.html">Binder</a> objects are a core facility of Android's general cross-process
+ communication system.  The <a href="../../../reference/android/os/IBinder.html">IBinder</a> interface describes an abstract
+ protocol with a Binder object.  Any such interface can be written in to
+ a Parcel, and upon reading you will receive either the original object
+ implementing that interface or a special proxy implementation
+ that communicates calls back to the original object.  The methods to use are
+ <a href="../../../reference/android/os/Parcel.html#writeStrongBinder(android.os.IBinder)">writeStrongBinder(IBinder)</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeStrongInterface(android.os.IInterface)">writeStrongInterface(IInterface)</a>, <a href="../../../reference/android/os/Parcel.html#readStrongBinder()">readStrongBinder()</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeBinderArray(android.os.IBinder[])">writeBinderArray(IBinder[])</a>, <a href="../../../reference/android/os/Parcel.html#readBinderArray(android.os.IBinder[])">readBinderArray(IBinder[])</a>,
+ <a href="../../../reference/android/os/Parcel.html#createBinderArray()">createBinderArray()</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List)</a>, <a href="../../../reference/android/os/Parcel.html#readBinderList(java.util.List<android.os.IBinder>)">readBinderList(List)</a>,
+ <a href="../../../reference/android/os/Parcel.html#createBinderArrayList()">createBinderArrayList()</a>.</p>
+ 
+ <p>FileDescriptor objects, representing raw Linux file descriptor identifiers,
+ can be written and <a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a> objects returned to operate
+ on the original file descriptor.  The returned file descriptor is a dup
+ of the original file descriptor: the object and fd is different, but
+ operating on the same underlying file stream, with the same position, etc.
+ The methods to use are <a href="../../../reference/android/os/Parcel.html#writeFileDescriptor(java.io.FileDescriptor)">writeFileDescriptor(FileDescriptor)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readFileDescriptor()">readFileDescriptor()</a>.
+ 
+ <h3>Untyped Containers</h3>
+ 
+ <p>A final class of methods are for writing and reading standard Java
+ containers of arbitrary types.  These all revolve around the
+ <a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue(Object)</a> and <a href="../../../reference/android/os/Parcel.html#readValue(java.lang.ClassLoader)">readValue(ClassLoader)</a> methods
+ which define the types of objects allowed.  The container methods are
+ <a href="../../../reference/android/os/Parcel.html#writeArray(java.lang.Object[])">writeArray(Object[])</a>, <a href="../../../reference/android/os/Parcel.html#readArray(java.lang.ClassLoader)">readArray(ClassLoader)</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeList(java.util.List)">writeList(List)</a>, <a href="../../../reference/android/os/Parcel.html#readList(java.util.List, java.lang.ClassLoader)">readList(List, ClassLoader)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readArrayList(java.lang.ClassLoader)">readArrayList(ClassLoader)</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeMap(java.util.Map)">writeMap(Map)</a>, <a href="../../../reference/android/os/Parcel.html#readMap(java.util.Map, java.lang.ClassLoader)">readMap(Map, ClassLoader)</a>,
+ <a href="../../../reference/android/os/Parcel.html#writeSparseArray(android.util.SparseArray<java.lang.Object>)">writeSparseArray(SparseArray)</a>,
+ <a href="../../../reference/android/os/Parcel.html#readSparseArray(java.lang.ClassLoader)">readSparseArray(ClassLoader)</a>.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcel.html#STRING_CREATOR">STRING_CREATOR</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#appendFrom(android.os.Parcel, int, int)">appendFrom</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel, int offset, int length)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IBinder.html">IBinder[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createBinderArray()">createBinderArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createBinderArrayList()">createBinderArrayList</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new ArrayList containing IBinder objects from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a> at the
+ current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createBooleanArray()">createBooleanArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createByteArray()">createByteArray</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a byte[] object from the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">char[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createCharArray()">createCharArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createDoubleArray()">createDoubleArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createFloatArray()">createFloatArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createIntArray()">createIntArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createLongArray()">createLongArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createStringArray()">createStringArray</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createStringArrayList()">createStringArrayList</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new ArrayList containing String objects from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a> at the
+ current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createTypedArray(android.os.Parcelable.Creator<T>)">createTypedArray</a>(<a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new array containing a particular object type from
+ the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#createTypedArrayList(android.os.Parcelable.Creator<T>)">createTypedArrayList</a>(<a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new ArrayList containing a particular object type from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> at the
+ current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#dataAvail()">dataAvail</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the amount of data remaining to be read from the
+ parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#dataCapacity()">dataCapacity</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the total amount of space in the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#dataPosition()">dataPosition</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the current position in the parcel data.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the total amount of data contained in the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#enforceInterface(java.lang.String)">enforceInterface</a>(<a href="../../../reference/java/lang/String.html">String</a> interfaceName)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#hasFileDescriptors()">hasFileDescriptors</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Report whether the parcel contains any marshalled file descriptors.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#marshall()">marshall</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the raw bytes of the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcel.html">Parcel</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#obtain()">obtain</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve a new Parcel object from the pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readArray(java.lang.ClassLoader)">readArray</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Object array from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readArrayList(java.lang.ClassLoader)">readArrayList</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new ArrayList object from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readBinderArray(android.os.IBinder[])">readBinderArray</a>(<a href="../../../reference/android/os/IBinder.html">IBinder[]</a> val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readBinderList(java.util.List<android.os.IBinder>)">readBinderList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt; list)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read into the given List items IBinder objects that were written with
+ <a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a> at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readBooleanArray(boolean[])">readBooleanArray</a>(boolean[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readBundle()">readBundle</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Bundle object from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Bundle object from the parcel at the current
+ dataPosition(), using the given class loader to initialize the class
+ loader of the Bundle for later retrieval of Parcelable objects.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readByte()">readByte</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a byte value from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readByteArray(byte[])">readByteArray</a>(byte[] val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a byte[] object from the parcel and copy it into the
+ given byte array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readCharArray(char[])">readCharArray</a>(char[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readDouble()">readDouble</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a double precision floating point value from the parcel at the
+ current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readDoubleArray(double[])">readDoubleArray</a>(double[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readException()">readException</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Special function for reading an exception result from the header of
+ a parcel, to be used after receiving the result of a transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readException(int, java.lang.String)">readException</a>(int code, <a href="../../../reference/java/lang/String.html">String</a> msg)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Use this function for customized exception handling.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readFileDescriptor()">readFileDescriptor</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a FileDescriptor from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readFloat()">readFloat</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a floating point value from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readFloatArray(float[])">readFloatArray</a>(float[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/HashMap.html">HashMap</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readHashMap(java.lang.ClassLoader)">readHashMap</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Please use <a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle(ClassLoader)</a> instead (whose data must have
+ been written with <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readInt()">readInt</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read an integer value from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readIntArray(int[])">readIntArray</a>(int[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readList(java.util.List, java.lang.ClassLoader)">readList</a>(<a href="../../../reference/java/util/List.html">List</a> outVal, <a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read into an existing List object from the parcel at the current
+ dataPosition(), using the given class loader to load any enclosed
+ Parcelables.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readLong()">readLong</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a long integer value from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readLongArray(long[])">readLongArray</a>(long[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readMap(java.util.Map, java.lang.ClassLoader)">readMap</a>(<a href="../../../reference/java/util/Map.html">Map</a> outVal, <a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Please use <a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle(ClassLoader)</a> instead (whose data must have
+ been written with <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/os/Parcelable.html">Parcelable</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readParcelable(java.lang.ClassLoader)">readParcelable</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Parcelable from the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcelable.html">Parcelable[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readParcelableArray(java.lang.ClassLoader)">readParcelableArray</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Parcelable array from the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/Serializable.html">Serializable</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readSerializable()">readSerializable</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new Serializable object from the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/util/SparseArray.html">SparseArray</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readSparseArray(java.lang.ClassLoader)">readSparseArray</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new SparseArray object from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/util/SparseBooleanArray.html">SparseBooleanArray</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readSparseBooleanArray()">readSparseBooleanArray</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read and return a new SparseBooleanArray object from the parcel at the current
+ dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readString()">readString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a string value from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readStringArray(java.lang.String[])">readStringArray</a>(<a href="../../../reference/java/lang/String.html">String[]</a> val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readStringList(java.util.List<java.lang.String>)">readStringList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt; list)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read into the given List items String objects that were written with
+ <a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a> at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/IBinder.html">IBinder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readStrongBinder()">readStrongBinder</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read an object from the parcel at the current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readTypedArray(T[], android.os.Parcelable.Creator<T>)">readTypedArray</a>(T[] val, <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readTypedList(java.util.List<T>, android.os.Parcelable.Creator<T>)">readTypedList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;T&gt; list, <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read into the given List items containing a particular object type
+ that were written with <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> at the
+ current dataPosition().</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#readValue(java.lang.ClassLoader)">readValue</a>(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Read a typed object from a parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#recycle()">recycle</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Put a Parcel object back into the pool.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#setDataCapacity(int)">setDataCapacity</a>(int size)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the capacity (current available space) of the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#setDataPosition(int)">setDataPosition</a>(int pos)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Move the current read/write position in the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#setDataSize(int)">setDataSize</a>(int size)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the amount of data in the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#unmarshall(byte[], int, int)">unmarshall</a>(byte[] data, int offest, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the bytes in data to be the raw bytes of this Parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeArray(java.lang.Object[])">writeArray</a>(<a href="../../../reference/java/lang/Object.html">Object[]</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten an Object array into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeBinderArray(android.os.IBinder[])">writeBinderArray</a>(<a href="../../../reference/android/os/IBinder.html">IBinder[]</a> val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt; val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a List containing IBinder objects into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeBooleanArray(boolean[])">writeBooleanArray</a>(boolean[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle</a>(<a href="../../../reference/android/os/Bundle.html">Bundle</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a Bundle into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeByte(byte)">writeByte</a>(byte val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write an byte value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeByteArray(byte[])">writeByteArray</a>(byte[] b)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a byte array into the parcel at the current {#link #dataPosition},
+ growing <a href="../../../reference/android/os/Parcel.html#dataCapacity()">dataCapacity()</a> if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeByteArray(byte[], int, int)">writeByteArray</a>(byte[] b, int offset, int len)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write an byte array into the parcel at the current {#link #dataPosition},
+ growing <a href="../../../reference/android/os/Parcel.html#dataCapacity()">dataCapacity()</a> if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeCharArray(char[])">writeCharArray</a>(char[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeDouble(double)">writeDouble</a>(double val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a double precision floating point value into the parcel at the
+ current dataPosition(), growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeDoubleArray(double[])">writeDoubleArray</a>(double[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeException(java.lang.Exception)">writeException</a>(<a href="../../../reference/java/lang/Exception.html">Exception</a> e)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Special function for writing an exception result at the header of
+ a parcel, to be used when returning an exception from a transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeFileDescriptor(java.io.FileDescriptor)">writeFileDescriptor</a>(<a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a FileDescriptor into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeFloat(float)">writeFloat</a>(float val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a floating point value into the parcel at the current
+ dataPosition(), growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeFloatArray(float[])">writeFloatArray</a>(float[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeInt(int)">writeInt</a>(int val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write an integer value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeIntArray(int[])">writeIntArray</a>(int[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeInterfaceToken(java.lang.String)">writeInterfaceToken</a>(<a href="../../../reference/java/lang/String.html">String</a> interfaceName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Store or read an IBinder interface token in the parcel at the current
+ <a href="../../../reference/android/os/Parcel.html#dataPosition()">dataPosition()</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeList(java.util.List)">writeList</a>(<a href="../../../reference/java/util/List.html">List</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a List into the parcel at the current dataPosition(), growing
+ dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeLong(long)">writeLong</a>(long val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a long integer value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeLongArray(long[])">writeLongArray</a>(long[] val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeMap(java.util.Map)">writeMap</a>(<a href="../../../reference/java/util/Map.html">Map</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Please use <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a> instead.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeNoException()">writeNoException</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Special function for writing information at the front of the Parcel
+ indicating that no exception occurred.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeParcelable(android.os.Parcelable, int)">writeParcelable</a>(<a href="../../../reference/android/os/Parcelable.html">Parcelable</a> p, int parcelableFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten the name of the class of the Parcelable and its contents
+ into the parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/os/Parcelable.html">Parcelable</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeParcelableArray(T[], int)">writeParcelableArray</a>(T[] value, int parcelableFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a heterogeneous array of Parcelable objects into the Parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeSerializable(java.io.Serializable)">writeSerializable</a>(<a href="../../../reference/java/io/Serializable.html">Serializable</a> s)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a generic serializable Java object in to a Parcel.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeSparseArray(android.util.SparseArray<java.lang.Object>)">writeSparseArray</a>(<a href="../../../reference/android/util/SparseArray.html">SparseArray</a>&lt;<a href="../../../reference/java/lang/Object.html">Object</a>&gt; val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a generic SparseArray into the parcel at the current
+ dataPosition(), growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeSparseBooleanArray(android.util.SparseBooleanArray)">writeSparseBooleanArray</a>(<a href="../../../reference/android/util/SparseBooleanArray.html">SparseBooleanArray</a> val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeString(java.lang.String)">writeString</a>(<a href="../../../reference/java/lang/String.html">String</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a string value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeStringArray(java.lang.String[])">writeStringArray</a>(<a href="../../../reference/java/lang/String.html">String[]</a> val)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt; val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a List containing String objects into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeStrongBinder(android.os.IBinder)">writeStrongBinder</a>(<a href="../../../reference/android/os/IBinder.html">IBinder</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write an object into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeStrongInterface(android.os.IInterface)">writeStrongInterface</a>(<a href="../../../reference/android/os/IInterface.html">IInterface</a> val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write an object into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/os/Parcelable.html">Parcelable</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray</a>(T[] val, int parcelableFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a heterogeneous array containing a particular object type into
+ the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&nbsp;extends&nbsp;<a href="../../../reference/android/os/Parcelable.html">Parcelable</a>&gt;&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList</a>(<a href="../../../reference/java/util/List.html">List</a>&lt;T&gt; val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a List containing a particular object type into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue</a>(<a href="../../../reference/java/lang/Object.html">Object</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten a generic object in to a parcel.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcel.html">Parcel</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcel.html#obtain(int)">obtain</a>(int obj)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="STRING_CREATOR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;
+        STRING_CREATOR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="appendFrom(android.os.Parcel, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        appendFrom(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel, int offset, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createBinderArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/IBinder.html">IBinder[]</a>
+        createBinderArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createBinderArrayList()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt;
+        createBinderArrayList()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new ArrayList containing IBinder objects from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a> at the
+ current dataPosition().  Returns null if the
+ previously written list object was null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing strings with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="createBooleanArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean[]
+        createBooleanArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createByteArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        byte[]
+        createByteArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a byte[] object from the parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createCharArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        char[]
+        createCharArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createDoubleArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        double[]
+        createDoubleArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createFloatArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        float[]
+        createFloatArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createIntArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int[]
+        createIntArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createLongArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        long[]
+        createLongArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStringArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/String.html">String[]</a>
+        createStringArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStringArrayList()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;
+        createStringArrayList()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new ArrayList containing String objects from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a> at the
+ current dataPosition().  Returns null if the
+ previously written list object was null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing strings with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="createTypedArray(android.os.Parcelable.Creator<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        T[]
+        createTypedArray(<a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new array containing a particular object type from
+ the parcel at the current dataPosition().  Returns null if the
+ previously written array was null.  The array <em>must</em> have
+ previously been written via <a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray(T[], int)</a> with the same
+ object type.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created array containing objects with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray(T[], int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="createTypedArrayList(android.os.Parcelable.Creator<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/util/ArrayList.html">ArrayList</a>&lt;T&gt;
+        createTypedArrayList(<a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new ArrayList containing a particular object type from
+ the parcel that was written with <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> at the
+ current dataPosition().  Returns null if the
+ previously written list object was null.  The list <em>must</em> have
+ previously been written via <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> with the same object
+ type.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing objects with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="dataAvail()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        dataAvail()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the amount of data remaining to be read from the
+ parcel.  That is, <a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize()</a>-<a href="../../../reference/android/os/Parcel.html#dataPosition()">dataPosition()</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dataCapacity()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        dataCapacity()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the total amount of space in the parcel.  This is always
+ >= <a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize()</a>.  The difference between it and dataSize() is the
+ amount of room left until the parcel needs to re-allocate its
+ data buffer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dataPosition()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        dataPosition()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the current position in the parcel data.  Never
+ more than <a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize()</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dataSize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        dataSize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the total amount of data contained in the parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="enforceInterface(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        enforceInterface(<a href="../../../reference/java/lang/String.html">String</a> interfaceName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasFileDescriptors()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        hasFileDescriptors()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Report whether the parcel contains any marshalled file descriptors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="marshall()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        byte[]
+        marshall()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the raw bytes of the parcel.
+
+ <p class="note">The data you retrieve here <strong>must not</strong>
+ be placed in any kind of persistent storage (on local disk, across
+ a network, etc).  For that, you should use standard Java serialization
+ or another kind of general serialization mechanism.  The Parcel
+ marshalled representation is highly optimized for local IPC, and as
+ such does not attempt to maintain compatibility with data created
+ in different versions of the platform.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtain()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/android/os/Parcel.html">Parcel</a>
+        obtain()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve a new Parcel object from the pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readArray(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/Object.html">Object[]</a>
+        readArray(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Object array from the parcel at the current
+ dataPosition().  Returns null if the previously written array was
+ null.  The given class loader will be used to load any enclosed
+ Parcelables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readArrayList(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/util/ArrayList.html">ArrayList</a>
+        readArrayList(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new ArrayList object from the parcel at the current
+ dataPosition().  Returns null if the previously written list object was
+ null.  The given class loader will be used to load any enclosed
+ Parcelables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readBinderArray(android.os.IBinder[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readBinderArray(<a href="../../../reference/android/os/IBinder.html">IBinder[]</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readBinderList(java.util.List<android.os.IBinder>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readBinderList(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt; list)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read into the given List items IBinder objects that were written with
+ <a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a> at the current dataPosition().
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing strings with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeBinderList(java.util.List<android.os.IBinder>)">writeBinderList(List<IBinder>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="readBooleanArray(boolean[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readBooleanArray(boolean[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readBundle()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Bundle.html">Bundle</a>
+        readBundle()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Bundle object from the parcel at the current
+ dataPosition().  Returns null if the previously written Bundle object was
+ null.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readBundle(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Bundle.html">Bundle</a>
+        readBundle(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Bundle object from the parcel at the current
+ dataPosition(), using the given class loader to initialize the class
+ loader of the Bundle for later retrieval of Parcelable objects.
+ Returns null if the previously written Bundle object was null.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readByte()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        byte
+        readByte()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a byte value from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readByteArray(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readByteArray(byte[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a byte[] object from the parcel and copy it into the
+ given byte array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readCharArray(char[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readCharArray(char[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readDouble()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        double
+        readDouble()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a double precision floating point value from the parcel at the
+ current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readDoubleArray(double[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readDoubleArray(double[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readException()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readException()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Special function for reading an exception result from the header of
+ a parcel, to be used after receiving the result of a transaction.  This
+ will throw the exception for you if it had been written to the Parcel,
+ otherwise return and let you read the normal result data from the Parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeException(java.lang.Exception)">writeException(Exception)</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#writeNoException()">writeNoException()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="readException(int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readException(int code, <a href="../../../reference/java/lang/String.html">String</a> msg)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use this function for customized exception handling.
+ customized method call this method for all unknown case
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>code</td>
+        <td>exception code</td>
+      </tr>
+    <tr>
+        <th>msg</td>
+        <td>exception message
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readFileDescriptor()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>
+        readFileDescriptor()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a FileDescriptor from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readFloat()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        float
+        readFloat()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a floating point value from the parcel at the current
+ dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readFloatArray(float[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readFloatArray(float[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readHashMap(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/util/HashMap.html">HashMap</a>
+        readHashMap(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Please use <a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle(ClassLoader)</a> instead (whose data must have
+ been written with <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a>.  Read and return a new HashMap
+ object from the parcel at the current dataPosition(), using the given
+ class loader to load any enclosed Parcelables.  Returns null if
+ the previously written map object was null.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readInt()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        readInt()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read an integer value from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readIntArray(int[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readIntArray(int[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readList(java.util.List, java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readList(<a href="../../../reference/java/util/List.html">List</a> outVal, <a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read into an existing List object from the parcel at the current
+ dataPosition(), using the given class loader to load any enclosed
+ Parcelables.  If it is null, the default class loader is used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readLong()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        long
+        readLong()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a long integer value from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readLongArray(long[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readLongArray(long[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readMap(java.util.Map, java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readMap(<a href="../../../reference/java/util/Map.html">Map</a> outVal, <a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Please use <a href="../../../reference/android/os/Parcel.html#readBundle(java.lang.ClassLoader)">readBundle(ClassLoader)</a> instead (whose data must have
+ been written with <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a>.  Read into an existing Map object
+ from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readParcelable(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        T
+        readParcelable(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Parcelable from the parcel.  The given class loader
+ will be used to load any enclosed Parcelables.  If it is null, the default
+ class loader will be used.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>loader</td>
+        <td>A ClassLoader from which to instantiate the Parcelable
+ object, or null for the default class loader.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns the newly created Parcelable, or null if a null
+ object has been written.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/os/BadParcelableException.html">BadParcelableException</a></td>
+            <td>Throws BadParcelableException if there
+ was an error trying to instantiate the Parcelable.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readParcelableArray(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Parcelable.html">Parcelable[]</a>
+        readParcelableArray(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Parcelable array from the parcel.
+ The given class loader will be used to load any enclosed
+ Parcelables.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the Parcelable array, or null if the array is null
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readSerializable()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/io/Serializable.html">Serializable</a>
+        readSerializable()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new Serializable object from the parcel.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the Serializable object, or null if the Serializable name
+ wasn't found in the parcel.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readSparseArray(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/util/SparseArray.html">SparseArray</a>
+        readSparseArray(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new SparseArray object from the parcel at the current
+ dataPosition().  Returns null if the previously written list object was
+ null.  The given class loader will be used to load any enclosed
+ Parcelables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readSparseBooleanArray()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/util/SparseBooleanArray.html">SparseBooleanArray</a>
+        readSparseBooleanArray()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read and return a new SparseBooleanArray object from the parcel at the current
+ dataPosition().  Returns null if the previously written list object was
+ null.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        readString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a string value from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readStringArray(java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readStringArray(<a href="../../../reference/java/lang/String.html">String[]</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readStringList(java.util.List<java.lang.String>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readStringList(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt; list)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read into the given List items String objects that were written with
+ <a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a> at the current dataPosition().
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing strings with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeStringList(java.util.List<java.lang.String>)">writeStringList(List<String>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="readStrongBinder()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/IBinder.html">IBinder</a>
+        readStrongBinder()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read an object from the parcel at the current dataPosition().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readTypedArray(T[], android.os.Parcelable.Creator<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readTypedArray(T[] val, <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="readTypedList(java.util.List<T>, android.os.Parcelable.Creator<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        readTypedList(<a href="../../../reference/java/util/List.html">List</a>&lt;T&gt; list, <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;T&gt; c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read into the given List items containing a particular object type
+ that were written with <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> at the
+ current dataPosition().  The list <em>must</em> have
+ previously been written via <a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a> with the same object
+ type.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A newly created ArrayList containing objects with the same data
+         as those that were previously written.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeTypedList(java.util.List<T>)">writeTypedList(List<T>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="readValue(java.lang.ClassLoader)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/Object.html">Object</a>
+        readValue(<a href="../../../reference/java/lang/ClassLoader.html">ClassLoader</a> loader)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Read a typed object from a parcel.  The given class loader will be
+ used to load any enclosed Parcelables.  If it is null, the default class
+ loader will be used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="recycle()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        recycle()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Put a Parcel object back into the pool.  You must not touch
+ the object after this call.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDataCapacity(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setDataCapacity(int size)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the capacity (current available space) of the parcel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>size</td>
+        <td>The new capacity of the parcel, in bytes.  Can not be
+ less than <a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize()</a> -- that is, you can not drop existing data
+ with this method.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDataPosition(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setDataPosition(int pos)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Move the current read/write position in the parcel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pos</td>
+        <td>New offset in the parcel; must be between 0 and
+ <a href="../../../reference/android/os/Parcel.html#dataSize()">dataSize()</a>.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDataSize(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setDataSize(int size)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the amount of data in the parcel.  Can be either smaller or
+ larger than the current size.  If larger than the current capacity,
+ more memory will be allocated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>size</td>
+        <td>The new number of bytes in the Parcel.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unmarshall(byte[], int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        unmarshall(byte[] data, int offest, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the bytes in data to be the raw bytes of this Parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeArray(java.lang.Object[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeArray(<a href="../../../reference/java/lang/Object.html">Object[]</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten an Object array into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.  The array values are written using
+ <a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue(Object)</a> and must follow the specification there.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBinderArray(android.os.IBinder[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeBinderArray(<a href="../../../reference/android/os/IBinder.html">IBinder[]</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBinderList(java.util.List<android.os.IBinder>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeBinderList(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/os/IBinder.html">IBinder</a>&gt; val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a List containing IBinder objects into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.  They
+ can later be retrieved with <a href="../../../reference/android/os/Parcel.html#createBinderArrayList()">createBinderArrayList()</a> or
+ <a href="../../../reference/android/os/Parcel.html#readBinderList(java.util.List<android.os.IBinder>)">readBinderList(List<IBinder>)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>val</td>
+        <td>The list of strings to be written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#createBinderArrayList()">createBinderArrayList()</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readBinderList(java.util.List<android.os.IBinder>)">readBinderList(List<IBinder>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBooleanArray(boolean[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeBooleanArray(boolean[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBundle(android.os.Bundle)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeBundle(<a href="../../../reference/android/os/Bundle.html">Bundle</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a Bundle into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeByte(byte)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeByte(byte val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write an byte value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeByteArray(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeByteArray(byte[] b)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a byte array into the parcel at the current {#link #dataPosition},
+ growing <a href="../../../reference/android/os/Parcel.html#dataCapacity()">dataCapacity()</a> if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>b</td>
+        <td>Bytes to place into the parcel.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeByteArray(byte[], int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeByteArray(byte[] b, int offset, int len)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write an byte array into the parcel at the current {#link #dataPosition},
+ growing <a href="../../../reference/android/os/Parcel.html#dataCapacity()">dataCapacity()</a> if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>b</td>
+        <td>Bytes to place into the parcel.</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>Index of first byte to be written.</td>
+      </tr>
+    <tr>
+        <th>len</td>
+        <td>Number of bytes to write.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeCharArray(char[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeCharArray(char[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeDouble(double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeDouble(double val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a double precision floating point value into the parcel at the
+ current dataPosition(), growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeDoubleArray(double[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeDoubleArray(double[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeException(java.lang.Exception)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeException(<a href="../../../reference/java/lang/Exception.html">Exception</a> e)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Special function for writing an exception result at the header of
+ a parcel, to be used when returning an exception from a transaction.
+ Note that this currently only supports a few exception types; any other
+ exception will be re-thrown by this function as a RuntimeException
+ (to be caught by the system's last-resort exception handling when
+ dispatching a transaction).
+ 
+ <p>The supported exception types are:
+ <ul>
+ <li><a href="../../../reference/android/os/BadParcelableException.html">BadParcelableException</a>
+ <li><a href="../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>
+ <li><a href="../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a>
+ <li><a href="../../../reference/java/lang/NullPointerException.html">NullPointerException</a>
+ <li><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a>
+ </ul>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>e</td>
+        <td>The Exception to be written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeNoException()">writeNoException()</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readException()">readException()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeFileDescriptor(java.io.FileDescriptor)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeFileDescriptor(<a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a FileDescriptor into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeFloat(float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeFloat(float val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a floating point value into the parcel at the current
+ dataPosition(), growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeFloatArray(float[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeFloatArray(float[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeInt(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeInt(int val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write an integer value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeIntArray(int[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeIntArray(int[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeInterfaceToken(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeInterfaceToken(<a href="../../../reference/java/lang/String.html">String</a> interfaceName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Store or read an IBinder interface token in the parcel at the current
+ <a href="../../../reference/android/os/Parcel.html#dataPosition()">dataPosition()</a>.  This is used to validate that the marshalled
+ transaction is intended for the target interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeList(java.util.List)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeList(<a href="../../../reference/java/util/List.html">List</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a List into the parcel at the current dataPosition(), growing
+ dataCapacity() if needed.  The List values are written using
+ <a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue(Object)</a> and must follow the specification there.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeLong(long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeLong(long val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a long integer value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeLongArray(long[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeLongArray(long[] val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeMap(java.util.Map)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeMap(<a href="../../../reference/java/util/Map.html">Map</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Please use <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a> instead.  Flattens a Map into the parcel
+ at the current dataPosition(),
+ growing dataCapacity() if needed.  The Map keys must be String objects.
+ The Map values are written using <a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue(Object)</a> and must follow
+ the specification there.
+ 
+ <p>It is strongly recommended to use <a href="../../../reference/android/os/Parcel.html#writeBundle(android.os.Bundle)">writeBundle(Bundle)</a> instead of
+ this method, since the Bundle class provides a type-safe API that
+ allows you to avoid mysterious type errors at the point of marshalling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeNoException()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeNoException()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Special function for writing information at the front of the Parcel
+ indicating that no exception occurred.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeException(java.lang.Exception)">writeException(Exception)</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readException()">readException()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeParcelable(android.os.Parcelable, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeParcelable(<a href="../../../reference/android/os/Parcelable.html">Parcelable</a> p, int parcelableFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten the name of the class of the Parcelable and its contents
+ into the parcel.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>p</td>
+        <td>The Parcelable object to be written.</td>
+      </tr>
+    <tr>
+        <th>parcelableFlags</td>
+        <td>Contextual flags as per
+ <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">Parcelable.writeToParcel()</a>.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeParcelableArray(T[], int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeParcelableArray(T[] value, int parcelableFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a heterogeneous array of Parcelable objects into the Parcel.
+ Each object in the array is written along with its class name, so
+ that the correct class can later be instantiated.  As a result, this
+ has significantly more overhead than <a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray(T[], int)</a>, but will
+ correctly handle an array containing more than one type of object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The array of objects to be written.</td>
+      </tr>
+    <tr>
+        <th>parcelableFlags</td>
+        <td>Contextual flags as per
+ <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">Parcelable.writeToParcel()</a>.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#writeTypedArray(T[], int)">writeTypedArray(T[], int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeSerializable(java.io.Serializable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeSerializable(<a href="../../../reference/java/io/Serializable.html">Serializable</a> s)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a generic serializable Java object in to a Parcel.  It is strongly
+ recommended that this method be avoided, since the serialization
+ overhead is extremely large, and this approach will be much slower than
+ using the other approaches to writing data in to a Parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeSparseArray(android.util.SparseArray<java.lang.Object>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeSparseArray(<a href="../../../reference/android/util/SparseArray.html">SparseArray</a>&lt;<a href="../../../reference/java/lang/Object.html">Object</a>&gt; val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a generic SparseArray into the parcel at the current
+ dataPosition(), growing dataCapacity() if needed.  The SparseArray
+ values are written using <a href="../../../reference/android/os/Parcel.html#writeValue(java.lang.Object)">writeValue(Object)</a> and must follow the
+ specification there.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeSparseBooleanArray(android.util.SparseBooleanArray)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeSparseBooleanArray(<a href="../../../reference/android/util/SparseBooleanArray.html">SparseBooleanArray</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeString(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeString(<a href="../../../reference/java/lang/String.html">String</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a string value into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeStringArray(java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeStringArray(<a href="../../../reference/java/lang/String.html">String[]</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeStringList(java.util.List<java.lang.String>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeStringList(<a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt; val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a List containing String objects into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.  They
+ can later be retrieved with <a href="../../../reference/android/os/Parcel.html#createStringArrayList()">createStringArrayList()</a> or
+ <a href="../../../reference/android/os/Parcel.html#readStringList(java.util.List<java.lang.String>)">readStringList(List<String>)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>val</td>
+        <td>The list of strings to be written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#createStringArrayList()">createStringArrayList()</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readStringList(java.util.List<java.lang.String>)">readStringList(List<String>)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeStrongBinder(android.os.IBinder)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeStrongBinder(<a href="../../../reference/android/os/IBinder.html">IBinder</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write an object into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeStrongInterface(android.os.IInterface)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeStrongInterface(<a href="../../../reference/android/os/IInterface.html">IInterface</a> val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write an object into the parcel at the current dataPosition(),
+ growing dataCapacity() if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeTypedArray(T[], int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeTypedArray(T[] val, int parcelableFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a heterogeneous array containing a particular object type into
+ the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.  The
+ type of the objects in the array must be one that implements Parcelable.
+ Unlike the <a href="../../../reference/android/os/Parcel.html#writeParcelableArray(T[], int)">writeParcelableArray(T[], int)</a> method, however, only the
+ raw data of the objects is written and not their type, so you must use
+ <a href="../../../reference/android/os/Parcel.html#readTypedArray(T[], android.os.Parcelable.Creator<T>)">readTypedArray(T[], Parcelable.Creator<T>)</a> with the correct corresponding
+ <a href="../../../reference/android/os/Parcelable.Creator.html">Parcelable.Creator</a> implementation to unmarshall them.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>val</td>
+        <td>The array of objects to be written.</td>
+      </tr>
+    <tr>
+        <th>parcelableFlags</td>
+        <td>Contextual flags as per
+ <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">Parcelable.writeToParcel()</a>.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#readTypedArray(T[], android.os.Parcelable.Creator<T>)">readTypedArray(T[], Parcelable.Creator<T>)</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#writeParcelableArray(T[], int)">writeParcelableArray(T[], int)</a></li>
+    <li><a href="../../../reference/android/os/Parcelable.Creator.html">Parcelable.Creator</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeTypedList(java.util.List<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeTypedList(<a href="../../../reference/java/util/List.html">List</a>&lt;T&gt; val)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a List containing a particular object type into the parcel, at
+ the current dataPosition() and growing dataCapacity() if needed.  The
+ type of the objects in the list must be one that implements Parcelable.
+ Unlike the generic writeList() method, however, only the raw data of the
+ objects is written and not their type, so you must use the corresponding
+ readTypedList() to unmarshall them.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>val</td>
+        <td>The list of objects to be written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Parcel.html#createTypedArrayList(android.os.Parcelable.Creator<T>)">createTypedArrayList(Parcelable.Creator<T>)</a></li>
+    <li><a href="../../../reference/android/os/Parcel.html#readTypedList(java.util.List<T>, android.os.Parcelable.Creator<T>)">readTypedList(List<T>, Parcelable.Creator<T>)</a></li>
+    <li><a href="../../../reference/android/os/Parcelable.html">Parcelable</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeValue(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeValue(<a href="../../../reference/java/lang/Object.html">Object</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten a generic object in to a parcel.  The given Object value may
+ currently be one of the following types:
+ 
+ <ul>
+ <li> null
+ <li> String
+ <li> Byte
+ <li> Short
+ <li> Integer
+ <li> Long
+ <li> Float
+ <li> Double
+ <li> Boolean
+ <li> String[]
+ <li> boolean[]
+ <li> byte[]
+ <li> int[]
+ <li> long[]
+ <li> Object[] (supporting objects of the same type defined here).
+ <li> <a href="../../../reference/android/os/Bundle.html">Bundle</a>
+ <li> Map (as supported by <a href="../../../reference/android/os/Parcel.html#writeMap(java.util.Map)">writeMap(Map)</a>).
+ <li> Any object that implements the <a href="../../../reference/android/os/Parcelable.html">Parcelable</a> protocol.
+ <li> Parcelable[]
+ <li> CharSequence (as supported by <a href="../../../reference/android/text/TextUtils.html#writeToParcel(java.lang.CharSequence, android.os.Parcel, int)">writeToParcel(CharSequence, Parcel, int)</a>).
+ <li> List (as supported by <a href="../../../reference/android/os/Parcel.html#writeList(java.util.List)">writeList(List)</a>).
+ <li> <a href="../../../reference/android/util/SparseArray.html">SparseArray</a> (as supported by <a href="../../../reference/android/os/Parcel.html#writeSparseArray(android.util.SparseArray<java.lang.Object>)">writeSparseArray(SparseArray<Object>)</a>).
+ <li> <a href="../../../reference/android/os/IBinder.html">IBinder</a>
+ <li> Any object that implements Serializable (but see
+      <a href="../../../reference/android/os/Parcel.html#writeSerializable(java.io.Serializable)">writeSerializable(Serializable)</a> for caveats).  Note that all of the
+      previous types have relatively efficient implementations for
+      writing to a Parcel; having to rely on the generic serialization
+      approach is much less efficient and should be avoided whenever
+      possible.
+ </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="finalize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        finalize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver. Subclasses can use this facility to guarantee
+ that any associated resources are cleaned up before the receiver is
+ garbage collected. Uncaught exceptions which are thrown during the
+ running of the method cause it to terminate immediately, but are
+ otherwise ignored.
+ <p>
+ Note: The virtual machine assumes that the implementation in class Object
+ is empty.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/Throwable.html">Throwable</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="obtain(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/os/Parcel.html">Parcel</a>
+        obtain(int obj)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

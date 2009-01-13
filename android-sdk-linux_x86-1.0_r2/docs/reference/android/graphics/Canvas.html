@@ -1,0 +1,7046 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.graphics.Canvas - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/graphics/package-summary.html">android.graphics</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.graphics.Canvas</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.graphics.Canvas</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>The Canvas class holds the "draw" calls. To draw something, you need
+ 4 basic components: A Bitmap to hold the pixels, a Canvas to host
+ the draw calls (writing into the bitmap), a drawing primitive (e.g. Rect,
+ Path, text, Bitmap), and a paint (to describe the colors and styles for the
+ drawing).
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a>,
+            
+                <a href="../../../reference/android/graphics/Canvas.VertexMode.html">Canvas.VertexMode</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.VertexMode.html">Canvas.VertexMode</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#ALL_SAVE_FLAG">ALL_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">restore everything when restore() is called &nbsp;</td>
+        
+            <td class="jd-valcol">31&nbsp;</td>
+            <td class="jd-valcol">0x0000001f&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#CLIP_SAVE_FLAG">CLIP_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">restore the current clip when restore() is called &nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#CLIP_TO_LAYER_SAVE_FLAG">CLIP_TO_LAYER_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">clip against the layer's bounds &nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#FULL_COLOR_LAYER_SAVE_FLAG">FULL_COLOR_LAYER_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">the layer needs to 8-bits per color component &nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#HAS_ALPHA_LAYER_SAVE_FLAG">HAS_ALPHA_LAYER_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">the layer needs to per-pixel alpha &nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/graphics/Canvas.html#MATRIX_SAVE_FLAG">MATRIX_SAVE_FLAG</a>&nbsp;</td>
+        <td class="jd-descrcol">restore the current matrix when restore() is called &nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#Canvas()">Canvas</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct an empty raster canvas.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#Canvas(android.graphics.Bitmap)">Canvas</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a canvas with the specified bitmap to draw into.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#Canvas(javax.microedition.khronos.opengles.GL)">Canvas</a>(<a href="../../../reference/javax/microedition/khronos/opengles/GL.html">GL</a> gl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a canvas with the specified gl context.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipPath(android.graphics.Path)">clipPath</a>(<a href="../../../reference/android/graphics/Path.html">Path</a> path)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified path.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipPath(android.graphics.Path, android.graphics.Region.Op)">clipPath</a>(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Modify the current clip with the specified path.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(float, float, float, float)">clipRect</a>(float left, float top, float right, float bottom)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(android.graphics.Rect)">clipRect</a>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> rect)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(float, float, float, float, android.graphics.Region.Op)">clipRect</a>(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Modify the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(android.graphics.Rect, android.graphics.Region.Op)">clipRect</a>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> rect, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Modify the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(android.graphics.RectF)">clipRect</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(android.graphics.RectF, android.graphics.Region.Op)">clipRect</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Modify the current clip with the specified rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRect(int, int, int, int)">clipRect</a>(int left, int top, int right, int bottom)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRegion(android.graphics.Region, android.graphics.Region.Op)">clipRegion</a>(<a href="../../../reference/android/graphics/Region.html">Region</a> region, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Modify the current clip with the specified region.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#clipRegion(android.graphics.Region)">clipRegion</a>(<a href="../../../reference/android/graphics/Region.html">Region</a> region)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Intersect the current clip with the specified region.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#concat(android.graphics.Matrix)">concat</a>(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawARGB(int, int, int, int)">drawARGB</a>(int a, int r, int g, int b)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified ARGB color, using srcover porterduff mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawArc(android.graphics.RectF, float, float, boolean, android.graphics.Paint)">drawArc</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> oval, float startAngle, float sweepAngle, boolean useCenter, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified arc, which will be scaled to fit inside the
+ specified oval.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmap(android.graphics.Bitmap, android.graphics.Matrix, android.graphics.Paint)">drawBitmap</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the bitmap using the specified matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmap(android.graphics.Bitmap, android.graphics.Rect, android.graphics.Rect, android.graphics.Paint)">drawBitmap</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Rect.html">Rect</a> src, <a href="../../../reference/android/graphics/Rect.html">Rect</a> dst, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified bitmap, scaling/translating automatically to fill
+ the destination rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmap(android.graphics.Bitmap, float, float, android.graphics.Paint)">drawBitmap</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, float left, float top, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified bitmap, with its top/left corner at (x,y), using
+ the specified paint, transformed by the current matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmap(int[], int, int, int, int, int, int, boolean, android.graphics.Paint)">drawBitmap</a>(int[] colors, int offset, int stride, int x, int y, int width, int height, boolean hasAlpha, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Treat the specified array of colors as a bitmap, and draw it.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmap(android.graphics.Bitmap, android.graphics.Rect, android.graphics.RectF, android.graphics.Paint)">drawBitmap</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Rect.html">Rect</a> src, <a href="../../../reference/android/graphics/RectF.html">RectF</a> dst, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified bitmap, scaling/translating automatically to fill
+ the destination rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawBitmapMesh(android.graphics.Bitmap, int, int, float[], int, int[], int, android.graphics.Paint)">drawBitmapMesh</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, int meshWidth, int meshHeight, float[] verts, int vertOffset, int[] colors, int colorOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the bitmap through the mesh, where mesh vertices are evenly
+ distributed across the bitmap.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawCircle(float, float, float, android.graphics.Paint)">drawCircle</a>(float cx, float cy, float radius, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified circle using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawColor(int)">drawColor</a>(int color)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified color, using srcover porterduff mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawColor(int, android.graphics.PorterDuff.Mode)">drawColor</a>(int color, <a href="../../../reference/android/graphics/PorterDuff.Mode.html">PorterDuff.Mode</a> mode)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified color and porter-duff xfermode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawLine(float, float, float, float, android.graphics.Paint)">drawLine</a>(float startX, float startY, float stopX, float stopY, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw a line segment with the specified start and stop x,y coordinates,
+ using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawLines(float[], android.graphics.Paint)">drawLines</a>(float[] pts, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawLines(float[], int, int, android.graphics.Paint)">drawLines</a>(float[] pts, int offset, int count, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw a series of lines.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawOval(android.graphics.RectF, android.graphics.Paint)">drawOval</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> oval, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified oval using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPaint(android.graphics.Paint)">drawPaint</a>(<a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Fill the entire canvas' bitmap (restricted to the current clip) with
+ the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPath(android.graphics.Path, android.graphics.Paint)">drawPath</a>(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified path using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPicture(android.graphics.Picture, android.graphics.RectF)">drawPicture</a>(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture, <a href="../../../reference/android/graphics/RectF.html">RectF</a> dst)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the picture, stretched to fit into the dst rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPicture(android.graphics.Picture, android.graphics.Rect)">drawPicture</a>(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture, <a href="../../../reference/android/graphics/Rect.html">Rect</a> dst)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the picture, stretched to fit into the dst rectangle.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPicture(android.graphics.Picture)">drawPicture</a>(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Save the canvas state, draw the picture, and restore the canvas state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPoint(float, float, android.graphics.Paint)">drawPoint</a>(float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Helper for drawPoints() for drawing a single point.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPoints(float[], int, int, android.graphics.Paint)">drawPoints</a>(float[] pts, int offset, int count, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw a series of points.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPoints(float[], android.graphics.Paint)">drawPoints</a>(float[] pts, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Helper for drawPoints() that assumes you want to draw the entire array
+</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPosText(char[], int, int, float[], android.graphics.Paint)">drawPosText</a>(char[] text, int index, int count, float[] pos, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text in the array, with each character's origin specified by
+ the pos array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawPosText(java.lang.String, float[], android.graphics.Paint)">drawPosText</a>(<a href="../../../reference/java/lang/String.html">String</a> text, float[] pos, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text in the array, with each character's origin specified by
+ the pos array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawRGB(int, int, int)">drawRGB</a>(int r, int g, int b)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified RGB color, using srcover porterduff mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawRect(android.graphics.RectF, android.graphics.Paint)">drawRect</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified Rect using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawRect(float, float, float, float, android.graphics.Paint)">drawRect</a>(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified Rect using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawRect(android.graphics.Rect, android.graphics.Paint)">drawRect</a>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> r, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified Rect using the specified Paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawRoundRect(android.graphics.RectF, float, float, android.graphics.Paint)">drawRoundRect</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, float rx, float ry, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified round-rect using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawText(java.lang.String, int, int, float, float, android.graphics.Paint)">drawText</a>(<a href="../../../reference/java/lang/String.html">String</a> text, int start, int end, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text, with origin at (x,y), using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawText(char[], int, int, float, float, android.graphics.Paint)">drawText</a>(char[] text, int index, int count, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text, with origin at (x,y), using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawText(java.lang.String, float, float, android.graphics.Paint)">drawText</a>(<a href="../../../reference/java/lang/String.html">String</a> text, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text, with origin at (x,y), using the specified paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawText(java.lang.CharSequence, int, int, float, float, android.graphics.Paint)">drawText</a>(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int start, int end, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the specified range of text, specified by start/end, with its
+ origin at (x,y), in the specified Paint.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawTextOnPath(java.lang.String, android.graphics.Path, float, float, android.graphics.Paint)">drawTextOnPath</a>(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/android/graphics/Path.html">Path</a> path, float hOffset, float vOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text, with origin at (x,y), using the specified paint, along
+ the specified path.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawTextOnPath(char[], int, int, android.graphics.Path, float, float, android.graphics.Paint)">drawTextOnPath</a>(char[] text, int index, int count, <a href="../../../reference/android/graphics/Path.html">Path</a> path, float hOffset, float vOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the text, with origin at (x,y), using the specified paint, along
+ the specified path.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#drawVertices(android.graphics.Canvas.VertexMode, int, float[], int, float[], int, int[], int, short[], int, int, android.graphics.Paint)">drawVertices</a>(<a href="../../../reference/android/graphics/Canvas.VertexMode.html">Canvas.VertexMode</a> mode, int vertexCount, float[] verts, int vertOffset, float[] texs, int texOffset, int[] colors, int colorOffset, short[] indices, int indexOffset, int indexCount, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Draw the array of vertices, interpreted as triangles (based on mode).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#freeGlCaches()">freeGlCaches</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Call this to free up OpenGL resources that may be cached or allocated
+ on behalf of the Canvas.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getClipBounds(android.graphics.Rect)">getClipBounds</a>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> bounds)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the clip bounds, returning true if they are non-empty.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/Rect.html">Rect</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getClipBounds()">getClipBounds</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the clip bounds.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/DrawFilter.html">DrawFilter</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getDrawFilter()">getDrawFilter</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/javax/microedition/khronos/opengles/GL.html">GL</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getGL()">getGL</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the GL object associated with this canvas, or null if it is not
+ backed by GL.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getHeight()">getHeight</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the height of the current drawing layer</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getMatrix(android.graphics.Matrix)">getMatrix</a>(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> ctm)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return, in ctm, the current transformation matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/graphics/Matrix.html">Matrix</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getMatrix()">getMatrix</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a new matrix with a copy of the canvas' current transformation
+ matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getSaveCount()">getSaveCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the number of matrix/clip states on the Canvas' private stack.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#getWidth()">getWidth</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the width of the current drawing layer</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#isOpaque()">isOpaque</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if the device that the current layer draws into is opaque
+ (i.e.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#quickReject(android.graphics.Path, android.graphics.Canvas.EdgeType)">quickReject</a>(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if the specified path, after being transformed by the
+ current matrix, would lie completely outside of the current clip.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#quickReject(float, float, float, float, android.graphics.Canvas.EdgeType)">quickReject</a>(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if the specified rectangle, after being transformed by the
+ current matrix, would lie completely outside of the current clip.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#quickReject(android.graphics.RectF, android.graphics.Canvas.EdgeType)">quickReject</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if the specified rectangle, after being transformed by the
+ current matrix, would lie completely outside of the current clip.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#restore()">restore</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This call balances a previous call to save(), and is used to remove all
+ modifications to the matrix/clip state since the last save call.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#restoreToCount(int)">restoreToCount</a>(int saveCount)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Efficient way to pop any calls to save() that happened after the save
+ count reached saveCount.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#rotate(float, float, float)">rotate</a>(float degrees, float px, float py)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified rotation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#rotate(float)">rotate</a>(float degrees)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified rotation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#save()">save</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Saves the current matrix and clip onto a private stack.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#save(int)">save</a>(int saveFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Based on saveFlags, can save the current matrix and clip onto a private
+ stack.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#saveLayer(float, float, float, float, android.graphics.Paint, int)">saveLayer</a>(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint, int saveFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Helper version of saveLayer() that takes 4 values rather than a RectF.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#saveLayer(android.graphics.RectF, android.graphics.Paint, int)">saveLayer</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> bounds, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint, int saveFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This behaves the same as save(), but in addition it allocates an
+ offscreen bitmap.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#saveLayerAlpha(float, float, float, float, int, int)">saveLayerAlpha</a>(float left, float top, float right, float bottom, int alpha, int saveFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Helper for saveLayerAlpha() that takes 4 values instead of a RectF.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#saveLayerAlpha(android.graphics.RectF, int, int)">saveLayerAlpha</a>(<a href="../../../reference/android/graphics/RectF.html">RectF</a> bounds, int alpha, int saveFlags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This behaves the same as save(), but in addition it allocates an
+ offscreen bitmap.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#scale(float, float, float, float)">scale</a>(float sx, float sy, float px, float py)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified scale.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#scale(float, float)">scale</a>(float sx, float sy)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified scale.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#setBitmap(android.graphics.Bitmap)">setBitmap</a>(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Specify a bitmap for the canvas to draw into.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#setDrawFilter(android.graphics.DrawFilter)">setDrawFilter</a>(<a href="../../../reference/android/graphics/DrawFilter.html">DrawFilter</a> filter)</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#setMatrix(android.graphics.Matrix)">setMatrix</a>(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Completely replace the current matrix with the specified matrix.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#setViewport(int, int)">setViewport</a>(int width, int height)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the viewport dimensions if this canvas is GL based.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#skew(float, float)">skew</a>(float sx, float sy)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified skew.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#translate(float, float)">translate</a>(float dx, float dy)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Preconcat the current matrix with the specified translation</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/graphics/Canvas.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="ALL_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        ALL_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+restore everything when restore() is called 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                31
+                (0x0000001f)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="CLIP_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        CLIP_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+restore the current clip when restore() is called 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="CLIP_TO_LAYER_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        CLIP_TO_LAYER_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+clip against the layer's bounds 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FULL_COLOR_LAYER_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FULL_COLOR_LAYER_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the layer needs to 8-bits per color component 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8
+                (0x00000008)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="HAS_ALPHA_LAYER_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        HAS_ALPHA_LAYER_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+the layer needs to per-pixel alpha 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="MATRIX_SAVE_FLAG"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        MATRIX_SAVE_FLAG
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+restore the current matrix when restore() is called 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Canvas()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Canvas()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct an empty raster canvas. Use setBitmap() to specify a bitmap to
+ draw into.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Canvas(android.graphics.Bitmap)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Canvas(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a canvas with the specified bitmap to draw into. The bitmap
+ must be mutable.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>Specifies a mutable bitmap for the canvas to draw into.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Canvas(javax.microedition.khronos.opengles.GL)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Canvas(<a href="../../../reference/javax/microedition/khronos/opengles/GL.html">GL</a> gl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a canvas with the specified gl context. All drawing through
+ this canvas will be redirected to OpenGL. Note: some features may not
+ be supported in this mode (e.g. some GL implementations may not support
+ antialiasing or certain effects like ColorMatrix or certain Xfermodes).
+ However, no exception will be thrown in those cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="clipPath(android.graphics.Path)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipPath(<a href="../../../reference/android/graphics/Path.html">Path</a> path)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified path.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>path</td>
+        <td>The path to intersect with the current clip</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipPath(android.graphics.Path, android.graphics.Region.Op)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipPath(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Modify the current clip with the specified path.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>path</td>
+        <td>The path to operate on the current clip</td>
+      </tr>
+    <tr>
+        <th>op</td>
+        <td>How the clip is modified</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(float, float, float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(float left, float top, float right, float bottom)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>left</td>
+        <td>The left side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The top of the rectangle to intersect with the current clip</td>
+      </tr>
+    <tr>
+        <th>right</td>
+        <td>The right side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>bottom</td>
+        <td>The bottom of the rectangle to intersect with the current
+               clip</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(<a href="../../../reference/android/graphics/Rect.html">Rect</a> rect)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rectangle to intersect with the current clip.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(float, float, float, float, android.graphics.Region.Op)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Modify the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>left</td>
+        <td>The left side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The top of the rectangle to intersect with the current
+               clip</td>
+      </tr>
+    <tr>
+        <th>right</td>
+        <td>The right side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>bottom</td>
+        <td>The bottom of the rectangle to intersect with the current
+               clip</td>
+      </tr>
+    <tr>
+        <th>op</td>
+        <td>How the clip is modified</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(android.graphics.Rect, android.graphics.Region.Op)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(<a href="../../../reference/android/graphics/Rect.html">Rect</a> rect, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Modify the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rectangle to intersect with the current clip.</td>
+      </tr>
+    <tr>
+        <th>op</td>
+        <td>How the clip is modified</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(android.graphics.RectF)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rectangle to intersect with the current clip.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(android.graphics.RectF, android.graphics.Region.Op)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Modify the current clip with the specified rectangle.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rect to intersect with the current clip</td>
+      </tr>
+    <tr>
+        <th>op</td>
+        <td>How the clip is modified</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRect(int, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRect(int left, int top, int right, int bottom)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified rectangle, which is
+ expressed in local coordinates.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>left</td>
+        <td>The left side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The top of the rectangle to intersect with the current clip</td>
+      </tr>
+    <tr>
+        <th>right</td>
+        <td>The right side of the rectangle to intersect with the
+               current clip</td>
+      </tr>
+    <tr>
+        <th>bottom</td>
+        <td>The bottom of the rectangle to intersect with the current
+               clip</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting clip is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRegion(android.graphics.Region, android.graphics.Region.Op)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRegion(<a href="../../../reference/android/graphics/Region.html">Region</a> region, <a href="../../../reference/android/graphics/Region.Op.html">Region.Op</a> op)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Modify the current clip with the specified region. Note that unlike
+ clipRect() and clipPath() which transform their arguments by the
+ current matrix, clipRegion() assumes its argument is already in the
+ coordinate system of the current layer's bitmap, and so not
+ transformation is performed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>region</td>
+        <td>The region to operate on the current clip, based on op</td>
+      </tr>
+    <tr>
+        <th>op</td>
+        <td>How the clip is modified</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clipRegion(android.graphics.Region)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        clipRegion(<a href="../../../reference/android/graphics/Region.html">Region</a> region)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Intersect the current clip with the specified region. Note that unlike
+ clipRect() and clipPath() which transform their arguments by the
+ current matrix, clipRegion() assumes its argument is already in the
+ coordinate system of the current layer's bitmap, and so not
+ transformation is performed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>region</td>
+        <td>The region to operate on the current clip, based on op</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the resulting is non-empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="concat(android.graphics.Matrix)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        concat(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified matrix.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>matrix</td>
+        <td>The matrix to preconcatenate with the current matrix
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawARGB(int, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawARGB(int a, int r, int g, int b)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified ARGB color, using srcover porterduff mode.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>a</td>
+        <td>alpha component (0..255) of the color to draw onto the canvas</td>
+      </tr>
+    <tr>
+        <th>r</td>
+        <td>red component (0..255) of the color to draw onto the canvas</td>
+      </tr>
+    <tr>
+        <th>g</td>
+        <td>green component (0..255) of the color to draw onto the canvas</td>
+      </tr>
+    <tr>
+        <th>b</td>
+        <td>blue component (0..255) of the color to draw onto the canvas
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawArc(android.graphics.RectF, float, float, boolean, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawArc(<a href="../../../reference/android/graphics/RectF.html">RectF</a> oval, float startAngle, float sweepAngle, boolean useCenter, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified arc, which will be scaled to fit inside the
+ specified oval. If the sweep angle is >= 360, then the oval is drawn
+ completely. Note that this differs slightly from SkPath::arcTo, which
+ treats the sweep angle mod 360.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>oval</td>
+        <td>The bounds of oval used to define the shape and size
+                   of the arc</td>
+      </tr>
+    <tr>
+        <th>startAngle</td>
+        <td>Starting angle (in degrees) where the arc begins</td>
+      </tr>
+    <tr>
+        <th>sweepAngle</td>
+        <td>Sweep angle (in degrees) measured clockwise</td>
+      </tr>
+    <tr>
+        <th>useCenter</td>
+        <td>If true, include the center of the oval in the arc, and
+                        close it if it is being stroked. This will draw a wedge</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the arc
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmap(android.graphics.Bitmap, android.graphics.Matrix, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmap(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the bitmap using the specified matrix.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>The bitmap to draw</td>
+      </tr>
+    <tr>
+        <th>matrix</td>
+        <td>The matrix used to transform the bitmap when it is drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>May be null. The paint used to draw the bitmap
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmap(android.graphics.Bitmap, android.graphics.Rect, android.graphics.Rect, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmap(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Rect.html">Rect</a> src, <a href="../../../reference/android/graphics/Rect.html">Rect</a> dst, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified bitmap, scaling/translating automatically to fill
+ the destination rectangle. If the source rectangle is not null, it
+ specifies the subset of the bitmap to draw.
+ Note: if the paint contains a maskfilter that generates a mask which
+ extends beyond the bitmap's original width/height (e.g. BlurMaskFilter),
+ then the bitmap will be drawn as if it were in a Shader with CLAMP mode.
+ Thus the color outside of the original width/height will be the edge
+ color replicated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>The bitmap to be drawn</td>
+      </tr>
+    <tr>
+        <th>src</td>
+        <td>May be null. The subset of the bitmap to be drawn</td>
+      </tr>
+    <tr>
+        <th>dst</td>
+        <td>The rectangle that the bitmap will be scaled/translated
+               to fit into</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>May be null. The paint used to draw the bitmap
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmap(android.graphics.Bitmap, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmap(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, float left, float top, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified bitmap, with its top/left corner at (x,y), using
+ the specified paint, transformed by the current matrix.
+ Note: if the paint contains a maskfilter that generates a mask which
+ extends beyond the bitmap's original width/height (e.g. BlurMaskFilter),
+ then the bitmap will be drawn as if it were in a Shader with CLAMP mode.
+ Thus the color outside of the original width/height will be the edge
+ color replicated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>The bitmap to be drawn</td>
+      </tr>
+    <tr>
+        <th>left</td>
+        <td>The position of the left side of the bitmap being drawn</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The position of the top side of the bitmap being drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the bitmap (may be null)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmap(int[], int, int, int, int, int, int, boolean, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmap(int[] colors, int offset, int stride, int x, int y, int width, int height, boolean hasAlpha, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Treat the specified array of colors as a bitmap, and draw it. This gives
+ the same result as first creating a bitmap from the array, and then
+ drawing it, but this method avoids explicitly creating a bitmap object
+ which can be more efficient if the colors are changing often.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>colors</td>
+        <td>Array of colors representing the pixels of the bitmap</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>Offset into the array of colors for the first pixel</td>
+      </tr>
+    <tr>
+        <th>stride</td>
+        <td>The number of of colors in the array between rows (must be
+               >= width or <= -width).</td>
+      </tr>
+    <tr>
+        <th>x</td>
+        <td>The X coordinate for where to draw the bitmap</td>
+      </tr>
+    <tr>
+        <th>y</td>
+        <td>The Y coordinate for where to draw the bitmap</td>
+      </tr>
+    <tr>
+        <th>width</td>
+        <td>The width of the bitmap</td>
+      </tr>
+    <tr>
+        <th>height</td>
+        <td>The height of the bitmap</td>
+      </tr>
+    <tr>
+        <th>hasAlpha</td>
+        <td>True if the alpha channel of the colors contains valid
+                 values. If false, the alpha byte is ignored (assumed to
+                 be 0xFF for every pixel).</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>May be null. The paint used to draw the bitmap
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmap(android.graphics.Bitmap, android.graphics.Rect, android.graphics.RectF, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmap(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, <a href="../../../reference/android/graphics/Rect.html">Rect</a> src, <a href="../../../reference/android/graphics/RectF.html">RectF</a> dst, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified bitmap, scaling/translating automatically to fill
+ the destination rectangle. If the source rectangle is not null, it
+ specifies the subset of the bitmap to draw.
+ Note: if the paint contains a maskfilter that generates a mask which
+ extends beyond the bitmap's original width/height (e.g. BlurMaskFilter),
+ then the bitmap will be drawn as if it were in a Shader with CLAMP mode.
+ Thus the color outside of the original width/height will be the edge
+ color replicated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>The bitmap to be drawn</td>
+      </tr>
+    <tr>
+        <th>src</td>
+        <td>May be null. The subset of the bitmap to be drawn</td>
+      </tr>
+    <tr>
+        <th>dst</td>
+        <td>The rectangle that the bitmap will be scaled/translated
+               to fit into</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>May be null. The paint used to draw the bitmap
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawBitmapMesh(android.graphics.Bitmap, int, int, float[], int, int[], int, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawBitmapMesh(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap, int meshWidth, int meshHeight, float[] verts, int vertOffset, int[] colors, int colorOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the bitmap through the mesh, where mesh vertices are evenly
+ distributed across the bitmap. There are meshWidth+1 vertices across, and
+ meshHeight+1 vertices down. The verts array is accessed in row-major
+ order, so that the first meshWidth+1 vertices are distributed across the
+ top of the bitmap from left to right. A more general version of this
+ methid is drawVertices().
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>The bitmap to draw using the mesh</td>
+      </tr>
+    <tr>
+        <th>meshWidth</td>
+        <td>The number of columns in the mesh. Nothing is drawn if
+                  this is 0</td>
+      </tr>
+    <tr>
+        <th>meshHeight</td>
+        <td>The number of rows in the mesh. Nothing is drawn if
+                   this is 0</td>
+      </tr>
+    <tr>
+        <th>verts</td>
+        <td>Array of x,y pairs, specifying where the mesh should be
+              drawn. There must be at least
+              (meshWidth+1) * (meshHeight+1) * 2 + meshOffset values
+              in the array</td>
+      </tr>
+    <tr>
+        <th>vertOffset</td>
+        <td>Number of verts elements to skip before drawing</td>
+      </tr>
+    <tr>
+        <th>colors</td>
+        <td>May be null. Specifies a color at each vertex, which is
+               interpolated across the cell, and whose values are
+               multiplied by the corresponding bitmap colors. If not null,
+               there must be at least (meshWidth+1) * (meshHeight+1) +
+               colorOffset values in the array.</td>
+      </tr>
+    <tr>
+        <th>colorOffset</td>
+        <td>Number of color elements to skip before drawing</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>May be null. The paint used to draw the bitmap
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawCircle(float, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawCircle(float cx, float cy, float radius, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified circle using the specified paint. If radius is <= 0,
+ then nothing will be drawn. The circle will be filled or framed based
+ on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>cx</td>
+        <td>The x-coordinate of the center of the cirle to be drawn</td>
+      </tr>
+    <tr>
+        <th>cy</td>
+        <td>The y-coordinate of the center of the cirle to be drawn</td>
+      </tr>
+    <tr>
+        <th>radius</td>
+        <td>The radius of the cirle to be drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the circle
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawColor(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawColor(int color)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified color, using srcover porterduff mode.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>color</td>
+        <td>the color to draw onto the canvas
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawColor(int, android.graphics.PorterDuff.Mode)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawColor(int color, <a href="../../../reference/android/graphics/PorterDuff.Mode.html">PorterDuff.Mode</a> mode)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified color and porter-duff xfermode.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>color</td>
+        <td>the color to draw with</td>
+      </tr>
+    <tr>
+        <th>mode</td>
+        <td>the porter-duff mode to apply to the color
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawLine(float, float, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawLine(float startX, float startY, float stopX, float stopY, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw a line segment with the specified start and stop x,y coordinates,
+ using the specified paint. NOTE: since a line is always "framed", the
+ Style is ignored in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>startX</td>
+        <td>The x-coordinate of the start point of the line</td>
+      </tr>
+    <tr>
+        <th>startY</td>
+        <td>The y-coordinate of the start point of the line</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the line
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawLines(float[], android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawLines(float[] pts, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawLines(float[], int, int, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawLines(float[] pts, int offset, int count, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw a series of lines. Each line is taken from 4 consecutive values
+ in the pts array. Thus to draw 1 line, the array must contain at least 4
+ values. This is logically the same as drawing the array as follows:
+ drawLine(pts[0], pts[1], pts[2], pts[3]) followed by
+ drawLine(pts[4], pts[5], pts[6], pts[7]) and so on.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pts</td>
+        <td>Array of points to draw [x0 y0 x1 y1 x2 y2 ...]</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>Number of values in the array to skip before drawing.</td>
+      </tr>
+    <tr>
+        <th>count</td>
+        <td>The number of values in the array to process, after
+                 skipping "offset" of them. Since each line uses 4 values,
+                 the number of "lines" that are drawn is really
+                 (count >> 2).</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the points
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawOval(android.graphics.RectF, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawOval(<a href="../../../reference/android/graphics/RectF.html">RectF</a> oval, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified oval using the specified paint. The oval will be
+ filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>oval</td>
+        <td>The rectangle bounds of the oval to be drawn
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPaint(android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPaint(<a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Fill the entire canvas' bitmap (restricted to the current clip) with
+ the specified paint. This is equivalent (but faster) to drawing an
+ infinitely large rectangle with the specified paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw onto the canvas
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPath(android.graphics.Path, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPath(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified path using the specified paint. The path will be
+ filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>path</td>
+        <td>The path to be drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the path
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPicture(android.graphics.Picture, android.graphics.RectF)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPicture(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture, <a href="../../../reference/android/graphics/RectF.html">RectF</a> dst)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the picture, stretched to fit into the dst rectangle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPicture(android.graphics.Picture, android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPicture(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture, <a href="../../../reference/android/graphics/Rect.html">Rect</a> dst)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the picture, stretched to fit into the dst rectangle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPicture(android.graphics.Picture)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPicture(<a href="../../../reference/android/graphics/Picture.html">Picture</a> picture)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Save the canvas state, draw the picture, and restore the canvas state.
+ This differs from picture.draw(canvas), which does not perform any
+ save/restore.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>picture</td>
+        <td>The picture to be drawn
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPoint(float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPoint(float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Helper for drawPoints() for drawing a single point.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPoints(float[], int, int, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPoints(float[] pts, int offset, int count, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw a series of points. Each point is centered at the coordinate
+ specified by pts[], and its diameter is specified by the paint's stroke
+ width (as transformed by the canvas' CTM), with special treatment for
+ a stroke width of 0, which always draws exactly 1 pixel (or at most 4
+ if antialiasing is enabled). The shape of the point is controlled by
+ the paint's Cap type. The shape is a square, unless the cap type is
+ Round, in which case the shape is a circle.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pts</td>
+        <td>Array of points to draw [x0 y0 x1 y1 x2 y2 ...]</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>Number of values to skip before starting to draw.</td>
+      </tr>
+    <tr>
+        <th>count</td>
+        <td>The number of values to process, after skipping offset
+                 of them. Since one point uses two values, the number of
+                 "points" that are drawn is really (count >> 1).</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the points
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPoints(float[], android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPoints(float[] pts, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Helper for drawPoints() that assumes you want to draw the entire array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPosText(char[], int, int, float[], android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPosText(char[] text, int index, int count, float[] pos, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text in the array, with each character's origin specified by
+ the pos array.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>index</td>
+        <td>The index of the first character to draw</td>
+      </tr>
+    <tr>
+        <th>count</td>
+        <td>The number of characters to draw, starting from index.</td>
+      </tr>
+    <tr>
+        <th>pos</td>
+        <td>Array of [x,y] positions, used to position each
+                 character</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawPosText(java.lang.String, float[], android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawPosText(<a href="../../../reference/java/lang/String.html">String</a> text, float[] pos, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text in the array, with each character's origin specified by
+ the pos array.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>pos</td>
+        <td>Array of [x,y] positions, used to position each character</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawRGB(int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawRGB(int r, int g, int b)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Fill the entire canvas' bitmap (restricted to the current clip) with the
+ specified RGB color, using srcover porterduff mode.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>red component (0..255) of the color to draw onto the canvas</td>
+      </tr>
+    <tr>
+        <th>g</td>
+        <td>green component (0..255) of the color to draw onto the canvas</td>
+      </tr>
+    <tr>
+        <th>b</td>
+        <td>blue component (0..255) of the color to draw onto the canvas
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawRect(android.graphics.RectF, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawRect(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified Rect using the specified paint. The rectangle will
+ be filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rect to be drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the rect
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawRect(float, float, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawRect(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified Rect using the specified paint. The rectangle will
+ be filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>left</td>
+        <td>The left side of the rectangle to be drawn</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The top side of the rectangle to be drawn</td>
+      </tr>
+    <tr>
+        <th>right</td>
+        <td>The right side of the rectangle to be drawn</td>
+      </tr>
+    <tr>
+        <th>bottom</td>
+        <td>The bottom side of the rectangle to be drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the rect
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawRect(android.graphics.Rect, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawRect(<a href="../../../reference/android/graphics/Rect.html">Rect</a> r, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified Rect using the specified Paint. The rectangle
+ will be filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>r</td>
+        <td>The rectangle to be drawn.</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the rectangle
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawRoundRect(android.graphics.RectF, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawRoundRect(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, float rx, float ry, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified round-rect using the specified paint. The roundrect
+ will be filled or framed based on the Style in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>The rectangular bounds of the roundRect to be drawn</td>
+      </tr>
+    <tr>
+        <th>rx</td>
+        <td>The x-radius of the oval used to round the corners</td>
+      </tr>
+    <tr>
+        <th>ry</td>
+        <td>The y-radius of the oval used to round the corners</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used to draw the roundRect
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawText(java.lang.String, int, int, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawText(<a href="../../../reference/java/lang/String.html">String</a> text, int start, int end, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text, with origin at (x,y), using the specified paint.
+ The origin is interpreted based on the Align setting in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>start</td>
+        <td>The index of the first character in text to draw</td>
+      </tr>
+    <tr>
+        <th>end</td>
+        <td>(end - 1) is the index of the last character in text to draw</td>
+      </tr>
+    <tr>
+        <th>x</td>
+        <td>The x-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>y</td>
+        <td>The y-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawText(char[], int, int, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawText(char[] text, int index, int count, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text, with origin at (x,y), using the specified paint. The
+ origin is interpreted based on the Align setting in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>x</td>
+        <td>The x-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>y</td>
+        <td>The y-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawText(java.lang.String, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawText(<a href="../../../reference/java/lang/String.html">String</a> text, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text, with origin at (x,y), using the specified paint. The
+ origin is interpreted based on the Align setting in the paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>x</td>
+        <td>The x-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>y</td>
+        <td>The y-coordinate of the origin of the text being drawn</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawText(java.lang.CharSequence, int, int, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawText(<a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> text, int start, int end, float x, float y, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the specified range of text, specified by start/end, with its
+ origin at (x,y), in the specified Paint. The origin is interpreted
+ based on the Align setting in the Paint.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>start</td>
+        <td>The index of the first character in text to draw</td>
+      </tr>
+    <tr>
+        <th>end</td>
+        <td>(end - 1) is the index of the last character in text
+                 to draw</td>
+      </tr>
+    <tr>
+        <th>x</td>
+        <td>The x-coordinate of origin for where to draw the text</td>
+      </tr>
+    <tr>
+        <th>y</td>
+        <td>The y-coordinate of origin for where to draw the text</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawTextOnPath(java.lang.String, android.graphics.Path, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawTextOnPath(<a href="../../../reference/java/lang/String.html">String</a> text, <a href="../../../reference/android/graphics/Path.html">Path</a> path, float hOffset, float vOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text, with origin at (x,y), using the specified paint, along
+ the specified path. The paint's Align setting determins where along the
+ path to start the text.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>path</td>
+        <td>The path the text should follow for its baseline</td>
+      </tr>
+    <tr>
+        <th>hOffset</td>
+        <td>The distance along the path to add to the text's
+                 starting position</td>
+      </tr>
+    <tr>
+        <th>vOffset</td>
+        <td>The distance above(-) or below(+) the path to position
+                 the text</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawTextOnPath(char[], int, int, android.graphics.Path, float, float, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawTextOnPath(char[] text, int index, int count, <a href="../../../reference/android/graphics/Path.html">Path</a> path, float hOffset, float vOffset, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the text, with origin at (x,y), using the specified paint, along
+ the specified path. The paint's Align setting determins where along the
+ path to start the text.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>text</td>
+        <td>The text to be drawn</td>
+      </tr>
+    <tr>
+        <th>path</td>
+        <td>The path the text should follow for its baseline</td>
+      </tr>
+    <tr>
+        <th>hOffset</td>
+        <td>The distance along the path to add to the text's
+                 starting position</td>
+      </tr>
+    <tr>
+        <th>vOffset</td>
+        <td>The distance above(-) or below(+) the path to position
+                 the text</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>The paint used for the text (e.g. color, size, style)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drawVertices(android.graphics.Canvas.VertexMode, int, float[], int, float[], int, int[], int, short[], int, int, android.graphics.Paint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        drawVertices(<a href="../../../reference/android/graphics/Canvas.VertexMode.html">Canvas.VertexMode</a> mode, int vertexCount, float[] verts, int vertOffset, float[] texs, int texOffset, int[] colors, int colorOffset, short[] indices, int indexOffset, int indexCount, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Draw the array of vertices, interpreted as triangles (based on mode). The
+ verts array is required, and specifies the x,y pairs for each vertex. If
+ texs is non-null, then it is used to specify the coordinate in shader
+ coordinates to use at each vertex (the paint must have a shader in this
+ case). If there is no texs array, but there is a color array, then each
+ color is interpolated across its corresponding triangle in a gradient. If
+ both texs and colors arrays are present, then they behave as before, but
+ the resulting color at each pixels is the result of multiplying the
+ colors from the shader and the color-gradient together. The indices array
+ is optional, but if it is present, then it is used to specify the index
+ of each triangle, rather than just walking through the arrays in order.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>mode</td>
+        <td>How to interpret the array of vertices</td>
+      </tr>
+    <tr>
+        <th>vertexCount</td>
+        <td>The number of values in the vertices array (and
+      corresponding texs and colors arrays if non-null). Each logical
+      vertex is two values (x, y), vertexCount must be a multiple of 2.</td>
+      </tr>
+    <tr>
+        <th>verts</td>
+        <td>Array of vertices for the mesh</td>
+      </tr>
+    <tr>
+        <th>vertOffset</td>
+        <td>Number of values in the verts to skip before drawing.</td>
+      </tr>
+    <tr>
+        <th>texs</td>
+        <td>May be null. If not null, specifies the coordinates to sample
+      into the current shader (e.g. bitmap tile or gradient)</td>
+      </tr>
+    <tr>
+        <th>texOffset</td>
+        <td>Number of values in texs to skip before drawing.</td>
+      </tr>
+    <tr>
+        <th>colors</td>
+        <td>May be null. If not null, specifies a color for each
+      vertex, to be interpolated across the triangle.</td>
+      </tr>
+    <tr>
+        <th>colorOffset</td>
+        <td>Number of values in colors to skip before drawing.</td>
+      </tr>
+    <tr>
+        <th>indices</td>
+        <td>If not null, array of indices to reference into the
+      vertex (texs, colors) array.</td>
+      </tr>
+    <tr>
+        <th>indexCount</td>
+        <td>number of entries in the indices array (if not null).</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>Specifies the shader to use if the texs array is non-null. 
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="freeGlCaches()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        freeGlCaches()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Call this to free up OpenGL resources that may be cached or allocated
+ on behalf of the Canvas. Any subsequent drawing with a GL-backed Canvas
+ will have to recreate those resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getClipBounds(android.graphics.Rect)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getClipBounds(<a href="../../../reference/android/graphics/Rect.html">Rect</a> bounds)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the clip bounds, returning true if they are non-empty.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bounds</td>
+        <td>Return the clip bounds here. If it is null, ignore it but
+               still return true if the current clip is non-empty.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the current clip is non-empty.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getClipBounds()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/graphics/Rect.html">Rect</a>
+        getClipBounds()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the clip bounds.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the clip bounds, or [0, 0, 0, 0] if the clip is empty.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDrawFilter()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/graphics/DrawFilter.html">DrawFilter</a>
+        getDrawFilter()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getGL()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/javax/microedition/khronos/opengles/GL.html">GL</a>
+        getGL()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the GL object associated with this canvas, or null if it is not
+ backed by GL.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getHeight()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getHeight()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the height of the current drawing layer
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the height of the current drawing layer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMatrix(android.graphics.Matrix)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        getMatrix(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> ctm)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return, in ctm, the current transformation matrix. This does not alter
+ the matrix in the canvas, but just returns a copy of it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMatrix()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/graphics/Matrix.html">Matrix</a>
+        getMatrix()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a new matrix with a copy of the canvas' current transformation
+ matrix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSaveCount()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getSaveCount()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the number of matrix/clip states on the Canvas' private stack.
+ This will equal # save() calls - # restore() calls.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWidth()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getWidth()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the width of the current drawing layer
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the width of the current drawing layer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isOpaque()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isOpaque()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if the device that the current layer draws into is opaque
+ (i.e. does not support per-pixel alpha).
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the device that the current layer draws into is opaque
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="quickReject(android.graphics.Path, android.graphics.Canvas.EdgeType)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        quickReject(<a href="../../../reference/android/graphics/Path.html">Path</a> path, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if the specified path, after being transformed by the
+ current matrix, would lie completely outside of the current clip. Call
+ this to check if an area you intend to draw into is clipped out (and
+ therefore you can skip making the draw calls). Note: for speed it may
+ return false even if the path itself might not intersect the clip
+ (i.e. the bounds of the path intersects, but the path does not).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>path</td>
+        <td>The path to compare with the current clip</td>
+      </tr>
+    <tr>
+        <th>type</td>
+        <td>true if the path should be considered antialiased,
+                    since that means it may
+                    affect a larger area (more pixels) than
+                    non-antialiased.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the path (transformed by the canvas' matrix)
+                    does not intersect with the canvas' clip
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="quickReject(float, float, float, float, android.graphics.Canvas.EdgeType)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        quickReject(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if the specified rectangle, after being transformed by the
+ current matrix, would lie completely outside of the current clip. Call
+ this to check if an area you intend to draw into is clipped out (and
+ therefore you can skip making the draw calls).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>left</td>
+        <td>The left side of the rectangle to compare with the
+                    current clip</td>
+      </tr>
+    <tr>
+        <th>top</td>
+        <td>The top of the rectangle to compare with the current
+                    clip</td>
+      </tr>
+    <tr>
+        <th>right</td>
+        <td>The right side of the rectangle to compare with the
+                    current clip</td>
+      </tr>
+    <tr>
+        <th>bottom</td>
+        <td>The bottom of the rectangle to compare with the
+                    current clip</td>
+      </tr>
+    <tr>
+        <th>type</td>
+        <td>true if the rect should be considered antialiased,
+                    since that means it may affect a larger area (more
+                    pixels) than non-antialiased.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the rect (transformed by the canvas' matrix)
+                    does not intersect with the canvas' clip
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="quickReject(android.graphics.RectF, android.graphics.Canvas.EdgeType)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        quickReject(<a href="../../../reference/android/graphics/RectF.html">RectF</a> rect, <a href="../../../reference/android/graphics/Canvas.EdgeType.html">Canvas.EdgeType</a> type)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if the specified rectangle, after being transformed by the
+ current matrix, would lie completely outside of the current clip. Call
+ this to check if an area you intend to draw into is clipped out (and
+ therefore you can skip making the draw calls).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>rect</td>
+        <td>the rect to compare with the current clip</td>
+      </tr>
+    <tr>
+        <th>type</td>
+        <td>specifies how to treat the edges (BW or antialiased)</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the rect (transformed by the canvas' matrix)
+              does not intersect with the canvas' clip
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="restore()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        restore()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This call balances a previous call to save(), and is used to remove all
+ modifications to the matrix/clip state since the last save call. It is
+ an error to call restore() more times than save() was called.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="restoreToCount(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        restoreToCount(int saveCount)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Efficient way to pop any calls to save() that happened after the save
+ count reached saveCount. It is an error for saveCount to be less than 1.
+
+ Example:
+    int count = canvas.save();
+    ... // more calls potentially to save()
+    canvas.restoreToCount(count);
+    // now the canvas is back in the same state it was before the initial
+    // call to save().
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>saveCount</td>
+        <td>The save level to restore to.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rotate(float, float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        rotate(float degrees, float px, float py)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified rotation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>degrees</td>
+        <td>The amount to rotate, in degrees</td>
+      </tr>
+    <tr>
+        <th>px</td>
+        <td>The x-coord for the pivot point (unchanged by the rotation)</td>
+      </tr>
+    <tr>
+        <th>py</td>
+        <td>The y-coord for the pivot point (unchanged by the rotation)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rotate(float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        rotate(float degrees)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified rotation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>degrees</td>
+        <td>The amount to rotate, in degrees
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="save()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        save()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Saves the current matrix and clip onto a private stack. Subsequent
+ calls to translate,scale,rotate,skew,concat or clipRect,clipPath
+ will all operate as usual, but when the balancing call to restore()
+ is made, those calls will be forgotten, and the settings that existed
+ before the save() will be reinstated.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The value to pass to restoreToCount() to balance this save()
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="save(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        save(int saveFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Based on saveFlags, can save the current matrix and clip onto a private
+ stack. Subsequent calls to translate,scale,rotate,skew,concat or
+ clipRect,clipPath will all operate as usual, but when the balancing
+ call to restore() is made, those calls will be forgotten, and the
+ settings that existed before the save() will be reinstated.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>saveFlags</td>
+        <td>flag bits that specify which parts of the Canvas state
+                  to save/restore</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The value to pass to restoreToCount() to balance this save()
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="saveLayer(float, float, float, float, android.graphics.Paint, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        saveLayer(float left, float top, float right, float bottom, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint, int saveFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Helper version of saveLayer() that takes 4 values rather than a RectF.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="saveLayer(android.graphics.RectF, android.graphics.Paint, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        saveLayer(<a href="../../../reference/android/graphics/RectF.html">RectF</a> bounds, <a href="../../../reference/android/graphics/Paint.html">Paint</a> paint, int saveFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This behaves the same as save(), but in addition it allocates an
+ offscreen bitmap. All drawing calls are directed there, and only when
+ the balancing call to restore() is made is that offscreen transfered to
+ the canvas (or the previous layer). Subsequent calls to translate,
+ scale, rotate, skew, concat or clipRect, clipPath all operate on this
+ copy. When the balancing call to restore() is made, this copy is
+ deleted and the previous matrix/clip state is restored.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bounds</td>
+        <td>May be null. The maximum size the offscreen bitmap
+               needs to be (in local coordinates)</td>
+      </tr>
+    <tr>
+        <th>paint</td>
+        <td>This is copied, and is applied to the offscreen when
+               restore() is called.</td>
+      </tr>
+    <tr>
+        <th>saveFlags</td>
+        <td>see _SAVE_FLAG constants</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>value to pass to restoreToCount() to balance this save()
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="saveLayerAlpha(float, float, float, float, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        saveLayerAlpha(float left, float top, float right, float bottom, int alpha, int saveFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Helper for saveLayerAlpha() that takes 4 values instead of a RectF.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="saveLayerAlpha(android.graphics.RectF, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        saveLayerAlpha(<a href="../../../reference/android/graphics/RectF.html">RectF</a> bounds, int alpha, int saveFlags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This behaves the same as save(), but in addition it allocates an
+ offscreen bitmap. All drawing calls are directed there, and only when
+ the balancing call to restore() is made is that offscreen transfered to
+ the canvas (or the previous layer). Subsequent calls to translate,
+ scale, rotate, skew, concat or clipRect, clipPath all operate on this
+ copy. When the balancing call to restore() is made, this copy is
+ deleted and the previous matrix/clip state is restored.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bounds</td>
+        <td>The maximum size the offscreen bitmap needs to be
+                  (in local coordinates)</td>
+      </tr>
+    <tr>
+        <th>alpha</td>
+        <td>The alpha to apply to the offscreen when when it is
+                        drawn during restore()</td>
+      </tr>
+    <tr>
+        <th>saveFlags</td>
+        <td>see _SAVE_FLAG constants</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>value to pass to restoreToCount() to balance this call
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="scale(float, float, float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        scale(float sx, float sy, float px, float py)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified scale.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sx</td>
+        <td>The amount to scale in X</td>
+      </tr>
+    <tr>
+        <th>sy</td>
+        <td>The amount to scale in Y</td>
+      </tr>
+    <tr>
+        <th>px</td>
+        <td>The x-coord for the pivot point (unchanged by the rotation)</td>
+      </tr>
+    <tr>
+        <th>py</td>
+        <td>The y-coord for the pivot point (unchanged by the rotation)
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="scale(float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        scale(float sx, float sy)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified scale.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sx</td>
+        <td>The amount to scale in X</td>
+      </tr>
+    <tr>
+        <th>sy</td>
+        <td>The amount to scale in Y
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBitmap(android.graphics.Bitmap)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBitmap(<a href="../../../reference/android/graphics/Bitmap.html">Bitmap</a> bitmap)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Specify a bitmap for the canvas to draw into.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>bitmap</td>
+        <td>Specifies a mutable bitmap for the canvas to draw into.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDrawFilter(android.graphics.DrawFilter)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDrawFilter(<a href="../../../reference/android/graphics/DrawFilter.html">DrawFilter</a> filter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setMatrix(android.graphics.Matrix)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setMatrix(<a href="../../../reference/android/graphics/Matrix.html">Matrix</a> matrix)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Completely replace the current matrix with the specified matrix. If the
+ matrix parameter is null, then the current matrix is reset to identity.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>matrix</td>
+        <td>The matrix to replace the current matrix with. If it is
+               null, set the current matrix to identity.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setViewport(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setViewport(int width, int height)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the viewport dimensions if this canvas is GL based. If it is not,
+ this method is ignored and no exception is thrown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>width</td>
+        <td>The width of the viewport</td>
+      </tr>
+    <tr>
+        <th>height</td>
+        <td>The height of the viewport
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="skew(float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        skew(float sx, float sy)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified skew.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sx</td>
+        <td>The amount to skew in X</td>
+      </tr>
+    <tr>
+        <th>sy</td>
+        <td>The amount to skew in Y
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="translate(float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        translate(float dx, float dy)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Preconcat the current matrix with the specified translation
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>dx</td>
+        <td>The distance to translate in X</td>
+      </tr>
+    <tr>
+        <th>dy</td>
+        <td>The distance to translate in Y
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="finalize()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        finalize()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver. Subclasses can use this facility to guarantee
+ that any associated resources are cleaned up before the receiver is
+ garbage collected. Uncaught exceptions which are thrown during the
+ running of the method cause it to terminate immediately, but are
+ otherwise ignored.
+ <p>
+ Note: The virtual machine assumes that the implementation in class Object
+ is empty.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/Throwable.html">Throwable</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

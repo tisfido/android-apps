@@ -1,0 +1,4938 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.prefs.AbstractPreferences - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/prefs/package-summary.html">java.util.prefs</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>java.util.prefs.AbstractPreferences</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/util/prefs/Preferences.html">java.util.prefs.Preferences</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.prefs.AbstractPreferences</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>This class is partly implementation of <code>Preferences</code>, which can be 
+ used to simplify <code>Preferences</code> provider's implementation. 
+ <p>
+ This class define nine abstract SPI methods, which must be implemented by 
+ preference provider. And provider can also override other methods of this 
+ class. Some SPI methods will throw <code>BackingStoreException</code>, 
+ including <code>childrenNamesSpi()</code>, <code>flushSpi()</code>, 
+ <code>keysSpi()</code>, <code>removeNodeSpi()</code>, 
+ <code>syncSpi()</code>; <code>getSpi(String, String)</code> never throws any 
+ exceptions; the last SPI methods, <code>putSpi(String)</code>, 
+ <code>removeSpi(String)</code> and <code>childSpi(String)</code> won't throw 
+ <code>BackingStoreException</code>, but in some implementations, they may 
+ throw <code>SecurityException</code> due to lacking the permission to access 
+ backing end storage.</p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-java.util.prefs.Preferences')" class="jd-expando-trigger"
+        ><img id="inherited-constants-java.util.prefs.Preferences-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from class
+    <a href="../../../../reference/java/util/prefs/Preferences.html">java.util.prefs.Preferences</a>
+</h5>
+<div id="inherited-constants-java.util.prefs.Preferences">
+<div id="inherited-constants-java.util.prefs.Preferences-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#MAX_KEY_LENGTH">MAX_KEY_LENGTH</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#MAX_NAME_LENGTH">MAX_NAME_LENGTH</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#MAX_VALUE_LENGTH">MAX_VALUE_LENGTH</a>
+
+</div>
+<div id="inherited-constants-java.util.prefs.Preferences-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/prefs/Preferences.html#MAX_KEY_LENGTH">MAX_KEY_LENGTH</a>&nbsp;</td>
+        <td class="jd-descrcol">Maximum size in characters of preferences key  
+&nbsp;</td>
+        
+            <td class="jd-valcol">80&nbsp;</td>
+            <td class="jd-valcol">0x00000050&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/prefs/Preferences.html#MAX_NAME_LENGTH">MAX_NAME_LENGTH</a>&nbsp;</td>
+        <td class="jd-descrcol">Maximum size in characters of preferences name
+&nbsp;</td>
+        
+            <td class="jd-valcol">80&nbsp;</td>
+            <td class="jd-valcol">0x00000050&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/prefs/Preferences.html#MAX_VALUE_LENGTH">MAX_VALUE_LENGTH</a>&nbsp;</td>
+        <td class="jd-descrcol">Maximum size in characters of preferences value
+&nbsp;</td>
+        
+            <td class="jd-valcol">8192&nbsp;</td>
+            <td class="jd-valcol">0x00002000&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#lock">lock</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The object used to lock this node.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">protected&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#newNode">newNode</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">This field is true if this node is created while it doesn't exist in the 
+ backing store.&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#AbstractPreferences(java.util.prefs.AbstractPreferences, java.lang.String)">AbstractPreferences</a>(<a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a> parent, <a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a new <code>AbstractPreferences</code> instance using given 
+ parent node and node name.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#absolutePath()">absolutePath</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get this preference node's absolute path string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#addNodeChangeListener(java.util.prefs.NodeChangeListener)">addNodeChangeListener</a>(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an <code>NodeChangeListener</code> instance for this node, which 
+ will receive <code>NodeChangeEvent</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">addPreferenceChangeListener</a>(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an <code>PreferenceChangeListener</code> instance for this node, which 
+ will receive <code>PreferenceChangeEvent</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#childrenNames()">childrenNames</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return names of all children of this node, or empty string if this node 
+ has no children.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#clear()">clear</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove all preferences of this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#exportNode(java.io.OutputStream)">exportNode</a>(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Export all preferences of this node to the given output stream in XML 
+ document.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#exportSubtree(java.io.OutputStream)">exportSubtree</a>(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Export all preferences of this node and its all descendants to the given 
+ output stream in XML document.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Force the updates to this node and its descendants to the backing store.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#get(java.lang.String, java.lang.String)">get</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the string value mapped to the given key, or default value if no 
+ value is mapped or backing store is unavailable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getBoolean(java.lang.String, boolean)">getBoolean</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the boolean value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getByteArray(java.lang.String, byte[])">getByteArray</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the byte array value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getDouble(java.lang.String, double)">getDouble</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, double deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the double value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getFloat(java.lang.String, float)">getFloat</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, float deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getInt(java.lang.String, int)">getInt</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, int deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getLong(java.lang.String, long)">getLong</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, long deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the long value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#isUserNode()">isUserNode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if this is a user preferences, false if this is a system 
+ preferences</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#keys()">keys</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return all preferences keys stored in this node, or empty array if no 
+ key is found.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#name()">name</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return name of this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#node(java.lang.String)">node</a>(<a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the preferences node with the given path name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#nodeExists(java.lang.String)">nodeExists</a>(<a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the preferences node with the given path name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#parent()">parent</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the parent preferences node of this node, or null if this node is root.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#put(java.lang.String, java.lang.String)">put</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and value, or update 
+ value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putBoolean(java.lang.String, boolean)">putBoolean</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putByteArray(java.lang.String, byte[])">putByteArray</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putDouble(java.lang.String, double)">putDouble</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, double value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putFloat(java.lang.String, float)">putFloat</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, float value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putInt(java.lang.String, int)">putInt</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putLong(java.lang.String, long)">putLong</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, long value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#remove(java.lang.String)">remove</a>(<a href="../../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the preferences mapped to the given key from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNode()">removeNode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove this preferences node and its all descendants.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNodeChangeListener(java.util.prefs.NodeChangeListener)">removeNodeChangeListener</a>(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the given <code>NodeChangeListener</code> instance from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">removePreferenceChangeListener</a>(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the given <code>PreferenceChangeListener</code> instance from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#sync()">sync</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Synchronize this preferences node and its descendants' data with the back 
+ end preferences store.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a string description of this node.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#cachedChildren()">cachedChildren</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return arrays of all cached children node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#childSpi(java.lang.String)">childSpi</a>(<a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the child preference node with the given name, and create new one if 
+ it does not exist.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#childrenNamesSpi()">childrenNamesSpi</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return names of this node's all children , or empty array if this node has 
+ no child.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#flushSpi()">flushSpi</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush changes of this node to the backing store.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getChild(java.lang.String)">getChild</a>(<a href="../../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the child node with given name, or null if it doesn't exist.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#getSpi(java.lang.String)">getSpi</a>(<a href="../../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the preference value mapped to the given key.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#isRemoved()">isRemoved</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if and only if this node has been removed by invoking 
+ <a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNode()">removeNode</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#keysSpi()">keysSpi</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return all keys of this node's preferences, or empty array if no preference 
+ found on this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#putSpi(java.lang.String, java.lang.String)">putSpi</a>(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Put the given key-value pair into this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNodeSpi()">removeNodeSpi</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove this node from the preference hierarchy tree.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeSpi(java.lang.String)">removeSpi</a>(<a href="../../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the preference with the given key.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/AbstractPreferences.html#syncSpi()">syncSpi</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Synchronize this node with the backing store.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.prefs.Preferences')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.prefs.Preferences-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/util/prefs/Preferences.html">java.util.prefs.Preferences</a>
+</h5>
+<div id="inherited-methods-java.util.prefs.Preferences">
+<div id="inherited-methods-java.util.prefs.Preferences-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#absolutePath()">absolutePath</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#addNodeChangeListener(java.util.prefs.NodeChangeListener)">addNodeChangeListener</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">addPreferenceChangeListener</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#childrenNames()">childrenNames</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#clear()">clear</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#exportNode(java.io.OutputStream)">exportNode</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#exportSubtree(java.io.OutputStream)">exportSubtree</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#flush()">flush</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#get(java.lang.String, java.lang.String)">get</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getBoolean(java.lang.String, boolean)">getBoolean</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getByteArray(java.lang.String, byte[])">getByteArray</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getDouble(java.lang.String, double)">getDouble</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getFloat(java.lang.String, float)">getFloat</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getInt(java.lang.String, int)">getInt</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#getLong(java.lang.String, long)">getLong</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#importPreferences(java.io.InputStream)">importPreferences</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#isUserNode()">isUserNode</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#keys()">keys</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#name()">name</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#node(java.lang.String)">node</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#nodeExists(java.lang.String)">nodeExists</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#parent()">parent</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#put(java.lang.String, java.lang.String)">put</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putBoolean(java.lang.String, boolean)">putBoolean</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putByteArray(java.lang.String, byte[])">putByteArray</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putDouble(java.lang.String, double)">putDouble</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putFloat(java.lang.String, float)">putFloat</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putInt(java.lang.String, int)">putInt</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#putLong(java.lang.String, long)">putLong</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#remove(java.lang.String)">remove</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#removeNode()">removeNode</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#removeNodeChangeListener(java.util.prefs.NodeChangeListener)">removeNodeChangeListener</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">removePreferenceChangeListener</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#sync()">sync</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#systemNodeForPackage(java.lang.Class<?>)">systemNodeForPackage</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#systemRoot()">systemRoot</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#userNodeForPackage(java.lang.Class<?>)">userNodeForPackage</a>,
+
+<a href="../../../../reference/java/util/prefs/Preferences.html#userRoot()">userRoot</a>
+
+</div>
+<div id="inherited-methods-java.util.prefs.Preferences-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#absolutePath()">absolutePath</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get this preference node's absolute path string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#addNodeChangeListener(java.util.prefs.NodeChangeListener)">addNodeChangeListener</a>(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an <code>NodeChangeListener</code> instance for this node, which 
+ will receive <code>NodeChangeEvent</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">addPreferenceChangeListener</a>(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register an <code>PreferenceChangeListener</code> instance for this node, which 
+ will receive <code>PreferenceChangeEvent</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#childrenNames()">childrenNames</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return names of all children of this node, or empty string if this node 
+ has no children.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#clear()">clear</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove all preferences of this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#exportNode(java.io.OutputStream)">exportNode</a>(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Export all preferences of this node to the given output stream in XML 
+ document.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#exportSubtree(java.io.OutputStream)">exportSubtree</a>(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Export all preferences of this node and its all descendants to the given 
+ output stream in XML document.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Force the updates to this node and its descendants to the backing store.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#get(java.lang.String, java.lang.String)">get</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the string value mapped to the given key, or default value if no 
+ value is mapped or backing store is unavailable.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getBoolean(java.lang.String, boolean)">getBoolean</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the boolean value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">byte[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getByteArray(java.lang.String, byte[])">getByteArray</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the byte array value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">double&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getDouble(java.lang.String, double)">getDouble</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, double deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the double value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getFloat(java.lang.String, float)">getFloat</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, float deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getInt(java.lang.String, int)">getInt</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, int deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#getLong(java.lang.String, long)">getLong</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, long deflt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the long value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#importPreferences(java.io.InputStream)">importPreferences</a>(<a href="../../../../reference/java/io/InputStream.html">InputStream</a> istream)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Import all preferences from the given input stream in XML document.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#isUserNode()">isUserNode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return true if this is a user preferences, false if this is a system 
+ preferences</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#keys()">keys</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return all preferences keys stored in this node, or empty array if no 
+ key is found.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#name()">name</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return name of this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#node(java.lang.String)">node</a>(<a href="../../../../reference/java/lang/String.html">String</a> path)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the preferences node with the given path name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#nodeExists(java.lang.String)">nodeExists</a>(<a href="../../../../reference/java/lang/String.html">String</a> path)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the preferences node with the given path name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#parent()">parent</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the parent preferences node of this node, or null if this node is root.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#put(java.lang.String, java.lang.String)">put</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and value, or update 
+ value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putBoolean(java.lang.String, boolean)">putBoolean</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putByteArray(java.lang.String, byte[])">putByteArray</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putDouble(java.lang.String, double)">putDouble</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, double value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putFloat(java.lang.String, float)">putFloat</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, float value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putInt(java.lang.String, int)">putInt</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#putLong(java.lang.String, long)">putLong</a>(<a href="../../../../reference/java/lang/String.html">String</a> key, long value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#remove(java.lang.String)">remove</a>(<a href="../../../../reference/java/lang/String.html">String</a> key)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the preferences mapped to the given key from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#removeNode()">removeNode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove this preferences node and its all descendants.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#removeNodeChangeListener(java.util.prefs.NodeChangeListener)">removeNodeChangeListener</a>(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the given <code>NodeChangeListener</code> instance from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">removePreferenceChangeListener</a>(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Remove the given <code>PreferenceChangeListener</code> instance from this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#sync()">sync</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Synchronize this preferences node and its descendants' data with the back 
+ end preferences store.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#systemNodeForPackage(java.lang.Class<?>)">systemNodeForPackage</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the system preference node for the package of given class.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#systemRoot()">systemRoot</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the root node for system preference hierarchy.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a string description of this node.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#userNodeForPackage(java.lang.Class<?>)">userNodeForPackage</a>(<a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the user preference node for the package of given class.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/prefs/Preferences.html#userRoot()">userRoot</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the root node for user preference hierarchy.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="lock"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+        <a href="../../../../reference/java/lang/Object.html">Object</a>
+        lock
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The object used to lock this node. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="newNode"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        boolean
+        newNode
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This field is true if this node is created while it doesn't exist in the 
+ backing store. This field's default value is false, and it is checked when 
+ the node creation is completed, and if it is true, the node change event 
+ will be fired for this node's parent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="AbstractPreferences(java.util.prefs.AbstractPreferences, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        AbstractPreferences(<a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a> parent, <a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a new <code>AbstractPreferences</code> instance using given 
+ parent node and node name. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parent</td>
+        <td>the parent node of this node, can be null, which means this 
+                 node is root</td>
+      </tr>
+    <tr>
+        <th>name</td>
+        <td>the name of this node, can be empty(""), which means this 
+                 node is root</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if name contains slash, or be empty if parent is not null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="absolutePath()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        absolutePath()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get this preference node's absolute path string.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this preference node's absolute path string.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addNodeChangeListener(java.util.prefs.NodeChangeListener)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addNodeChangeListener(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Register an <code>NodeChangeListener</code> instance for this node, which 
+ will receive <code>NodeChangeEvent</code>. <code>NodeChangeEvent</code> will 
+ be produced when direct child node is added to or removed from this node. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ncl</td>
+        <td>the given listener to be registered</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addPreferenceChangeListener(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Register an <code>PreferenceChangeListener</code> instance for this node, which 
+ will receive <code>PreferenceChangeEvent</code>. <code>PreferenceChangeEvent</code> will 
+ be produced when preference is added to, removed from or updated for this node. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pcl</td>
+        <td>the given listener to be registered</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="childrenNames()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String[]</a>
+        childrenNames()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return names of all children of this node, or empty string if this node 
+ has no children. 
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>names of all children of this node</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clear()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clear()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove all preferences of this node. 
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="exportNode(java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        exportNode(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Export all preferences of this node to the given output stream in XML 
+ document. 
+ <p>
+ This XML document has the following DOCTYPE declaration:
+ <pre>
+ &lt;!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd"&gt;</pre>
+ And the UTF-8 encoding will be used. Please note that this node is not 
+ thread-safe, which is an exception of this class. 
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ostream</td>
+        <td>the output stream to export the XML</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="exportSubtree(java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        exportSubtree(<a href="../../../../reference/java/io/OutputStream.html">OutputStream</a> ostream)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Export all preferences of this node and its all descendants to the given 
+ output stream in XML document. 
+ <p>
+ This XML document has the following DOCTYPE declaration:
+ <pre>
+ &lt;!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd"&gt;</pre>     * 
+ And the UTF-8 encoding will be used. Please note that this node is not 
+ thread-safe, which is an exception of this class. 
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ostream</td>
+        <td>the output stream to export the XML</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="flush()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        flush()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Force the updates to this node and its descendants to the backing store. 
+ <p>
+ If this node has been removed, then the invocation of this method only 
+ flush this node without descendants.
+ </p> 
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="get(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        get(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the string value mapped to the given key, or default value if no 
+ value is mapped or backing store is unavailable.
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key or backing store unavailable </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the preference value mapped to the given key, or default value if 
+                 no value is mapped or backing store unavailable </li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getBoolean(java.lang.String, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getBoolean(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the boolean value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid.
+ <p>
+ The valid value is string equals "true", which represents true, or "false", 
+ which represents false, case is ignored. 
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the boolean value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getByteArray(java.lang.String, byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        byte[]
+        getByteArray(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the byte array value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.
+ <p>
+ The valid value string is Base64 encoded binary data. The Base64 encoding 
+ is as defined in <a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045</a>, 
+ section 6.8.
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the byte array value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDouble(java.lang.String, double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        double
+        getDouble(<a href="../../../../reference/java/lang/String.html">String</a> key, double deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the double value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.
+ <p>
+ The valid value string can be converted to double number by 
+ <a href="../../../../reference/java/lang/Double.html#parseDouble(java.lang.String)">Double.parseDouble(String)</a>.
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the double value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getFloat(java.lang.String, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        float
+        getFloat(<a href="../../../../reference/java/lang/String.html">String</a> key, float deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.
+ <p>
+ The valid value string can be converted to float number by 
+ <a href="../../../../reference/java/lang/Float.html#parseFloat(java.lang.String)">Float.parseFloat(String)</a>.
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the float value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getInt(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getInt(<a href="../../../../reference/java/lang/String.html">String</a> key, int deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the float value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.
+ <p>
+ The valid value string can be converted to integer by 
+ <a href="../../../../reference/java/lang/Integer.html#parseInt(java.lang.String)">Integer.parseInt(String)</a>.
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the integer value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getLong(java.lang.String, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        getLong(<a href="../../../../reference/java/lang/String.html">String</a> key, long deflt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the long value mapped to the given key, or default value if no 
+ value is mapped, backing store is unavailable, or the value is invalid string.
+ <p>
+ The valid value string can be converted to long integer by 
+ <a href="../../../../reference/java/lang/Long.html#parseLong(java.lang.String)">Long.parseLong(String)</a>.
+ </p>  
+ <p>
+ Some implementations may store default values in backing stores. In this case, 
+ if there is no value mapped to the given key, the stored default value is 
+ returned.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preference key</td>
+      </tr>
+    <tr>
+        <th>deflt</td>
+        <td>the default value, which will be returned if no value is 
+                 mapped to the given key, backing store unavailable or value 
+                 is invalid </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the long value mapped to the given key, or default value if 
+                 no value is mapped, backing store unavailable or value is invalid</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isUserNode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isUserNode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if this is a user preferences, false if this is a system 
+ preferences
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if this is a user preferences, false if this is a 
+                 system preferences
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="keys()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String[]</a>
+        keys()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return all preferences keys stored in this node, or empty array if no 
+ key is found.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>all preferences keys in this node</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="name()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        name()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return name of this node.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the name of this node
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="node(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>
+        node(<a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the preferences node with the given path name. The path name can 
+ be relative or absolute. The dictated preferences and its ancestors will 
+ be created if they do not exist.
+ <p>
+ The path is treated as relative to this node if it doesn't start with 
+ slash, or as absolute otherwise.</p>  
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the path name of dictated preferences</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the dictated preferences node</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="nodeExists(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        nodeExists(<a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the preferences node with the given path name. The path is treated 
+ as relative to this node if it doesn't start with slash, or as absolute 
+ otherwise.
+ <p>
+ Please note that if this node has been removed, invocation of this node 
+ will throw <code>IllegalStateException</code> except the given path is 
+ empty string, which will return false.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the path name of dictated preferences</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the dictated preferences node exists</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parent()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/prefs/Preferences.html">Preferences</a>
+        parent()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the parent preferences node of this node, or null if this node is root.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the parent preferences node of this node.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="put(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        put(<a href="../../../../reference/java/lang/String.html">String</a> key, <a href="../../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and value, or update 
+ value if preferences with given key has already existed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putBoolean(java.lang.String, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putBoolean(<a href="../../../../reference/java/lang/String.html">String</a> key, boolean value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putByteArray(java.lang.String, byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putByteArray(<a href="../../../../reference/java/lang/String.html">String</a> key, byte[] value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+ <p>
+ The string form of value is the Base64 encoded binary data of the given 
+ byte array. The Base64 encoding is as defined in 
+ <a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045</a>, section 6.8.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putDouble(java.lang.String, double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putDouble(<a href="../../../../reference/java/lang/String.html">String</a> key, double value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+ <p>
+ The string form of given value is the result of invoking 
+ <a href="../../../../reference/java/lang/Double.html#toString(double)">Double.toString(double)</a></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putFloat(java.lang.String, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putFloat(<a href="../../../../reference/java/lang/String.html">String</a> key, float value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+ <p>
+ The string form of given value is the result of invoking 
+ <a href="../../../../reference/java/lang/Float.html#toString(float)">Float.toString(float)</a></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putInt(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putInt(<a href="../../../../reference/java/lang/String.html">String</a> key, int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+ <p>
+ The string form of given value is the result of invoking 
+ <a href="../../../../reference/java/lang/Integer.html#toString(int)">Integer.toString(int)</a></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putLong(java.lang.String, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        putLong(<a href="../../../../reference/java/lang/String.html">String</a> key, long value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add new preferences to this node using given key and string form of given 
+ value, or update value if preferences with given key has already existed. 
+ <p>
+ The string form of given value is the result of invoking 
+ <a href="../../../../reference/java/lang/Long.html#toString(long)">Long.toString(long)</a></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the preferences key to be added or be updated </td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the preferences value for the given key</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="remove(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        remove(<a href="../../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the preferences mapped to the given key from this node.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the given preferences key to removed </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeNode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        removeNode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove this preferences node and its all descendants. The removal maybe
+ won't be persisted until the <code>flush()</code> method is invoked. 
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeNodeChangeListener(java.util.prefs.NodeChangeListener)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        removeNodeChangeListener(<a href="../../../../reference/java/util/prefs/NodeChangeListener.html">NodeChangeListener</a> ncl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the given <code>NodeChangeListener</code> instance from this node. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>ncl</td>
+        <td>the given listener to be removed</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        removePreferenceChangeListener(<a href="../../../../reference/java/util/prefs/PreferenceChangeListener.html">PreferenceChangeListener</a> pcl)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the given <code>PreferenceChangeListener</code> instance from this node. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>pcl</td>
+        <td>the given listener to be removed</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="sync()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        sync()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Synchronize this preferences node and its descendants' data with the back 
+ end preferences store. The changes of back end should be reflect by this 
+ node and its descendants, meanwhile, the changes of this node and descendants 
+ should be persisted.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a string description of this node. The format is "User/System 
+ Preference Node: " followed by this node's absolute path.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a string description of this node
+ 
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="cachedChildren()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences[]</a>
+        cachedChildren()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return arrays of all cached children node.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>arrays of all cached children node.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="childSpi(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        <a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a>
+        childSpi(<a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the child preference node with the given name, and create new one if 
+ it does not exist. Invoker of this method should assure that the given name 
+ are valid as well as this node is not removed. Invocation of this method 
+ implies that the node with given name is not cached(or, has been removed.)
+ If the named node has just been removed, implementation of this method must 
+ create a new one instead of reactivated the removed one. 
+ <p>
+ The new creation is not required to be persisted immediately until the flush 
+ method is invoked.</p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>AbstractPreferences
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="childrenNamesSpi()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        <a href="../../../../reference/java/lang/String.html">String[]</a>
+        childrenNamesSpi()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return names of this node's all children , or empty array if this node has 
+ no child. Cached children name is not required to be returned.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>names of this node's all children</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="flushSpi()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        flushSpi()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flush changes of this node to the backing store. This method should only 
+ flush this node, and should not include the descendant nodes. The 
+ implementation which want to flush all nodes at once should override 
+ <a href="../../../../reference/java/util/prefs/AbstractPreferences.html#flush()">flush()</a> method. 
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getChild(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/prefs/AbstractPreferences.html">AbstractPreferences</a>
+        getChild(<a href="../../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the child node with given name, or null if it doesn't exist. The 
+ given name must be valid and this node cannot be removed. Invocation of 
+ this method implies that the node with given name is not cached(or, has 
+ been removed.)
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the given child name to be got </td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the child node with given name, or null if it doesn't exist </li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSpi(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getSpi(<a href="../../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the preference value mapped to the given key. Invoker of this method 
+ should assure that given key are valid as well as this node is not removed. 
+ This method should not throw exceptions, but if it does, the invoker should 
+ catch it and deal with it as null return value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the given key to be searched for</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the preference value mapped to the given key
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isRemoved()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        isRemoved()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return true if and only if this node has been removed by invoking 
+ <a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNode()">removeNode</a>. 
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if and only if this node has been removed by invoking 
+             <a href="../../../../reference/java/util/prefs/AbstractPreferences.html#removeNode()">removeNode</a>
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="keysSpi()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        <a href="../../../../reference/java/lang/String.html">String[]</a>
+        keysSpi()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return all keys of this node's preferences, or empty array if no preference 
+ found on this node. Invoker of this method should assure that this node is 
+ not removed.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>all keys of this node's preferences</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putSpi(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        putSpi(<a href="../../../../reference/java/lang/String.html">String</a> name, <a href="../../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Put the given key-value pair into this node. Invoker of this method should
+ assure that both the given values are valid as well as this node 
+ is not removed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the given preference key</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>the given preference value
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeNodeSpi()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        removeNodeSpi()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove this node from the preference hierarchy tree. The invoker of this 
+ method should assure that this node has no child node, which means the 
+ <a href="../../../../reference/java/util/prefs/Preferences.html#removeNode()">Preferences.removeNode()</a> should invoke 
+ this method multi-times in bottom-up pattern. The removal is not required 
+ to be persisted at once until the it is flushed.  
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="removeSpi(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        removeSpi(<a href="../../../../reference/java/lang/String.html">String</a> key)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Remove the preference with the given key. Invoker of this method 
+ should assure that given key are valid as well as this node is not removed. 
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>key</td>
+        <td>the given key to removed
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="syncSpi()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        void
+        syncSpi()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Synchronize this node with the backing store. This method should only 
+ synchronize this node, and should not include the descendant nodes. The 
+ implementation which want to synchronize all nodes at once should override 
+ <a href="../../../../reference/java/util/prefs/AbstractPreferences.html#sync()">sync()</a> method. 
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/prefs/BackingStoreException.html">BackingStoreException</a></td>
+            <td>if backing store is unavailable or causes operation failure
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

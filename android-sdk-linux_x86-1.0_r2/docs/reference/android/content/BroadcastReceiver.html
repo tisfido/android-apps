@@ -1,0 +1,1770 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.content.BroadcastReceiver - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/content/package-summary.html">android.content</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>android.content.BroadcastReceiver</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.content.BroadcastReceiver</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Base class for code that will receive intents sent by sendBroadcast().
+ You can either dynamically register an instance of this class with
+ <a href="../../../reference/android/content/Context.html#registerReceiver(android.content.BroadcastReceiver, android.content.IntentFilter)">Context.registerReceiver()</a>
+ or statically publish an implementation through the
+ <a href="../../../reference/android/R.styleable.html#AndroidManifestReceiver">&lt;receiver&gt;</a>
+ tag in your <code>AndroidManifest.xml</code>. <em><strong>Note:</strong></em>
+ &nbsp;&nbsp;&nbsp;If registering a receiver in your
+ <a href="../../../reference/android/app/Activity.html#onResume()">Activity.onResume()</a>
+ implementation, you should unregister it in 
+ <a href="../../../reference/android/app/Activity.html#onPause()">Activity.onPause()</a>.
+ (You won't receive intents when paused, 
+ and this will cut down on unnecessary system overhead). Do not unregister in 
+ <a href="../../../reference/android/app/Activity.html#onSaveInstanceState(android.os.Bundle)">Activity.onSaveInstanceState()</a>,
+ because this won't be called if the user moves back in the history
+ stack.
+ 
+ <p>There are two major classes of broadcasts that can be received:</p>
+ <ul>
+ <li> <b>Normal broadcasts</b> (sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a>) are completely asynchronous.  All receivers of the
+ broadcast are run, in an undefined order, often at the same time.  This is
+ more efficient, but means that receivers can not use the result or abort
+ APIs included here.
+ <li> <b>Ordered broadcasts</b> (sent with <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>) are delivered to one receiver at a time.
+ As each receiver executes in turn, it can propagate a result to the next
+ receiver, or it can completely abort the broadcast so that it won't be passed
+ to other receivers.  The order receivers runs in can be controlled with the
+ <a href="../../../reference/android/R.styleable.html#AndroidManifestIntentFilter_priority">android:priority</a> attribute of the matching intent-filter; receivers with
+ the same priority will be run in an arbitrary order.
+ </ul>
+ 
+ <p>Even in the case of normal broadcasts, the system may in some
+ situations revert to delivering the broadcast one receiver at a time.  In
+ particular, for receivers that may require the creation of a process, only
+ one will be run at a time to avoid overloading the system with new processes.
+ In this situation, however, the non-ordered semantics hold: these receivers
+ can not return results or abort their broadcast.</p>
+ 
+ <p>Note that, although the Intent class is used for sending and receiving
+ these broadcasts, the Intent broadcast mechanism here is completely separate
+ from Intents that are used to start Activities with
+ <a href="../../../reference/android/content/Context.html#startActivity(android.content.Intent)">Context.startActivity()</a>.
+ There is no way for an BroadcastReceiver
+ to see or capture Intents used with startActivity(); likewise, when
+ you broadcast an Intent, you will never find or start an Activity.
+ These two operations are semantically very different: starting an
+ Activity with an Intent is a foreground operation that modifies what the
+ user is currently interacting with; broadcasting an Intent is a background
+ operation that the user is not normally aware of.
+ 
+ <p>The BroadcastReceiver class (when launched as a component through
+ a manifest's <a href="../../../reference/android/R.styleable.html#AndroidManifestReceiver">&lt;receiver&gt;</a>
+ tag) is an important part of an
+ <a href="../../../intro/lifecycle.html">application's overall lifecycle</a>.</p>
+ 
+ <p>Topics covered here:
+ <ol>
+ <li><a href="#ReceiverLifecycle">Receiver Lifecycle</a>
+ <li><a href="#Permissions">Permissions</a>
+ <li><a href="#ProcessLifecycle">Process Lifecycle</a>
+ </ol>
+ 
+ <a name="ReceiverLifecycle"></a>
+ <h3>Receiver Lifecycle</h3>
+ 
+ <p>A BroadcastReceiver object is only valid for the duration of the call
+ to <a href="../../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive(Context, Intent)</a>.  Once your code returns from this function,
+ the system considers the object to be finished and no longer active.
+ 
+ <p>This has important repercussions to what you can do in an
+ <a href="../../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive(Context, Intent)</a> implementation: anything that requires asynchronous
+ operation is not available, because you will need to return from the
+ function to handle the asynchronous operation, but at that point the
+ BroadcastReceiver is no longer active and thus the system is free to kill
+ its process before the asynchronous operation completes.
+ 
+ <p>In particular, you may <i>not</i> show a dialog or bind to a service from
+ within an BroadcastReceiver.  For the former, you should instead use the
+ <a href="../../../reference/android/app/NotificationManager.html">NotificationManager</a> API.  For the latter, you can
+ use <a href="../../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a> to
+ send a command to the service.
+ 
+ <a name="Permissions"></a>
+ <h3>Permissions</h3>
+ 
+ <p>Access permissions can be enforced by either the sender or receiver
+ of an Intent.
+ 
+ <p>To enforce a permission when sending, you supply a non-null
+ <var>permission</var> argument to
+ <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent, java.lang.String)">sendBroadcast(Intent, String)</a> or
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String, android.content.BroadcastReceiver, android.os.Handler, int, java.lang.String, android.os.Bundle)">sendOrderedBroadcast(Intent, String, BroadcastReceiver, android.os.Handler, int, String, Bundle)</a>.
+ Only receivers who have been granted this permission
+ (by requesting it with the
+ <a href="../../../reference/android/R.styleable.html#AndroidManifestUsesPermission">&lt;uses-permission&gt;</a>
+ tag in their <code>AndroidManifest.xml</code>) will be able to receive
+ the broadcast.
+ 
+ <p>To enforce a permission when receiving, you supply a non-null
+ <var>permission</var> when registering your receiver -- either when calling
+ <a href="../../../reference/android/content/Context.html#registerReceiver(android.content.BroadcastReceiver, android.content.IntentFilter, java.lang.String, android.os.Handler)">registerReceiver(BroadcastReceiver, IntentFilter, String, android.os.Handler)</a>
+ or in the static
+ <a href="../../../reference/android/R.styleable.html#AndroidManifestReceiver">&lt;receiver&gt;</a>
+ tag in your <code>AndroidManifest.xml</code>.  Only broadcasters who have
+ been granted this permission (by requesting it with the
+ <a href="../../../reference/android/R.styleable.html#AndroidManifestUsesPermission">&lt;uses-permission&gt;</a>
+ tag in their <code>AndroidManifest.xml</code>) will be able to send an
+ Intent to the receiver.
+ 
+ <p>See the <a href="../../../devel/security.html">Security Model</a>
+ document for more information on permissions and security in general.
+ 
+ <a name="ProcessLifecycle"></a>
+ <h3>Process Lifecycle</h3>
+ 
+ <p>A process that is currently executing an BroadcastReceiver (that is,
+ currently running the code in its <a href="../../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive(Context, Intent)</a> method) is
+ considered to be a foreground process and will be kept running by the
+ system except under cases of extreme memory pressure.
+ 
+ <p>Once you return from onReceive(), the BroadcastReceiver is no longer
+ active, and its hosting process is only as important as any other application
+ components that are running in it.  This is especially important because if
+ that process was only hosting the BroadcastReceiver (a common case for
+ applications that the user has never or not recently interacted with), then
+ upon returning from onReceive() the system will consider its process
+ to be empty and aggressively kill it so that resources are available for other
+ more important processes.
+ 
+ <p>This means that for longer-running operations you will often use
+ a <a href="../../../reference/android/app/Service.html">Service</a> in conjunction with an BroadcastReceiver to keep
+ the containing process active for the entire time of your operation.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#BroadcastReceiver()">BroadcastReceiver</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#abortBroadcast()">abortBroadcast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the flag indicating that this receiver should abort the
+ current broadcast; only works with broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#clearAbortBroadcast()">clearAbortBroadcast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clears the flag indicating that this receiver should abort the current
+ broadcast.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#getAbortBroadcast()">getAbortBroadcast</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the flag indicating whether or not this receiver should
+ abort the current broadcast.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#getDebugUnregister()">getDebugUnregister</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the last value given to <a href="../../../reference/android/content/BroadcastReceiver.html#setDebugUnregister(boolean)">setDebugUnregister(boolean)</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#getResultCode()">getResultCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current result code, as set by the previous receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#getResultData()">getResultData</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current result data, as set by the previous receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Bundle.html">Bundle</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#getResultExtras(boolean)">getResultExtras</a>(boolean makeMap)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the current result extra data, as set by the previous receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/android/content/Intent.html">Intent</a> intent)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This method is called when the BroadcastReceiver is receiving an Intent
+ broadcast.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setDebugUnregister(boolean)">setDebugUnregister</a>(boolean debug)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Control inclusion of debugging help for mismatched
+ calls to {@ Context#registerReceiver(BroadcastReceiver, IntentFilter)
+ Context.registerReceiver()}.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setOrderedHint(boolean)">setOrderedHint</a>(boolean isOrdered)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">For internal use, sets the hint about whether this BroadcastReceiver is
+ running in ordered mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setResult(int, java.lang.String, android.os.Bundle)">setResult</a>(int code, <a href="../../../reference/java/lang/String.html">String</a> data, <a href="../../../reference/android/os/Bundle.html">Bundle</a> extras)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change all of the result data returned from this broadcasts; only works
+ with broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setResultCode(int)">setResultCode</a>(int code)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the current result code of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setResultData(java.lang.String)">setResultData</a>(<a href="../../../reference/java/lang/String.html">String</a> data)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the current result data of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/BroadcastReceiver.html#setResultExtras(android.os.Bundle)">setResultExtras</a>(<a href="../../../reference/android/os/Bundle.html">Bundle</a> extras)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the current result extras of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="BroadcastReceiver()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        BroadcastReceiver()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="abortBroadcast()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        abortBroadcast()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the flag indicating that this receiver should abort the
+ current broadcast; only works with broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.  This will prevent
+ any other intent receivers from receiving the broadcast. It will still
+ call <a href="../../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive(Context, Intent)</a> of the BroadcastReceiver that the caller of 
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a> passed in.
+ 
+ <p><strong>This method does not work with non-ordered broadcasts such
+ as those sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearAbortBroadcast()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        clearAbortBroadcast()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Clears the flag indicating that this receiver should abort the current
+ broadcast.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAbortBroadcast()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        getAbortBroadcast()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the flag indicating whether or not this receiver should
+ abort the current broadcast.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>True if the broadcast should be aborted.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getDebugUnregister()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        boolean
+        getDebugUnregister()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the last value given to <a href="../../../reference/android/content/BroadcastReceiver.html#setDebugUnregister(boolean)">setDebugUnregister(boolean)</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultCode()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        int
+        getResultCode()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current result code, as set by the previous receiver.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>int The current result code.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultData()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getResultData()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current result data, as set by the previous receiver.
+ Often this is null.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>String The current result data; may be null.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getResultExtras(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/Bundle.html">Bundle</a>
+        getResultExtras(boolean makeMap)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the current result extra data, as set by the previous receiver.
+ Any changes you make to the returned Map will be propagated to the next
+ receiver.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>makeMap</td>
+        <td>If true then a new empty Map will be made for you if the
+                current Map is null; if false you should be prepared to
+                receive a null Map.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Map The current extras map.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onReceive(android.content.Context, android.content.Intent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        void
+        onReceive(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/android/content/Intent.html">Intent</a> intent)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This method is called when the BroadcastReceiver is receiving an Intent
+ broadcast.  During this time you can use the other methods on
+ BroadcastReceiver to view/modify the current result values.  The function
+ is normally called from the main thread of its process, so you should
+ never perform long-running operations in it (there is a timeout of
+ 10 seconds that the system allows before considering the receiver to
+ be blocked and a candidate to be killed). You cannot launch a popup dialog
+ in your implementation of onReceive().
+ 
+ <p><b>If this BroadcastReceiver was launched through a &lt;receiver&gt; tag,
+ then the object is no longer alive after returning from this
+ function.</b>  This means you should not perform any operations that
+ return a result to you asynchronously -- in particular, for interacting
+ with services, you should use
+ <a href="../../../reference/android/content/Context.html#startService(android.content.Intent)">startService(Intent)</a> instead of
+ <a href="../../../reference/android/content/Context.html#bindService(android.content.Intent, android.content.ServiceConnection, int)">bindService(Intent, ServiceConnection, int)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The Context in which the receiver is running.</td>
+      </tr>
+    <tr>
+        <th>intent</td>
+        <td>The Intent being received.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDebugUnregister(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setDebugUnregister(boolean debug)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Control inclusion of debugging help for mismatched
+ calls to {@ Context#registerReceiver(BroadcastReceiver, IntentFilter)
+ Context.registerReceiver()}.
+ If called with true, before given to registerReceiver(), then the
+ callstack of the following <a href="../../../reference/android/content/Context.html#unregisterReceiver(android.content.BroadcastReceiver)">Context.unregisterReceiver()</a> call is retained, to be printed if a later
+ incorrect unregister call is made.  Note that doing this requires retaining
+ information about the BroadcastReceiver for the lifetime of the app,
+ resulting in a leak -- this should only be used for debugging.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setOrderedHint(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setOrderedHint(boolean isOrdered)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+For internal use, sets the hint about whether this BroadcastReceiver is
+ running in ordered mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setResult(int, java.lang.String, android.os.Bundle)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setResult(int code, <a href="../../../reference/java/lang/String.html">String</a> data, <a href="../../../reference/android/os/Bundle.html">Bundle</a> extras)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change all of the result data returned from this broadcasts; only works
+ with broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.  All current result data is replaced
+ by the value given to this method.
+ 
+ <p><strong>This method does not work with non-ordered broadcasts such
+ as those sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a></strong></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>code</td>
+        <td>The new result code.  Often uses the
+ Activity <a href="../../../reference/android/app/Activity.html#RESULT_CANCELED">RESULT_CANCELED</a> and
+ <a href="../../../reference/android/app/Activity.html#RESULT_OK">RESULT_OK</a> constants, though the
+ actual meaning of this value is ultimately up to the broadcaster.</td>
+      </tr>
+    <tr>
+        <th>data</td>
+        <td>The new result data.  This is an arbitrary
+ string whose interpretation is up to the broadcaster; may be null.</td>
+      </tr>
+    <tr>
+        <th>extras</td>
+        <td>The new extra data map.  This is a Bundle
+ holding arbitrary data, whose interpretation is up to the
+ broadcaster.  Can be set to null.  This completely
+ replaces the current map (if any).
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setResultCode(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setResultCode(int code)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the current result code of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.  Often uses the
+ Activity <a href="../../../reference/android/app/Activity.html#RESULT_CANCELED">RESULT_CANCELED</a> and
+ <a href="../../../reference/android/app/Activity.html#RESULT_OK">RESULT_OK</a> constants, though the
+ actual meaning of this value is ultimately up to the broadcaster.
+ 
+ <p><strong>This method does not work with non-ordered broadcasts such
+ as those sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a></strong></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>code</td>
+        <td>The new result code.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/BroadcastReceiver.html#setResult(int, java.lang.String, android.os.Bundle)">setResult(int, String, Bundle)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setResultData(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setResultData(<a href="../../../reference/java/lang/String.html">String</a> data)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the current result data of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.  This is an arbitrary
+ string whose interpretation is up to the broadcaster.
+ 
+ <p><strong>This method does not work with non-ordered broadcasts such
+ as those sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a></strong></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>data</td>
+        <td>The new result data; may be null.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/BroadcastReceiver.html#setResult(int, java.lang.String, android.os.Bundle)">setResult(int, String, Bundle)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setResultExtras(android.os.Bundle)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        setResultExtras(<a href="../../../reference/android/os/Bundle.html">Bundle</a> extras)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the current result extras of this broadcast; only works with
+ broadcasts sent through
+ <a href="../../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast</a>.  This is a Bundle
+ holding arbitrary data, whose interpretation is up to the
+ broadcaster.  Can be set to null.  Calling this method completely
+ replaces the current map (if any).
+ 
+ <p><strong>This method does not work with non-ordered broadcasts such
+ as those sent with <a href="../../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast</a></strong></p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>extras</td>
+        <td>The new extra data map; may be null.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/content/BroadcastReceiver.html#setResult(int, java.lang.String, android.os.Bundle)">setResult(int, String, Bundle)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

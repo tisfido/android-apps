@@ -1,0 +1,4321 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.io.ObjectOutputStream - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/io/package-summary.html">java.io</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>java.io.ObjectOutputStream</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/io/OutputStream.html">java.io.OutputStream</a></td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/java/io/Closeable.html">Closeable</a> <a href="../../../reference/java/io/Flushable.html">Flushable</a> 
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.io.ObjectOutputStream</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/java/io/ObjectOutput.html">ObjectOutput</a> <a href="../../../reference/java/io/ObjectStreamConstants.html">ObjectStreamConstants</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>An ObjectOutputStream can be used to save Java objects into a stream where
+ the objects can be loaded later with an ObjectInputStream. Primitive data
+ (ints, bytes, chars, etc) can also be saved.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/java/io/ObjectOutputStream.PutField.html">ObjectOutputStream.PutField</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectOutputStream.PutField.html">ObjectOutputStream.PutField</a></td>
+            <td class="jd-descrcol" width="100%">Inner class to provide access to serializable fields
+&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html">ObjectInputStream</a></li>
+    <li><a href="../../../reference/java/io/ObjectOutput.html">ObjectOutput</a></li>
+    <li><a href="../../../reference/java/io/Serializable.html">Serializable</a></li>
+    <li><a href="../../../reference/java/io/Externalizable.html">Externalizable</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-java.io.ObjectStreamConstants')" class="jd-expando-trigger"
+        ><img id="inherited-constants-java.io.ObjectStreamConstants-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/java/io/ObjectStreamConstants.html">java.io.ObjectStreamConstants</a>
+</h5>
+<div id="inherited-constants-java.io.ObjectStreamConstants">
+<div id="inherited-constants-java.io.ObjectStreamConstants-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#PROTOCOL_VERSION_1">PROTOCOL_VERSION_1</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#PROTOCOL_VERSION_2">PROTOCOL_VERSION_2</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SC_BLOCK_DATA">SC_BLOCK_DATA</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SC_ENUM">SC_ENUM</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SC_EXTERNALIZABLE">SC_EXTERNALIZABLE</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SC_SERIALIZABLE">SC_SERIALIZABLE</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SC_WRITE_METHOD">SC_WRITE_METHOD</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#STREAM_MAGIC">STREAM_MAGIC</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#STREAM_VERSION">STREAM_VERSION</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SUBCLASS_IMPLEMENTATION_PERMISSION">SUBCLASS_IMPLEMENTATION_PERMISSION</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#SUBSTITUTION_PERMISSION">SUBSTITUTION_PERMISSION</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ARRAY">TC_ARRAY</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BASE">TC_BASE</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BLOCKDATA">TC_BLOCKDATA</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BLOCKDATALONG">TC_BLOCKDATALONG</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_CLASS">TC_CLASS</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_CLASSDESC">TC_CLASSDESC</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ENDBLOCKDATA">TC_ENDBLOCKDATA</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ENUM">TC_ENUM</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_EXCEPTION">TC_EXCEPTION</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_LONGSTRING">TC_LONGSTRING</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_MAX">TC_MAX</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_NULL">TC_NULL</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_OBJECT">TC_OBJECT</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_PROXYCLASSDESC">TC_PROXYCLASSDESC</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_REFERENCE">TC_REFERENCE</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_RESET">TC_RESET</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#TC_STRING">TC_STRING</a>,
+
+<a href="../../../reference/java/io/ObjectStreamConstants.html#baseWireHandle">baseWireHandle</a>
+
+</div>
+<div id="inherited-constants-java.io.ObjectStreamConstants-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#PROTOCOL_VERSION_1">PROTOCOL_VERSION_1</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#PROTOCOL_VERSION_2">PROTOCOL_VERSION_2</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SC_BLOCK_DATA">SC_BLOCK_DATA</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SC_ENUM">SC_ENUM</a>&nbsp;</td>
+        <td class="jd-descrcol">the bitmask denoting that the object is a enum
+&nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SC_EXTERNALIZABLE">SC_EXTERNALIZABLE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SC_SERIALIZABLE">SC_SERIALIZABLE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SC_WRITE_METHOD">SC_WRITE_METHOD</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">short&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#STREAM_MAGIC">STREAM_MAGIC</a>&nbsp;</td>
+        <td class="jd-descrcol">Used for the stream header
+&nbsp;</td>
+        
+            <td class="jd-valcol">-21267&nbsp;</td>
+            <td class="jd-valcol">0xffffaced&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">short&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#STREAM_VERSION">STREAM_VERSION</a>&nbsp;</td>
+        <td class="jd-descrcol">Used for the stream header
+&nbsp;</td>
+        
+            <td class="jd-valcol">5&nbsp;</td>
+            <td class="jd-valcol">0x00000005&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/SerializablePermission.html">SerializablePermission</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SUBCLASS_IMPLEMENTATION_PERMISSION">SUBCLASS_IMPLEMENTATION_PERMISSION</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/SerializablePermission.html">SerializablePermission</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#SUBSTITUTION_PERMISSION">SUBSTITUTION_PERMISSION</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ARRAY">TC_ARRAY</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">117&nbsp;</td>
+            <td class="jd-valcol">0x00000075&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BASE">TC_BASE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">112&nbsp;</td>
+            <td class="jd-valcol">0x00000070&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BLOCKDATA">TC_BLOCKDATA</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">119&nbsp;</td>
+            <td class="jd-valcol">0x00000077&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_BLOCKDATALONG">TC_BLOCKDATALONG</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">122&nbsp;</td>
+            <td class="jd-valcol">0x0000007a&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_CLASS">TC_CLASS</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">118&nbsp;</td>
+            <td class="jd-valcol">0x00000076&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_CLASSDESC">TC_CLASSDESC</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">114&nbsp;</td>
+            <td class="jd-valcol">0x00000072&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ENDBLOCKDATA">TC_ENDBLOCKDATA</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">120&nbsp;</td>
+            <td class="jd-valcol">0x00000078&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_ENUM">TC_ENUM</a>&nbsp;</td>
+        <td class="jd-descrcol">constant for new enum
+&nbsp;</td>
+        
+            <td class="jd-valcol">126&nbsp;</td>
+            <td class="jd-valcol">0x0000007e&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_EXCEPTION">TC_EXCEPTION</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">123&nbsp;</td>
+            <td class="jd-valcol">0x0000007b&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_LONGSTRING">TC_LONGSTRING</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">124&nbsp;</td>
+            <td class="jd-valcol">0x0000007c&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_MAX">TC_MAX</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">126&nbsp;</td>
+            <td class="jd-valcol">0x0000007e&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_NULL">TC_NULL</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">112&nbsp;</td>
+            <td class="jd-valcol">0x00000070&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_OBJECT">TC_OBJECT</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">115&nbsp;</td>
+            <td class="jd-valcol">0x00000073&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_PROXYCLASSDESC">TC_PROXYCLASSDESC</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">125&nbsp;</td>
+            <td class="jd-valcol">0x0000007d&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_REFERENCE">TC_REFERENCE</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">113&nbsp;</td>
+            <td class="jd-valcol">0x00000071&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_RESET">TC_RESET</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">121&nbsp;</td>
+            <td class="jd-valcol">0x00000079&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">byte&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#TC_STRING">TC_STRING</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">116&nbsp;</td>
+            <td class="jd-valcol">0x00000074&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/io/ObjectStreamConstants.html#baseWireHandle">baseWireHandle</a>&nbsp;</td>
+        <td class="jd-descrcol">The first object dumped gets assigned this handle/ID
+&nbsp;</td>
+        
+            <td class="jd-valcol">8257536&nbsp;</td>
+            <td class="jd-valcol">0x007e0000&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#ObjectOutputStream(java.io.OutputStream)">ObjectOutputStream</a>(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> output)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a new ObjectOutputStream on the OutputStream
+ <code>output</code>.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#ObjectOutputStream()">ObjectOutputStream</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a new <code>ObjectOutputStream</code>.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close this ObjectOutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#defaultWriteObject()">defaultWriteObject</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Default method to write objects into the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush this ObjectOutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/io/ObjectOutputStream.PutField.html">ObjectOutputStream.PutField</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#putFields()">putFields</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the <code>PutField</code> object for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#reset()">reset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reset the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#useProtocolVersion(int)">useProtocolVersion</a>(int version)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the receiver to use the given protocol version.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#write(byte[], int, int)">write</a>(byte[] buffer, int offset, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes <code>length</code> <code>bytes</code> from the byte array
+ <code>buffer</code> starting at offset <code>offset</code> to the
+ ObjectOutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#write(int)">write</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write one byte (<code>value</code>) into the receiver's underlying
+ stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#write(byte[])">write</a>(byte[] buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the entire contents of the byte array <code>buffer</code> to
+ this ObjectOutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeBoolean(boolean)">writeBoolean</a>(boolean value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type boolean (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeByte(int)">writeByte</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type byte (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeBytes(java.lang.String)">writeBytes</a>(<a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a String as a sequence of bytes (only lower-order 8 bits of each
+ char are written), as primitive data (<code>value</code>) into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeChar(int)">writeChar</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type char (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeChars(java.lang.String)">writeChars</a>(<a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write a String as a sequence of char, as primitive data (<code>value</code>)
+ into the receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeDouble(double)">writeDouble</a>(double value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type double (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeFields()">writeFields</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write the fields of the object being dumped.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeFloat(float)">writeFloat</a>(float value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type float (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeInt(int)">writeInt</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type int (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeLong(long)">writeLong</a>(long value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type long (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeObject(java.lang.Object)">writeObject</a>(<a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write object <code>object</code> into the receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeShort(int)">writeShort</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type short (<code>value</code>)into the
+ receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeUTF(java.lang.String)">writeUTF</a>(<a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write primitive data of type String (<code>value</code>) in UTF
+ format into the receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeUnshared(java.lang.Object)">writeUnshared</a>(<a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write object <code>object</code> into the receiver's underlying stream
+ unshared with previously written identical objects.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#annotateClass(java.lang.Class<?>)">annotateClass</a>(<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; aClass)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes optional information for class <code>aClass</code> into the
+ stream represented by the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#annotateProxyClass(java.lang.Class<?>)">annotateProxyClass</a>(<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; aClass)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes optional information for a proxy class into the stream represented
+ by the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#drain()">drain</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flushes buffered primitive data into the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#enableReplaceObject(boolean)">enableReplaceObject</a>(boolean enable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Enables/disables object replacement for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#replaceObject(java.lang.Object)">replaceObject</a>(<a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">If <code>enableReplaceObject()</code> was activated, computes the
+ replacement object for the original object <code>object</code> and
+ returns the replacement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeClassDescriptor(java.io.ObjectStreamClass)">writeClassDescriptor</a>(<a href="../../../reference/java/io/ObjectStreamClass.html">ObjectStreamClass</a> classDesc)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Write class descriptor <code>classDesc</code> into the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeObjectOverride(java.lang.Object)">writeObjectOverride</a>(<a href="../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Method to be overridden by subclasses to write <code>object</code> into
+ the receiver's underlying stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutputStream.html#writeStreamHeader()">writeStreamHeader</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the ObjectOutputStream header into the underlying stream.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.OutputStream')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.OutputStream-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/io/OutputStream.html">java.io.OutputStream</a>
+</h5>
+<div id="inherited-methods-java.io.OutputStream">
+<div id="inherited-methods-java.io.OutputStream-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/OutputStream.html#close()">close</a>,
+
+<a href="../../../reference/java/io/OutputStream.html#flush()">flush</a>,
+
+<a href="../../../reference/java/io/OutputStream.html#write(byte[])">write</a>,
+
+<a href="../../../reference/java/io/OutputStream.html#write(int)">write</a>,
+
+<a href="../../../reference/java/io/OutputStream.html#write(byte[], int, int)">write</a>
+
+</div>
+<div id="inherited-methods-java.io.OutputStream-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/OutputStream.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close this OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/OutputStream.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush this OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/OutputStream.html#write(byte[])">write</a>(byte[] buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the entire contents of the byte array <code>buffer</code> to
+ this OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/OutputStream.html#write(int)">write</a>(int oneByte)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified byte <code>oneByte</code> to this OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/OutputStream.html#write(byte[], int, int)">write</a>(byte[] buffer, int offset, int count)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes <code>count</code> <code>bytes</code> from the byte array
+ <code>buffer</code> starting at <code>offset</code> to this
+ OutputStream.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.Closeable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.Closeable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/Closeable.html">java.io.Closeable</a>
+</h5>
+<div id="inherited-methods-java.io.Closeable">
+<div id="inherited-methods-java.io.Closeable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/Closeable.html#close()">close</a>
+
+</div>
+<div id="inherited-methods-java.io.Closeable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/Closeable.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close the object and release any system resources it holds.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.DataOutput')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.DataOutput-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/DataOutput.html">java.io.DataOutput</a>
+</h5>
+<div id="inherited-methods-java.io.DataOutput">
+<div id="inherited-methods-java.io.DataOutput-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/DataOutput.html#write(int)">write</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#write(byte[])">write</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#write(byte[], int, int)">write</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeBoolean(boolean)">writeBoolean</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeByte(int)">writeByte</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeBytes(java.lang.String)">writeBytes</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeChar(int)">writeChar</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeChars(java.lang.String)">writeChars</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeDouble(double)">writeDouble</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeFloat(float)">writeFloat</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeInt(int)">writeInt</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeLong(long)">writeLong</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeShort(int)">writeShort</a>,
+
+<a href="../../../reference/java/io/DataOutput.html#writeUTF(java.lang.String)">writeUTF</a>
+
+</div>
+<div id="inherited-methods-java.io.DataOutput-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#write(int)">write</a>(int oneByte)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified <code>byte</code> to the OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#write(byte[])">write</a>(byte[] buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the entire contents of the byte array <code>buffer</code> to the
+ OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#write(byte[], int, int)">write</a>(byte[] buffer, int offset, int count)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes <code>count</code> <code>bytes</code> from the byte array
+ <code>buffer</code> starting at offset <code>index</code> to the
+ OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeBoolean(boolean)">writeBoolean</a>(boolean val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a boolean to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeByte(int)">writeByte</a>(int val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a 8-bit byte to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeBytes(java.lang.String)">writeBytes</a>(<a href="../../../reference/java/lang/String.html">String</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the low order 8-bit bytes from a String to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeChar(int)">writeChar</a>(int oneByte)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified 16-bit character to the OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeChars(java.lang.String)">writeChars</a>(<a href="../../../reference/java/lang/String.html">String</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified 16-bit characters contained in str to the
+ OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeDouble(double)">writeDouble</a>(double val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a 64-bit double to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeFloat(float)">writeFloat</a>(float val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a 32-bit float to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeInt(int)">writeInt</a>(int val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a 32-bit int to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeLong(long)">writeLong</a>(long val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes a 64-bit long to this output stream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeShort(int)">writeShort</a>(int val)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified 16-bit short to the OutputStream.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/DataOutput.html#writeUTF(java.lang.String)">writeUTF</a>(<a href="../../../reference/java/lang/String.html">String</a> str)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified String out in UTF format.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.Flushable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.Flushable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/Flushable.html">java.io.Flushable</a>
+</h5>
+<div id="inherited-methods-java.io.Flushable">
+<div id="inherited-methods-java.io.Flushable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/Flushable.html#flush()">flush</a>
+
+</div>
+<div id="inherited-methods-java.io.Flushable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/Flushable.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>
+ Flushes the object by writing out any buffered data to the underlying
+ output.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.io.ObjectOutput')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.io.ObjectOutput-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/io/ObjectOutput.html">java.io.ObjectOutput</a>
+</h5>
+<div id="inherited-methods-java.io.ObjectOutput">
+<div id="inherited-methods-java.io.ObjectOutput-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/io/ObjectOutput.html#close()">close</a>,
+
+<a href="../../../reference/java/io/ObjectOutput.html#flush()">flush</a>,
+
+<a href="../../../reference/java/io/ObjectOutput.html#write(byte[])">write</a>,
+
+<a href="../../../reference/java/io/ObjectOutput.html#write(int)">write</a>,
+
+<a href="../../../reference/java/io/ObjectOutput.html#write(byte[], int, int)">write</a>,
+
+<a href="../../../reference/java/io/ObjectOutput.html#writeObject(java.lang.Object)">writeObject</a>
+
+</div>
+<div id="inherited-methods-java.io.ObjectOutput-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Close this ObjectOutput.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush this ObjectOutput.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#write(byte[])">write</a>(byte[] buffer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the entire contents of the byte array <code>buffer</code> to
+ this ObjectOutput.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#write(int)">write</a>(int value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified int <code>value</code> to this ObjectOutput.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#write(byte[], int, int)">write</a>(byte[] buffer, int offset, int count)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes <code>count</code> <code>bytes</code> from this byte array
+ <code>buffer</code> starting at offset <code>index</code> to this
+ ObjectOutput.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/io/ObjectOutput.html#writeObject(java.lang.Object)">writeObject</a>(<a href="../../../reference/java/lang/Object.html">Object</a> obj)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes the specified object <code>obj</code> to this ObjectOutput.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="ObjectOutputStream(java.io.OutputStream)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        ObjectOutputStream(<a href="../../../reference/java/io/OutputStream.html">OutputStream</a> output)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a new ObjectOutputStream on the OutputStream
+ <code>output</code>. All writes are now filtered through this stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>output</td>
+        <td>The non-null OutputStream to filter writes on.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the object stream
+             header
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="ObjectOutputStream()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        ObjectOutputStream()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a new <code>ObjectOutputStream</code>. The representation
+ and proper initialization is in the hands of subclasses.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th></td>
+            <td>IOException</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>if subclassing this is not allowed</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/lang/SecurityManager.html#checkPermission(java.security.Permission)">checkPermission(java.security.Permission)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Close this ObjectOutputStream. Any buffered data is flushed. This
+ implementation closes the target stream.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an error occurs attempting to close this stream.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="defaultWriteObject()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        defaultWriteObject()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Default method to write objects into the receiver. Fields defined in the
+ object's class and superclasses (which are Serializable) will be saved.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO error occurs attempting to write the object data</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#defaultReadObject()">defaultReadObject()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="flush()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        flush()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flush this ObjectOutputStream. Any pending writes to the underlying
+ stream are written out when this method is invoked.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an error occurs attempting to flush this
+             ObjectOutputStream.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="putFields()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/io/ObjectOutputStream.PutField.html">ObjectOutputStream.PutField</a>
+        putFields()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the <code>PutField</code> object for the receiver. This allows
+ users to transfer values from actual object fields in the object being
+ dumped to the emulated fields represented by the <code>PutField</code>
+ returned by this method.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the PutFieldObject for the receiver</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO error occurs</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/io/NotActiveException.html">NotActiveException</a></td>
+            <td>If this method is not called from writeObject()</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#defaultReadObject()">defaultReadObject()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="reset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        reset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reset the receiver. A marker is written to the stream, so that
+ deserialization will also perform a rest at the same point. Objects
+ previously written are no longer remembered, so they will be written
+ again (instead of a cyclical reference) if found in the object graph.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If any IO problem occurred when trying to reset the receiver
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="useProtocolVersion(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        useProtocolVersion(int version)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the receiver to use the given protocol version.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>version</td>
+        <td>protocol version to be used</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO error occurs
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="write(byte[], int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        write(byte[] buffer, int offset, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes <code>length</code> <code>bytes</code> from the byte array
+ <code>buffer</code> starting at offset <code>offset</code> to the
+ ObjectOutputStream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>the buffer to be written</td>
+      </tr>
+    <tr>
+        <th>offset</td>
+        <td>offset in buffer to get bytes</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>number of bytes in buffer to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an error occurs attempting to write to this OutputStream.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="write(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        write(int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write one byte (<code>value</code>) into the receiver's underlying
+ stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write. Only the lower byte is written.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the byte.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="write(byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        write(byte[] buffer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes the entire contents of the byte array <code>buffer</code> to
+ this ObjectOutputStream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>buffer</td>
+        <td>the buffer to be written</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an error occurs attempting to write to this
+             ObjectOutputStream.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBoolean(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeBoolean(boolean value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type boolean (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeByte(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeByte(int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type byte (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeBytes(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeBytes(<a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a String as a sequence of bytes (only lower-order 8 bits of each
+ char are written), as primitive data (<code>value</code>) into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeChar(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeChar(int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type char (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeChars(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeChars(<a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write a String as a sequence of char, as primitive data (<code>value</code>)
+ into the receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeDouble(double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeDouble(double value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type double (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeFields()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeFields()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write the fields of the object being dumped. The stream will use the
+ currently active <code>PutField</code> object, allowing users to dump
+ emulated fields, for cross-loading compatibility when a class definition
+ changes.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO error occurs</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectOutputStream.html#putFields()">putFields()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeFloat(float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeFloat(float value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type float (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeInt(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeInt(int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type int (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeLong(long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeLong(long value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type long (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeObject(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        void
+        writeObject(<a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write object <code>object</code> into the receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>The object to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the object</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#readObject()">readObject()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeShort(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeShort(int value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type short (<code>value</code>)into the
+ receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeUTF(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeUTF(<a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write primitive data of type String (<code>value</code>) in UTF
+ format into the receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>value</td>
+        <td>The primitive data to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the primitive data.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeUnshared(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeUnshared(<a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write object <code>object</code> into the receiver's underlying stream
+ unshared with previously written identical objects.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>The object to write</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the object</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#readObject()">readObject()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="annotateClass(java.lang.Class<?>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        annotateClass(<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; aClass)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes optional information for class <code>aClass</code> into the
+ stream represented by the receiver. This optional data can be read when
+ deserializing the class descriptor (ObjectStreamClass) for this class
+ from the input stream. By default no extra data is saved.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>aClass</td>
+        <td>The class to annotate</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when annotating the class.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#resolveClass(java.io.ObjectStreamClass)">resolveClass(ObjectStreamClass)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="annotateProxyClass(java.lang.Class<?>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        annotateProxyClass(<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt; aClass)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes optional information for a proxy class into the stream represented
+ by the receiver. This optional data can be read when deserializing the
+ proxy class from the input stream. By default no extra data is saved.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>aClass</td>
+        <td>The proxy class to annotate</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when annotating the class.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#resolveProxyClass(java.lang.String[])">resolveProxyClass(String[])</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="drain()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        drain()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flushes buffered primitive data into the receiver.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an error occurs attempting to drain the data
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="enableReplaceObject(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        enableReplaceObject(boolean enable)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Enables/disables object replacement for the receiver. By default this is
+ not enabled. Only trusted subclasses (loaded with system class loader)
+ can override this behavior.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>enable</td>
+        <td>if true, enables replacement. If false, disables replacement.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean the previous configuration (if it was enabled or
+         disabled)</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>If the class of the receiver is not trusted</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectOutputStream.html#replaceObject(java.lang.Object)">replaceObject(Object)</a></li>
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#enableResolveObject(boolean)">enableResolveObject(boolean)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="replaceObject(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/Object.html">Object</a>
+        replaceObject(<a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+If <code>enableReplaceObject()</code> was activated, computes the
+ replacement object for the original object <code>object</code> and
+ returns the replacement. Otherwise returns <code>object</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>Original object for which a replacement may be defined</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a possibly new, replacement object for <code>object</code></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If any IO problem occurred when trying to resolve the object.</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/io/ObjectOutputStream.html#enableReplaceObject(boolean)">enableReplaceObject(boolean)</a></li>
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#enableResolveObject(boolean)">enableResolveObject(boolean)</a></li>
+    <li><a href="../../../reference/java/io/ObjectInputStream.html#resolveObject(java.lang.Object)">resolveObject(Object)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeClassDescriptor(java.io.ObjectStreamClass)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        writeClassDescriptor(<a href="../../../reference/java/io/ObjectStreamClass.html">ObjectStreamClass</a> classDesc)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Write class descriptor <code>classDesc</code> into the receiver.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>classDesc</td>
+        <td>The <code>ObjectStreamClass</code> object to dump</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the class
+             descriptor.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeObjectOverride(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        writeObjectOverride(<a href="../../../reference/java/lang/Object.html">Object</a> object)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Method to be overridden by subclasses to write <code>object</code> into
+ the receiver's underlying stream.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>object</td>
+        <td>the object</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the object
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeStreamHeader()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        writeStreamHeader()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Writes the ObjectOutputStream header into the underlying stream.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>If an IO exception happened when writing the stream header.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

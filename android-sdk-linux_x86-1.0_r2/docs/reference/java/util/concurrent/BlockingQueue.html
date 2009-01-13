@@ -1,0 +1,1771 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.BlockingQueue - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/concurrent/package-summary.html">java.util.concurrent</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.util.concurrent.BlockingQueue&lt;E&gt;</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.BlockingQueue&lt;E&gt;</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/util/Queue.html">Queue</a>&lt;E&gt; 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A <a href="../../../../reference/java/util/Queue.html">Queue</a> that additionally supports operations
+ that wait for the queue to become non-empty when retrieving an element,
+ and wait for space to become available in the queue when storing an 
+ element.
+
+ <p>A <tt>BlockingQueue</tt> does not accept <tt>null</tt> elements.
+ Implementations throw <tt>NullPointerException</tt> on attempts
+ to <tt>add</tt>, <tt>put</tt> or <tt>offer</tt> a <tt>null</tt>.  A
+ <tt>null</tt> is used as a sentinel value to indicate failure of
+ <tt>poll</tt> operations.
+
+ <p>A <tt>BlockingQueue</tt> may be capacity bounded. At any given
+ time it may have a <tt>remainingCapacity</tt> beyond which no
+ additional elements can be <tt>put</tt> without blocking.
+ A <tt>BlockingQueue</tt> without any intrinsic capacity constraints always
+ reports a remaining capacity of <tt>Integer.MAX_VALUE</tt>.
+
+ <p> While <tt>BlockingQueue</tt> is designed to be used primarily
+ for producer-consumer queues, it additionally supports the <a href="../../../../reference/java/util/Collection.html">Collection</a> interface.  So, for example, it is possible
+ to remove an arbitrary element from a queue using
+ <tt>remove(x)</tt>. However, such operations are in general
+ <em>not</em> performed very efficiently, and are intended for only
+ occasional use, such as when a queued message is cancelled.  Also,
+ the bulk Collection operations, most notably <tt>addAll</tt>, are
+ <em>not</em> necessarily performed atomically, so it is possible
+ for <tt>addAll(c)</tt> to fail (throwing an exception) after adding
+ only some of the elements in <tt>c</tt>.
+
+ <p>A <tt>BlockingQueue</tt> does <em>not</em> intrinsically support
+ any kind of &quot;close&quot; or &quot;shutdown&quot; operation to
+ indicate that no more items will be added.  The needs and usage of
+ such features tend to be implementation-dependent. For example, a
+ common tactic is for producers to insert special
+ <em>end-of-stream</em> or <em>poison</em> objects, that are
+ interpreted accordingly when taken by consumers.
+
+ <p>
+ Usage example, based on a typical producer-consumer scenario.
+ Note that a <tt>BlockingQueue</tt> can safely be used with multiple
+ producers and multiple consumers.
+ <pre>
+ class Producer implements Runnable {
+   private final BlockingQueue queue;
+   Producer(BlockingQueue q) { queue = q; }
+   public void run() {
+     try {
+       while(true) { queue.put(produce()); }
+     } catch (InterruptedException ex) { ... handle ...}
+   }
+   Object produce() { ... }
+ }
+
+ class Consumer implements Runnable {
+   private final BlockingQueue queue;
+   Consumer(BlockingQueue q) { queue = q; }
+   public void run() {
+     try {
+       while(true) { consume(queue.take()); }
+     } catch (InterruptedException ex) { ... handle ...}
+   }
+   void consume(Object x) { ... }
+ }
+
+ class Setup {
+   void main() {
+     BlockingQueue q = new SomeQueueImplementation();
+     Producer p = new Producer(q);
+     Consumer c1 = new Consumer(q);
+     Consumer c2 = new Consumer(q);
+     new Thread(p).start();
+     new Thread(c1).start();
+     new Thread(c2).start();
+   }
+ }
+ </pre></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../reference/java/util/concurrent/ArrayBlockingQueue.html">ArrayBlockingQueue</a>&lt;E&gt;,
+            
+                <a href="../../../../reference/java/util/concurrent/DelayQueue.html">DelayQueue</a>&lt;E&nbsp;extends&nbsp;<a href="../../../../reference/java/util/concurrent/Delayed.html">Delayed</a>&gt;,
+            
+                <a href="../../../../reference/java/util/concurrent/LinkedBlockingQueue.html">LinkedBlockingQueue</a>&lt;E&gt;,
+            
+                <a href="../../../../reference/java/util/concurrent/PriorityBlockingQueue.html">PriorityBlockingQueue</a>&lt;E&gt;,
+            
+                <a href="../../../../reference/java/util/concurrent/SynchronousQueue.html">SynchronousQueue</a>&lt;E&gt;
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/ArrayBlockingQueue.html">ArrayBlockingQueue</a>&lt;E&gt;</td>
+            <td class="jd-descrcol" width="100%">A bounded <a href="../../../../reference/java/util/concurrent/BlockingQueue.html">blocking queue</a> backed by an
+ array.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/DelayQueue.html">DelayQueue</a>&lt;E&nbsp;extends&nbsp;<a href="../../../../reference/java/util/concurrent/Delayed.html">Delayed</a>&gt;</td>
+            <td class="jd-descrcol" width="100%">An unbounded <a href="../../../../reference/java/util/concurrent/BlockingQueue.html">blocking queue</a> of <tt>Delayed</tt>
+ elements, in which an element can only be taken when its delay has expired.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/LinkedBlockingQueue.html">LinkedBlockingQueue</a>&lt;E&gt;</td>
+            <td class="jd-descrcol" width="100%">An optionally-bounded <a href="../../../../reference/java/util/concurrent/BlockingQueue.html">blocking queue</a> based on
+ linked nodes.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/PriorityBlockingQueue.html">PriorityBlockingQueue</a>&lt;E&gt;</td>
+            <td class="jd-descrcol" width="100%">An unbounded <a href="../../../../reference/java/util/concurrent/BlockingQueue.html">blocking queue</a> that uses
+ the same ordering rules as class <a href="../../../../reference/java/util/PriorityQueue.html">PriorityQueue</a> and supplies
+ blocking retrieval operations.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/SynchronousQueue.html">SynchronousQueue</a>&lt;E&gt;</td>
+            <td class="jd-descrcol" width="100%">A <a href="../../../../reference/java/util/concurrent/BlockingQueue.html">blocking queue</a> in which each
+ <tt>put</tt> must wait for a <tt>take</tt>, and vice versa.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#add(E)">add</a>(E o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Adds the specified element to this queue if it is possible to
+ do so immediately, returning <tt>true</tt> upon success, else
+ throwing an IllegalStateException.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#drainTo(java.util.Collection<? super E>, int)">drainTo</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&nbsp;super&nbsp;E&gt; c, int maxElements)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes at most the given number of available elements from
+ this queue and adds them into the given collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#drainTo(java.util.Collection<? super E>)">drainTo</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&nbsp;super&nbsp;E&gt; c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes all available elements from this queue and adds them
+ into the given collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#offer(E)">offer</a>(E o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Inserts the specified element into this queue, if possible.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#offer(E, long, java.util.concurrent.TimeUnit)">offer</a>(E o, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Inserts the specified element into this queue, waiting if necessary
+ up to the specified wait time for space to become available.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#poll(long, java.util.concurrent.TimeUnit)">poll</a>(long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieves and removes the head of this queue, waiting
+ if necessary up to the specified wait time if no elements are
+ present on this queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#put(E)">put</a>(E o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Adds the specified element to this queue, waiting if necessary for
+ space to become available.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#remainingCapacity()">remainingCapacity</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the number of elements that this queue can ideally (in
+ the absence of memory or resource constraints) accept without
+ blocking, or <tt>Integer.MAX_VALUE</tt> if there is no
+ intrinsic limit.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/BlockingQueue.html#take()">take</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieves and removes the head of this queue, waiting
+ if no elements are present on this queue.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Iterable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Iterable-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/lang/Iterable.html">java.lang.Iterable</a>
+</h5>
+<div id="inherited-methods-java.lang.Iterable">
+<div id="inherited-methods-java.lang.Iterable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Iterable.html#iterator()">iterator</a>
+
+</div>
+<div id="inherited-methods-java.lang.Iterable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Iterator.html">Iterator</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Iterable.html#iterator()">iterator</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow"><p>Returns an <a href="../../../../reference/java/util/Iterator.html">Iterator</a> for the elements in this object.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.Collection')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.Collection-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/util/Collection.html">java.util.Collection</a>
+</h5>
+<div id="inherited-methods-java.util.Collection">
+<div id="inherited-methods-java.util.Collection-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/Collection.html#add(E)">add</a>,
+
+<a href="../../../../reference/java/util/Collection.html#addAll(java.util.Collection<? extends E>)">addAll</a>,
+
+<a href="../../../../reference/java/util/Collection.html#clear()">clear</a>,
+
+<a href="../../../../reference/java/util/Collection.html#contains(java.lang.Object)">contains</a>,
+
+<a href="../../../../reference/java/util/Collection.html#containsAll(java.util.Collection<?>)">containsAll</a>,
+
+<a href="../../../../reference/java/util/Collection.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/util/Collection.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/util/Collection.html#isEmpty()">isEmpty</a>,
+
+<a href="../../../../reference/java/util/Collection.html#iterator()">iterator</a>,
+
+<a href="../../../../reference/java/util/Collection.html#remove(java.lang.Object)">remove</a>,
+
+<a href="../../../../reference/java/util/Collection.html#removeAll(java.util.Collection<?>)">removeAll</a>,
+
+<a href="../../../../reference/java/util/Collection.html#retainAll(java.util.Collection<?>)">retainAll</a>,
+
+<a href="../../../../reference/java/util/Collection.html#size()">size</a>,
+
+<a href="../../../../reference/java/util/Collection.html#toArray(T[])">toArray</a>,
+
+<a href="../../../../reference/java/util/Collection.html#toArray()">toArray</a>
+
+</div>
+<div id="inherited-methods-java.util.Collection-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#add(E)">add</a>(E object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to add <code>object</code> to the contents of this
+ <code>Collection</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#addAll(java.util.Collection<? extends E>)">addAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&nbsp;extends&nbsp;E&gt; collection)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to add all of the objects contained in <code>collection</code>
+ to the contents of this collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#clear()">clear</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes all elements from this Collection, leaving it empty.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#contains(java.lang.Object)">contains</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Searches this Collection for the specified object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#containsAll(java.util.Collection<?>)">containsAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&gt; collection)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Searches this Collection for all objects in the specified Collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#isEmpty()">isEmpty</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns if this Collection has no elements, a size of zero.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/Iterator.html">Iterator</a>&lt;E&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#iterator()">iterator</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an instance of <a href="../../../../reference/java/util/Iterator.html">Iterator</a> that may be used to access the
+ objects contained by this collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#remove(java.lang.Object)">remove</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> object)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes the first occurrence of the specified object from this
+ Collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#removeAll(java.util.Collection<?>)">removeAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&gt; collection)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes all occurrences in this Collection of each object in the
+ specified Collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#retainAll(java.util.Collection<?>)">retainAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&gt; collection)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Removes all objects from this Collection that are not also found in the
+ contents of <code>collection</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#size()">size</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a count of how many objects are contained by this collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#toArray(T[])">toArray</a>(T[] array)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an array containing all elements contained in this Collection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object[]</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Collection.html#toArray()">toArray</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new array containing all elements contained in this Collection.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.Queue')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.Queue-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/util/Queue.html">java.util.Queue</a>
+</h5>
+<div id="inherited-methods-java.util.Queue">
+<div id="inherited-methods-java.util.Queue-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/Queue.html#element()">element</a>,
+
+<a href="../../../../reference/java/util/Queue.html#offer(E)">offer</a>,
+
+<a href="../../../../reference/java/util/Queue.html#peek()">peek</a>,
+
+<a href="../../../../reference/java/util/Queue.html#poll()">poll</a>,
+
+<a href="../../../../reference/java/util/Queue.html#remove()">remove</a>
+
+</div>
+<div id="inherited-methods-java.util.Queue-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Queue.html#element()">element</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets but not removes the element in the head of the queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Queue.html#offer(E)">offer</a>(E o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Inserts the specified element into the queue provided that the condition
+ allows such an operation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Queue.html#peek()">peek</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets but not removes the element in the head of the queue, or throws
+ exception if there is no element in the queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Queue.html#poll()">poll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets and removes the element in the head of the queue, or returns null if
+ there is no element in the queue.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">E&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/Queue.html#remove()">remove</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets and removes the element in the head of the queue.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="add(E)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        add(E o)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Adds the specified element to this queue if it is possible to
+ do so immediately, returning <tt>true</tt> upon success, else
+ throwing an IllegalStateException.  
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>o</td>
+        <td>the element</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> (as per the general contract of
+         <tt>Collection.add</tt>).</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the specified element is <tt>null</tt></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if element cannot be added
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drainTo(java.util.Collection<? super E>, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        drainTo(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&nbsp;super&nbsp;E&gt; c, int maxElements)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Removes at most the given number of available elements from
+ this queue and adds them into the given collection.  A failure
+ encountered while attempting to <tt>add</tt> elements to
+ collection <tt>c</tt> may result in elements being in neither,
+ either or both collections when the associated exception is
+ thrown. Attempts to drain a queue to itself result in
+ <tt>IllegalArgumentException</tt>. Further, the behavior of
+ this operation is undefined if the specified collection is
+ modified while the operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>c</td>
+        <td>the collection to transfer elements into</td>
+      </tr>
+    <tr>
+        <th>maxElements</td>
+        <td>the maximum number of elements to transfer</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of elements transferred.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if c is null</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if c is this queue
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drainTo(java.util.Collection<? super E>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        drainTo(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;?&nbsp;super&nbsp;E&gt; c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Removes all available elements from this queue and adds them
+ into the given collection.  This operation may be more
+ efficient than repeatedly polling this queue.  A failure
+ encountered while attempting to <tt>add</tt> elements to
+ collection <tt>c</tt> may result in elements being in neither,
+ either or both collections when the associated exception is
+ thrown. Attempts to drain a queue to itself result in
+ <tt>IllegalArgumentException</tt>. Further, the behavior of
+ this operation is undefined if the specified collection is
+ modified while the operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>c</td>
+        <td>the collection to transfer elements into</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of elements transferred.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if c is null</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if c is this queue
+ 
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="offer(E)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        offer(E o)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Inserts the specified element into this queue, if possible.  When
+ using queues that may impose insertion restrictions (for
+ example capacity bounds), method <tt>offer</tt> is generally
+ preferable to method <a href="../../../../reference/java/util/Collection.html#add(E)">add(E)</a>, which can fail to
+ insert an element only by throwing an exception.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>o</td>
+        <td>the element to add.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if it was possible to add the element to
+         this queue, else <tt>false</tt></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the specified element is <tt>null</tt>
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="offer(E, long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        offer(E o, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Inserts the specified element into this queue, waiting if necessary
+ up to the specified wait time for space to become available.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>o</td>
+        <td>the element to add</td>
+      </tr>
+    <tr>
+        <th>timeout</td>
+        <td>how long to wait before giving up, in units of
+ <tt>unit</tt></td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>a <tt>TimeUnit</tt> determining how to interpret the
+ <tt>timeout</tt> parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if successful, or <tt>false</tt> if
+ the specified waiting time elapses before space is available.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the specified element is <tt>null</tt>.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="poll(long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        E
+        poll(long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieves and removes the head of this queue, waiting
+ if necessary up to the specified wait time if no elements are
+ present on this queue.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>timeout</td>
+        <td>how long to wait before giving up, in units of
+ <tt>unit</tt></td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>a <tt>TimeUnit</tt> determining how to interpret the
+ <tt>timeout</tt> parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the head of this queue, or <tt>null</tt> if the
+ specified waiting time elapses before an element is present.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="put(E)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        put(E o)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Adds the specified element to this queue, waiting if necessary for
+ space to become available.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>o</td>
+        <td>the element to add</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if the specified element is <tt>null</tt>.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="remainingCapacity()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        remainingCapacity()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the number of elements that this queue can ideally (in
+ the absence of memory or resource constraints) accept without
+ blocking, or <tt>Integer.MAX_VALUE</tt> if there is no
+ intrinsic limit.
+ <p>Note that you <em>cannot</em> always tell if
+ an attempt to <tt>add</tt> an element will succeed by
+ inspecting <tt>remainingCapacity</tt> because it may be the
+ case that a waiting consumer is ready to <tt>take</tt> an
+ element out of an otherwise full queue.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the remaining capacity
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="take()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        E
+        take()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieves and removes the head of this queue, waiting
+ if no elements are present on this queue.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the head of this queue</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

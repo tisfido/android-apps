@@ -1,0 +1,2493 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.nio.charset.CharsetDecoder - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/nio/charset/package-summary.html">java.nio.charset</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>java.nio.charset.CharsetDecoder</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.nio.charset.CharsetDecoder</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>An converter that can convert bytes sequence in some charset to 16-bit
+ Unicode character sequence.
+ <p>
+ The input byte sequence is wrapped by <a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a>
+ and the output character sequence is <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a>.
+ A decoder instance should be used in following sequence, which is referred to
+ as a decoding operation:
+ <ol>
+ <li>Invoking the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#reset()">reset</a> method to reset the decoder if the
+ decoder has been used;</li>
+ <li>Invoking the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a>
+ method until the additional input is not needed, the <code>endOfInput</code>
+ parameter must be set to false, the input buffer must be filled and the
+ output buffer must be flushed between invocations;</li>
+ <li>Invoking the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a>
+ method last time, and the the <code>endOfInput</code> parameter must be set
+ to true</li>
+ <li>Invoking the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#flush(java.nio.CharBuffer)">flush</a> method to flush the
+ output.</li>
+ </ol>
+ </p>
+ <p>
+ The <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a> method will
+ convert as many bytes as possible, and the process won't stop except the
+ input bytes has been run out of, the output buffer has been filled or some
+ error has happened. A <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a> instance will be
+ returned to indicate the stop reason, and the invoker can identify the result
+ and choose further action, which can include filling the input buffer,
+ flushing the output buffer, recovering from error and trying again.
+ </p>
+ <p>
+ There are two common decoding errors. One is named as malformed and it is
+ returned when the input byte sequence is illegal for current specific
+ charset, the other is named as unmappable character and it is returned when a
+ problem occurs mapping a legal input byte sequence to its Unicode character
+ equivalent.
+ </p>
+ <p>
+ The two errors can be handled in three ways, the default one is to report the
+ error to the invoker by a <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a> instance, and the
+ alternatives are to ignore it or to replace the erroneous input with the
+ replacement string. The replacement string is "?" by default and can be
+ changed by invoking <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#replaceWith(java.lang.String)">replaceWith</a> method. The
+ invoker of this decoder can choose one way by specifying a
+ <a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> instance for each error type via
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#onMalformedInput(java.nio.charset.CodingErrorAction)">onMalformedInput</a> method and
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#onUnmappableCharacter(java.nio.charset.CodingErrorAction)">onUnmappableCharacter</a>
+ method.
+ </p>
+ <p>
+ This class is abstract class and encapsulate many common operations of
+ decoding process for all charsets. Decoder for specific charset should extend
+ this class and need only implement
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decodeLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">decodeLoop</a> method for basic
+ decoding loop. If a subclass maintains internal state, it should override the
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implFlush(java.nio.CharBuffer)">implFlush</a> method and
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implReset()">implReset</a> method in addition.
+ </p>
+ <p>
+ This class is not thread-safe.
+ </p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/java/nio/charset/Charset.html">Charset</a></li>
+    <li><a href="../../../../reference/java/nio/charset/CharsetEncoder.html">CharsetEncoder</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Protected Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#CharsetDecoder(java.nio.charset.Charset, float, float)">CharsetDecoder</a>(<a href="../../../../reference/java/nio/charset/Charset.html">Charset</a> charset, float averageCharsPerByte, float maxCharsPerByte)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a new <code>CharsetDecoder</code> using given
+ <code>Charset</code>, average number and maximum number of characters
+ created by this decoder for one input byte, and the default replacement
+ string "?".</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#averageCharsPerByte()">averageCharsPerByte</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">get the average number of characters created by this decoder for single
+ input byte</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/Charset.html">Charset</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#charset()">charset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the <code>Charset</code> which creates this decoder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a>(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in, <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out, boolean endOfInput)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Decodes bytes starting at the current position of the given input buffer,
+ and writes the equivalent character sequence into the given output buffer
+ from its current position.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer)">decode</a>(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This is a facade method for decoding operation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/Charset.html">Charset</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#detectedCharset()">detectedCharset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the charset detected by this decoder, this method is optional.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#flush(java.nio.CharBuffer)">flush</a>(<a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush this decoder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#isAutoDetecting()">isAutoDetecting</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get if this decoder implements an auto-detecting charset.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#isCharsetDetected()">isCharsetDetected</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get if this decoder has detected a charset, this method is optional.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#malformedInputAction()">malformedInputAction</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets this decoder's <code>CodingErrorAction</code> when malformed input
+ occurred during decoding process.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">float&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#maxCharsPerByte()">maxCharsPerByte</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the maximum number of characters which can be created by this decoder
+ for one input byte, must be positive</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#onMalformedInput(java.nio.charset.CodingErrorAction)">onMalformedInput</a>(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set this decoder's action on malformed input error.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#onUnmappableCharacter(java.nio.charset.CodingErrorAction)">onUnmappableCharacter</a>(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set this decoder's action on unmappable character error.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#replaceWith(java.lang.String)">replaceWith</a>(<a href="../../../../reference/java/lang/String.html">String</a> newReplacement)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set new replacement value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#replacement()">replacement</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the replacement string, which is never null or empty</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#reset()">reset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reset this decoder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#unmappableCharacterAction()">unmappableCharacterAction</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets this decoder's <code>CodingErrorAction</code> when unmappable
+ character occurred during decoding process.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decodeLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">decodeLoop</a>(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in, <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Decode bytes into characters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implFlush(java.nio.CharBuffer)">implFlush</a>(<a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flush this decoder.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implOnMalformedInput(java.nio.charset.CodingErrorAction)">implOnMalformedInput</a>(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Notify that this decoder's <code>CodingErrorAction</code> specified for
+ malformed input error has been changed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)">implOnUnmappableCharacter</a>(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Notify that this decoder's <code>CodingErrorAction</code> specified for
+ unmappable character error has been changed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implReplaceWith(java.lang.String)">implReplaceWith</a>(<a href="../../../../reference/java/lang/String.html">String</a> newReplacement)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Notify that this decoder's replacement has been changed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implReset()">implReset</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Reset this decoder's charset related state.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+<h3>Protected Constructors</h3>
+
+
+
+<A NAME="CharsetDecoder(java.nio.charset.Charset, float, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        
+        CharsetDecoder(<a href="../../../../reference/java/nio/charset/Charset.html">Charset</a> charset, float averageCharsPerByte, float maxCharsPerByte)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a new <code>CharsetDecoder</code> using given
+ <code>Charset</code>, average number and maximum number of characters
+ created by this decoder for one input byte, and the default replacement
+ string "?".
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>charset</td>
+        <td>this decoder's <code>Charset</code>, which create this
+            decoder</td>
+      </tr>
+    <tr>
+        <th>averageCharsPerByte</td>
+        <td>average number of characters created by this decoder for one
+            input byte, must be positive</td>
+      </tr>
+    <tr>
+        <th>maxCharsPerByte</td>
+        <td>maximum number of characters created by this decoder for one
+            input byte, must be positive</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if <code>averageCharsPerByte</code> or
+             <code>maxCharsPerByte</code> is negative
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="averageCharsPerByte()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        float
+        averageCharsPerByte()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+get the average number of characters created by this decoder for single
+ input byte
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the average number of characters created by this decoder for
+         single input byte
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="charset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/Charset.html">Charset</a>
+        charset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the <code>Charset</code> which creates this decoder.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the <code>Charset</code> which creates this decoder
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>
+        decode(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in, <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out, boolean endOfInput)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Decodes bytes starting at the current position of the given input buffer,
+ and writes the equivalent character sequence into the given output buffer
+ from its current position.
+ <p>
+ The buffers' position will be changed with the reading and writing
+ operation, but their limits and marks will be kept intact.
+ </p>
+ <p>
+ A <code>CoderResult</code> instance will be returned according to
+ following rules:
+ <ul>
+ <li><a href="../../../../reference/java/nio/charset/CoderResult.html#OVERFLOW">CoderResult.OVERFLOW</a> indicates that
+ even though not all of the input has been processed, the buffer the
+ output is being written to has reached its capacity. In the event of this
+ code being returned this method should be called once more with an
+ <code>out</code> argument that has not already been filled.</li>
+ <li><a href="../../../../reference/java/nio/charset/CoderResult.html#UNDERFLOW">CoderResult.UNDERFLOW</a> indicates that
+ as many bytes as possible in the input buffer have been decoded. If there
+ is no further input and no remaining bytes in the input buffer then this
+ operation may be regarded as complete. Otherwise, this method should be
+ called once more with additional input.</li>
+ <li>A <a href="../../../../reference/java/nio/charset/CoderResult.html#malformedForLength(int)">malformed input</a> result
+ indicates that some malformed input error encountered, and the erroneous
+ bytes start at the input buffer's position and their number can be got by
+ result's <a href="../../../../reference/java/nio/charset/CoderResult.html#length()">length</a>. This kind of result can be
+ returned only if the malformed action is
+ <a href="../../../../reference/java/nio/charset/CodingErrorAction.html#REPORT">CodingErrorAction.REPORT</a>. </li>
+ <li>A <a href="../../../../reference/java/nio/charset/CoderResult.html#unmappableForLength(int)">unmappable character</a>
+ result indicates that some unmappable character error encountered, and
+ the erroneous bytes start at the input buffer's position and their number
+ can be got by result's <a href="../../../../reference/java/nio/charset/CoderResult.html#length()">length</a>. This kind of
+ result can be returned only if the unmappable character action is
+ <a href="../../../../reference/java/nio/charset/CodingErrorAction.html#REPORT">CodingErrorAction.REPORT</a>. </li>
+ </ul>
+ </p>
+ <p>
+ The <code>endOfInput</code> parameter indicates that if the invoker can
+ provider further input. This parameter is true if and only if the bytes
+ in current input buffer are all inputs for this decoding operation. Note
+ that it is common and won't cause error that the invoker sets false and
+ then finds no more input available; while it may cause error that the
+ invoker always sets true in several consecutive invocations so that any
+ remaining input will be treated as malformed input.
+ </p>
+ <p>
+ This method invokes
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decodeLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">decodeLoop</a> method to
+ implement basic decode logic for specific charset.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>the input buffer</td>
+      </tr>
+    <tr>
+        <th>out</td>
+        <td>the output buffer</td>
+      </tr>
+    <tr>
+        <th>endOfInput</td>
+        <td>true if all the input characters have been provided</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a <code>CoderResult</code> instance which indicates the reason
+         of termination</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if decoding has started or no more input is needed in this
+             decoding progress.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/nio/charset/CoderMalfunctionError.html">CoderMalfunctionError</a></td>
+            <td>if the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decodeLoop(java.nio.ByteBuffer, java.nio.CharBuffer)">decodeLoop</a>
+             method threw an <code>BufferUnderflowException</code> or
+             <code>BufferOverflowException</code>
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="decode(java.nio.ByteBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a>
+        decode(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This is a facade method for decoding operation.
+ <p>
+ This method decodes the remaining byte sequence of the given byte buffer
+ into a new character buffer. This method performs a complete decoding
+ operation, resets at first, then decodes, and flushes at last.
+ </p>
+ <p>
+ This method should not be invoked if another decode operation is ongoing.
+ </p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>the input buffer</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new <code>CharBuffer</code> containing the the characters
+         produced by this decoding operation. The buffer's limit will be
+         the position of last character in buffer, and the position will
+         be zero</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if another decoding operation is ongoing</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/nio/charset/MalformedInputException.html">MalformedInputException</a></td>
+            <td>if illegal input byte sequence for this charset encountered,
+             and the action for malformed error is
+             <a href="../../../../reference/java/nio/charset/CodingErrorAction.html#REPORT">CodingErrorAction.REPORT</a></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/nio/charset/UnmappableCharacterException.html">UnmappableCharacterException</a></td>
+            <td>if legal but unmappable input byte sequence for this charset
+             encountered, and the action for unmappable character error is
+             <a href="../../../../reference/java/nio/charset/CodingErrorAction.html#REPORT">CodingErrorAction.REPORT</a>.
+             Unmappable means the byte sequence at the input buffer's
+             current position cannot be mapped to a Unicode character
+             sequence.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/nio/charset/CharacterCodingException.html">CharacterCodingException</a></td>
+            <td>if other exception happened during the decode operation
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="detectedCharset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/nio/charset/Charset.html">Charset</a>
+        detectedCharset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the charset detected by this decoder, this method is optional.
+ <p>
+ If implementing an auto-detecting charset, then this decoder returns the
+ detected charset from this method when it is available. The returned
+ charset will be the same for the rest of the decode operation.
+ </p>
+ <p>
+ If insufficient bytes have been read to determine the charset,
+ <code>IllegalStateException</code> will be thrown.
+ </p>
+ <p>
+ The default implementation always throws
+ <code>UnsupportedOperationException</code>, so it should be overridden
+ by subclass if needed.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the charset detected by this decoder, or null if it is not yet
+         determined</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if this decoder does not implement an auto-detecting charset</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if insufficient bytes have been read to determine the charset
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="flush(java.nio.CharBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>
+        flush(<a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flush this decoder.
+ 
+ This method will call <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implFlush(java.nio.CharBuffer)">implFlush</a>. Some
+ decoders may need to write some characters to the output buffer when they
+ have read all input bytes, subclasses can overridden
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implFlush(java.nio.CharBuffer)">implFlush</a> to perform writing action.
+ 
+ The maximum number of written bytes won't larger than
+ <a href="../../../../reference/java/nio/Buffer.html#remaining()">out.remaining()</a>. If some decoder want to
+ write more bytes than output buffer's remaining spaces, then
+ <code>CoderResult.OVERFLOW</code> will be returned, and this method
+ must be called again with a character buffer that has more spaces.
+ Otherwise this method will return <code>CoderResult.UNDERFLOW</code>,
+ which means one decoding process has been completed successfully.
+ 
+ During the flush, the output buffer's position will be changed
+ accordingly, while its mark and limit will be intact.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>out</td>
+        <td>the given output buffer</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>CoderResult.UNDERFLOW</code> or
+         <code>CoderResult.OVERFLOW</code></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalStateException.html">IllegalStateException</a></td>
+            <td>if this decoder hasn't read all input bytes during one
+             decoding process, which means neither after calling
+             <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer)">decode(ByteBuffer)</a> nor after
+             calling <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode(ByteBuffer, CharBuffer, boolean)</a> with true value for
+             the last boolean parameter
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isAutoDetecting()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isAutoDetecting()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get if this decoder implements an auto-detecting charset.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if this decoder implements an auto-detecting
+         charset
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isCharsetDetected()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isCharsetDetected()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get if this decoder has detected a charset, this method is optional.
+ <p>
+ If this decoder implements an auto-detecting charset, then this method
+ may start to return true during decoding operation to indicate that a
+ charset has been detected in the input bytes and that the charset can be
+ retrieved by invoking <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#detectedCharset()">detectedCharset</a> method.
+ </p>
+ <p>
+ Note that a decoder that implements an auto-detecting charset may still
+ succeed in decoding a portion of the given input even when it is unable
+ to detect the charset. For this reason users should be aware that a
+ <code>false</code> return value does not indicate that no decoding took
+ place.
+ </p>
+ <p>
+ The default implementation always throws an
+ <code>UnsupportedOperationException</code>; it should be overridden by
+ subclass if needed.
+ </p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> this decoder has detected a charset</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/UnsupportedOperationException.html">UnsupportedOperationException</a></td>
+            <td>if this decoder doesn't implement an auto-detecting charset
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="malformedInputAction()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a>
+        malformedInputAction()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets this decoder's <code>CodingErrorAction</code> when malformed input
+ occurred during decoding process.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder's <code>CodingErrorAction</code> when malformed
+         input occurred during decoding process.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="maxCharsPerByte()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        float
+        maxCharsPerByte()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the maximum number of characters which can be created by this decoder
+ for one input byte, must be positive
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the maximum number of characters which can be created by this
+         decoder for one input byte, must be positive
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onMalformedInput(java.nio.charset.CodingErrorAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>
+        onMalformedInput(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set this decoder's action on malformed input error.
+ 
+ This method will call the
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implOnMalformedInput(java.nio.charset.CodingErrorAction)">implOnMalformedInput</a>
+ method with the given new action as argument.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newAction</td>
+        <td>the new action on malformed input error</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given newAction is null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onUnmappableCharacter(java.nio.charset.CodingErrorAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>
+        onUnmappableCharacter(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set this decoder's action on unmappable character error.
+ 
+ This method will call the
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)">implOnUnmappableCharacter</a>
+ method with the given new action as argument.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newAction</td>
+        <td>the new action on unmappable character error</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given newAction is null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replaceWith(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>
+        replaceWith(<a href="../../../../reference/java/lang/String.html">String</a> newReplacement)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set new replacement value.
+ 
+ This method first checks the given replacement's validity, then changes
+ the replacement value, and at last calls
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#implReplaceWith(java.lang.String)">implReplaceWith</a> method with the given
+ new replacement as argument.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newReplacement</td>
+        <td>the replacement string, cannot be null or empty</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if the given replacement cannot satisfy the requirement
+             mentioned above
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="replacement()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        replacement()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the replacement string, which is never null or empty
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the replacement string, cannot be null or empty
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="reset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../../reference/java/nio/charset/CharsetDecoder.html">CharsetDecoder</a>
+        reset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reset this decoder. This method will reset internal status, and then call
+ <code>implReset()</code> to reset any status related to specific
+ charset.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unmappableCharacterAction()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a>
+        unmappableCharacterAction()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets this decoder's <code>CodingErrorAction</code> when unmappable
+ character occurred during decoding process.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>this decoder's <code>CodingErrorAction</code> when unmappable
+         character occurred during decoding process.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="decodeLoop(java.nio.ByteBuffer, java.nio.CharBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+        abstract 
+         
+        <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>
+        decodeLoop(<a href="../../../../reference/java/nio/ByteBuffer.html">ByteBuffer</a> in, <a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Decode bytes into characters. This method is called by
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a> method.
+ 
+ This method will implement the essential decoding operation, and it won't
+ stop decoding until either all the input bytes are read, the output
+ buffer is filled, or some exception encountered. And then it will return
+ a <code>CoderResult</code> object indicating the result of current
+ decoding operation. The rules to construct the <code>CoderResult</code>
+ is same as the <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a>.
+ When exception encountered in the decoding operation, most implementation
+ of this method will return a relevant result object to
+ <a href="../../../../reference/java/nio/charset/CharsetDecoder.html#decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean)">decode</a> method, and some
+ performance optimized implementation may handle the exception and
+ implement the error action itself.
+ 
+ The buffers are scanned from their current positions, and their positions
+ will be modified accordingly, while their marks and limits will be
+ intact. At most <a href="../../../../reference/java/nio/Buffer.html#remaining()">in.remaining()</a> characters
+ will be read, and <a href="../../../../reference/java/nio/Buffer.html#remaining()">out.remaining()</a> bytes
+ will be written.
+ 
+ Note that some implementation may pre-scan the input buffer and return
+ <code>CoderResult.UNDERFLOW</code> until it receives sufficient input.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>in</td>
+        <td>the input buffer</td>
+      </tr>
+    <tr>
+        <th>out</td>
+        <td>the output buffer</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a <code>CoderResult</code> instance indicating the result
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="implFlush(java.nio.CharBuffer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../reference/java/nio/charset/CoderResult.html">CoderResult</a>
+        implFlush(<a href="../../../../reference/java/nio/CharBuffer.html">CharBuffer</a> out)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flush this decoder. Default implementation does nothing and always return
+ <code>CoderResult.UNDERFLOW</code>, and this method can be overridden
+ if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>out</td>
+        <td>the output buffer</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>CoderResult.UNDERFLOW</code> or
+         <code>CoderResult.OVERFLOW</code>
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="implOnMalformedInput(java.nio.charset.CodingErrorAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        implOnMalformedInput(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Notify that this decoder's <code>CodingErrorAction</code> specified for
+ malformed input error has been changed. Default implementation does
+ nothing, and this method can be overridden if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newAction</td>
+        <td>The new action
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        implOnUnmappableCharacter(<a href="../../../../reference/java/nio/charset/CodingErrorAction.html">CodingErrorAction</a> newAction)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Notify that this decoder's <code>CodingErrorAction</code> specified for
+ unmappable character error has been changed. Default implementation does
+ nothing, and this method can be overridden if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newAction</td>
+        <td>The new action
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="implReplaceWith(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        implReplaceWith(<a href="../../../../reference/java/lang/String.html">String</a> newReplacement)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Notify that this decoder's replacement has been changed. Default
+ implementation does nothing, and this method can be overridden if needed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newReplacement</td>
+        <td>the new replacement string
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="implReset()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        implReset()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Reset this decoder's charset related state. Default implementation does
+ nothing, and this method can be overridden if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

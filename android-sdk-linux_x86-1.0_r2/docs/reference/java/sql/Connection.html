@@ -1,0 +1,3725 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.sql.Connection - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/sql/package-summary.html">java.sql</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.sql.Connection</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.sql.Connection</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A Connection represents a link from a Java application to a database. All SQL
+ statements and results are returned within the context of a connection.
+ 
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Connection.html#TRANSACTION_NONE">TRANSACTION_NONE</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant indicating that transactions are not supported.&nbsp;</td>
+        
+            <td class="jd-valcol">0&nbsp;</td>
+            <td class="jd-valcol">0x00000000&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</a>&nbsp;</td>
+        <td class="jd-descrcol">No dirty reads are permitted.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</a>&nbsp;</td>
+        <td class="jd-descrcol">Dirty reads (reading from table rows containing changes that have not yet
+ been committed), non-repeatable reads (reading table rows more than once
+ in a transaction but getting back different data because other
+ transactions may have altered rows between reads), and phantom reads
+ (retrieving additional "phantom" rows in the course of repeated table
+ reads because other transactions may have inserted additional rows that
+ satisfy an SQL <code>WHERE</code> clause) are <b>all permitted</b>.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Connection.html#TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</a>&nbsp;</td>
+        <td class="jd-descrcol">A constant indicating that dirty reads and non-repeatable reads are
+ prevented; phantom reads can occur.&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Connection.html#TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</a>&nbsp;</td>
+        <td class="jd-descrcol">Dirty reads (reading from table rows containing changes that have not yet
+ been committed), non-repeatable reads (reading table rows more than once
+ in a transaction but getting back different data because other
+ transactions may have altered rows between reads), and phantom reads
+ (retrieving additional "phantom" rows in the course of repeated table
+ reads because other transactions may have inserted additional rows that
+ satisfy an SQL <code>WHERE</code> clause) are <b>all prevented</b>.&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#clearWarnings()">clearWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Throws away any warnings that may have arisen for this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the instant release of all database and driver connection
+ resources associated with this object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#commit()">commit</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Commits all of the changes made subsequent to the last commit or rollback
+ of the associated transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Statement.html">Statement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#createStatement(int, int, int)">createStatement</a>(int resultSetType, int resultSetConcurrency, int resultSetHoldability)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>Statement</code> whose associated
+ <code>ResultSet</code>s will have the characteristics specified in the
+ type, concurrency and holdability arguments.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Statement.html">Statement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#createStatement(int, int)">createStatement</a>(int resultSetType, int resultSetConcurrency)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>Statement</code> whose associated
+ <code>ResultSet</code>s will have the characteristics specified in the
+ type, concurrency and holdability arguments.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Statement.html">Statement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#createStatement()">createStatement</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>Statement</code> for issuing SQL
+ commands to the remote database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getAutoCommit()">getAutoCommit</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a boolean indication of whether or not this connection is in the
+ auto-commit operating mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getCatalog()">getCatalog</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets this Connection object's current catalog name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getHoldability()">getHoldability</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the kind of holdability that any <code>ResultSet</code>s made
+ from this instance will have.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/DatabaseMetaData.html">DatabaseMetaData</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getMetaData()">getMetaData</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the metadata about the database referenced by this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getTransactionIsolation()">getTransactionIsolation</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the present value of transaction isolation for this Connection
+ instance.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getTypeMap()">getTypeMap</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the Type Map associated with this Connection object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/SQLWarning.html">SQLWarning</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#getWarnings()">getWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the first instance of any <code>SQLWarning</code> objects that may
+ have been created in the use of this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#isClosed()">isClosed</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a boolean indication of whether or not this connection is in the
+ closed state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#isReadOnly()">isReadOnly</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a boolean indication of whether or not this connection is
+ currently in read-only state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#nativeSQL(java.lang.String)">nativeSQL</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string representation of the input SQL statement
+ <code>sql</code> expressed in the underlying system's native SQL
+ syntax.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareCall(java.lang.String)">prepareCall</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareCall(java.lang.String, int, int, int)">prepareCall</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareCall(java.lang.String, int, int)">prepareCall</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String, int)">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a default PreparedStatement that can retrieve automatically
+ generated keys.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String, java.lang.String[])">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a default PreparedStatement that can retrieve the auto-generated
+ keys designated by a supplied array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String, int, int, int)">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a PreparedStatement that generates ResultSets with the specified
+ type, concurrency and holdability</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String, int, int)">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a PreparedStatement that generates ResultSets with the specified
+ values of <code>resultSetType</code> and
+ <code>resultSetConcurrency</code>.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String)">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of <code>PreparedStatement</code> that may be
+ used any number of times to execute parameterized requests on the
+ database server.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#prepareStatement(java.lang.String, int[])">prepareStatement</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a default PreparedStatement that can retrieve the auto-generated
+ keys designated by a supplied array.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#releaseSavepoint(java.sql.Savepoint)">releaseSavepoint</a>(<a href="../../../reference/java/sql/Savepoint.html">Savepoint</a> savepoint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases <code>savepoint</code> from the present transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#rollback(java.sql.Savepoint)">rollback</a>(<a href="../../../reference/java/sql/Savepoint.html">Savepoint</a> savepoint)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Undoes all changes made after the supplied Savepoint object was set.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#rollback()">rollback</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Rolls back all updates made so far in this transaction as well as
+ relinquishing all acquired database locks.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setAutoCommit(boolean)">setAutoCommit</a>(boolean autoCommit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets this connection's auto-commit mode on or off.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setCatalog(java.lang.String)">setCatalog</a>(<a href="../../../reference/java/lang/String.html">String</a> catalog)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the catalog name for this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setHoldability(int)">setHoldability</a>(int holdability)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the holdability of ResultSets created by this Connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setReadOnly(boolean)">setReadOnly</a>(boolean readOnly)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets this connection to read-only mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Savepoint.html">Savepoint</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setSavepoint()">setSavepoint</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates an unnamed Savepoint in the current transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Savepoint.html">Savepoint</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setSavepoint(java.lang.String)">setSavepoint</a>(<a href="../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Creates a named Savepoint in the current transaction.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setTransactionIsolation(int)">setTransactionIsolation</a>(int level)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the transaction isolation level for this Connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Connection.html#setTypeMap(java.util.Map<java.lang.String, java.lang.Class<?>>)">setTypeMap</a>(<a href="../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&gt; map)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the <code>TypeMap</code> for this connection.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="TRANSACTION_NONE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TRANSACTION_NONE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant indicating that transactions are not supported.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TRANSACTION_READ_COMMITTED"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TRANSACTION_READ_COMMITTED
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+No dirty reads are permitted. Transactions may not read a row containing
+ changes that have not yet been committed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TRANSACTION_READ_UNCOMMITTED"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TRANSACTION_READ_UNCOMMITTED
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Dirty reads (reading from table rows containing changes that have not yet
+ been committed), non-repeatable reads (reading table rows more than once
+ in a transaction but getting back different data because other
+ transactions may have altered rows between reads), and phantom reads
+ (retrieving additional "phantom" rows in the course of repeated table
+ reads because other transactions may have inserted additional rows that
+ satisfy an SQL <code>WHERE</code> clause) are <b>all permitted</b>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TRANSACTION_REPEATABLE_READ"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TRANSACTION_REPEATABLE_READ
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A constant indicating that dirty reads and non-repeatable reads are
+ prevented; phantom reads can occur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="TRANSACTION_SERIALIZABLE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        TRANSACTION_SERIALIZABLE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Dirty reads (reading from table rows containing changes that have not yet
+ been committed), non-repeatable reads (reading table rows more than once
+ in a transaction but getting back different data because other
+ transactions may have altered rows between reads), and phantom reads
+ (retrieving additional "phantom" rows in the course of repeated table
+ reads because other transactions may have inserted additional rows that
+ satisfy an SQL <code>WHERE</code> clause) are <b>all prevented</b>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8
+                (0x00000008)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="clearWarnings()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearWarnings()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Throws away any warnings that may have arisen for this connection.
+ Subsequent calls to <a href="../../../reference/java/sql/Connection.html#getWarnings()">getWarnings()</a> will return <code>null</code>
+ up until a brand new warning condition occurs.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="close()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        close()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Causes the instant release of all database and driver connection
+ resources associated with this object. Any subsequent invocations of this
+ method will have no effect.
+ <p>
+ It is strongly recommended that all Connections are closed before they
+ are dereferenced by the application ready for garbage collection. While
+ the finalize method of the Connection will close the Connection before
+ garbage collection takes place, it is not advisable to leave the close
+ operation to take place in this way. Unpredictable performance may result
+ from closing Connections in the finalizer.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="commit()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        commit()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Commits all of the changes made subsequent to the last commit or rollback
+ of the associated transaction. All locks in the database held by this
+ connection are also relinquished. Calling this operation on connection
+ objects in auto-commit mode is an error.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database or if the target
+             connection instance is in auto-commit mode.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStatement(int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Statement.html">Statement</a>
+        createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>Statement</code> whose associated
+ <code>ResultSet</code>s will have the characteristics specified in the
+ type, concurrency and holdability arguments.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetHoldability</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#HOLD_CURSORS_OVER_COMMIT">HOLD_CURSORS_OVER_COMMIT</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CLOSE_CURSORS_AT_COMMIT">CLOSE_CURSORS_AT_COMMIT</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>Statement</code> capable of
+         manufacturing <code>ResultSet</code>s that satisfy the
+         specified <code>resultSetType</code>,
+         <code>resultSetConcurrency</code> and
+         <code>resultSetHoldability</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStatement(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Statement.html">Statement</a>
+        createStatement(int resultSetType, int resultSetConcurrency)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>Statement</code> whose associated
+ <code>ResultSet</code>s will have the characteristics specified in the
+ type, concurrency and holdability arguments.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>Statement</code> capable of
+         manufacturing <code>ResultSet</code>s that satisfy the
+         specified <code>resultSetType</code> and
+         <code>resultSetConcurrency</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="createStatement()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Statement.html">Statement</a>
+        createStatement()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>Statement</code> for issuing SQL
+ commands to the remote database.
+ <p>
+ ResultSets generated by the returned Statement will default to type
+ <code>TYPE_FORWARD_ONLY</code> and concurrency level
+ <code>CONCUR_READ_ONLY</code>.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a <code>Statement</code> object with default settings.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAutoCommit()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getAutoCommit()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a boolean indication of whether or not this connection is in the
+ auto-commit operating mode.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if auto-commit is on, otherwise
+         <code>false</code></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getCatalog()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getCatalog()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets this Connection object's current catalog name.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the catalog name. <code>null</code> if there is no catalog
+         name.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getHoldability()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getHoldability()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the kind of holdability that any <code>ResultSet</code>s made
+ from this instance will have.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>one of :
+         <ul>
+         <li><a href="../../../reference/java/sql/ResultSet.html#HOLD_CURSORS_OVER_COMMIT">HOLD_CURSORS_OVER_COMMIT</a>
+         <li><a href="../../../reference/java/sql/ResultSet.html#CLOSE_CURSORS_AT_COMMIT">CLOSE_CURSORS_AT_COMMIT</a>
+         </ul></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the a database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMetaData()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/DatabaseMetaData.html">DatabaseMetaData</a>
+        getMetaData()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the metadata about the database referenced by this connection. The
+ returned <code>DatabaseMetaData</code> describes the database
+ topography, available stored procedures, SQL syntax and so on.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a <code>DatabaseMetaData</code> object containing the database
+         description</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the a database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTransactionIsolation()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        getTransactionIsolation()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the present value of transaction isolation for this Connection
+ instance.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the transaction isolation value</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_NONE">TRANSACTION_NONE</a></li>
+    <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</a></li>
+    <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</a></li>
+    <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</a></li>
+    <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTypeMap()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&gt;
+        getTypeMap()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the Type Map associated with this Connection object. The type map
+ will be empty unless the application has added at least one entry.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the Type Map as a <code>java.util.Map</code></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWarnings()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/SQLWarning.html">SQLWarning</a>
+        getWarnings()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets the first instance of any <code>SQLWarning</code> objects that may
+ have been created in the use of this connection. If at least one warning
+ has occurred then this operation returns the first one reported. A
+ <code>null</code> indicates that no warnings have occurred.
+ <p>
+ By invoking the <a href="../../../reference/java/sql/SQLWarning.html#getNextWarning()">getNextWarning()</a> method of the
+ returned <code>SQLWarning</code> object it is possible to obtain all
+ warning objects.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the first warning as an SQLWarning object (may be
+         <code>null</code>)</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database or if the call
+             has been made on a connection which has been previously
+             closed.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isClosed()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isClosed()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a boolean indication of whether or not this connection is in the
+ closed state. The closed state may be entered into as a consequence of a
+ successful invocation of the <a href="../../../reference/java/sql/Connection.html#close()">close()</a> method or else if an error
+ has occurred that prevents the connection from functioning normally.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if closed, otherwise <code>false</code></li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isReadOnly()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isReadOnly()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a boolean indication of whether or not this connection is
+ currently in read-only state.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if in read-only state, otherwise
+         <code>false</code>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="nativeSQL(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        nativeSQL(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string representation of the input SQL statement
+ <code>sql</code> expressed in the underlying system's native SQL
+ syntax.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the JDBC form of an SQL statement.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the SQL statement in native database format.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareCall(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>
+        prepareCall(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement that calls the stored function</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>CallableStatement</code> representing
+         the SQL statement. <code>ResultSet</code>s emitted from this
+         <code>CallableStatement</code> will default to type
+         <a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a> and concurrency
+         <a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareCall(java.lang.String, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>
+        prepareCall(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database. ResultSets
+ created from this <code>CallableStatement</code> will have
+ characteristics determined by the specified type, concurrency and
+ holdability arguments.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement</td>
+      </tr>
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetHoldability</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#HOLD_CURSORS_OVER_COMMIT">HOLD_CURSORS_OVER_COMMIT</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CLOSE_CURSORS_AT_COMMIT">CLOSE_CURSORS_AT_COMMIT</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>CallableStatement</code> representing
+         the precompiled SQL statement. <code>ResultSet</code>s emitted
+         from this <code>CallableStatement</code> will satisfy the
+         specified <code>resultSetType</code>,
+         <code>resultSetConcurrency</code> and
+         <code>resultSetHoldability</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareCall(java.lang.String, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>
+        prepareCall(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>CallableStatement</code> that may be
+ used for making stored procedure calls to the database.
+ <code>ResultSet</code>s emitted from this
+ <code>CallableStatement</code> will satisfy the specified
+ <code>resultSetType</code> and <code>resultSetConcurrency</code>
+ values.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement</td>
+      </tr>
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>CallableStatement</code> representing
+         the precompiled SQL statement. <code>ResultSet</code>s emitted
+         from this <code>CallableStatement</code> will satisfy the
+         specified <code>resultSetType</code> and
+         <code>resultSetConcurrency</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a default PreparedStatement that can retrieve automatically
+ generated keys. Parameter <code>autoGeneratedKeys</code> may be used to
+ specify to the driver if such keys should be made accessible. This is
+ only the case when <code>sql</code> is an insert statement.
+ <p>
+ An SQL statement which may have IN parameters can be stored and
+ precompiled in a PreparedStatement. The PreparedStatement can then be
+ used to execute the statement multiple times in an efficient way.
+ <p>
+ Subject to JDBC driver support, this operation will attempt to send the
+ precompiled version of the statement to the database. Alternatively, if
+ the driver is not capable of flowing precompiled statements, the
+ statement will not reach the database server until it is executed. This
+ will have a bearing on precisely when <code>SQLException</code>
+ instances get raised.
+ <p>
+ By default, ResultSets from the returned object will be
+ <a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a> type with a
+ <a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a> mode of concurrency.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement.</td>
+      </tr>
+    <tr>
+        <th>autoGeneratedKeys</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/Statement.html#RETURN_GENERATED_KEYS">RETURN_GENERATED_KEYS</a>
+            <li><a href="../../../reference/java/sql/Statement.html#NO_GENERATED_KEYS">NO_GENERATED_KEYS</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new <code>PreparedStatement</code> instance representing the
+         input SQL statement.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a default PreparedStatement that can retrieve the auto-generated
+ keys designated by a supplied array. If <code>sql</code> is an SQL
+ <code>INSERT</code> statement, <code>columnNames</code> is expected
+ to hold the names of each column in the statement's associated database
+ table containing the autogenerated-keys of interest. Otherwise
+ <code>columnNames</code> is ignored.
+ <p>
+ Subject to JDBC driver support, this operation will attempt to send the
+ precompiled version of the statement to the database. Alternatively, if
+ the driver is not capable of flowing precompiled statements, the
+ statement will not reach the database server until it is executed. This
+ will have a bearing on precisely when <code>SQLException</code>
+ instances get raised.
+ <p>
+ By default, ResultSets from the returned object will be
+ <a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a> type with a
+ <a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a> mode of concurrency.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement.</td>
+      </tr>
+    <tr>
+        <th>columnNames</td>
+        <td>the names of the columns for which auto-generated keys should
+            be made available.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the PreparedStatement containing the supplied SQL statement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a PreparedStatement that generates ResultSets with the specified
+ type, concurrency and holdability
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement. It can contain one or more '?' IN parameter
+            placeholders</td>
+      </tr>
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetHoldability</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#HOLD_CURSORS_OVER_COMMIT">HOLD_CURSORS_OVER_COMMIT</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CLOSE_CURSORS_AT_COMMIT">CLOSE_CURSORS_AT_COMMIT</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>PreparedStatement</code> containing the
+         SQL statement <code>sql</code>. <code>ResultSet</code>s
+         emitted from this <code>PreparedStatement</code> will satisfy
+         the specified <code>resultSetType</code>,
+         <code>resultSetConcurrency</code> and
+         <code>resultSetHoldability</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql, int resultSetType, int resultSetConcurrency)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a PreparedStatement that generates ResultSets with the specified
+ values of <code>resultSetType</code> and
+ <code>resultSetConcurrency</code>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement. It can contain one or more '?' IN parameter
+            placeholders</td>
+      </tr>
+    <tr>
+        <th>resultSetType</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_SENSITIVE">TYPE_SCROLL_SENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a>
+            </ul></td>
+      </tr>
+    <tr>
+        <th>resultSetConcurrency</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CONCUR_UPDATABLE">CONCUR_UPDATABLE</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a new instance of <code>PreparedStatement</code> containing the
+         SQL statement <code>sql</code>. <code>ResultSet</code>s
+         emitted from this <code>PreparedStatement</code> will satisfy
+         the specified <code>resultSetType</code> and
+         <code>resultSetConcurrency</code> values.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a new instance of <code>PreparedStatement</code> that may be
+ used any number of times to execute parameterized requests on the
+ database server.
+ <p>
+ Subject to JDBC driver support, this operation will attempt to send the
+ precompiled version of the statement to the database. Alternatively, if
+ the driver is not capable of flowing precompiled statements, the
+ statement will not reach the database server until it is executed. This
+ will have a bearing on precisely when <code>SQLException</code>
+ instances get raised.
+ <p>
+ By default, ResultSets from the returned object will be
+ <a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a> type with a
+ <a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a> mode of concurrency.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the PreparedStatement containing the supplied SQL statement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="prepareStatement(java.lang.String, int[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/PreparedStatement.html">PreparedStatement</a>
+        prepareStatement(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a default PreparedStatement that can retrieve the auto-generated
+ keys designated by a supplied array. If <code>sql</code> is an SQL
+ <code>INSERT</code> statement, parameter <code>columnIndexes</code>
+ is expected to hold the index values for each column in the statement's
+ intended database table containing the autogenerated-keys of interest.
+ Otherwise <code>columnIndexes</code> is ignored.
+ <p>
+ Subject to JDBC driver support, this operation will attempt to send the
+ precompiled version of the statement to the database. Alternatively, if
+ the driver is not capable of flowing precompiled statements, the
+ statement will not reach the database server until it is executed. This
+ will have a bearing on precisely when <code>SQLException</code>
+ instances get raised.
+ <p>
+ By default, ResultSets from the returned object will be
+ <a href="../../../reference/java/sql/ResultSet.html#TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</a> type with a
+ <a href="../../../reference/java/sql/ResultSet.html#CONCUR_READ_ONLY">CONCUR_READ_ONLY</a> mode of concurrency.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sql</td>
+        <td>the SQL statement.</td>
+      </tr>
+    <tr>
+        <th>columnIndexes</td>
+        <td>the indexes of the columns for which auto-generated keys
+            should be made available.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the PreparedStatement containing the supplied SQL statement</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a problem occurs accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="releaseSavepoint(java.sql.Savepoint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        releaseSavepoint(<a href="../../../reference/java/sql/Savepoint.html">Savepoint</a> savepoint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Releases <code>savepoint</code> from the present transaction. Once
+ removed, the <code>Savepoint</code> is considered invalid and should
+ not be referenced further.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>savepoint</td>
+        <td>the object targeted for removal</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem with accessing the database or if
+             <code>savepoint</code> is considered not valid in this
+             transaction.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rollback(java.sql.Savepoint)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        rollback(<a href="../../../reference/java/sql/Savepoint.html">Savepoint</a> savepoint)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Undoes all changes made after the supplied Savepoint object was set. This
+ method should only be used when auto-commit mode is disabled.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>savepoint</td>
+        <td>the Savepoint to roll back to</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="rollback()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        rollback()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Rolls back all updates made so far in this transaction as well as
+ relinquishing all acquired database locks. It is an error to invoke this
+ operation when in auto-commit mode.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem with the database or if the method is
+             called while in auto-commit mode of operation.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setAutoCommit(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setAutoCommit(boolean autoCommit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets this connection's auto-commit mode on or off.
+ <p>
+ Putting a Connection into auto-commit mode means that all associated SQL
+ statements will be run and committed in their own separate transactions.
+ Alternatively, auto-commit set to off means that associated SQL
+ statements get grouped into transactions that need to be completed by
+ explicit calls to either the <a href="../../../reference/java/sql/Connection.html#commit()">commit()</a> or <a href="../../../reference/java/sql/Connection.html#rollback()">rollback()</a>
+ methods.
+ <p>
+ Auto-commit is the default mode for new connection instances.
+ <p>
+ When in this mode, commits will automatically occur upon successful SQL
+ statement completion or upon successful completion of an execute.
+ Statements are not considered successfully complete until all associated
+ <code>ResultSet</code>s and output parameters have been obtained or
+ closed.
+ <p>
+ Calling this operation during an uncommitted transaction will result in
+ it being committed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>autoCommit</td>
+        <td>boolean indication of whether to put the target connection
+            into auto-commit mode (<code>true</code>) or not (<code>false</code>)</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCatalog(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCatalog(<a href="../../../reference/java/lang/String.html">String</a> catalog)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the catalog name for this connection. This is used to select a
+ subspace of the database for future work. If the driver does not support
+ catalog names, this method is ignored.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>catalog</td>
+        <td>the catalog name to use.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setHoldability(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setHoldability(int holdability)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the holdability of ResultSets created by this Connection.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>holdability</td>
+        <td>one of :
+            <ul>
+            <li><a href="../../../reference/java/sql/ResultSet.html#CLOSE_CURSORS_AT_COMMIT">CLOSE_CURSORS_AT_COMMIT</a>
+            <li><a href="../../../reference/java/sql/ResultSet.html#HOLD_CURSORS_OVER_COMMIT">HOLD_CURSORS_OVER_COMMIT</a>
+            <li>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setReadOnly(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setReadOnly(boolean readOnly)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets this connection to read-only mode.
+ <p>
+ This serves as a hint to the driver, which can enable database
+ optimizations.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>readOnly</td>
+        <td>true to set the Connection to read only mode. false disables
+            read-only mode</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSavepoint()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Savepoint.html">Savepoint</a>
+        setSavepoint()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates an unnamed Savepoint in the current transaction.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Savepoint object for this savepoint.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setSavepoint(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/Savepoint.html">Savepoint</a>
+        setSavepoint(<a href="../../../reference/java/lang/String.html">String</a> name)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Creates a named Savepoint in the current transaction.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>name</td>
+        <td>the name to use for the new Savepoint.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Savepoint object for this savepoint.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTransactionIsolation(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTransactionIsolation(int level)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the transaction isolation level for this Connection.
+ <p>
+ If this method is called during a transaction, the results are
+ implementation defined.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>level</td>
+        <td>the new transaction isolation level to use from the following
+            list of possible values :
+            <ul>
+            <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_COMMITTED">TRANSACTION_READ_COMMITTED</a>
+            <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_READ_UNCOMMITTED">TRANSACTION_READ_UNCOMMITTED</a>
+            <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_REPEATABLE_READ">TRANSACTION_REPEATABLE_READ</a>
+            <li><a href="../../../reference/java/sql/Connection.html#TRANSACTION_SERIALIZABLE">TRANSACTION_SERIALIZABLE</a>
+            </ul></td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem with the database or if the value of
+             <code>level</code> is not one of the expected constant
+             values.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTypeMap(java.util.Map<java.lang.String, java.lang.Class<?>>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTypeMap(<a href="../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&gt;&gt; map)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the <code>TypeMap</code> for this connection. The input
+ <code>map</code> should contain mappings between complex Java and SQL
+ types.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>map</td>
+        <td>the new type map</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a problem accessing the database or if
+             <code>map</code> is not an instance of <a href="../../../reference/java/util/Map.html">Map</a>.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

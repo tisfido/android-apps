@@ -1,0 +1,1605 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.util.concurrent.ExecutorService - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/java/util/concurrent/package-summary.html">java.util.concurrent</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.util.concurrent.ExecutorService</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.util.concurrent.ExecutorService</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../reference/java/util/concurrent/Executor.html">Executor</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>An <a href="../../../../reference/java/util/concurrent/Executor.html">Executor</a> that provides methods to manage termination and
+ methods that can produce a <a href="../../../../reference/java/util/concurrent/Future.html">Future</a> for tracking progress of
+ one or more asynchronous tasks.
+
+ <p>
+ An <tt>ExecutorService</tt> can be shut down, which will cause it
+ to stop accepting new tasks.  After being shut down, the executor
+ will eventually terminate, at which point no tasks are actively
+ executing, no tasks are awaiting execution, and no new tasks can be
+ submitted.
+
+ <p> Method <tt>submit</tt> extends base method <a href="../../../../reference/java/util/concurrent/Executor.html#execute(java.lang.Runnable)">execute(Runnable)</a> by creating and returning a <a href="../../../../reference/java/util/concurrent/Future.html">Future</a> that
+ can be used to cancel execution and/or wait for completion.
+ Methods <tt>invokeAny</tt> and <tt>invokeAll</tt> perform the most
+ commonly useful forms of bulk execution, executing a collection of
+ tasks and then waiting for at least one, or all, to
+ complete. (Class <a href="../../../../reference/java/util/concurrent/ExecutorCompletionService.html">ExecutorCompletionService</a> can be used to
+ write customized variants of these methods.)
+
+ <p>The <a href="../../../../reference/java/util/concurrent/Executors.html">Executors</a> class provides factory methods for the
+ executor services provided in this package.
+
+ <h3>Usage Example</h3>
+
+ Here is a sketch of a network service in which threads in a thread
+ pool service incoming requests. It uses the preconfigured <a href="../../../../reference/java/util/concurrent/Executors.html#newFixedThreadPool(int)">newFixedThreadPool(int)</a> factory method:
+
+ <pre>
+ class NetworkService {
+    private final ServerSocket serverSocket;
+    private final ExecutorService pool;
+
+    public NetworkService(int port, int poolSize) throws IOException {
+      serverSocket = new ServerSocket(port);
+      pool = Executors.newFixedThreadPool(poolSize);
+    }
+ 
+    public void serve() {
+      try {
+        for (;;) {
+          pool.execute(new Handler(serverSocket.accept()));
+        }
+      } catch (IOException ex) {
+        pool.shutdown();
+      }
+    }
+  }
+
+  class Handler implements Runnable {
+    private final Socket socket;
+    Handler(Socket socket) { this.socket = socket; }
+    public void run() {
+      // read and service request
+    }
+ }
+ </pre></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../reference/java/util/concurrent/AbstractExecutorService.html">AbstractExecutorService</a>,
+            
+                <a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a>,
+            
+                <a href="../../../../reference/java/util/concurrent/ScheduledThreadPoolExecutor.html">ScheduledThreadPoolExecutor</a>,
+            
+                <a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/AbstractExecutorService.html">AbstractExecutorService</a></td>
+            <td class="jd-descrcol" width="100%">Provides default implementation of <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a>
+ execution methods.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a></td>
+            <td class="jd-descrcol" width="100%">An <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> that can schedule commands to run after a given
+ delay, or to execute periodically.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/ScheduledThreadPoolExecutor.html">ScheduledThreadPoolExecutor</a></td>
+            <td class="jd-descrcol" width="100%">A <a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a> that can additionally schedule
+ commands to run after a given delay, or to execute
+ periodically.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a></td>
+            <td class="jd-descrcol" width="100%">An <a href="../../../../reference/java/util/concurrent/ExecutorService.html">ExecutorService</a> that executes each submitted task using
+ one of possibly several pooled threads, normally configured
+ using <a href="../../../../reference/java/util/concurrent/Executors.html">Executors</a> factory methods.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#awaitTermination(long, java.util.concurrent.TimeUnit)">awaitTermination</a>(long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Blocks until all tasks have completed execution after a shutdown
+ request, or the timeout occurs, or the current thread is
+ interrupted, whichever happens first.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#invokeAll(java.util.Collection<java.util.concurrent.Callable<T>>, long, java.util.concurrent.TimeUnit)">invokeAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the given tasks, returning their results
+ when all complete or the timeout expires, whichever happens first.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#invokeAll(java.util.Collection<java.util.concurrent.Callable<T>>)">invokeAll</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the given tasks, returning their results
+ when all complete.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#invokeAny(java.util.Collection<java.util.concurrent.Callable<T>>, long, java.util.concurrent.TimeUnit)">invokeAny</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the given tasks, returning the result
+ of one that has completed successfully (i.e., without throwing
+ an exception), if any do before the given timeout elapses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol">T&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#invokeAny(java.util.Collection<java.util.concurrent.Callable<T>>)">invokeAny</a>(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the given tasks, returning the result
+ of one that has completed successfully (i.e., without throwing
+ an exception), if any do.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#isShutdown()">isShutdown</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns <tt>true</tt> if this executor has been shut down.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#isTerminated()">isTerminated</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns <tt>true</tt> if all tasks have completed following shut down.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#shutdown()">shutdown</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Initiates an orderly shutdown in which previously submitted
+ tasks are executed, but no new tasks will be
+ accepted.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/lang/Runnable.html">Runnable</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#shutdownNow()">shutdownNow</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Attempts to stop all actively executing tasks, halts the
+ processing of waiting tasks, and returns a list of the tasks that were
+ awaiting execution.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;?&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#submit(java.lang.Runnable)">submit</a>(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Submits a Runnable task for execution and returns a Future 
+ representing that task.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#submit(java.lang.Runnable, T)">submit</a>(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task, T result)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Submits a Runnable task for execution and returns a Future 
+ representing that task that will upon completion return 
+ the given result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&lt;T&gt;&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/ExecutorService.html#submit(java.util.concurrent.Callable<T>)">submit</a>(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; task)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Submits a value-returning task for execution and returns a Future
+ representing the pending results of the task.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.util.concurrent.Executor')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.util.concurrent.Executor-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../reference/java/util/concurrent/Executor.html">java.util.concurrent.Executor</a>
+</h5>
+<div id="inherited-methods-java.util.concurrent.Executor">
+<div id="inherited-methods-java.util.concurrent.Executor-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/util/concurrent/Executor.html#execute(java.lang.Runnable)">execute</a>
+
+</div>
+<div id="inherited-methods-java.util.concurrent.Executor-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/util/concurrent/Executor.html#execute(java.lang.Runnable)">execute</a>(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> command)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the given command at some time in the future.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="awaitTermination(long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        awaitTermination(long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Blocks until all tasks have completed execution after a shutdown
+ request, or the timeout occurs, or the current thread is
+ interrupted, whichever happens first.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>timeout</td>
+        <td>the maximum time to wait</td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>the time unit of the timeout argument</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if this executor terminated and <tt>false</tt>
+ if the timeout elapsed before termination</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invokeAll(java.util.Collection<java.util.concurrent.Callable<T>>, long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&gt;
+        invokeAll(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the given tasks, returning their results
+ when all complete or the timeout expires, whichever happens first.
+ Upon return, tasks that have not completed are cancelled.
+ Note that a <em>completed</em> task could have
+ terminated either normally or by throwing an exception.
+ The results of this method are undefined if the given
+ collection is modified while this operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tasks</td>
+        <td>the collection of tasks</td>
+      </tr>
+    <tr>
+        <th>timeout</td>
+        <td>the maximum time to wait</td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>the time unit of the timeout argument</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A list of Futures representing the tasks, in the same
+ sequential order as produced by the iterator for the given
+ task list. If the operation did not time out, each task will
+ have completed. If it did time out, some of thiese tasks will
+ not have completed.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting, in
+ which case unfinished tasks are cancelled.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if tasks, any of its elements, or
+ unit are <tt>null</tt></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if any task cannot be scheduled
+ for execution
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invokeAll(java.util.Collection<java.util.concurrent.Callable<T>>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;&gt;
+        invokeAll(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the given tasks, returning their results
+ when all complete.
+ Note that a <em>completed</em> task could have
+ terminated either normally or by throwing an exception.
+ The results of this method are undefined if the given
+ collection is modified while this operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tasks</td>
+        <td>the collection of tasks</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>A list of Futures representing the tasks, in the same
+ sequential order as produced by the iterator for the given task
+ list, each of which has completed.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting, in
+ which case unfinished tasks are cancelled.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if tasks or any of its elements are <tt>null</tt></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if any task cannot be scheduled
+ for execution
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invokeAny(java.util.Collection<java.util.concurrent.Callable<T>>, long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        T
+        invokeAny(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks, long timeout, <a href="../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the given tasks, returning the result
+ of one that has completed successfully (i.e., without throwing
+ an exception), if any do before the given timeout elapses.
+ Upon normal or exceptional return, tasks that have not
+ completed are cancelled.
+ The results of this method are undefined if the given
+ collection is modified while this operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tasks</td>
+        <td>the collection of tasks</td>
+      </tr>
+    <tr>
+        <th>timeout</td>
+        <td>the maximum time to wait</td>
+      </tr>
+    <tr>
+        <th>unit</td>
+        <td>the time unit of the timeout argument</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The result returned by one of the tasks.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if tasks, any of its elements, or
+ unit are <tt>null</tt></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/TimeoutException.html">TimeoutException</a></td>
+            <td>if the given timeout elapses before
+ any task successfully completes</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/ExecutionException.html">ExecutionException</a></td>
+            <td>if no task successfully completes</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if tasks cannot be scheduled
+ for execution
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="invokeAny(java.util.Collection<java.util.concurrent.Callable<T>>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        T
+        invokeAny(<a href="../../../../reference/java/util/Collection.html">Collection</a>&lt;<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt;&gt; tasks)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the given tasks, returning the result
+ of one that has completed successfully (i.e., without throwing
+ an exception), if any do. Upon normal or exceptional return,
+ tasks that have not completed are cancelled.
+ The results of this method are undefined if the given
+ collection is modified while this operation is in progress.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>tasks</td>
+        <td>the collection of tasks</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The result returned by one of the tasks.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/InterruptedException.html">InterruptedException</a></td>
+            <td>if interrupted while waiting</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if tasks or any of its elements
+ are <tt>null</tt></td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td>if tasks empty</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/ExecutionException.html">ExecutionException</a></td>
+            <td>if no task successfully completes</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if tasks cannot be scheduled
+ for execution
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isShutdown()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isShutdown()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns <tt>true</tt> if this executor has been shut down.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if this executor has been shut down
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isTerminated()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isTerminated()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns <tt>true</tt> if all tasks have completed following shut down.
+ Note that <tt>isTerminated</tt> is never <tt>true</tt> unless
+ either <tt>shutdown</tt> or <tt>shutdownNow</tt> was called first.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><tt>true</tt> if all tasks have completed following shut down
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="shutdown()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        shutdown()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Initiates an orderly shutdown in which previously submitted
+ tasks are executed, but no new tasks will be
+ accepted. Invocation has no additional effect if already shut
+ down.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>if a security manager exists and
+ shutting down this ExecutorService may manipulate threads that
+ the caller is not permitted to modify because it does not hold
+ <a href="../../../../reference/java/lang/RuntimePermission.html">RuntimePermission</a><tt>("modifyThread")</tt>,
+ or the security manager's <tt>checkAccess</tt>  method denies access.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="shutdownNow()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/List.html">List</a>&lt;<a href="../../../../reference/java/lang/Runnable.html">Runnable</a>&gt;
+        shutdownNow()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Attempts to stop all actively executing tasks, halts the
+ processing of waiting tasks, and returns a list of the tasks that were
+ awaiting execution. 
+  
+ <p>There are no guarantees beyond best-effort attempts to stop
+ processing actively executing tasks.  For example, typical
+ implementations will cancel via <a href="../../../../reference/java/lang/Thread.html#interrupt()">interrupt()</a>, so if any
+ tasks mask or fail to respond to interrupts, they may never terminate.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>list of tasks that never commenced execution</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>if a security manager exists and
+ shutting down this ExecutorService may manipulate threads that
+ the caller is not permitted to modify because it does not hold
+ <a href="../../../../reference/java/lang/RuntimePermission.html">RuntimePermission</a><tt>("modifyThread")</tt>,
+ or the security manager's <tt>checkAccess</tt> method denies access.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="submit(java.lang.Runnable)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;?&gt;
+        submit(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Submits a Runnable task for execution and returns a Future 
+ representing that task.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>task</td>
+        <td>the task to submit</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Future representing pending completion of the task,
+ and whose <tt>get()</tt> method will return <tt>null</tt>
+ upon completion.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if task cannot be scheduled
+ for execution</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if task null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="submit(java.lang.Runnable, T)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;
+        submit(<a href="../../../../reference/java/lang/Runnable.html">Runnable</a> task, T result)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Submits a Runnable task for execution and returns a Future 
+ representing that task that will upon completion return 
+ the given result.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>task</td>
+        <td>the task to submit</td>
+      </tr>
+    <tr>
+        <th>result</td>
+        <td>the result to return</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Future representing pending completion of the task,
+ and whose <tt>get()</tt> method will return the given result
+ upon completion.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if task cannot be scheduled
+ for execution</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if task null     
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="submit(java.util.concurrent.Callable<T>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/util/concurrent/Future.html">Future</a>&lt;T&gt;
+        submit(<a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a>&lt;T&gt; task)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Submits a value-returning task for execution and returns a Future
+ representing the pending results of the task. 
+
+ <p>
+ If you would like to immediately block waiting
+ for a task, you can use constructions of the form
+ <tt>result = exec.submit(aCallable).get();</tt>
+
+ <p> Note: The <a href="../../../../reference/java/util/concurrent/Executors.html">Executors</a> class includes a set of methods
+ that can convert some other common closure-like objects,
+ for example, <a href="../../../../reference/java/security/PrivilegedAction.html">PrivilegedAction</a> to
+ <a href="../../../../reference/java/util/concurrent/Callable.html">Callable</a> form so they can be submitted.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>task</td>
+        <td>the task to submit</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Future representing pending completion of the task</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../reference/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></td>
+            <td>if task cannot be scheduled
+ for execution</td>
+        </tr>
+      <tr>
+            <th><a href="../../../../reference/java/lang/NullPointerException.html">NullPointerException</a></td>
+            <td>if task null
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

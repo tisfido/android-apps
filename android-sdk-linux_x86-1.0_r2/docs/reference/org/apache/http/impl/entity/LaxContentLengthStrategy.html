@@ -1,0 +1,984 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.impl.entity.LaxContentLengthStrategy - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../../assets/style.css" />
+<script src="../../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../../')"
+            onchange="search_changed(event, false, '../../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../../reference/org/apache/http/impl/entity/package-summary.html">org.apache.http.impl.entity</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>org.apache.http.impl.entity.LaxContentLengthStrategy</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.impl.entity.LaxContentLengthStrategy</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html">ContentLengthStrategy</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>The lax implementation of the content length strategy.
+ <p>
+ This strategy conforms to the entity transfer rules outlined in  
+ <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec4.4">Section 4.4</a>, 
+ <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.6">Section 3.6</a>, 
+ <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.41">Section 14.41</a>
+ and <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec14.13">Section 14.13</a>
+ of <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.txt">RFC 2616</a>, but is lenient 
+ about unsupported transfer codecs and malformed content-length headers.
+ </p>
+ <h>4.4 Message Length</h>
+ <p>
+ The transfer-length of a message is the length of the message-body as it appears in the 
+ message; that is, after any transfer-codings have been applied. When a message-body is 
+ included with a message, the transfer-length of that body is determined by one of the 
+ following (in order of precedence):
+ </p>
+ <p>
+ 1.Any response message which "MUST NOT" include a message-body (such as the 1xx, 204, 
+ and 304 responses and any response to a HEAD request) is always terminated by the first 
+ empty line after the header fields, regardless of the entity-header fields present in the 
+ message.
+ </p>
+ <p>
+ 2.If a Transfer-Encoding header field (section 14.41) is present and has any value other 
+ than "identity", then the transfer-length is defined by use of the "chunked" transfer-
+ coding (section 3.6), unless the message is terminated by closing the connection.
+ </p>
+ <p>
+ 3.If a Content-Length header field (section 14.13) is present, its decimal value in 
+ OCTETs represents both the entity-length and the transfer-length. The Content-Length 
+ header field MUST NOT be sent if these two lengths are different (i.e., if a 
+ Transfer-Encoding
+ </p>
+ <pre>
+    header field is present). If a message is received with both a
+    Transfer-Encoding header field and a Content-Length header field,
+    the latter MUST be ignored.
+ </pre>
+ <p>
+ 4.If the message uses the media type "multipart/byteranges", and the ransfer-length is not 
+ otherwise specified, then this self- elimiting media type defines the transfer-length. 
+ This media type UST NOT be used unless the sender knows that the recipient can arse it; the 
+ presence in a request of a Range header with ultiple byte- range specifiers from a 1.1 
+ client implies that the lient can parse multipart/byteranges responses.
+ </p>
+ <pre>
+     A range header might be forwarded by a 1.0 proxy that does not
+     understand multipart/byteranges; in this case the server MUST
+     delimit the message using methods defined in items 1,3 or 5 of
+     this section.
+ </pre>
+ <p>
+ 5.By the server closing the connection. (Closing the connection cannot be used to indicate 
+ the end of a request body, since that would leave no possibility for the server to send back 
+ a response.)
+ </p>
+ <p>
+ For compatibility with HTTP/1.0 applications, HTTP/1.1 requests containing a message-body 
+ MUST include a valid Content-Length header field unless the server is known to be HTTP/1.1 
+ compliant. If a request contains a message-body and a Content-Length is not given, the 
+ server SHOULD respond with 400 (bad request) if it cannot determine the length of the 
+ message, or with 411 (length required) if it wishes to insist on receiving a valid 
+ Content-Length.
+ </p>
+ <p>All HTTP/1.1 applications that receive entities MUST accept the "chunked" transfer-coding 
+ (section 3.6), thus allowing this mechanism to be used for messages when the message 
+ length cannot be determined in advance. 
+ </p>
+ <h>3.6 Transfer Codings</h>
+ <p>
+ Transfer-coding values are used to indicate an encoding transformation that 
+ has been, can be, or may need to be applied to an entity-body in order to ensure 
+ "safe transport" through the network. This differs from a content coding in that 
+ the transfer-coding is a property of the message, not of the original entity.
+ </p>
+ <pre>
+ transfer-coding         = "chunked" | transfer-extension
+ transfer-extension      = token *( ";" parameter )
+ </pre>
+ <p>
+ Parameters are in the form of attribute/value pairs.
+ </p>
+ <pre>
+ parameter               = attribute "=" value
+ attribute               = token
+ value                   = token | quoted-string
+ </pre>
+ <p>
+ All transfer-coding values are case-insensitive. HTTP/1.1 uses transfer-coding values in 
+ the TE header field (section 14.39) and in the Transfer-Encoding header field (section 14.41).
+ </p>
+ <p>
+ Whenever a transfer-coding is applied to a message-body, the set of transfer-codings MUST 
+ include "chunked", unless the message is terminated by closing the connection. When the 
+ "chunked" transfer-coding is used, it MUST be the last transfer-coding applied to the 
+ message-body. The "chunked" transfer-coding MUST NOT be applied more than once to a 
+ message-body. These rules allow the recipient to determine the transfer-length of the 
+ message (section 4.4).
+ </p>
+ <h>14.41 Transfer-Encoding</h>
+ <p>
+ The Transfer-Encoding general-header field indicates what (if any) type of transformation has 
+ been applied to the message body in order to safely transfer it between the sender and the 
+ recipient. This differs from the content-coding in that the transfer-coding is a property of 
+ the message, not of the entity.
+ </p>
+ <pre>
+   Transfer-Encoding       = "Transfer-Encoding" ":" 1#transfer-coding
+ </pre>
+ <p>
+ If multiple encodings have been applied to an entity, the transfer- codings MUST be listed in 
+ the order in which they were applied. Additional information about the encoding parameters 
+ MAY be provided by other entity-header fields not defined by this specification.
+ </p> 
+ <h>14.13 Content-Length</h>
+ <p>
+ The Content-Length entity-header field indicates the size of the entity-body, in decimal 
+ number of OCTETs, sent to the recipient or, in the case of the HEAD method, the size of 
+ the entity-body that would have been sent had the request been a GET.
+ </p>
+ <pre>
+   Content-Length    = "Content-Length" ":" 1*DIGIT
+ </pre>
+ <p>
+ Applications SHOULD use this field to indicate the transfer-length of the message-body, 
+ unless this is prohibited by the rules in section 4.4. 
+ </p></p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-org.apache.http.entity.ContentLengthStrategy')" class="jd-expando-trigger"
+        ><img id="inherited-constants-org.apache.http.entity.ContentLengthStrategy-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html">org.apache.http.entity.ContentLengthStrategy</a>
+</h5>
+<div id="inherited-constants-org.apache.http.entity.ContentLengthStrategy">
+<div id="inherited-constants-org.apache.http.entity.ContentLengthStrategy-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#CHUNKED">CHUNKED</a>,
+
+<a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#IDENTITY">IDENTITY</a>
+
+</div>
+<div id="inherited-constants-org.apache.http.entity.ContentLengthStrategy-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#CHUNKED">CHUNKED</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">-2&nbsp;</td>
+            <td class="jd-valcol">0xfffffffe&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#IDENTITY">IDENTITY</a>&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        
+            <td class="jd-valcol">-1&nbsp;</td>
+            <td class="jd-valcol">0xffffffff&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/entity/LaxContentLengthStrategy.html#LaxContentLengthStrategy()">LaxContentLengthStrategy</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/impl/entity/LaxContentLengthStrategy.html#determineLength(org.apache.http.HttpMessage)">determineLength</a>(<a href="../../../../../../reference/org/apache/http/HttpMessage.html">HttpMessage</a> message)</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.entity.ContentLengthStrategy')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.entity.ContentLengthStrategy-trigger"
+        src="../../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html">org.apache.http.entity.ContentLengthStrategy</a>
+</h5>
+<div id="inherited-methods-org.apache.http.entity.ContentLengthStrategy">
+<div id="inherited-methods-org.apache.http.entity.ContentLengthStrategy-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#determineLength(org.apache.http.HttpMessage)">determineLength</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.entity.ContentLengthStrategy-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../../reference/org/apache/http/entity/ContentLengthStrategy.html#determineLength(org.apache.http.HttpMessage)">determineLength</a>(<a href="../../../../../../reference/org/apache/http/HttpMessage.html">HttpMessage</a> message)</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="LaxContentLengthStrategy()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        LaxContentLengthStrategy()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="determineLength(org.apache.http.HttpMessage)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        long
+        determineLength(<a href="../../../../../../reference/org/apache/http/HttpMessage.html">HttpMessage</a> message)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../../reference/org/apache/http/HttpException.html">HttpException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

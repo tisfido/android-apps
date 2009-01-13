@@ -1,0 +1,2190 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.content.ContentProvider - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/content/package-summary.html">android.content</a>
+<br/>
+    public 
+     
+     
+    abstract
+    class
+</div>
+<h1>android.content.ContentProvider</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.content.ContentProvider</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/content/ComponentCallbacks.html">ComponentCallbacks</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Content providers are one of the primary building blocks of Android applications, providing
+ content to applications. They encapsulate data and provide it to applications through the single
+ <a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a> interface. A content provider is only required if you need to share
+ data between multiple applications. For example, the contacts data is used by multiple
+ applications and must be stored in a content provider. If you don't need to share data amongst
+ multiple applications you can use a database directly via
+ <a href="../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a>.
+
+ <p>See <a href="../../../devel/data/contentproviders.html">this page</a> for more information on
+ content providers.</p>
+
+ <p>When a request is made via
+ a <a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a> the system inspects the authority of the given URI and passes the
+ request to the content provider registered with the authority. The content provider can interpret
+ the rest of the URI however it wants. The <a href="../../../reference/android/content/UriMatcher.html">UriMatcher</a> class is helpful for parsing
+ URIs.</p>
+
+ <p>The primary methods that need to be implemented are:
+ <ul>
+   <li><a href="../../../reference/android/content/ContentProvider.html#query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)">query(Uri, String[], String, String[], String)</a> which returns data to the caller</li>
+   <li><a href="../../../reference/android/content/ContentProvider.html#insert(android.net.Uri, android.content.ContentValues)">insert(Uri, ContentValues)</a> which inserts new data into the content provider</li>
+   <li><a href="../../../reference/android/content/ContentProvider.html#update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])">update(Uri, ContentValues, String, String[])</a> which updates existing data in the content provider</li>
+   <li><a href="../../../reference/android/content/ContentProvider.html#delete(android.net.Uri, java.lang.String, java.lang.String[])">delete(Uri, String, String[])</a> which deletes data from the content provider</li>
+   <li><a href="../../../reference/android/content/ContentProvider.html#getType(android.net.Uri)">getType(Uri)</a> which returns the MIME type of data in the content provider</li>
+ </ul></p>
+
+ <p>This class takes care of cross process calls so subclasses don't have to worry about which
+ process a request is coming from.</p>
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-direct')" class="jd-expando-trigger"
+        ><img id="subclasses-direct-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Direct Subclasses</h5>
+
+    <div id="subclasses-direct">
+        <div id="subclasses-direct-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/android/content/SearchRecentSuggestionsProvider.html">SearchRecentSuggestionsProvider</a>
+            
+        </div>
+        <div id="subclasses-direct-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/content/SearchRecentSuggestionsProvider.html">SearchRecentSuggestionsProvider</a></td>
+            <td class="jd-descrcol" width="100%">This superclass can be used to create a simple search suggestions provider for your application.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#ContentProvider()">ContentProvider</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#attachInfo(android.content.Context, android.content.pm.ProviderInfo)">attachInfo</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/android/content/pm/ProviderInfo.html">ProviderInfo</a> info)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">After being instantiated, this is called to tell the content provider
+ about itself.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#bulkInsert(android.net.Uri, android.content.ContentValues[])">bulkInsert</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues[]</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implement this to insert a set of new rows, or the default implementation will
+ iterate over the values and call <a href="../../../reference/android/content/ContentProvider.html#insert(android.net.Uri, android.content.ContentValues)">insert(Uri, ContentValues)</a> on each of them.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#delete(android.net.Uri, java.lang.String, java.lang.String[])">delete</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">A request to delete one or more rows.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/content/Context.html">Context</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#getContext()">getContext</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieve the Context this provider is running in.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#getReadPermission()">getReadPermission</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the name of the permission required for read-only access to
+ this content provider.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#getType(android.net.Uri)">getType</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the MIME type of the data at the given URI.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#getWritePermission()">getWritePermission</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return the name of the permission required for read/write access to
+ this content provider.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/Uri.html">Uri</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#insert(android.net.Uri, android.content.ContentValues)">insert</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Implement this to insert a new row.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#onConfigurationChanged(android.content.res.Configuration)">onConfigurationChanged</a>(<a href="../../../reference/android/content/res/Configuration.html">Configuration</a> newConfig)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the system when the device configuration changes while your
+ component is running.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#onCreate()">onCreate</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when the provider is being started.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#onLowMemory()">onLowMemory</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This is called when the overall system is running low on memory, and
+ would like actively running process to try to tighten their belt.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#openFile(android.net.Uri, java.lang.String)">openFile</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> mode)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Open a file blob associated with a content URI.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)">query</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String[]</a> projection, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../reference/java/lang/String.html">String</a> sortOrder)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receives a query request from a client in a local process, and
+ returns a Cursor.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">abstract&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])">update</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Update a content URI.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#isTemporary()">isTemporary</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns true if this instance is a temporary content provider.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#openFileHelper(android.net.Uri, java.lang.String)">openFileHelper</a>(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> mode)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convenience for subclasses that wish to implement <a href="../../../reference/android/content/ContentProvider.html#openFile(android.net.Uri, java.lang.String)">openFile(Uri, String)</a>
+ by looking up a column named "_data" at the given URI.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#setReadPermission(java.lang.String)">setReadPermission</a>(<a href="../../../reference/java/lang/String.html">String</a> permission)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the permission required to read data from the content
+ provider.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ContentProvider.html#setWritePermission(java.lang.String)">setWritePermission</a>(<a href="../../../reference/java/lang/String.html">String</a> permission)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Change the permission required to read and write data in the content
+ provider.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.content.ComponentCallbacks')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.content.ComponentCallbacks-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/content/ComponentCallbacks.html">android.content.ComponentCallbacks</a>
+</h5>
+<div id="inherited-methods-android.content.ComponentCallbacks">
+<div id="inherited-methods-android.content.ComponentCallbacks-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/content/ComponentCallbacks.html#onConfigurationChanged(android.content.res.Configuration)">onConfigurationChanged</a>,
+
+<a href="../../../reference/android/content/ComponentCallbacks.html#onLowMemory()">onLowMemory</a>
+
+</div>
+<div id="inherited-methods-android.content.ComponentCallbacks-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ComponentCallbacks.html#onConfigurationChanged(android.content.res.Configuration)">onConfigurationChanged</a>(<a href="../../../reference/android/content/res/Configuration.html">Configuration</a> newConfig)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the system when the device configuration changes while your
+ component is running.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/content/ComponentCallbacks.html#onLowMemory()">onLowMemory</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This is called when the overall system is running low on memory, and
+ would like actively running process to try to tighten their belt.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="ContentProvider()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        ContentProvider()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="attachInfo(android.content.Context, android.content.pm.ProviderInfo)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        attachInfo(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/android/content/pm/ProviderInfo.html">ProviderInfo</a> info)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+After being instantiated, this is called to tell the content provider
+ about itself.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The context this provider is running in</td>
+      </tr>
+    <tr>
+        <th>info</td>
+        <td>Registered information about this content provider
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="bulkInsert(android.net.Uri, android.content.ContentValues[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        bulkInsert(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues[]</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implement this to insert a set of new rows, or the default implementation will
+ iterate over the values and call <a href="../../../reference/android/content/ContentProvider.html#insert(android.net.Uri, android.content.ContentValues)">insert(Uri, ContentValues)</a> on each of them.
+ As a courtesy, call <a href="../../../reference/android/content/ContentResolver.html#notifyChange(android.net.Uri, android.database.ContentObserver)">notifyChange()</a>
+ after inserting.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of
+ the Application Model overview</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The content:// URI of the insertion request.</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>An array of sets of column_name/value pairs to add to the database.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The number of values that were inserted.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="delete(android.net.Uri, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        int
+        delete(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+A request to delete one or more rows. The selection clause is applied when performing
+ the deletion, allowing the operation to affect multiple rows in a
+ directory.
+ As a courtesy, call <a href="../../../reference/android/content/ContentResolver.html#notifyChange(android.net.Uri, android.database.ContentObserver)">notifyDelete()</a>
+ after deleting.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of the
+ Application Model overview</a>.
+
+ <p>The implementation is responsible for parsing out a row ID at the end
+ of the URI, if a specific row is being deleted. That is, the client would
+ pass in <code>content://contacts/people/22</code> and the implementation is
+ responsible for parsing the record number (22) when creating a SQL statement.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The full URI to query, including a row ID (if a specific record is requested).</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>An optional restriction to apply to rows when deleting.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The number of rows affected.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/android/database/SQLException.html">SQLException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getContext()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/content/Context.html">Context</a>
+        getContext()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Retrieve the Context this provider is running in.  Only available once
+ onCreate(Map icicle) has been called -- this will be null in the
+ constructor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getReadPermission()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getReadPermission()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the name of the permission required for read-only access to
+ this content provider.  This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of
+ the Application Model overview</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getType(android.net.Uri)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getType(<a href="../../../reference/android/net/Uri.html">Uri</a> uri)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the MIME type of the data at the given URI. This should start with
+ <code>vnd.android.cursor.item</code> for a single record,
+ or <code>vnd.android.cursor.dir/</code> for multiple items.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of
+ the Application Model overview</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>the URI to query.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a MIME type string, or null if there is no type.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getWritePermission()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+        final 
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getWritePermission()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return the name of the permission required for read/write access to
+ this content provider.  This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of
+ the Application Model overview</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="insert(android.net.Uri, android.content.ContentValues)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/net/Uri.html">Uri</a>
+        insert(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Implement this to insert a new row.
+ As a courtesy, call <a href="../../../reference/android/content/ContentResolver.html#notifyChange(android.net.Uri, android.database.ContentObserver)">notifyChange()</a>
+ after inserting.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of the
+ Application Model overview</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The content:// URI of the insertion request.</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>A set of column_name/value pairs to add to the database.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The URI for the newly inserted item.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onConfigurationChanged(android.content.res.Configuration)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onConfigurationChanged(<a href="../../../reference/android/content/res/Configuration.html">Configuration</a> newConfig)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called by the system when the device configuration changes while your
+ component is running.  Note that, unlike activities, other components
+ are never restarted when a configuration changes: they must always deal
+ with the results of the change, such as by re-retrieving resources.
+ 
+ <p>At the time that this function has been called, your Resources
+ object will have been updated to return resource values matching the
+ new configuration.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>newConfig</td>
+        <td>The new device configuration.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onCreate()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+        onCreate()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when the provider is being started.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the provider was successfully loaded, false otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onLowMemory()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onLowMemory()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This is called when the overall system is running low on memory, and
+ would like actively running process to try to tighten their belt.  While
+ the exact point at which this will be called is not defined, generally
+ it will happen around the time all background process have been killed,
+ that is before reaching the point of killing processes hosting
+ service and foreground UI that we would like to avoid killing.
+ 
+ <p>Applications that want to be nice can implement this method to release
+ any caches or other unnecessary resources they may be holding on to.
+ The system will perform a gc for you after returning from this method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openFile(android.net.Uri, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>
+        openFile(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> mode)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Open a file blob associated with a content URI.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of the
+ Application Model overview</a>.
+ 
+ <p>Returns a
+ ParcelFileDescriptor, from which you can obtain a
+ <a href="../../../reference/java/io/FileDescriptor.html">FileDescriptor</a> for use with
+ <a href="../../../reference/java/io/FileInputStream.html">FileInputStream</a>, <a href="../../../reference/java/io/FileOutputStream.html">FileOutputStream</a>, etc.
+ This can be used to store large data (such as an image) associated with
+ a particular piece of content.
+
+ <p>The returned ParcelFileDescriptor is owned by the caller, so it is
+ their responsibility to close it when done.  That is, the implementation
+ of this method should create a new ParcelFileDescriptor for each call.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The URI whose file is to be opened.</td>
+      </tr>
+    <tr>
+        <th>mode</td>
+        <td>Access mode for the file.  May be "r" for read-only access
+ or "rw" for read and write access.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns a new ParcelFileDescriptor which you can use to access
+ the file.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td>Throws FileNotFoundException if there is
+ no file associated with the given URI or the mode is invalid.</td>
+        </tr>
+      <tr>
+            <th><a href="../../../reference/java/lang/SecurityException.html">SecurityException</a></td>
+            <td>Throws SecurityException if the caller does
+ not have permission to access the file.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../reference/android/database/Cursor.html">Cursor</a>
+        query(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String[]</a> projection, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../reference/java/lang/String.html">String</a> sortOrder)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Receives a query request from a client in a local process, and
+ returns a Cursor. This is called internally by the <a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a>.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of
+ the Application Model overview</a>.
+ <p>
+ Example client call:<p>
+ <pre>// Request a specific record.
+ Cursor managedCursor = managedQuery(
+                Contacts.People.CONTENT_URI.addId(2),
+                projection,    // Which columns to return.
+                null,          // WHERE clause.
+                People.NAME + " ASC");   // Sort order.</pre>
+ Example implementation:<p>
+ <pre>// SQLiteQueryBuilder is a helper class that creates the
+        // proper SQL syntax for us.
+        SQLiteQueryBuilder qBuilder = new SQLiteQueryBuilder();
+
+        // Set the table we're querying.
+        qBuilder.setTables(DATABASE_TABLE_NAME);
+
+        // If the query ends in a specific record number, we're
+        // being asked for a specific record, so set the
+        // WHERE clause in our query.
+        if((URI_MATCHER.match(uri)) == SPECIFIC_MESSAGE){
+            qBuilder.appendWhere("_id=" + uri.getPathLeafId());
+        }
+
+        // Make the query.
+        Cursor c = qBuilder.query(mDb,
+                projection,
+                selection,
+                selectionArgs,
+                groupBy,
+                having,
+                sortOrder);
+        c.setNotificationUri(getContext().getContentResolver(), uri);
+        return c;</pre>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The URI to query. This will be the full URI sent by the client;
+ if the client is requesting a specific record, the URI will end in a record number
+ that the implementation should parse and add to a WHERE or HAVING clause, specifying
+ that _id value.</td>
+      </tr>
+    <tr>
+        <th>projection</td>
+        <td>The list of columns to put into the cursor. If
+      null all columns are included.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A selection criteria to apply when filtering rows.
+      If null then all rows are included.</td>
+      </tr>
+    <tr>
+        <th>sortOrder</td>
+        <td>How the rows in the cursor should be sorted.
+        If null then the provider is free to define the sort order.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a Cursor or null.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        abstract 
+         
+        int
+        update(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/android/content/ContentValues.html">ContentValues</a> values, <a href="../../../reference/java/lang/String.html">String</a> selection, <a href="../../../reference/java/lang/String.html">String[]</a> selectionArgs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Update a content URI. All rows matching the optionally provided selection
+ will have their columns listed as the keys in the values map with the
+ values of those keys.
+ As a courtesy, call <a href="../../../reference/android/content/ContentResolver.html#notifyChange(android.net.Uri, android.database.ContentObserver)">notifyChange()</a>
+ after updating.
+ This method can be called from multiple
+ threads, as described in the
+ <a href="../../../intro/appmodel.html#Threads">Threading section of the
+ Application Model overview</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The URI to query. This can potentially have a record ID if this
+ is an update request for a specific record.</td>
+      </tr>
+    <tr>
+        <th>values</td>
+        <td>A Bundle mapping from column names to new column values (NULL is a
+               valid value).</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>An optional filter to match rows to update.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the number of rows affected.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="isTemporary()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        isTemporary()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns true if this instance is a temporary content provider.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if this instance is a temporary content provider
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="openFileHelper(android.net.Uri, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        <a href="../../../reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a>
+        openFileHelper(<a href="../../../reference/android/net/Uri.html">Uri</a> uri, <a href="../../../reference/java/lang/String.html">String</a> mode)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convenience for subclasses that wish to implement <a href="../../../reference/android/content/ContentProvider.html#openFile(android.net.Uri, java.lang.String)">openFile(Uri, String)</a>
+ by looking up a column named "_data" at the given URI.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>uri</td>
+        <td>The URI to be opened.</td>
+      </tr>
+    <tr>
+        <th>mode</td>
+        <td>The file mode.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Returns a new ParcelFileDescriptor that can be used by the
+ client to access the file.
+</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+            <td></td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setReadPermission(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        void
+        setReadPermission(<a href="../../../reference/java/lang/String.html">String</a> permission)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the permission required to read data from the content
+ provider.  This is normally set for you from its manifest information
+ when the provider is first created.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>permission</td>
+        <td>Name of the permission required for read-only access.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setWritePermission(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+        final 
+         
+         
+        void
+        setWritePermission(<a href="../../../reference/java/lang/String.html">String</a> permission)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Change the permission required to read and write data in the content
+ provider.  This is normally set for you from its manifest information
+ when the provider is first created.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>permission</td>
+        <td>Name of the permission required for read/write access.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

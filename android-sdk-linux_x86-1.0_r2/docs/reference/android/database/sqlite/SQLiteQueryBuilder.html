@@ -1,0 +1,1878 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.database.sqlite.SQLiteQueryBuilder - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../assets/style.css" />
+<script src="../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../')"
+            onkeyup="search_changed(event, false, '../../../../')"
+            onchange="search_changed(event, false, '../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../reference/android/database/sqlite/package-summary.html">android.database.sqlite</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.database.sqlite.SQLiteQueryBuilder</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.database.sqlite.SQLiteQueryBuilder</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>This is a convience class that helps build SQL queries to be sent to
+ <a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> objects.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#SQLiteQueryBuilder()">SQLiteQueryBuilder</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#appendColumns(java.lang.StringBuilder, java.lang.String[])">appendColumns</a>(<a href="../../../../reference/java/lang/StringBuilder.html">StringBuilder</a> s, <a href="../../../../reference/java/lang/String.html">String[]</a> columns)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add the names that are non-null in columns to s, separating
+ them with commas.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#appendWhere(java.lang.CharSequence)">appendWhere</a>(<a href="../../../../reference/java/lang/CharSequence.html">CharSequence</a> inWhere)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Append a chunk to the WHERE clause of the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#appendWhereEscapeString(java.lang.String)">appendWhereEscapeString</a>(<a href="../../../../reference/java/lang/String.html">String</a> inWhere)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Append a chunk to the WHERE clause of the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#buildQuery(java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">buildQuery</a>(<a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a SELECT statement suitable for use in a group of
+ SELECT statements that will be joined through UNION operators
+ in buildUnionQuery.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#buildQueryString(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)">buildQueryString</a>(boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> tables, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> where, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Build an SQL query string from the given clauses.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#buildUnionQuery(java.lang.String[], java.lang.String, java.lang.String)">buildUnionQuery</a>(<a href="../../../../reference/java/lang/String.html">String[]</a> subQueries, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Given a set of subqueries, all of which are SELECT statements,
+ construct a query that returns the union of what those
+ subqueries return.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#buildUnionSubQuery(java.lang.String, java.lang.String[], java.util.Set<java.lang.String>, int, java.lang.String, java.lang.String, java.lang.String[], java.lang.String, java.lang.String)">buildUnionSubQuery</a>(<a href="../../../../reference/java/lang/String.html">String</a> typeDiscriminatorColumn, <a href="../../../../reference/java/lang/String.html">String[]</a> unionColumns, <a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; columnsPresentInTable, int computedColumnsOffset, <a href="../../../../reference/java/lang/String.html">String</a> typeDiscriminatorValue, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Construct a SELECT statement suitable for use in a group of
+ SELECT statements that will be joined through UNION operators
+ in buildUnionQuery.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#getTables()">getTables</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the list of tables being queried</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)">query</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform a query by combining all current settings and the
+ information passed into this method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/android/database/Cursor.html">Cursor</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">query</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Perform a query by combining all current settings and the
+ information passed into this method.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#setCursorFactory(android.database.sqlite.SQLiteDatabase.CursorFactory)">setCursorFactory</a>(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the cursor factory to be used for the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#setDistinct(boolean)">setDistinct</a>(boolean distinct)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Mark the query as DISTINCT.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#setProjectionMap(java.util.Map<java.lang.String, java.lang.String>)">setProjectionMap</a>(<a href="../../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt; columnMap)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the projection map for the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#setTables(java.lang.String)">setTables</a>(<a href="../../../../reference/java/lang/String.html">String</a> inTables)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the list of tables to query.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="SQLiteQueryBuilder()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        SQLiteQueryBuilder()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="appendColumns(java.lang.StringBuilder, java.lang.String[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        appendColumns(<a href="../../../../reference/java/lang/StringBuilder.html">StringBuilder</a> s, <a href="../../../../reference/java/lang/String.html">String[]</a> columns)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add the names that are non-null in columns to s, separating
+ them with commas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="appendWhere(java.lang.CharSequence)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        appendWhere(<a href="../../../../reference/java/lang/CharSequence.html">CharSequence</a> inWhere)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Append a chunk to the WHERE clause of the query. All chunks appended are surrounded
+ by parenthesis and ANDed with the selection passed to <a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)">query(SQLiteDatabase, String[], String, String[], String, String, String)</a>. The final
+ WHERE clause looks like:
+
+ WHERE (&lt;append chunk 1>&lt;append chunk2>) AND (&lt;query() selection parameter>)
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>inWhere</td>
+        <td>the chunk of text to append to the WHERE clause.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="appendWhereEscapeString(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        appendWhereEscapeString(<a href="../../../../reference/java/lang/String.html">String</a> inWhere)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Append a chunk to the WHERE clause of the query. All chunks appended are surrounded
+ by parenthesis and ANDed with the selection passed to <a href="../../../../reference/android/database/sqlite/SQLiteQueryBuilder.html#query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)">query(SQLiteDatabase, String[], String, String[], String, String, String)</a>. The final
+ WHERE clause looks like:
+
+ WHERE (&lt;append chunk 1>&lt;append chunk2>) AND (&lt;query() selection parameter>)
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>inWhere</td>
+        <td>the chunk of text to append to the WHERE clause. it will be escaped
+ to avoid SQL injection attacks
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="buildQuery(java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        buildQuery(<a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a SELECT statement suitable for use in a group of
+ SELECT statements that will be joined through UNION operators
+ in buildUnionQuery.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>projectionIn</td>
+        <td>A list of which columns to return. Passing
+    null will return all columns, which is discouraged to
+    prevent reading data from storage that isn't going to be
+    used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return,
+   formatted as an SQL WHERE clause (excluding the WHERE
+   itself).  Passing null will return all rows for the given
+   URL.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which
+   will be replaced by the values from selectionArgs, in order
+   that they appear in the selection.  The values will be bound
+   as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted
+   as an SQL GROUP BY clause (excluding the GROUP BY itself).
+   Passing null will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in
+   the cursor, if row grouping is being used, formatted as an
+   SQL HAVING clause (excluding the HAVING itself).  Passing
+   null will cause all row groups to be included, and is
+   required when row grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>sortOrder</td>
+        <td>How to order the rows, formatted as an SQL
+   ORDER BY clause (excluding the ORDER BY itself). Passing null
+   will use the default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+   formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the resulting SQL SELECT statement
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="buildQueryString(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        buildQueryString(boolean distinct, <a href="../../../../reference/java/lang/String.html">String</a> tables, <a href="../../../../reference/java/lang/String.html">String[]</a> columns, <a href="../../../../reference/java/lang/String.html">String</a> where, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> orderBy, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Build an SQL query string from the given clauses.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>distinct</td>
+        <td>true if you want each row to be unique, false otherwise.</td>
+      </tr>
+    <tr>
+        <th>tables</td>
+        <td>The table names to compile the query against.</td>
+      </tr>
+    <tr>
+        <th>columns</td>
+        <td>A list of which columns to return. Passing null will
+            return all columns, which is discouraged to prevent reading
+            data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>where</td>
+        <td>A filter declaring which rows to return, formatted as an SQL
+            WHERE clause (excluding the WHERE itself). Passing null will
+            return all rows for the given URL.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted as an SQL
+            GROUP BY clause (excluding the GROUP BY itself). Passing null
+            will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in the cursor,
+            if row grouping is being used, formatted as an SQL HAVING
+            clause (excluding the HAVING itself). Passing null will cause
+            all row groups to be included, and is required when row
+            grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>orderBy</td>
+        <td>How to order the rows, formatted as an SQL ORDER BY clause
+            (excluding the ORDER BY itself). Passing null will use the
+            default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+            formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the SQL query string
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="buildUnionQuery(java.lang.String[], java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        buildUnionQuery(<a href="../../../../reference/java/lang/String.html">String[]</a> subQueries, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Given a set of subqueries, all of which are SELECT statements,
+ construct a query that returns the union of what those
+ subqueries return.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>subQueries</td>
+        <td>an array of SQL SELECT statements, all of
+   which must have the same columns as the same positions in
+   their results</td>
+      </tr>
+    <tr>
+        <th>sortOrder</td>
+        <td>How to order the rows, formatted as an SQL
+   ORDER BY clause (excluding the ORDER BY itself).  Passing
+   null will use the default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>The limit clause, which applies to the entire union result set</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the resulting SQL SELECT statement
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="buildUnionSubQuery(java.lang.String, java.lang.String[], java.util.Set<java.lang.String>, int, java.lang.String, java.lang.String, java.lang.String[], java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        buildUnionSubQuery(<a href="../../../../reference/java/lang/String.html">String</a> typeDiscriminatorColumn, <a href="../../../../reference/java/lang/String.html">String[]</a> unionColumns, <a href="../../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>&gt; columnsPresentInTable, int computedColumnsOffset, <a href="../../../../reference/java/lang/String.html">String</a> typeDiscriminatorValue, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Construct a SELECT statement suitable for use in a group of
+ SELECT statements that will be joined through UNION operators
+ in buildUnionQuery.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>typeDiscriminatorColumn</td>
+        <td>the name of the result column
+   whose cells will contain the name of the table from which
+   each row was drawn.</td>
+      </tr>
+    <tr>
+        <th>unionColumns</td>
+        <td>the names of the columns to appear in the
+   result.  This may include columns that do not appear in the
+   table this SELECT is querying (i.e. mTables), but that do
+   appear in one of the other tables in the UNION query that we
+   are constructing.</td>
+      </tr>
+    <tr>
+        <th>columnsPresentInTable</td>
+        <td>a Set of the names of the columns
+   that appear in this table (i.e. in the table whose name is
+   mTables).  Since columns in unionColumns include columns that
+   appear only in other tables, we use this array to distinguish
+   which ones actually are present.  Other columns will have
+   NULL values for results from this subquery.</td>
+      </tr>
+    <tr>
+        <th>computedColumnsOffset</td>
+        <td>all columns in unionColumns before
+   this index are included under the assumption that they're
+   computed and therefore won't appear in columnsPresentInTable,
+   e.g. "date * 1000 as normalized_date"</td>
+      </tr>
+    <tr>
+        <th>typeDiscriminatorValue</td>
+        <td>the value used for the
+   type-discriminator column in this subquery</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return,
+   formatted as an SQL WHERE clause (excluding the WHERE
+   itself).  Passing null will return all rows for the given
+   URL.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which
+   will be replaced by the values from selectionArgs, in order
+   that they appear in the selection.  The values will be bound
+   as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted
+   as an SQL GROUP BY clause (excluding the GROUP BY itself).
+   Passing null will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in
+   the cursor, if row grouping is being used, formatted as an
+   SQL HAVING clause (excluding the HAVING itself).  Passing
+   null will cause all row groups to be included, and is
+   required when row grouping is not being used.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the resulting SQL SELECT statement
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getTables()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/java/lang/String.html">String</a>
+        getTables()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the list of tables being queried
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the list of tables being queried
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        query(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform a query by combining all current settings and the
+ information passed into this method.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>db</td>
+        <td>the database to query on</td>
+      </tr>
+    <tr>
+        <th>projectionIn</td>
+        <td>A list of which columns to return. Passing
+   null will return all columns, which is discouraged to prevent
+   reading data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return,
+   formatted as an SQL WHERE clause (excluding the WHERE
+   itself). Passing null will return all rows for the given URL.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which
+   will be replaced by the values from selectionArgs, in order
+   that they appear in the selection. The values will be bound
+   as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted
+   as an SQL GROUP BY clause (excluding the GROUP BY
+   itself). Passing null will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in
+   the cursor, if row grouping is being used, formatted as an
+   SQL HAVING clause (excluding the HAVING itself).  Passing
+   null will cause all row groups to be included, and is
+   required when row grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>sortOrder</td>
+        <td>How to order the rows, formatted as an SQL
+   ORDER BY clause (excluding the ORDER BY itself). Passing null
+   will use the default sort order, which may be unordered.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a cursor over the result set</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/content/ContentResolver.html#query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)">query(android.net.Uri, String[], String, String[], String)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../reference/android/database/Cursor.html">Cursor</a>
+        query(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.html">SQLiteDatabase</a> db, <a href="../../../../reference/java/lang/String.html">String[]</a> projectionIn, <a href="../../../../reference/java/lang/String.html">String</a> selection, <a href="../../../../reference/java/lang/String.html">String[]</a> selectionArgs, <a href="../../../../reference/java/lang/String.html">String</a> groupBy, <a href="../../../../reference/java/lang/String.html">String</a> having, <a href="../../../../reference/java/lang/String.html">String</a> sortOrder, <a href="../../../../reference/java/lang/String.html">String</a> limit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Perform a query by combining all current settings and the
+ information passed into this method.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>db</td>
+        <td>the database to query on</td>
+      </tr>
+    <tr>
+        <th>projectionIn</td>
+        <td>A list of which columns to return. Passing
+   null will return all columns, which is discouraged to prevent
+   reading data from storage that isn't going to be used.</td>
+      </tr>
+    <tr>
+        <th>selection</td>
+        <td>A filter declaring which rows to return,
+   formatted as an SQL WHERE clause (excluding the WHERE
+   itself). Passing null will return all rows for the given URL.</td>
+      </tr>
+    <tr>
+        <th>selectionArgs</td>
+        <td>You may include ?s in selection, which
+   will be replaced by the values from selectionArgs, in order
+   that they appear in the selection. The values will be bound
+   as Strings.</td>
+      </tr>
+    <tr>
+        <th>groupBy</td>
+        <td>A filter declaring how to group rows, formatted
+   as an SQL GROUP BY clause (excluding the GROUP BY
+   itself). Passing null will cause the rows to not be grouped.</td>
+      </tr>
+    <tr>
+        <th>having</td>
+        <td>A filter declare which row groups to include in
+   the cursor, if row grouping is being used, formatted as an
+   SQL HAVING clause (excluding the HAVING itself).  Passing
+   null will cause all row groups to be included, and is
+   required when row grouping is not being used.</td>
+      </tr>
+    <tr>
+        <th>sortOrder</td>
+        <td>How to order the rows, formatted as an SQL
+   ORDER BY clause (excluding the ORDER BY itself). Passing null
+   will use the default sort order, which may be unordered.</td>
+      </tr>
+    <tr>
+        <th>limit</td>
+        <td>Limits the number of rows returned by the query,
+   formatted as LIMIT clause. Passing null denotes no LIMIT clause.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a cursor over the result set</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../../reference/android/content/ContentResolver.html#query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)">query(android.net.Uri, String[], String, String[], String)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCursorFactory(android.database.sqlite.SQLiteDatabase.CursorFactory)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCursorFactory(<a href="../../../../reference/android/database/sqlite/SQLiteDatabase.CursorFactory.html">SQLiteDatabase.CursorFactory</a> factory)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the cursor factory to be used for the query.  You can use
+ one factory for all queries on a database but it is normally
+ easier to specify the factory when doing this query.  @param
+ factory the factor to use
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDistinct(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDistinct(boolean distinct)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Mark the query as DISTINCT.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>distinct</td>
+        <td>if true the query is DISTINCT, otherwise it isn't
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setProjectionMap(java.util.Map<java.lang.String, java.lang.String>)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setProjectionMap(<a href="../../../../reference/java/util/Map.html">Map</a>&lt;<a href="../../../../reference/java/lang/String.html">String</a>,&nbsp;<a href="../../../../reference/java/lang/String.html">String</a>&gt; columnMap)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the projection map for the query.  The projection map maps
+ from column names that the caller passes into query to database
+ column names. This is useful for renaming columns as well as
+ disambiguating column names when doing joins. For example you
+ could map "name" to "people.name".  If a projection map is set
+ it must contain all column names the user may request, even if
+ the key and value are the same.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>columnMap</td>
+        <td>maps from the user column names to the database column names
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTables(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTables(<a href="../../../../reference/java/lang/String.html">String</a> inTables)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the list of tables to query. Multiple tables can be specified to perform a join.
+ For example:
+   setTables("foo, bar")
+   setTables("foo LEFT OUTER JOIN bar ON (foo.id = bar.foo_id)")
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>inTables</td>
+        <td>the list of tables to query on
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

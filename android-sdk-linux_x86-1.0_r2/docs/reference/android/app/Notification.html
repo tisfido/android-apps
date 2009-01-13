@@ -1,0 +1,2805 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.app.Notification - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/app/package-summary.html">android.app</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.app.Notification</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.app.Notification</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/android/os/Parcelable.html">Parcelable</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A class that represents how a persistent notification is to be presented to
+ the user using the <a href="../../../reference/android/app/NotificationManager.html">NotificationManager</a>.
+
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Constants</h3>
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol"><a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/app/Notification.html">Notification</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#CREATOR">CREATOR</a>&nbsp;</td>
+        <td class="jd-descrcol">Parcelable.Creator that instantiates Notification objects
+&nbsp;</td>
+        
+            <td class="jd-valcol">&nbsp;</td>
+            <td class="jd-valcol">&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#DEFAULT_ALL">DEFAULT_ALL</a>&nbsp;</td>
+        <td class="jd-descrcol">Use all default values (where applicable).&nbsp;</td>
+        
+            <td class="jd-valcol">-1&nbsp;</td>
+            <td class="jd-valcol">0xffffffff&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#DEFAULT_LIGHTS">DEFAULT_LIGHTS</a>&nbsp;</td>
+        <td class="jd-descrcol">Use the default notification lights.&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#DEFAULT_SOUND">DEFAULT_SOUND</a>&nbsp;</td>
+        <td class="jd-descrcol">Use the default notification sound.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#DEFAULT_VIBRATE">DEFAULT_VIBRATE</a>&nbsp;</td>
+        <td class="jd-descrcol">Use the default notification vibrate.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_AUTO_CANCEL">FLAG_AUTO_CANCEL</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if the notification should be canceled when it is clicked by the
+ user.&nbsp;</td>
+        
+            <td class="jd-valcol">16&nbsp;</td>
+            <td class="jd-valcol">0x00000010&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_INSISTENT">FLAG_INSISTENT</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that if set,
+ the audio and vibration will be repeated until the notification is
+ cancelled.&nbsp;</td>
+        
+            <td class="jd-valcol">4&nbsp;</td>
+            <td class="jd-valcol">0x00000004&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_NO_CLEAR">FLAG_NO_CLEAR</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if the notification should not be canceled when the user clicks
+ the Clear all button.&nbsp;</td>
+        
+            <td class="jd-valcol">32&nbsp;</td>
+            <td class="jd-valcol">0x00000020&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_ONGOING_EVENT">FLAG_ONGOING_EVENT</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if this notification is in reference to something that is ongoing,
+ like a phone call.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_ONLY_ALERT_ONCE">FLAG_ONLY_ALERT_ONCE</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if you want the sound and/or vibration play each time the
+ notification is sent, even if it has not been canceled before that.&nbsp;</td>
+        
+            <td class="jd-valcol">8&nbsp;</td>
+            <td class="jd-valcol">0x00000008&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#FLAG_SHOW_LIGHTS">FLAG_SHOW_LIGHTS</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if you want the LED on for this notification.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#STREAM_DEFAULT">STREAM_DEFAULT</a>&nbsp;</td>
+        <td class="jd-descrcol">Use this constant as the value for audioStreamType to request that
+ the default stream type for notifications be used.&nbsp;</td>
+        
+            <td class="jd-valcol">-1&nbsp;</td>
+            <td class="jd-valcol">0xffffffff&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-android.os.Parcelable')" class="jd-expando-trigger"
+        ><img id="inherited-constants-android.os.Parcelable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+</h5>
+<div id="inherited-constants-android.os.Parcelable">
+<div id="inherited-constants-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR">CONTENTS_FILE_DESCRIPTOR</a>,
+
+<a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>
+
+</div>
+<div id="inherited-constants-android.os.Parcelable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR">CONTENTS_FILE_DESCRIPTOR</a>&nbsp;</td>
+        <td class="jd-descrcol">Bit masks for use with <a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents()</a>: each bit represents a
+ kind of object considered to have potential special significance when
+ marshalled.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>&nbsp;</td>
+        <td class="jd-descrcol">Flag for use with <a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel(Parcel, int)</a>: the object being written
+ is a return value, that is the result of a function such as
+ "<code>Parcelable someFunction()</code>",
+ "<code>void someFunction(out Parcelable)</code>", or
+ "<code>void someFunction(inout Parcelable)</code>".&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<h3>Fields</h3>
+
+<table class="jd-linktable">
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#audioStreamType">audioStreamType</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The audio stream type to use when playing the sound.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#contentIntent">contentIntent</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The intent to execute when the expanded status entry is clicked.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/widget/RemoteViews.html">RemoteViews</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#contentView">contentView</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The view that shows when this notification is shown in the expanded status bar.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#defaults">defaults</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Specifies which values should be taken from the defaults.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#deleteIntent">deleteIntent</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The intent to execute when the status entry is deleted by the user
+ with the "Clear All Notifications" button.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#flags">flags</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#icon">icon</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The resource id of a drawable to use as the icon in the status bar.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#iconLevel">iconLevel</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">If the icon in the status bar is to have more than one level, you can set this.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#ledARGB">ledARGB</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The color of the led.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#ledOffMS">ledOffMS</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The number of milliseconds for the LED to be off while it's flashing.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#ledOnMS">ledOnMS</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The number of milliseconds for the LED to be on while it's flashing.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#number">number</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The number of events that this notification represents.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/Uri.html">Uri</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#sound">sound</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The sound to play.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#tickerText">tickerText</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">Text to scroll across the screen when this item is added to
+ the status bar.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long[]&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#vibrate">vibrate</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The pattern with which to vibrate.&nbsp;</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">public&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">long&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/app/Notification.html#when">when</a>&nbsp;</td>
+        <td class="jd-descrcol" width="100%">The timestamp for the notification.&nbsp;</td>
+    </tr>
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#Notification()">Notification</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a Notification object with everything set to 0.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#Notification(int, java.lang.CharSequence, long)">Notification</a>(int icon, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> tickerText, long when)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a Notification object with the information needed to
+ have a status bar icon without the standard expanded view.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#Notification(android.os.Parcel)">Notification</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unflatten the notification from a parcel.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#describeContents()">describeContents</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#setLatestEventInfo(android.content.Context, java.lang.CharSequence, java.lang.CharSequence, android.app.PendingIntent)">setLatestEventInfo</a>(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> contentTitle, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> contentText, <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a> contentIntent)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the <a href="../../../reference/android/app/Notification.html#contentView">contentView</a> field to be a view with the standard "Latest Event"
+ layout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/app/Notification.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten this notification from a parcel.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-android.os.Parcelable')" class="jd-expando-trigger"
+        ><img id="inherited-methods-android.os.Parcelable-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+</h5>
+<div id="inherited-methods-android.os.Parcelable">
+<div id="inherited-methods-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents</a>,
+
+<a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>
+
+</div>
+<div id="inherited-methods-android.os.Parcelable-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> dest, int flags)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Flatten this object in to a Parcel.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+<h3>Constants</h3>
+
+
+
+<A NAME="CREATOR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/app/Notification.html">Notification</a>&gt;
+        CREATOR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parcelable.Creator that instantiates Notification objects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="DEFAULT_ALL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DEFAULT_ALL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use all default values (where applicable).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -1
+                (0xffffffff)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DEFAULT_LIGHTS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DEFAULT_LIGHTS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use the default notification lights. This will ignore the
+ <a href="../../../reference/android/app/Notification.html#FLAG_SHOW_LIGHTS">FLAG_SHOW_LIGHTS</a> bit, and <a href="../../../reference/android/app/Notification.html#ledARGB">ledARGB</a>, <a href="../../../reference/android/app/Notification.html#ledOffMS">ledOffMS</a>, or
+ <a href="../../../reference/android/app/Notification.html#ledOnMS">ledOnMS</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#defaults">defaults</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DEFAULT_SOUND"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DEFAULT_SOUND
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use the default notification sound. This will ignore any given
+ <a href="../../../reference/android/app/Notification.html#sound">sound</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#defaults">defaults</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="DEFAULT_VIBRATE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        DEFAULT_VIBRATE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use the default notification vibrate. This will ignore any given
+ <a href="../../../reference/android/app/Notification.html#vibrate">vibrate</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#defaults">defaults</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_AUTO_CANCEL"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_AUTO_CANCEL
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if the notification should be canceled when it is clicked by the
+ user. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_INSISTENT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_INSISTENT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that if set,
+ the audio and vibration will be repeated until the notification is
+ cancelled.
+
+ <p>
+ NOTE: This notion will change when we have decided exactly
+ what the UI will be.
+ </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_NO_CLEAR"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_NO_CLEAR
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if the notification should not be canceled when the user clicks
+ the Clear all button.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                32
+                (0x00000020)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_ONGOING_EVENT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_ONGOING_EVENT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if this notification is in reference to something that is ongoing,
+ like a phone call.  It should not be set if this notification is in
+ reference to something that happened at a particular point in time,
+ like a missed phone call.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_ONLY_ALERT_ONCE"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_ONLY_ALERT_ONCE
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if you want the sound and/or vibration play each time the
+ notification is sent, even if it has not been canceled before that.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                8
+                (0x00000008)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="FLAG_SHOW_LIGHTS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        FLAG_SHOW_LIGHTS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Bit to be bitwise-ored into the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field that should be
+ set if you want the LED on for this notification.
+ <ul>
+ <li>To turn the LED off, pass 0 in the alpha channel for colorARGB
+      or 0 for both ledOnMS and ledOffMS.</li>
+ <li>To turn the LED on, pass 1 for ledOnMS and 0 for ledOffMS.</li>
+ <li>To flash the LED, pass the number of milliseconds that it should
+      be on and off to ledOnMS and ledOffMS.</li>
+ </ul>
+ <p>
+ Since hardware varies, you are not guaranteed that any of the values
+ you pass are honored exactly.  Use the system defaults (TODO) if possible
+ because they will be set to values that work on any given hardware.
+ <p>
+ The alpha channel must be set for forward compatibility.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+<A NAME="STREAM_DEFAULT"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+        int
+        STREAM_DEFAULT
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Use this constant as the value for audioStreamType to request that
+ the default stream type for notifications be used.  Currently the
+ default stream type is STREAM_RING.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -1
+                (0xffffffff)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+<h3>Fields</h3>
+
+
+
+<A NAME="audioStreamType"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        audioStreamType
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The audio stream type to use when playing the sound.
+ Should be one of the STREAM_ constants from
+ <a href="../../../reference/android/media/AudioManager.html">AudioManager</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="contentIntent"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        contentIntent
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The intent to execute when the expanded status entry is clicked.  If
+ this is an activity, it must include the
+ <a href="../../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a> flag, which requires
+ that you take care of task management as described in the
+ <a href="../../../intro/appmodel.html">application model</a> document.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="contentView"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        <a href="../../../reference/android/widget/RemoteViews.html">RemoteViews</a>
+        contentView
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The view that shows when this notification is shown in the expanded status bar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="defaults"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        defaults
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Specifies which values should be taken from the defaults.
+ <p>
+ To set, OR the desired from <a href="../../../reference/android/app/Notification.html#DEFAULT_SOUND">DEFAULT_SOUND</a>,
+ <a href="../../../reference/android/app/Notification.html#DEFAULT_VIBRATE">DEFAULT_VIBRATE</a>, <a href="../../../reference/android/app/Notification.html#DEFAULT_LIGHTS">DEFAULT_LIGHTS</a>. For all default
+ values, use <a href="../../../reference/android/app/Notification.html#DEFAULT_ALL">DEFAULT_ALL</a>.
+ </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="deleteIntent"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a>
+        deleteIntent
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The intent to execute when the status entry is deleted by the user
+ with the "Clear All Notifications" button. This probably shouldn't
+ be launching an activity since several of those will be sent at the
+ same time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="flags"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        flags
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="icon"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        icon
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The resource id of a drawable to use as the icon in the status bar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="iconLevel"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        iconLevel
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+If the icon in the status bar is to have more than one level, you can set this.  Otherwise,
+ leave it at its default value of 0.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/widget/ImageView.html#setImageLevel(int)">setImageLevel(int)</a></li>
+    <li><a href="../../../reference/android/graphics/drawable/package-summary.html">android.graphics.drawable</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="ledARGB"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        ledARGB
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The color of the led.  The hardware will do its best approximation.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#FLAG_SHOW_LIGHTS">FLAG_SHOW_LIGHTS</a></li>
+    <li><a href="../../../reference/android/app/Notification.html#flags">flags</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="ledOffMS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        ledOffMS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The number of milliseconds for the LED to be off while it's flashing.
+ The hardware will do its best approximation.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#FLAG_SHOW_LIGHTS">FLAG_SHOW_LIGHTS</a></li>
+    <li><a href="../../../reference/android/app/Notification.html#flags">flags</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="ledOnMS"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        ledOnMS
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The number of milliseconds for the LED to be on while it's flashing.
+ The hardware will do its best approximation.
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Notification.html#FLAG_SHOW_LIGHTS">FLAG_SHOW_LIGHTS</a></li>
+    <li><a href="../../../reference/android/app/Notification.html#flags">flags</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="number"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        int
+        number
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The number of events that this notification represents.  For example, if this is the
+ new mail notification, this would be the number of unread messages.  This number is
+ be superimposed over the icon in the status bar.  If the number is 0 or negative, it
+ is not shown in the status bar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="sound"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        <a href="../../../reference/android/net/Uri.html">Uri</a>
+        sound
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The sound to play.
+ 
+ <p>
+ To play the default notification sound, see <a href="../../../reference/android/app/Notification.html#defaults">defaults</a>. 
+ </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="tickerText"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a>
+        tickerText
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Text to scroll across the screen when this item is added to
+ the status bar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="vibrate"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        long[]
+        vibrate
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The pattern with which to vibrate. This pattern will repeat if <a href="../../../reference/android/app/Notification.html#FLAG_INSISTENT">FLAG_INSISTENT</a> bit is set in the <a href="../../../reference/android/app/Notification.html#flags">flags</a> field.
+ 
+ <p>
+ To vibrate the default pattern, see <a href="../../../reference/android/app/Notification.html#defaults">defaults</a>.
+ </p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/os/Vibrator.html#vibrate(long[], int)">vibrate(long[], int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+
+    
+    </div>
+</div>
+
+
+<A NAME="when"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+        long
+        when
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+The timestamp for the notification.  The icons and expanded views
+ are sorted by this key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="Notification()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Notification()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a Notification object with everything set to 0.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Notification(int, java.lang.CharSequence, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Notification(int icon, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> tickerText, long when)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a Notification object with the information needed to
+ have a status bar icon without the standard expanded view.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>icon</td>
+        <td>The resource id of the icon to put in the status bar.</td>
+      </tr>
+    <tr>
+        <th>tickerText</td>
+        <td>The text that flows by in the status bar when the notification first
+                      activates.</td>
+      </tr>
+    <tr>
+        <th>when</td>
+        <td>The time to show in the time field.  In the System.currentTimeMillis
+                      timebase.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="Notification(android.os.Parcel)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        Notification(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Unflatten the notification from a parcel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="describeContents()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        describeContents()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a bitmask indicating the set of special object types marshalled
+ by the Parcelable.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLatestEventInfo(android.content.Context, java.lang.CharSequence, java.lang.CharSequence, android.app.PendingIntent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLatestEventInfo(<a href="../../../reference/android/content/Context.html">Context</a> context, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> contentTitle, <a href="../../../reference/java/lang/CharSequence.html">CharSequence</a> contentText, <a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a> contentIntent)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the <a href="../../../reference/android/app/Notification.html#contentView">contentView</a> field to be a view with the standard "Latest Event"
+ layout.
+
+ <p>Uses the <a href="../../../reference/android/app/Notification.html#icon">icon</a> and <a href="../../../reference/android/app/Notification.html#when">when</a> fields to set the icon and time fields
+ in the view.</p>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>The context for your application / activity.</td>
+      </tr>
+    <tr>
+        <th>contentTitle</td>
+        <td>The title that goes in the expanded entry.</td>
+      </tr>
+    <tr>
+        <th>contentText</td>
+        <td>The text that goes in the expanded entry.</td>
+      </tr>
+    <tr>
+        <th>contentIntent</td>
+        <td>The intent to launch when the user clicks the expanded notification.
+ If this is an activity, it must include the
+ <a href="../../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a> flag, which requires
+ that you take care of task management as described in the
+ <a href="../../../intro/appmodel.html">application model</a> document.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="toString()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        toString()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a string containing a concise, human-readable description of the
+ receiver.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>String a printable representation for the receiver.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="writeToParcel(android.os.Parcel, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        writeToParcel(<a href="../../../reference/android/os/Parcel.html">Parcel</a> parcel, int flags)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Flatten this notification from a parcel.
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parcel</td>
+        <td>The Parcel in which the object should be written.</td>
+      </tr>
+    <tr>
+        <th>flags</td>
+        <td>Additional flags about how the object should be written.
+ May be 0 or <a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a>.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

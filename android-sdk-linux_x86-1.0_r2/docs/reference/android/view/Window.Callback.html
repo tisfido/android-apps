@@ -1,0 +1,1427 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.view.Window.Callback - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/view/package-summary.html">android.view</a>
+<br/>
+    public 
+    static 
+     
+    
+    interface
+</div>
+<h1>android.view.Window.Callback</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.view.Window.Callback</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>API from a Window back to its caller.  This allows the client to
+ intercept key dispatching, panels and menus, etc.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/android/app/Activity.html">Activity</a>,
+            
+                <a href="../../../reference/android/app/ActivityGroup.html">ActivityGroup</a>,
+            
+                <a href="../../../reference/android/app/AlertDialog.html">AlertDialog</a>,
+            
+                <a href="../../../reference/android/app/AliasActivity.html">AliasActivity</a>,
+            
+                <a href="../../../reference/android/text/method/CharacterPickerDialog.html">CharacterPickerDialog</a>,
+            
+                <a href="../../../reference/android/app/DatePickerDialog.html">DatePickerDialog</a>,
+            
+                <a href="../../../reference/android/app/Dialog.html">Dialog</a>,
+            
+                <a href="../../../reference/android/app/ExpandableListActivity.html">ExpandableListActivity</a>,
+            
+                <a href="../../../reference/android/app/LauncherActivity.html">LauncherActivity</a>,
+            
+                <a href="../../../reference/android/app/ListActivity.html">ListActivity</a>,
+            
+                <a href="../../../reference/com/google/android/maps/MapActivity.html">MapActivity</a>,
+            
+                <a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a>,
+            
+                <a href="../../../reference/android/app/ProgressDialog.html">ProgressDialog</a>,
+            
+                <a href="../../../reference/android/app/TabActivity.html">TabActivity</a>,
+            
+                <a href="../../../reference/android/app/TimePickerDialog.html">TimePickerDialog</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/Activity.html">Activity</a></td>
+            <td class="jd-descrcol" width="100%">An activity is a single, focused thing that the user can do.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/ActivityGroup.html">ActivityGroup</a></td>
+            <td class="jd-descrcol" width="100%">A screen that contains and runs multiple embedded activities.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/AlertDialog.html">AlertDialog</a></td>
+            <td class="jd-descrcol" width="100%">A subclass of Dialog that can display one, two or three buttons.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/AliasActivity.html">AliasActivity</a></td>
+            <td class="jd-descrcol" width="100%">Stub activity that launches another activity (and then finishes itself)
+ based on information in its component's manifest meta-data.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/text/method/CharacterPickerDialog.html">CharacterPickerDialog</a></td>
+            <td class="jd-descrcol" width="100%">Dialog for choosing accented characters related to a base character.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/DatePickerDialog.html">DatePickerDialog</a></td>
+            <td class="jd-descrcol" width="100%">A simple dialog containing an <a href="../../../reference/android/widget/DatePicker.html">DatePicker</a>.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/Dialog.html">Dialog</a></td>
+            <td class="jd-descrcol" width="100%">Base class for Dialogs.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/ExpandableListActivity.html">ExpandableListActivity</a></td>
+            <td class="jd-descrcol" width="100%">An activity that displays an expandable list of items by binding to a data
+ source implementing the ExpandableListAdapter, and exposes event handlers
+ when the user selects an item.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/LauncherActivity.html">LauncherActivity</a></td>
+            <td class="jd-descrcol" width="100%">Displays a list of all activities which can be performed
+ for a given intent.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/ListActivity.html">ListActivity</a></td>
+            <td class="jd-descrcol" width="100%">An activity that displays a list of items by binding to a data source such as
+ an array or Cursor, and exposes event handlers when the user selects an item.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/com/google/android/maps/MapActivity.html">MapActivity</a></td>
+            <td class="jd-descrcol" width="100%">Base class with code to manage the boring necessities of any
+ activity that displays a <a href="../../../reference/com/google/android/maps/MapView.html">MapView</a>.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a></td>
+            <td class="jd-descrcol" width="100%">The <a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a> activity shows a hierarchy of preferences as
+ lists, possibly spanning multiple screens.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/ProgressDialog.html">ProgressDialog</a></td>
+            <td class="jd-descrcol" width="100%"><p>A dialog showing a progress indicator and an optional text message or view.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/TabActivity.html">TabActivity</a></td>
+            <td class="jd-descrcol" width="100%">An activity that contains and runs multiple embedded activities or views.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/app/TimePickerDialog.html">TimePickerDialog</a></td>
+            <td class="jd-descrcol" width="100%">A dialog that prompts the user for the time of day using a <a href="../../../reference/android/widget/TimePicker.html">TimePicker</a>.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#dispatchKeyEvent(android.view.KeyEvent)">dispatchKeyEvent</a>(<a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called to process key events.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#dispatchTouchEvent(android.view.MotionEvent)">dispatchTouchEvent</a>(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called to process touch screen events.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#dispatchTrackballEvent(android.view.MotionEvent)">dispatchTrackballEvent</a>(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called to process trackball events.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onContentChanged()">onContentChanged</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This hook is called whenever the content view of the screen changes
+ (due to a call to
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">Window.setContentView</a> or
+ <a href="../../../reference/android/view/Window.html#addContentView(android.view.View, android.view.ViewGroup.LayoutParams)">Window.addContentView</a>).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onCreatePanelMenu(int, android.view.Menu)">onCreatePanelMenu</a>(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Initialize the contents of the menu for panel 'featureId'.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/view/View.html">View</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onCreatePanelView(int)">onCreatePanelView</a>(int featureId)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Instantiate the view to display in the panel for 'featureId'.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onMenuItemSelected(int, android.view.MenuItem)">onMenuItemSelected</a>(int featureId, <a href="../../../reference/android/view/MenuItem.html">MenuItem</a> item)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a panel's menu item has been selected by the user.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onMenuOpened(int, android.view.Menu)">onMenuOpened</a>(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a panel's menu is opened by the user.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onPanelClosed(int, android.view.Menu)">onPanelClosed</a>(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when a panel is being closed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onPreparePanel(int, android.view.View, android.view.Menu)">onPreparePanel</a>(int featureId, <a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Prepare a panel to be displayed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onSearchRequested()">onSearchRequested</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called when the user signals the desire to start a search.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onWindowAttributesChanged(android.view.WindowManager.LayoutParams)">onWindowAttributesChanged</a>(<a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a> attrs)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This is called whenever the current window attributes change.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/view/Window.Callback.html#onWindowFocusChanged(boolean)">onWindowFocusChanged</a>(boolean hasFocus)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">This hook is called whenever the window focus changes.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="dispatchKeyEvent(android.view.KeyEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        dispatchKeyEvent(<a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called to process key events.  At the very least your
+ implementation must call
+ <a href="../../../reference/android/view/Window.html#superDispatchKeyEvent(android.view.KeyEvent)">superDispatchKeyEvent(KeyEvent)</a> to do the
+ standard key processing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>event</td>
+        <td>The key event.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean Return true if this event was consumed.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dispatchTouchEvent(android.view.MotionEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        dispatchTouchEvent(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called to process touch screen events.  At the very least your
+ implementation must call
+ <a href="../../../reference/android/view/Window.html#superDispatchTouchEvent(android.view.MotionEvent)">superDispatchTouchEvent(MotionEvent)</a> to do the
+ standard touch screen processing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>event</td>
+        <td>The touch screen event.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean Return true if this event was consumed.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dispatchTrackballEvent(android.view.MotionEvent)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        dispatchTrackballEvent(<a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a> event)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called to process trackball events.  At the very least your
+ implementation must call
+ <a href="../../../reference/android/view/Window.html#superDispatchTrackballEvent(android.view.MotionEvent)">superDispatchTrackballEvent(MotionEvent)</a> to do the
+ standard trackball processing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>event</td>
+        <td>The trackball event.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean Return true if this event was consumed.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onContentChanged()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onContentChanged()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This hook is called whenever the content view of the screen changes
+ (due to a call to
+ <a href="../../../reference/android/view/Window.html#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)">Window.setContentView</a> or
+ <a href="../../../reference/android/view/Window.html#addContentView(android.view.View, android.view.ViewGroup.LayoutParams)">Window.addContentView</a>).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onCreatePanelMenu(int, android.view.Menu)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onCreatePanelMenu(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Initialize the contents of the menu for panel 'featureId'.  This is
+ called if onCreatePanelView() returns null, giving you a standard
+ menu in which you can place your items.  It is only called once for
+ the panel, the first time it is shown.
+
+ <p>You can safely hold on to <var>menu</var> (and any items created
+ from it), making modifications to it as desired, until the next
+ time onCreatePanelMenu() is called for this feature.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The panel being created.</td>
+      </tr>
+    <tr>
+        <th>menu</td>
+        <td>The menu inside the panel.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean You must return true for the panel to be displayed;
+         if you return false it will not be shown.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onCreatePanelView(int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/view/View.html">View</a>
+        onCreatePanelView(int featureId)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Instantiate the view to display in the panel for 'featureId'.
+ You can return null, in which case the default content (typically
+ a menu) will be created for you.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>Which panel is being created.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>view The top-level view to place in the panel.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.Callback.html#onPreparePanel(int, android.view.View, android.view.Menu)">onPreparePanel(int, View, Menu)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="onMenuItemSelected(int, android.view.MenuItem)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onMenuItemSelected(int featureId, <a href="../../../reference/android/view/MenuItem.html">MenuItem</a> item)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a panel's menu item has been selected by the user.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The panel that the menu is in.</td>
+      </tr>
+    <tr>
+        <th>item</td>
+        <td>The menu item that was selected.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean Return true to finish processing of selection, or
+         false to perform the normal menu handling (calling its
+         Runnable or sending a Message to its target Handler).
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onMenuOpened(int, android.view.Menu)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onMenuOpened(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a panel's menu is opened by the user. This may also be
+ called when the menu is changing from one type to another (for
+ example, from the icon menu to the expanded menu).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The panel that the menu is in.</td>
+      </tr>
+    <tr>
+        <th>menu</td>
+        <td>The menu that is opened.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>Return true to allow the menu to open, or false to prevent
+         the menu from opening.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onPanelClosed(int, android.view.Menu)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onPanelClosed(int featureId, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when a panel is being closed.  If another logical subsequent
+ panel is being opened (and this panel is being closed to make room for the subsequent
+ panel), this method will NOT be called.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The panel that is being displayed.</td>
+      </tr>
+    <tr>
+        <th>menu</td>
+        <td>If onCreatePanelView() returned null, this is the Menu
+            being displayed in the panel.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onPreparePanel(int, android.view.View, android.view.Menu)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onPreparePanel(int featureId, <a href="../../../reference/android/view/View.html">View</a> view, <a href="../../../reference/android/view/Menu.html">Menu</a> menu)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Prepare a panel to be displayed.  This is called right before the
+ panel window is shown, every time it is shown.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>featureId</td>
+        <td>The panel that is being displayed.</td>
+      </tr>
+    <tr>
+        <th>view</td>
+        <td>The View that was returned by onCreatePanelView().</td>
+      </tr>
+    <tr>
+        <th>menu</td>
+        <td>If onCreatePanelView() returned null, this is the Menu
+             being displayed in the panel.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>boolean You must return true for the panel to be displayed;
+         if you return false it will not be shown.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/view/Window.Callback.html#onCreatePanelView(int)">onCreatePanelView(int)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="onSearchRequested()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        onSearchRequested()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Called when the user signals the desire to start a search.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if search launched, false if activity refuses (blocks)</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/app/Activity.html#onSearchRequested()">onSearchRequested()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="onWindowAttributesChanged(android.view.WindowManager.LayoutParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onWindowAttributesChanged(<a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a> attrs)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This is called whenever the current window attributes change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="onWindowFocusChanged(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        onWindowFocusChanged(boolean hasFocus)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+This hook is called whenever the window focus changes.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>hasFocus</td>
+        <td>Whether the window now has focus.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

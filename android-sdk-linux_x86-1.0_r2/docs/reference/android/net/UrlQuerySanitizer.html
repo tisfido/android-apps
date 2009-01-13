@@ -1,0 +1,2918 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.net.UrlQuerySanitizer - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/net/package-summary.html">android.net</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.net.UrlQuerySanitizer</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.net.UrlQuerySanitizer</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Sanitizes the Query portion of a URL. Simple example:
+ <code>
+ UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
+ sanitizer.setAllowUnregisteredParamaters(true);
+ sanitizer.parseUrl("http://example.com/?name=Joe+User");
+ String name = sanitizer.getValue("name"));
+ // name now contains "Joe_User"
+ </code>
+ 
+ Register ValueSanitizers to customize the way individual
+ parameters are sanitized:
+ <code>
+ UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
+ sanitizer.registerParamater("name", UrlQuerySanitizer.createSpaceLegal());
+ sanitizer.parseUrl("http://example.com/?name=Joe+User");
+ String name = sanitizer.getValue("name"));
+ // name now contains "Joe User". (The string is first decoded, which
+ // converts the '+' to a ' '. Then the string is sanitized, which
+ // converts the ' ' to an '_'. (The ' ' is converted because the default
+ unregistered parameter sanitizer does not allow any special characters,
+ and ' ' is a special character.)
+ </code>
+ 
+ There are several ways to create ValueSanitizers. In order of increasing
+ sophistication:
+ <ol>
+ <li>Call one of the UrlQuerySanitizer.createXXX() methods.
+ <li>Construct your own instance of
+ UrlQuerySanitizer.IllegalCharacterValueSanitizer.
+ <li>Subclass UrlQuerySanitizer.ValueSanitizer to define your own value
+ sanitizer.
+ </ol>
+ 
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<h5>
+<a href="javascript:toggle_inherited('nested-classes')" class="jd-expando-trigger"
+        ><img id="nested-classes-trigger"
+        src="../../../assets/triangle-close.png"
+        class="jd-expando-trigger" /></a>
+Nested Classes</h5>
+
+    <div id="nested-classes">
+        <div id="nested-classes-list"
+                class="jd-inheritedlinks"
+                style="display: none;"
+                >
+            
+                <a href="../../../reference/android/net/UrlQuerySanitizer.IllegalCharacterValueSanitizer.html">UrlQuerySanitizer.IllegalCharacterValueSanitizer</a>,
+            
+                <a href="../../../reference/android/net/UrlQuerySanitizer.ParameterValuePair.html">UrlQuerySanitizer.ParameterValuePair</a>,
+            
+                <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+            
+        </div>
+        <div id="nested-classes-summary"
+                
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/net/UrlQuerySanitizer.IllegalCharacterValueSanitizer.html">UrlQuerySanitizer.IllegalCharacterValueSanitizer</a></td>
+            <td class="jd-descrcol" width="100%">Sanitize values based on which characters they contain.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ParameterValuePair.html">UrlQuerySanitizer.ParameterValuePair</a></td>
+            <td class="jd-descrcol" width="100%">A simple tuple that holds parameter-value pairs.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a></td>
+            <td class="jd-descrcol" width="100%">A functor used to sanitize a single query value.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#UrlQuerySanitizer()">UrlQuerySanitizer</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a UrlQuerySanitizer.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#UrlQuerySanitizer(java.lang.String)">UrlQuerySanitizer</a>(<a href="../../../reference/java/lang/String.html">String</a> url)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Constructs a UrlQuerySanitizer and parse a URL.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllButNulAndAngleBracketsLegal()">getAllButNulAndAngleBracketsLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that allows any special characters
+ except angle brackets ('<' and '>') and Nul ('\0').</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllButNulLegal()">getAllButNulLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that allows everything except Nul ('\0')
+ characters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllButWhitespaceLegal()">getAllButWhitespaceLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that allows everything except Nul ('\0')
+ characters, space (' '), and other whitespace characters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllIllegal()">getAllIllegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that does not allow any special characters,
+ and also does not allow script URLs.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllowUnregisteredParamaters()">getAllowUnregisteredParamaters</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get whether or not unregistered parameters are allowed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAmpAndSpaceLegal()">getAmpAndSpaceLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that does not allow any special characters
+ except ampersand ('&') and space (' ').</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAmpLegal()">getAmpLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that does not allow any special characters
+ except ampersand ('&').</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getEffectiveValueSanitizer(java.lang.String)">getEffectiveValueSanitizer</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the effective value sanitizer for a parameter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/net/UrlQuerySanitizer.ParameterValuePair.html">UrlQuerySanitizer.ParameterValuePair</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getParameterList()">getParameterList</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">An array list of all of the parameter value pairs in the sanitized
+ query, in the order they appeared in the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getParameterSet()">getParameterSet</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get a set of all of the parameters found in the sanitized query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getPreferFirstRepeatedParameter()">getPreferFirstRepeatedParameter</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get whether or not the first occurrence of a repeated parameter is
+ preferred.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getSpaceLegal()">getSpaceLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that does not allow any special characters
+ except space (' ').</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getUnregisteredParameterValueSanitizer()">getUnregisteredParameterValueSanitizer</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the current value sanitizer used when processing
+ unregistered parameter values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getUrlAndSpaceLegal()">getUrlAndSpaceLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that allows all the characters used by
+ encoded URLs and allows spaces, which are not technically legal
+ in encoded URLs, but commonly appear anyway.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getUrlLegal()">getUrlLegal</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Return a value sanitizer that allows all the characters used by
+ encoded URLs.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getValue(java.lang.String)">getValue</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the value for a parameter in the current sanitized query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#getValueSanitizer(java.lang.String)">getValueSanitizer</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Get the value sanitizer for a parameter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#hasParameter(java.lang.String)">hasParameter</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Check if a parameter exists in the current sanitized query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#parseQuery(java.lang.String)">parseQuery</a>(<a href="../../../reference/java/lang/String.html">String</a> query)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parse a query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#parseUrl(java.lang.String)">parseUrl</a>(<a href="../../../reference/java/lang/String.html">String</a> url)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parse the query parameters out of an encoded URL.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#registerParameter(java.lang.String, android.net.UrlQuerySanitizer.ValueSanitizer)">registerParameter</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> valueSanitizer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register a value sanitizer for a particular parameter.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#registerParameters(java.lang.String[], android.net.UrlQuerySanitizer.ValueSanitizer)">registerParameters</a>(<a href="../../../reference/java/lang/String.html">String[]</a> parameters, <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> valueSanitizer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Register a value sanitizer for an array of parameters.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#setAllowUnregisteredParamaters(boolean)">setAllowUnregisteredParamaters</a>(boolean allowUnregisteredParamaters)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set whether or not unregistered parameters are allowed.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#setPreferFirstRepeatedParameter(boolean)">setPreferFirstRepeatedParameter</a>(boolean preferFirstRepeatedParameter)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set whether or not the first occurrence of a repeated parameter is
+ preferred.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#setUnregisteredParameterValueSanitizer(android.net.UrlQuerySanitizer.ValueSanitizer)">setUnregisteredParameterValueSanitizer</a>(<a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> sanitizer)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Set the value sanitizer used when processing unregistered
+ parameter values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#unescape(java.lang.String)">unescape</a>(<a href="../../../reference/java/lang/String.html">String</a> string)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Unescape an escaped string.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Protected Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#addSanitizedEntry(java.lang.String, java.lang.String)">addSanitizedEntry</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Record a sanitized parameter-value pair.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#clear()">clear</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clear the existing entries.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#decodeHexDigit(char)">decodeHexDigit</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Convert a character that represents a hexidecimal digit into an integer.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#isHexDigit(char)">isHexDigit</a>(char c)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Test if a character is a hexidecimal digit.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/net/UrlQuerySanitizer.html#parseEntry(java.lang.String, java.lang.String)">parseEntry</a>(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/java/lang/String.html">String</a> value)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Parse an escaped parameter-value pair.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="UrlQuerySanitizer()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        UrlQuerySanitizer()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a UrlQuerySanitizer.
+ <p>
+ Defaults:
+ <ul>
+ <li>unregistered parameters are not allowed.
+ <li>the last instance of a repeated parameter is preferred.
+ <li>The default value sanitizer is an AllIllegal value sanitizer.
+ <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="UrlQuerySanitizer(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        UrlQuerySanitizer(<a href="../../../reference/java/lang/String.html">String</a> url)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Constructs a UrlQuerySanitizer and parse a URL.
+ This constructor is provided for convenience when the
+ default parsing behavior is acceptable.
+ <p>
+ Because the URL is parsed before the constructor returns, there isn't
+ a chance to configure the sanitizer to change the parsing behavior.
+ <p>
+ <code>
+ UrlQuerySanitizer sanitizer = new UrlQuerySanitizer(myUrl);
+ String name = sanitizer.getValue("name");
+ </code>
+ <p>
+ Defaults:
+ <ul>
+ <li>unregistered parameters <em>are</em> allowed.
+ <li>the last instance of a repeated parameter is preferred.
+ <li>The default value sanitizer is an AllIllegal value sanitizer.
+ <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="getAllButNulAndAngleBracketsLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAllButNulAndAngleBracketsLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that allows any special characters
+ except angle brackets ('<' and '>') and Nul ('\0').
+ Allows script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAllButNulLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAllButNulLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that allows everything except Nul ('\0')
+ characters. Script URLs are allowed.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAllButWhitespaceLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAllButWhitespaceLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that allows everything except Nul ('\0')
+ characters, space (' '), and other whitespace characters.
+ Script URLs are allowed.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAllIllegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAllIllegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that does not allow any special characters,
+ and also does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAllowUnregisteredParamaters()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getAllowUnregisteredParamaters()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get whether or not unregistered parameters are allowed. If not
+ allowed, they will be dropped when a query is parsed.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if unregistered parameters are allowed.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#setAllowUnregisteredParamaters(boolean)">setAllowUnregisteredParamaters(boolean)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAmpAndSpaceLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAmpAndSpaceLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that does not allow any special characters
+ except ampersand ('&') and space (' '). Does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getAmpLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getAmpLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that does not allow any special characters
+ except ampersand ('&'). Does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getEffectiveValueSanitizer(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getEffectiveValueSanitizer(<a href="../../../reference/java/lang/String.html">String</a> parameter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the effective value sanitizer for a parameter. Like getValueSanitizer,
+ except if there is no value sanitizer registered for a parameter, and
+ unregistered paramaters are allowed, then the default value sanitizer is
+ returned.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>an unescaped parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the effective value sanitizer for a parameter.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getParameterList()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/List.html">List</a>&lt;<a href="../../../reference/android/net/UrlQuerySanitizer.ParameterValuePair.html">UrlQuerySanitizer.ParameterValuePair</a>&gt;
+        getParameterList()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+An array list of all of the parameter value pairs in the sanitized
+ query, in the order they appeared in the query. May contain duplicate
+ parameters.
+ <p class="note"><b>Note:</b> Do not modify this list. Treat it as a read-only list.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getParameterSet()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/util/Set.html">Set</a>&lt;<a href="../../../reference/java/lang/String.html">String</a>&gt;
+        getParameterSet()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get a set of all of the parameters found in the sanitized query.
+ <p>
+ Note: Do not modify this set. Treat it as a read-only set.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>all the parameters found in the current query.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getPreferFirstRepeatedParameter()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        getPreferFirstRepeatedParameter()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get whether or not the first occurrence of a repeated parameter is
+ preferred.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the first occurrence of a repeated parameter is
+ preferred.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#setPreferFirstRepeatedParameter(boolean)">setPreferFirstRepeatedParameter(boolean)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSpaceLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getSpaceLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that does not allow any special characters
+ except space (' '). Does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getUnregisteredParameterValueSanitizer()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getUnregisteredParameterValueSanitizer()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the current value sanitizer used when processing
+ unregistered parameter values.
+ <p>
+ <b>Note:</b> The default unregistered parameter value sanitizer is
+ one that doesn't allow any special characters, similar to what
+ is returned by calling createAllIllegal.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the current ValueSanitizer used to sanitize unregistered
+ parameter values.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getUrlAndSpaceLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getUrlAndSpaceLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that allows all the characters used by
+ encoded URLs and allows spaces, which are not technically legal
+ in encoded URLs, but commonly appear anyway.
+ Does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getUrlLegal()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getUrlLegal()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Return a value sanitizer that allows all the characters used by
+ encoded URLs. Does not allow script URLs.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a value sanitizer
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getValue(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        getValue(<a href="../../../reference/java/lang/String.html">String</a> parameter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the value for a parameter in the current sanitized query.
+ Returns null if the parameter does not
+ exit.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>the unencoded name of a parameter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the sanitized unencoded value of the parameter,
+ or null if the parameter does not exist.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getValueSanitizer(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a>
+        getValueSanitizer(<a href="../../../reference/java/lang/String.html">String</a> parameter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Get the value sanitizer for a parameter. Returns null if there
+ is no value sanitizer registered for the parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>the unescaped parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the currently registered value sanitizer for this parameter.</li></ul>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#registerParameter(java.lang.String, android.net.UrlQuerySanitizer.ValueSanitizer)">registerParameter(String, android.net.UrlQuerySanitizer.ValueSanitizer)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="hasParameter(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        hasParameter(<a href="../../../reference/java/lang/String.html">String</a> parameter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Check if a parameter exists in the current sanitized query.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>the unencoded name of a parameter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the paramater exists in the current sanitized queary.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseQuery(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        parseQuery(<a href="../../../reference/java/lang/String.html">String</a> query)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parse a query. A query string is any number of parameter-value clauses
+ separated by any non-zero number of ampersands. A parameter-value clause
+ is a parameter followed by an equal sign, followed by a value. If the
+ equal sign is missing, the value is assumed to be the empty string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>query</td>
+        <td>the query to parse.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseUrl(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        parseUrl(<a href="../../../reference/java/lang/String.html">String</a> url)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parse the query parameters out of an encoded URL.
+ Works by extracting the query portion from the URL and then
+ calling parseQuery(). If there is no query portion it is
+ treated as if the query portion is an empty string.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>url</td>
+        <td>the encoded URL to parse.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="registerParameter(java.lang.String, android.net.UrlQuerySanitizer.ValueSanitizer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        registerParameter(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> valueSanitizer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Register a value sanitizer for a particular parameter. Can also be used
+ to replace or remove an already-set value sanitizer.
+ <p>
+ Registering a non-null value sanitizer for a particular parameter
+ makes that parameter a registered parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>an unencoded parameter name</td>
+      </tr>
+    <tr>
+        <th>valueSanitizer</td>
+        <td>the value sanitizer to use for a particular
+ parameter. May be null in order to unregister that parameter.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllowUnregisteredParamaters()">getAllowUnregisteredParamaters()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="registerParameters(java.lang.String[], android.net.UrlQuerySanitizer.ValueSanitizer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        registerParameters(<a href="../../../reference/java/lang/String.html">String[]</a> parameters, <a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> valueSanitizer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Register a value sanitizer for an array of parameters.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameters</td>
+        <td>An array of unencoded parameter names.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#registerParameter(java.lang.String, android.net.UrlQuerySanitizer.ValueSanitizer)">registerParameter(String, UrlQuerySanitizer.ValueSanitizer)</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setAllowUnregisteredParamaters(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setAllowUnregisteredParamaters(boolean allowUnregisteredParamaters)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set whether or not unregistered parameters are allowed. If they
+ are not allowed, then they will be dropped when a query is sanitized.
+ <p>
+ Defaults to false.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>allowUnregisteredParamaters</td>
+        <td>true to allow unregistered parameters.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#getAllowUnregisteredParamaters()">getAllowUnregisteredParamaters()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setPreferFirstRepeatedParameter(boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setPreferFirstRepeatedParameter(boolean preferFirstRepeatedParameter)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set whether or not the first occurrence of a repeated parameter is
+ preferred. True means the first repeated parameter is preferred. 
+ False means that the last repeated parameter is preferred.
+ <p>
+ The preferred parameter is the one that is returned when getParameter
+ is called.
+ <p>
+ defaults to false.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>preferFirstRepeatedParameter</td>
+        <td>True if the first repeated
+ parameter is preferred.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">See Also</h4>
+    <ul class="nolist">
+    <li><a href="../../../reference/android/net/UrlQuerySanitizer.html#getPreferFirstRepeatedParameter()">getPreferFirstRepeatedParameter()</a></li>
+    
+    </table>
+    <ul>
+</div>
+
+
+
+</div>
+</div>
+
+
+<A NAME="setUnregisteredParameterValueSanitizer(android.net.UrlQuerySanitizer.ValueSanitizer)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setUnregisteredParameterValueSanitizer(<a href="../../../reference/android/net/UrlQuerySanitizer.ValueSanitizer.html">UrlQuerySanitizer.ValueSanitizer</a> sanitizer)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Set the value sanitizer used when processing unregistered
+ parameter values.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>sanitizer</td>
+        <td>set the ValueSanitizer used to sanitize unregistered
+ parameter values.
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unescape(java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+        unescape(<a href="../../../reference/java/lang/String.html">String</a> string)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Unescape an escaped string.
+ <ul>
+ <li>'+' characters are replaced by
+ ' ' characters.
+ <li>Valid "%xx" escape sequences are replaced by the
+ corresponding unescaped character.
+ <li>Invalid escape sequences such as %1z", are passed through unchanged.
+ <ol>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>string</td>
+        <td>the escaped string</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the unescaped string.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h3>Protected Methods</h3>
+
+
+
+<A NAME="addSanitizedEntry(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        addSanitizedEntry(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Record a sanitized parameter-value pair. Override if you want to
+ do additional filtering or validation.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>an unescaped parameter</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>a sanitized unescaped value
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clear()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        clear()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Clear the existing entries. Called to get ready to parse a new
+ query string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="decodeHexDigit(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        int
+        decodeHexDigit(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Convert a character that represents a hexidecimal digit into an integer.
+ If the character is not a hexidecimal digit, then -1 is returned.
+ Both upper case and lower case hex digits are allowed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>c</td>
+        <td>the hexidecimal digit.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the integer value of the hexidecimal digit.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isHexDigit(char)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        boolean
+        isHexDigit(char c)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Test if a character is a hexidecimal digit. Both upper case and lower
+ case hex digits are allowed.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>c</td>
+        <td>the character to test</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if c is a hex digit.
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="parseEntry(java.lang.String, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        protected 
+         
+         
+         
+         
+        void
+        parseEntry(<a href="../../../reference/java/lang/String.html">String</a> parameter, <a href="../../../reference/java/lang/String.html">String</a> value)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Parse an escaped parameter-value pair. The default implementation
+ unescapes both the parameter and the value, then looks up the 
+ effective value sanitizer for the parameter and uses it to sanitize
+ the value. If all goes well then addSanitizedValue is called with
+ the unescaped parameter and the sanitized unescaped value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameter</td>
+        <td>an escaped parameter</td>
+      </tr>
+    <tr>
+        <th>value</td>
+        <td>an unsanitzied escaped value
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

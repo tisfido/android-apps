@@ -1,0 +1,4262 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>java.sql.PreparedStatement - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/java/sql/package-summary.html">java.sql</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>java.sql.PreparedStatement</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">java.sql.PreparedStatement</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../reference/java/sql/Statement.html">Statement</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>An interface for a Precompiled SQL Statement.
+ <p>
+ An SQL Statement is put into a PreparedStatement and is precompiled so that
+ it can be executed multiple times efficiently.
+ <p>
+ Setter methods are supplied in the PreparedStatement interface for the
+ setting of IN parameters for the Statement. The setter method used for each
+ IN parameter must match the type of the IN parameter being set.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../reference/java/sql/CallableStatement.html">CallableStatement</a></td>
+            <td class="jd-descrcol" width="100%">An interface used to call Stored Procedures.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-constants-java.sql.Statement')" class="jd-expando-trigger"
+        ><img id="inherited-constants-java.sql.Statement-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Constants inherited
+    from interface
+    <a href="../../../reference/java/sql/Statement.html">java.sql.Statement</a>
+</h5>
+<div id="inherited-constants-java.sql.Statement">
+<div id="inherited-constants-java.sql.Statement-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/sql/Statement.html#CLOSE_ALL_RESULTS">CLOSE_ALL_RESULTS</a>,
+
+<a href="../../../reference/java/sql/Statement.html#CLOSE_CURRENT_RESULT">CLOSE_CURRENT_RESULT</a>,
+
+<a href="../../../reference/java/sql/Statement.html#EXECUTE_FAILED">EXECUTE_FAILED</a>,
+
+<a href="../../../reference/java/sql/Statement.html#KEEP_CURRENT_RESULT">KEEP_CURRENT_RESULT</a>,
+
+<a href="../../../reference/java/sql/Statement.html#NO_GENERATED_KEYS">NO_GENERATED_KEYS</a>,
+
+<a href="../../../reference/java/sql/Statement.html#RETURN_GENERATED_KEYS">RETURN_GENERATED_KEYS</a>,
+
+<a href="../../../reference/java/sql/Statement.html#SUCCESS_NO_INFO">SUCCESS_NO_INFO</a>
+
+</div>
+<div id="inherited-constants-java.sql.Statement-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th width="100%">&nbsp;</th>
+        <th>Value</th>
+        <th>&nbsp;</th>
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#CLOSE_ALL_RESULTS">CLOSE_ALL_RESULTS</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that all ResultSet
+ objects previously kept open should be closed.&nbsp;</td>
+        
+            <td class="jd-valcol">3&nbsp;</td>
+            <td class="jd-valcol">0x00000003&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#CLOSE_CURRENT_RESULT">CLOSE_CURRENT_RESULT</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that the current
+ ResultSet object should be closed
+&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#EXECUTE_FAILED">EXECUTE_FAILED</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that an error was encountered during execution of a batch
+ statement.&nbsp;</td>
+        
+            <td class="jd-valcol">-3&nbsp;</td>
+            <td class="jd-valcol">0xfffffffd&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#KEEP_CURRENT_RESULT">KEEP_CURRENT_RESULT</a>&nbsp;</td>
+        <td class="jd-descrcol">Passing this constant to getMoreResults implies that the current
+ ResultSet object should not be closed.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#NO_GENERATED_KEYS">NO_GENERATED_KEYS</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that generated keys should not be accessible for retrieval.&nbsp;</td>
+        
+            <td class="jd-valcol">2&nbsp;</td>
+            <td class="jd-valcol">0x00000002&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#RETURN_GENERATED_KEYS">RETURN_GENERATED_KEYS</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that generated keys should be accessible for retrieval.&nbsp;</td>
+        
+            <td class="jd-valcol">1&nbsp;</td>
+            <td class="jd-valcol">0x00000001&nbsp;</td>
+        
+    </tr>
+    
+    <tr>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol"><a href="../../../reference/java/sql/Statement.html#SUCCESS_NO_INFO">SUCCESS_NO_INFO</a>&nbsp;</td>
+        <td class="jd-descrcol">Indicates that a batch statement was executed with a successful result,
+ but a count of the number of rows it affected is unavailable.&nbsp;</td>
+        
+            <td class="jd-valcol">-2&nbsp;</td>
+            <td class="jd-valcol">0xfffffffe&nbsp;</td>
+        
+    </tr>
+    
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#addBatch()">addBatch</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Add a set of parameters to the PreparedStatement's command batch.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#clearParameters()">clearParameters</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clear the current parameter values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#execute()">execute</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the SQL statement in this PreparedStatement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#executeQuery()">executeQuery</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Execute the SQL query in the PreparedStatement and return the ResultSet
+ generated by the query.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#executeUpdate()">executeUpdate</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Invoke the SQL command contained within the Prepared Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSetMetaData.html">ResultSetMetaData</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#getMetaData()">getMetaData</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a ResultSetMetaData containing data from the ResultSet that is
+ produced when the PreparedStatement is invoked.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ParameterMetaData.html">ParameterMetaData</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#getParameterMetaData()">getParameterMetaData</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets information about the parameters of the PreparedStatement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setArray(int, java.sql.Array)">setArray</a>(int parameterIndex, <a href="../../../reference/java/sql/Array.html">Array</a> theArray)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the supplied Array object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setAsciiStream(int, java.io.InputStream, int)">setAsciiStream</a>(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the content of a supplied
+ InputStream, which has a specified number of bytes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setBigDecimal(int, java.math.BigDecimal)">setBigDecimal</a>(int parameterIndex, <a href="../../../reference/java/math/BigDecimal.html">BigDecimal</a> theBigDecimal)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied
+ java.math.BigDecimal value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setBinaryStream(int, java.io.InputStream, int)">setBinaryStream</a>(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the content of a supplied
+ binary InputStream, which has a specified number of bytes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setBlob(int, java.sql.Blob)">setBlob</a>(int parameterIndex, <a href="../../../reference/java/sql/Blob.html">Blob</a> theBlob)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the given Blob object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setBoolean(int, boolean)">setBoolean</a>(int parameterIndex, boolean theBoolean)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied boolean value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setByte(int, byte)">setByte</a>(int parameterIndex, byte theByte)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied byte value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setBytes(int, byte[])">setBytes</a>(int parameterIndex, byte[] theBytes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied array of bytes.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setCharacterStream(int, java.io.Reader, int)">setCharacterStream</a>(int parameterIndex, <a href="../../../reference/java/io/Reader.html">Reader</a> reader, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the character content of a
+ Reader object, with the specified length of character data.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setClob(int, java.sql.Clob)">setClob</a>(int parameterIndex, <a href="../../../reference/java/sql/Clob.html">Clob</a> theClob)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to the given Clob object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setDate(int, java.sql.Date, java.util.Calendar)">setDate</a>(int parameterIndex, <a href="../../../reference/java/sql/Date.html">Date</a> theDate, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Date
+ value, using a supplied Calendar to map the Date.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setDate(int, java.sql.Date)">setDate</a>(int parameterIndex, <a href="../../../reference/java/sql/Date.html">Date</a> theDate)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Date
+ value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setDouble(int, double)">setDouble</a>(int parameterIndex, double theDouble)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied double value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setFloat(int, float)">setFloat</a>(int parameterIndex, float theFloat)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to to a supplied float value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setInt(int, int)">setInt</a>(int parameterIndex, int theInt)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied int value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setLong(int, long)">setLong</a>(int parameterIndex, long theLong)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied long value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setNull(int, int)">setNull</a>(int parameterIndex, int sqlType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to SQL NULL.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setNull(int, int, java.lang.String)">setNull</a>(int paramIndex, int sqlType, <a href="../../../reference/java/lang/String.html">String</a> typeName)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to SQL NULL.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setObject(int, java.lang.Object, int)">setObject</a>(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject, int targetSqlType)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter using a supplied object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setObject(int, java.lang.Object, int, int)">setObject</a>(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject, int targetSqlType, int scale)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter using a supplied object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setObject(int, java.lang.Object)">setObject</a>(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter using a supplied object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setRef(int, java.sql.Ref)">setRef</a>(int parameterIndex, <a href="../../../reference/java/sql/Ref.html">Ref</a> theRef)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied REF(<structured-type>)
+ value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setShort(int, short)">setShort</a>(int parameterIndex, short theShort)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied short value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setString(int, java.lang.String)">setString</a>(int parameterIndex, <a href="../../../reference/java/lang/String.html">String</a> theString)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied String.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setTime(int, java.sql.Time, java.util.Calendar)">setTime</a>(int parameterIndex, <a href="../../../reference/java/sql/Time.html">Time</a> theTime, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Time
+ value, using a supplied Calendar.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setTime(int, java.sql.Time)">setTime</a>(int parameterIndex, <a href="../../../reference/java/sql/Time.html">Time</a> theTime)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Time
+ value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp, java.util.Calendar)">setTimestamp</a>(int parameterIndex, <a href="../../../reference/java/sql/Timestamp.html">Timestamp</a> theTimestamp, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Timestamp
+ value, using the supplied Calendar.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp)">setTimestamp</a>(int parameterIndex, <a href="../../../reference/java/sql/Timestamp.html">Timestamp</a> theTimestamp)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.sql.Timestamp
+ value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setURL(int, java.net.URL)">setURL</a>(int parameterIndex, <a href="../../../reference/java/net/URL.html">URL</a> theURL)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the value of a specified parameter to a supplied java.net.URL.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/PreparedStatement.html#setUnicodeStream(int, java.io.InputStream, int)">setUnicodeStream</a>(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">
+        <em>
+This method is deprecated.
+
+        Sets the value of a specified parameter to the characters
+             from a supplied InputStream, with a specified number of
+             bytes.</em></td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.sql.Statement')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.sql.Statement-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../reference/java/sql/Statement.html">java.sql.Statement</a>
+</h5>
+<div id="inherited-methods-java.sql.Statement">
+<div id="inherited-methods-java.sql.Statement-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/sql/Statement.html#addBatch(java.lang.String)">addBatch</a>,
+
+<a href="../../../reference/java/sql/Statement.html#cancel()">cancel</a>,
+
+<a href="../../../reference/java/sql/Statement.html#clearBatch()">clearBatch</a>,
+
+<a href="../../../reference/java/sql/Statement.html#clearWarnings()">clearWarnings</a>,
+
+<a href="../../../reference/java/sql/Statement.html#close()">close</a>,
+
+<a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, java.lang.String[])">execute</a>,
+
+<a href="../../../reference/java/sql/Statement.html#execute(java.lang.String)">execute</a>,
+
+<a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int)">execute</a>,
+
+<a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int[])">execute</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeBatch()">executeBatch</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeQuery(java.lang.String)">executeQuery</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int[])">executeUpdate</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String)">executeUpdate</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, java.lang.String[])">executeUpdate</a>,
+
+<a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int)">executeUpdate</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getConnection()">getConnection</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getFetchDirection()">getFetchDirection</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getFetchSize()">getFetchSize</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getGeneratedKeys()">getGeneratedKeys</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getMaxFieldSize()">getMaxFieldSize</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getMaxRows()">getMaxRows</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getMoreResults(int)">getMoreResults</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getMoreResults()">getMoreResults</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getQueryTimeout()">getQueryTimeout</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getResultSet()">getResultSet</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getResultSetConcurrency()">getResultSetConcurrency</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getResultSetHoldability()">getResultSetHoldability</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getResultSetType()">getResultSetType</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getUpdateCount()">getUpdateCount</a>,
+
+<a href="../../../reference/java/sql/Statement.html#getWarnings()">getWarnings</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setCursorName(java.lang.String)">setCursorName</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setEscapeProcessing(boolean)">setEscapeProcessing</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setFetchDirection(int)">setFetchDirection</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setFetchSize(int)">setFetchSize</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setMaxFieldSize(int)">setMaxFieldSize</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setMaxRows(int)">setMaxRows</a>,
+
+<a href="../../../reference/java/sql/Statement.html#setQueryTimeout(int)">setQueryTimeout</a>
+
+</div>
+<div id="inherited-methods-java.sql.Statement-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#addBatch(java.lang.String)">addBatch</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Adds a specified SQL commands to the list of commands for this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#cancel()">cancel</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Cancels this Statement execution if both the database and the JDBC driver
+ support aborting an SQL statement in flight.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#clearBatch()">clearBatch</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clears the current list of SQL commands for this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#clearWarnings()">clearWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Clears all SQLWarnings from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases this Statement's database and JDBC driver resources.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, java.lang.String[])">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String)">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int)">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#execute(java.lang.String, int[])">execute</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int[]&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeBatch()">executeBatch</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Submits a batch of SQL commands to the database.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeQuery(java.lang.String)">executeQuery</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes a supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int[])">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int[] columnIndexes)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String)">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, java.lang.String[])">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, <a href="../../../reference/java/lang/String.html">String[]</a> columnNames)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#executeUpdate(java.lang.String, int)">executeUpdate</a>(<a href="../../../reference/java/lang/String.html">String</a> sql, int autoGeneratedKeys)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Executes the supplied SQL statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/Connection.html">Connection</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getConnection()">getConnection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the Connection that produced this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getFetchDirection()">getFetchDirection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the default direction for fetching rows for ResultSets generated
+ from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getFetchSize()">getFetchSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the default number of rows for a fetch for the ResultSet objects
+ returned from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getGeneratedKeys()">getGeneratedKeys</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns auto generated keys created by executing this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMaxFieldSize()">getMaxFieldSize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the maximum number of bytes which can be returned for values from
+ Character and Binary values in a ResultSet derived from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMaxRows()">getMaxRows</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the maximum number of rows that a ResultSet can contain when
+ produced from this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMoreResults(int)">getMoreResults</a>(int current)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves to this Statement's next result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getMoreResults()">getMoreResults</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Moves to this Statement's next result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getQueryTimeout()">getQueryTimeout</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the timeout value for Statement execution.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSet()">getResultSet</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the current result.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetConcurrency()">getResultSetConcurrency</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the concurrency setting for ResultSet objects generated by this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetHoldability()">getResultSetHoldability</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the cursor hold setting for ResultSet objects generated by this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getResultSetType()">getResultSetType</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets the ResultSet type setting for ResultSets derived from this
+ Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getUpdateCount()">getUpdateCount</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Gets an update count for the current result if it is not a ResultSet.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/sql/SQLWarning.html">SQLWarning</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#getWarnings()">getWarnings</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Retrieves the first SQLWarning reported by calls on this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setCursorName(java.lang.String)">setCursorName</a>(<a href="../../../reference/java/lang/String.html">String</a> name)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the SQL cursor name.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setEscapeProcessing(boolean)">setEscapeProcessing</a>(boolean enable)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets Escape Processing mode.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setFetchDirection(int)">setFetchDirection</a>(int direction)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the fetch direction - a hint to the JDBC driver about the direction
+ of processing of rows in ResultSets created by this Statement.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setFetchSize(int)">setFetchSize</a>(int rows)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the fetch size.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setMaxFieldSize(int)">setMaxFieldSize</a>(int max)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the maximum number of bytes for ResultSet columns that contain
+ character or binary values.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setMaxRows(int)">setMaxRows</a>(int max)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the maximum number of rows that any ResultSet can contain.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/sql/Statement.html#setQueryTimeout(int)">setQueryTimeout</a>(int seconds)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the timeout, in seconds, for queries - how long the driver will
+ allow for completion of a Statement execution.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="addBatch()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        addBatch()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Add a set of parameters to the PreparedStatement's command batch.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="clearParameters()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        clearParameters()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Clear the current parameter values.
+ <p>
+ Typically, parameter values are retained for multiple executions of the
+ Statement. Setting a parameter value replaces the previous value. This
+ method clears the values for all parameters, releasing all resources used
+ by those parameters.
+
+
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="execute()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        execute()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Executes the SQL statement in this PreparedStatement.
+ <p>
+ A PreparedStatement may return multiple results. The execute method
+ returns a flag indicating the kind of result produced by
+ PreparedStatement. The methods <code>
+ getResultSet</code> or
+ <code>getUpdateCount</code> are used to retrieve the first result,
+ while <code>getMoreResults</code> must be used to retrieve the second
+ and subsequent results.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>true if the result of the execution is a ResultSet, false if
+         there is no result or if the result is an update count.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeQuery()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ResultSet.html">ResultSet</a>
+        executeQuery()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Execute the SQL query in the PreparedStatement and return the ResultSet
+ generated by the query.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the ResultSet generated by the query - never null.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens or if the SQL statement does not
+             produce a ResultSet.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="executeUpdate()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        int
+        executeUpdate()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Invoke the SQL command contained within the Prepared Statement. This must
+ be INSERT, UPDATE, DELETE, or a command that returns nothing.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the count of rows for INSERT, UPDATE or DELETE statements, 0 for
+         statements that return nothing</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens or if the SQL statement returns a
+             ResultSet.
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getMetaData()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ResultSetMetaData.html">ResultSetMetaData</a>
+        getMetaData()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns a ResultSetMetaData containing data from the ResultSet that is
+ produced when the PreparedStatement is invoked.
+ <p>
+ It is possible to know the Metadata for the ResultSet without executing
+ the PreparedStatement, because the PreparedStatement is precompiled. As a
+ result the Metadata can be queried ahead of time without actually
+ executing the statement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a ResultSetMetaData object with the information about the columns
+         of the ResultSet, if the driver can return a ResultSetMetaData.
+         null otherwise.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if there is a database error
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getParameterMetaData()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/sql/ParameterMetaData.html">ParameterMetaData</a>
+        getParameterMetaData()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Gets information about the parameters of the PreparedStatement.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>a ParameterMetaData object which holds information about the
+         number, type and properties of the parameters of this
+         PreparedStatement.</li></ul>
+</div>
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setArray(int, java.sql.Array)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setArray(int parameterIndex, <a href="../../../reference/java/sql/Array.html">Array</a> theArray)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the supplied Array object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theArray</td>
+        <td>a java.sql.Array holing the data to set.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setAsciiStream(int, java.io.InputStream, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setAsciiStream(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the content of a supplied
+ InputStream, which has a specified number of bytes.
+ <p>
+ This is a good method for setting an SQL LONVARCHAR parameter where the
+ length of the data is large. Data is read from the InputStream until
+ end-of-file is reached or the specified number of bytes is copied.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theInputStream</td>
+        <td>the ASCII InputStream carrying the data to update the
+            parameter</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>the number of bytes in the InputStream to copy to the
+            parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBigDecimal(int, java.math.BigDecimal)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBigDecimal(int parameterIndex, <a href="../../../reference/java/math/BigDecimal.html">BigDecimal</a> theBigDecimal)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied
+ java.math.BigDecimal value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theBigDecimal</td>
+        <td>the java.math.BigInteger value to set</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBinaryStream(int, java.io.InputStream, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBinaryStream(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the content of a supplied
+ binary InputStream, which has a specified number of bytes.
+ <p>
+ Use this method when a large amount of data needs to be set into a
+ LONGVARBINARY parameter.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theInputStream</td>
+        <td>the binary InputStream carrying the data to update the
+            parameter</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>the number of bytes in the InputStream to copy to the
+            parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBlob(int, java.sql.Blob)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBlob(int parameterIndex, <a href="../../../reference/java/sql/Blob.html">Blob</a> theBlob)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the given Blob object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theBlob</td>
+        <td>a java.sql.Blob holding the data to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBoolean(int, boolean)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBoolean(int parameterIndex, boolean theBoolean)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied boolean value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theBoolean</td>
+        <td>the boolean value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setByte(int, byte)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setByte(int parameterIndex, byte theByte)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied byte value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theByte</td>
+        <td>the byte value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setBytes(int, byte[])"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setBytes(int parameterIndex, byte[] theBytes)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied array of bytes. The
+ array is mapped to a VARBINARY or LONGVARBINARY in the database.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theBytes</td>
+        <td>the array of bytes to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setCharacterStream(int, java.io.Reader, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setCharacterStream(int parameterIndex, <a href="../../../reference/java/io/Reader.html">Reader</a> reader, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the character content of a
+ Reader object, with the specified length of character data.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>reader</td>
+        <td>the java.io.Reader encompassing the character data</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>the amount of characters to be read</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setClob(int, java.sql.Clob)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setClob(int parameterIndex, <a href="../../../reference/java/sql/Clob.html">Clob</a> theClob)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to the given Clob object.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theClob</td>
+        <td>a java.sql.Clob holding the data to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDate(int, java.sql.Date, java.util.Calendar)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDate(int parameterIndex, <a href="../../../reference/java/sql/Date.html">Date</a> theDate, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Date
+ value, using a supplied Calendar to map the Date. The Calendar allows the
+ application to control the timezone used to compute the SQL DATE in the
+ database - without the supplied Calendar, the driver uses the default
+ timezone of the Java virtual machine.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theDate</td>
+        <td>a java.sql.Date to update the parameter</td>
+      </tr>
+    <tr>
+        <th>cal</td>
+        <td>a Calendar to use to construct the SQL DATE value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDate(int, java.sql.Date)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDate(int parameterIndex, <a href="../../../reference/java/sql/Date.html">Date</a> theDate)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Date
+ value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theDate</td>
+        <td>a java.sql.Date to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setDouble(int, double)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setDouble(int parameterIndex, double theDouble)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied double value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theDouble</td>
+        <td>the double value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setFloat(int, float)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setFloat(int parameterIndex, float theFloat)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to to a supplied float value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theFloat</td>
+        <td>the float value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setInt(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setInt(int parameterIndex, int theInt)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied int value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theInt</td>
+        <td>the int value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setLong(int, long)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setLong(int parameterIndex, long theLong)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied long value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theLong</td>
+        <td>the long value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setNull(int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setNull(int parameterIndex, int sqlType)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to SQL NULL. Don't use this
+ version of setNull for User Defined Types or for REF type parameters.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>sqlType</td>
+        <td>the SQL Type of the parameter, as defined in java.sql.Types</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setNull(int, int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setNull(int paramIndex, int sqlType, <a href="../../../reference/java/lang/String.html">String</a> typeName)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to SQL NULL. This version of
+ setNull should be used for User Defined Types (UDTs) and also REF types.
+ UDTs can be STRUCT, DISTINCT, JAVA_OBJECT and named array types.
+ <p>
+ Applications must provide the SQL Type code and also a fully qualified
+ SQL Type name when supplying a NULL UDT or REF. For a UDT, the type name
+ is the type name of the parameter itself, but for a REF parameter the
+ type name is the type name of the referenced type.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>paramIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>sqlType</td>
+        <td>the SQL Type of the parameter, as defined in java.sql.Types</td>
+      </tr>
+    <tr>
+        <th>typeName</td>
+        <td>the fully qualified name of a UDT or REF type - ignored if the
+            parameter is not a UDT.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setObject(int, java.lang.Object, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setObject(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject, int targetSqlType)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter using a supplied object.
+ <p>
+ The Object is converted to the given targetSqlType before it is sent to
+ the database. If the object has a custom mapping (its class implements
+ the interface SQLData), the JDBC driver will call the method
+ SQLData.writeSQL to write it to the SQL data stream. If the object's
+ class implements Ref, Blob, Clob, Struct, or Array, the driver will pass
+ it to the database in the form of the relevant SQL type.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter index, where the first parameter has index 1</td>
+      </tr>
+    <tr>
+        <th>theObject</td>
+        <td>the Object containing the value to update the parameter</td>
+      </tr>
+    <tr>
+        <th>targetSqlType</td>
+        <td>the SQL Type to send to the database, as defined in
+            java.sql.Types</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setObject(int, java.lang.Object, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setObject(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject, int targetSqlType, int scale)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter using a supplied object.
+ <p>
+ The Object is converted to the given targetSqlType before it is sent to
+ the database. If the object has a custom mapping (its class implements
+ the interface SQLData), the JDBC driver will call the method
+ SQLData.writeSQL to write it to the SQL data stream. If the object's
+ class implements Ref, Blob, Clob, Struct, or Array, the driver will pass
+ it to the database in the form of the relevant SQL type.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter index, where the first parameter has index 1</td>
+      </tr>
+    <tr>
+        <th>theObject</td>
+        <td>the Object containing the value to update the parameter</td>
+      </tr>
+    <tr>
+        <th>targetSqlType</td>
+        <td>the SQL Type to send to the database, as defined in
+            java.sql.Types</td>
+      </tr>
+    <tr>
+        <th>scale</td>
+        <td>the number of digits after the decimal point - only applies to
+            the types java.sql.Types.DECIMAL and java.sql.Types.NUMERIC -
+            ignored for all other types.</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setObject(int, java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setObject(int parameterIndex, <a href="../../../reference/java/lang/Object.html">Object</a> theObject)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter using a supplied object.
+ <p>
+ There is a standard mapping from Java types to SQL types, defined in the
+ JDBC specification. The passed object is then transformed into the
+ appropriate SQL type, and then transferred to the database. setObject can
+ be used to pass abstract data types unique to the database, by using a
+ JDBC driver specific Java type. If the object's class implements the
+ interface SQLData, the JDBC driver calls <code>SQLData.writeSQL</code>
+ to write it to the SQL data stream. If the object's class implements Ref,
+ Blob, Clob, Struct, or Array, the driver passes it to the database as a
+ value of the corresponding SQL type.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theObject</td>
+        <td>the Object containing the value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setRef(int, java.sql.Ref)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setRef(int parameterIndex, <a href="../../../reference/java/sql/Ref.html">Ref</a> theRef)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied REF(<structured-type>)
+ value. This is stored as an SQL REF.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theRef</td>
+        <td>a java.sql.Ref value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setShort(int, short)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setShort(int parameterIndex, short theShort)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied short value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theShort</td>
+        <td>a short value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setString(int, java.lang.String)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setString(int parameterIndex, <a href="../../../reference/java/lang/String.html">String</a> theString)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied String.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theString</td>
+        <td>a String value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTime(int, java.sql.Time, java.util.Calendar)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTime(int parameterIndex, <a href="../../../reference/java/sql/Time.html">Time</a> theTime, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Time
+ value, using a supplied Calendar.
+ <p>
+ The driver uses the supplied Calendar to create the SQL TIME value, which
+ allows it to use a custom timezone - otherwise the driver uses the
+ default timezone of the Java virtual machine.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theTime</td>
+        <td>a java.sql.Time value to update the parameter</td>
+      </tr>
+    <tr>
+        <th>cal</td>
+        <td>a Calendar to use to construct the SQL TIME value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTime(int, java.sql.Time)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTime(int parameterIndex, <a href="../../../reference/java/sql/Time.html">Time</a> theTime)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Time
+ value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theTime</td>
+        <td>a java.sql.Time value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTimestamp(int, java.sql.Timestamp, java.util.Calendar)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTimestamp(int parameterIndex, <a href="../../../reference/java/sql/Timestamp.html">Timestamp</a> theTimestamp, <a href="../../../reference/java/util/Calendar.html">Calendar</a> cal)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Timestamp
+ value, using the supplied Calendar.
+ <p>
+ The driver uses the supplied Calendar to create the SQL TIMESTAMP value,
+ which allows it to use a custom timezone - otherwise the driver uses the
+ default timezone of the Java virtual machine.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theTimestamp</td>
+        <td>the java.sql.Timestamp value to update the parameter</td>
+      </tr>
+    <tr>
+        <th>cal</td>
+        <td>a Calendar to use to construct the SQL TIMESTAMP value</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setTimestamp(int, java.sql.Timestamp)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setTimestamp(int parameterIndex, <a href="../../../reference/java/sql/Timestamp.html">Timestamp</a> theTimestamp)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.sql.Timestamp
+ value.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theTimestamp</td>
+        <td>the java.sql.Timestamp value to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setURL(int, java.net.URL)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setURL(int parameterIndex, <a href="../../../reference/java/net/URL.html">URL</a> theURL)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the value of a specified parameter to a supplied java.net.URL.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theURL</td>
+        <td>the URL to update the parameter</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setUnicodeStream(int, java.io.InputStream, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setUnicodeStream(int parameterIndex, <a href="../../../reference/java/io/InputStream.html">InputStream</a> theInputStream, int length)
+    </h4>
+    <div class="jd-details-descr">
+
+
+<p>
+<p class="warning jd-deprecated-warning">
+    <strong>
+This method is deprecated.
+</strong>
+    Sets the value of a specified parameter to the characters
+             from a supplied InputStream, with a specified number of
+             bytes.
+</p>
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>parameterIndex</td>
+        <td>the parameter number index, where the first parameter has
+            index 1</td>
+      </tr>
+    <tr>
+        <th>theInputStream</td>
+        <td>the InputStream with the character data to update the
+            parameter</td>
+      </tr>
+    <tr>
+        <th>length</td>
+        <td>the number of bytes to read from the InputStream</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../reference/java/sql/SQLException.html">SQLException</a></td>
+            <td>if a database error happens
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

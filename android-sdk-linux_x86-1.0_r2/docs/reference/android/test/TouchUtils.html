@@ -1,0 +1,1928 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>android.test.TouchUtils - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/style.css" />
+<script src="../../../assets/search_autocomplete.js"></script>
+<script src="../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../')"
+            onkeyup="search_changed(event, false, '../../../')"
+            onchange="search_changed(event, false, '../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../kb/general.html">General</a></li>
+          <li><a href="../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../reference/android/test/package-summary.html">android.test</a>
+<br/>
+    public 
+     
+     
+    
+    class
+</div>
+<h1>android.test.TouchUtils</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space"></td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">android.test.TouchUtils</td>
+        <td class="jd-inheritance-interface-cell">
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>Reusable methods for generating touch events. These methods can be used with
+ InstrumentationTestCase or ActivityTestCases to simulate user interaction with
+ the application through a touch screen.
+</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<h3>Public Constructors</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#TouchUtils()">TouchUtils</a>()</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#clickView(android.test.InstrumentationTestCase, android.view.View)">clickView</a>(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and releasing.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#drag(android.test.ActivityInstrumentationTestCase, float, float, float, float, int)">drag</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, float fromX, float toX, float fromY, float toY, int stepCount)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching a specific location and dragging to a new location.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenDown(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenDown</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching in the center of the screen and dragging one quarter of the way down</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenUp(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenUp</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching in the center of the screen and dragging one quarter of the way up</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewBy(android.test.ActivityInstrumentationTestCase, android.view.View, int, int, int)">dragViewBy</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int deltaX, int deltaY)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching a view and dragging it by the specified amount.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewTo(android.test.ActivityInstrumentationTestCase, android.view.View, int, int, int)">dragViewTo</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toX, int toY)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching a view and dragging it to a specified location.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToBottom(android.test.ActivityInstrumentationTestCase, android.view.View, int)">dragViewToBottom</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int stepCount)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and dragging to the bottom of the screen.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToBottom(android.test.ActivityInstrumentationTestCase, android.view.View)">dragViewToBottom</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and dragging to the bottom of the screen.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToTop(android.test.ActivityInstrumentationTestCase, android.view.View, int)">dragViewToTop</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int stepCount)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and dragging to the top of the screen.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToTop(android.test.ActivityInstrumentationTestCase, android.view.View)">dragViewToTop</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and dragging to the top of the screen.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToX(android.test.ActivityInstrumentationTestCase, android.view.View, int, int)">dragViewToX</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toX)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching a view and dragging it to a specified location.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#dragViewToY(android.test.ActivityInstrumentationTestCase, android.view.View, int, int)">dragViewToY</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toY)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching a view and dragging it to a specified location.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#longClickView(android.test.ActivityInstrumentationTestCase, android.view.View)">longClickView</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view, holding until it is a long press, and then releasing.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#scrollToBottom(android.test.ActivityInstrumentationTestCase, android.view.ViewGroup)">scrollToBottom</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Scroll a VirewGroup to the bottom by repeatedly calling
+ <a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenUp(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenUp(ActivityInstrumentationTestCase)</a></td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#scrollToTop(android.test.ActivityInstrumentationTestCase, android.view.ViewGroup)">scrollToTop</a>(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Scroll a ViewGroup to the top by repeatedly calling
+ <a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenDown(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenDown(ActivityInstrumentationTestCase)</a></td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#tapView(android.test.InstrumentationTestCase, android.view.View)">tapView</a>(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and releasing quickly (before the tap timeout).</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">static&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/android/test/TouchUtils.html#touchAndCancelView(android.test.InstrumentationTestCase, android.view.View)">touchAndCancelView</a>(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Simulate touching the center of a view and cancelling (so no on click should
+ fire, etc).</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-java.lang.Object')" class="jd-expando-trigger"
+        ><img id="inherited-methods-java.lang.Object-trigger"
+        src="../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from class
+    <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+</h5>
+<div id="inherited-methods-java.lang.Object">
+<div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../reference/java/lang/Object.html#clone()">clone</a>,
+
+<a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>,
+
+<a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>,
+
+<a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>,
+
+<a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>,
+
+<a href="../../../reference/java/lang/Object.html#notify()">notify</a>,
+
+<a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>,
+
+<a href="../../../reference/java/lang/Object.html#toString()">toString</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>,
+
+<a href="../../../reference/java/lang/Object.html#wait()">wait</a>
+
+</div>
+<div id="inherited-methods-java.lang.Object-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#clone()">clone</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a new instance of the same class as the receiver, whose slots
+ have been filled in with the values in the slots of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Compares the argument to the receiver, and returns true if they represent
+ the <em>same</em> object using a class specific comparison.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Called by the virtual machine when there are no longer any (non-weak)
+ references to the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the unique instance of java.lang.Class which represents the class
+ of the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns an integer hash code for the receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notify()">notify</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes one thread which is <code>wait</code> ing on the receiver to be
+ made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes all threads which are <code>wait</code> ing on the receiver to
+ be made ready to run.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../reference/java/lang/String.html">String</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#toString()">toString</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a string containing a concise, human-readable description of the
+ receiver.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a>(long time, int frac)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a>(long time)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ either pending some change in the receiver (as indicated by
+ <code>notify</code> or <code>notifyAll</code>) or the expiration of
+ the timeout.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">final&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../reference/java/lang/Object.html#wait()">wait</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Causes the thread which sent this message to be made not ready to run
+ pending some change in the receiver (as indicated by <code>notify</code>
+ or <code>notifyAll</code>).</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+<h3>Public Constructors</h3>
+
+
+
+<A NAME="TouchUtils()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        
+        TouchUtils()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="clickView(android.test.InstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        clickView(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and releasing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be clicked
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="drag(android.test.ActivityInstrumentationTestCase, float, float, float, float, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        drag(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, float fromX, float toX, float fromY, float toY, int stepCount)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching a specific location and dragging to a new location.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>fromX</td>
+        <td>X coordinate of the initial touch, in screen coordinates</td>
+      </tr>
+    <tr>
+        <th>toX</td>
+        <td>Xcoordinate of the drag destination, in screen coordinates</td>
+      </tr>
+    <tr>
+        <th>fromY</td>
+        <td>X coordinate of the initial touch, in screen coordinates</td>
+      </tr>
+    <tr>
+        <th>toY</td>
+        <td>Y coordinate of the drag destination, in screen coordinates</td>
+      </tr>
+    <tr>
+        <th>stepCount</td>
+        <td>How many move steps to include in the drag
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragQuarterScreenDown(android.test.ActivityInstrumentationTestCase)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragQuarterScreenDown(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching in the center of the screen and dragging one quarter of the way down
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragQuarterScreenUp(android.test.ActivityInstrumentationTestCase)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragQuarterScreenUp(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching in the center of the screen and dragging one quarter of the way up
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewBy(android.test.ActivityInstrumentationTestCase, android.view.View, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        dragViewBy(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int deltaX, int deltaY)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching a view and dragging it by the specified amount.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>gravity</td>
+        <td>Which part of the view to use for the initial down event. A combination of
+        (TOP, CENTER_VERTICAL, BOTTOM) and (LEFT, CENTER_HORIZONTAL, RIGHT)</td>
+      </tr>
+    <tr>
+        <th>deltaX</td>
+        <td>Amount to drag horizontally in pixels</td>
+      </tr>
+    <tr>
+        <th>deltaY</td>
+        <td>Amount to drag vertically in pixels</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>distance in pixels covered by the drag
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewTo(android.test.ActivityInstrumentationTestCase, android.view.View, int, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        dragViewTo(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toX, int toY)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching a view and dragging it to a specified location.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>gravity</td>
+        <td>Which part of the view to use for the initial down event. A combination of
+        (TOP, CENTER_VERTICAL, BOTTOM) and (LEFT, CENTER_HORIZONTAL, RIGHT)</td>
+      </tr>
+    <tr>
+        <th>toX</td>
+        <td>Final location of the view after dragging</td>
+      </tr>
+    <tr>
+        <th>toY</td>
+        <td>Final location of the view after dragging</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>distance in pixels covered by the drag
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToBottom(android.test.ActivityInstrumentationTestCase, android.view.View, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragViewToBottom(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int stepCount)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and dragging to the bottom of the screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>stepCount</td>
+        <td>How many move steps to include in the drag
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToBottom(android.test.ActivityInstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragViewToBottom(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and dragging to the bottom of the screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToTop(android.test.ActivityInstrumentationTestCase, android.view.View, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragViewToTop(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int stepCount)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and dragging to the top of the screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>stepCount</td>
+        <td>How many move steps to include in the drag
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToTop(android.test.ActivityInstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        dragViewToTop(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and dragging to the top of the screen.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToX(android.test.ActivityInstrumentationTestCase, android.view.View, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        dragViewToX(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toX)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching a view and dragging it to a specified location. Only moves horizontally.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>gravity</td>
+        <td>Which part of the view to use for the initial down event. A combination of
+        (TOP, CENTER_VERTICAL, BOTTOM) and (LEFT, CENTER_HORIZONTAL, RIGHT)</td>
+      </tr>
+    <tr>
+        <th>toX</td>
+        <td>Final location of the view after dragging</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>distance in pixels covered by the drag
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="dragViewToY(android.test.ActivityInstrumentationTestCase, android.view.View, int, int)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        int
+        dragViewToY(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v, int gravity, int toY)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching a view and dragging it to a specified location. Only moves vertically.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be dragged</td>
+      </tr>
+    <tr>
+        <th>gravity</td>
+        <td>Which part of the view to use for the initial down event. A combination of
+        (TOP, CENTER_VERTICAL, BOTTOM) and (LEFT, CENTER_HORIZONTAL, RIGHT)</td>
+      </tr>
+    <tr>
+        <th>toY</td>
+        <td>Final location of the view after dragging</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>distance in pixels covered by the drag
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="longClickView(android.test.ActivityInstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        longClickView(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view, holding until it is a long press, and then releasing.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be clicked
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="scrollToBottom(android.test.ActivityInstrumentationTestCase, android.view.ViewGroup)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        scrollToBottom(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Scroll a VirewGroup to the bottom by repeatedly calling
+ <a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenUp(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenUp(ActivityInstrumentationTestCase)</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The ViewGroup that should be dragged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="scrollToTop(android.test.ActivityInstrumentationTestCase, android.view.ViewGroup)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        scrollToTop(<a href="../../../reference/android/test/ActivityInstrumentationTestCase.html">ActivityInstrumentationTestCase</a> test, <a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Scroll a ViewGroup to the top by repeatedly calling
+ <a href="../../../reference/android/test/TouchUtils.html#dragQuarterScreenDown(android.test.ActivityInstrumentationTestCase)">dragQuarterScreenDown(ActivityInstrumentationTestCase)</a>
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The ViewGroup that should be dragged
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tapView(android.test.InstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        tapView(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and releasing quickly (before the tap timeout).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be clicked
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="touchAndCancelView(android.test.InstrumentationTestCase, android.view.View)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+        static 
+         
+         
+         
+        void
+        touchAndCancelView(<a href="../../../reference/android/test/InstrumentationTestCase.html">InstrumentationTestCase</a> test, <a href="../../../reference/android/view/View.html">View</a> v)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Simulate touching the center of a view and cancelling (so no on click should
+ fire, etc).
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>test</td>
+        <td>The test cast that is being run</td>
+      </tr>
+    <tr>
+        <th>v</td>
+        <td>The view that should be clicked
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>

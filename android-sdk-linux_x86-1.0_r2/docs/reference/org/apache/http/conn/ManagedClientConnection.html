@@ -1,0 +1,1789 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>org.apache.http.conn.ManagedClientConnection - Android SDK</title>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesite.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/codesearch.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/codesite/semantic_headers.css" />
+<link rel="stylesheet" type="text/css" href="../../../../../assets/style.css" />
+<script src="../../../../../assets/search_autocomplete.js"></script>
+<script src="../../../../../reference/lists.js"></script>
+</head>
+
+<script type="text/javascript">
+function toggle_inherited(base) {
+    var list = document.getElementById(base + "-list");
+    var summary = document.getElementById(base + "-summary");
+    var trigger = document.getElementById(base + "-trigger");
+    if (list.style.display == "none") {
+        list.style.display = "block";
+        summary.style.display = "none";
+        trigger.src = "../../../../../assets/triangle-open.png";
+    } else {
+        list.style.display = "none";
+        summary.style.display = "block";
+        trigger.src = "../../../../../assets/triangle-close.png";
+    }
+}
+</script>
+<body class="gc-documentation">
+<div id="gc-container">
+<a name="top"></a>
+
+<div id="gc-header">
+<div id="logo">
+    <a href="http://code.google.com/android/"><img style="border: 0;" src="../../../../../assets-google/android-logo.gif"/></a>
+</div> <!-- logo -->
+</div> <!-- gc-header -->
+
+
+<iframe id="backiFrame" name="backiFrame" style="display:none"></iframe>
+
+<div id="codesiteContent" style="margin-top: 50px;">
+
+<div id="gc-topnav">
+    <span class="jd-toptitle">Android</span>
+</div>
+
+<div class="g-section g-tpl-180">
+
+<a name="gc-toc-anchor"></a>  
+<div class="g-unit g-first" id="gc-toc">
+<div id="jd-searchbox" style="margin-top: 1px;">
+    <input id="search_autocomplete"
+            tabindex="1"
+            autocomplete="off" type=text size="23"
+            style="font-size:85%; color: #aaaaaa"
+            value="(quick search)"
+            onfocus="search_focus_changed(this, true)"
+            onblur="search_focus_changed(this, false)"
+            onkeydown="return search_changed(event, true, '../../../../../')"
+            onkeyup="search_changed(event, false, '../../../../../')"
+            onchange="search_changed(event, false, '../../../../../')"/>
+    <div style="position: absolute;">
+        <table id="search_filtered" class="jd-autocomplete-table-hidden"
+                style="border: 1px solid #3366cc;"
+                cellspacing=0>
+        </table>
+    </div>
+</div>
+
+<ul>
+  <li>
+    <h1><a href="../../../../../documentation.html">Documentation</a></h1>
+    <ul>
+      <li><a href="../../../../../what-is-android.html"><strong>What is Android?</strong></a></li>
+      <li>
+        <a href="../../../../../intro/index.html"><strong>Getting Started</strong></a>
+        <ul>
+          <li><a href="../../../../../intro/installing.html">Installing the SDK</a></li>
+          <li><a href="../../../../../intro/upgrading.html">Upgrading the SDK</a></li>
+          <li><a href="../../../../../intro/develop-and-debug.html">Developing/Debugging</a></li>
+          <li><a href="../../../../../intro/hello-android.html">Hello Android</a></li>
+          <li><a href="../../../../../intro/anatomy.html">Anatomy of an App</a></li>
+          <li><a href="../../../../../intro/tutorial.html">Notepad Tutorial</a></li>
+          <li><a href="../../../../../intro/tools.html">Development Tools</a></li>
+          <li><a href="../../../../../intro/appmodel.html">Application Model</a></li>
+          <li><a href="../../../../../intro/lifecycle.html">Application Life Cycle</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="../../../../../devel/index.html"><strong>Developing Applications</strong></a>
+        <ul>
+          <li><a href="../../../../../devel/implementing-ui.html">Implementing a UI</a></li>
+          <li><a href="../../../../../devel/building-blocks.html">Building Blocks</a></li>
+          <li><a href="../../../../../devel/data.html">Data Storage and Retrieval</a></li>
+          <li><a href="../../../../../devel/security.html">Security Model</a></li>
+          <li><a href="../../../../../devel/resources-i18n.html">Resources and i18n</a></li>
+          <li><a href="../../../../../devel/sign-publish.html">Signing and Publishing Your App</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../toolbox/index.html"><strong>Developer Toolbox</strong></a>
+        <ul>
+          <li><a href="../../../../../toolbox/philosophy.html">Design Philosophy</a></li>
+          <li><a href="../../../../../toolbox/custom-components.html">Building Custom Components</a></li>
+          <li><a href="../../../../../toolbox/optional-apis.html">Optional APIs</a></li>
+        </ul>
+      </li>
+      <li>  
+        <a href="../../../../../reference/index.html"><strong>Reference Information</strong></a>
+        <ul>
+          <li><a href="../../../../../reference/packages.html">Package Index</a></li>
+          <li><a href="../../../../../reference/classes.html">Class Index</a></li>
+          <li><a href="../../../../../reference/hierarchy.html">Class Hierarchy</a></li>
+          <li><a href="../../../../../reference/view-gallery.html">List of Views</a></li>
+          <li><a href="../../../../../reference/available-intents.html">List of Intents</a></li>
+          <li><a href="../../../../../reference/android/Manifest.permission.html">List of Permissions</a></li>
+          <li><a href="../../../../../reference/available-resources.html">List of Resource Types</a></li>
+          <li><a href="../../../../../reference/aidl.html">Android IDL</a></li>
+          <li><a href="../../../../../reference/glossary.html">Glossary</a></li>
+          <li><a href="../../../../../reference/keywords.html">Index</a></li>
+        </ul>
+      </li>
+      
+      <li>  
+        <a href="../../../../../kb/index.html"><strong>FAQs</strong></a>
+        <ul>
+          <li><a href="../../../../../kb/general.html">General</a></li>
+          <li><a href="../../../../../kb/commontasks.html">Common Tasks</a></li>
+          <li><a href="../../../../../kb/troubleshooting.html">Troubleshooting</a></li>
+          <li><a href="../../../../../kb/licensingandoss.html">Open Source Licensing</a></li>
+	  <li><a href="../../../../../kb/framework.html">Application Framework</a></li>
+	  <li><a href="../../../../../kb/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h1><a href="../../../../../roadmap.html">Roadmap</a></h1>
+  </li>
+  <li>
+    <h1><a href="../../../../../goodies/index.html">Goodies</a></h1>
+  </li>
+</ul>
+
+
+</div>
+
+<a name="gc-pagecontent-anchor"></a>   
+<div class="g-unit" id="gc-pagecontent">
+
+<div id="jd-content">
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div class="jd-page_title-prefix">
+    
+<a href="../../../../../reference/org/apache/http/conn/package-summary.html">org.apache.http.conn</a>
+<br/>
+    public 
+     
+     
+    
+    interface
+</div>
+<h1>org.apache.http.conn.ManagedClientConnection</h1>
+
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.apache.http.conn.ManagedClientConnection</td>
+        <td class="jd-inheritance-interface-cell"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html">HttpClientConnection</a> <a href="../../../../../reference/org/apache/http/HttpInetConnection.html">HttpInetConnection</a> <a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html">ConnectionReleaseTrigger</a> 
+        </td>
+    </tr>
+    
+
+</table>
+
+
+<div class="jd-descr">
+
+
+
+
+<p>A client-side connection with advanced connection logic.
+ Instances are typically obtained from a connection manager.</p>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('subclasses-indirect')" class="jd-expando-trigger"
+        ><img id="subclasses-indirect-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Known Indirect Subclasses</h5>
+
+    <div id="subclasses-indirect">
+        <div id="subclasses-indirect-list"
+                class="jd-inheritedlinks"
+                
+                >
+            
+                <a href="../../../../../reference/org/apache/http/impl/conn/AbstractClientConnAdapter.html">AbstractClientConnAdapter</a>,
+            
+                <a href="../../../../../reference/org/apache/http/impl/conn/AbstractPooledConnAdapter.html">AbstractPooledConnAdapter</a>,
+            
+                <a href="../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPooledConnAdapter.html">BasicPooledConnAdapter</a>,
+            
+                <a href="../../../../../reference/org/apache/http/impl/conn/SingleClientConnManager.ConnAdapter.html">SingleClientConnManager.ConnAdapter</a>
+            
+        </div>
+        <div id="subclasses-indirect-summary"
+                style="display: none;"
+                >
+
+            
+<table class="jd-linktable">
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/impl/conn/AbstractClientConnAdapter.html">AbstractClientConnAdapter</a></td>
+            <td class="jd-descrcol" width="100%">Abstract adapter from <a href="../../../../../reference/org/apache/http/conn/OperatedClientConnection.html">operated</a> to
+ <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html">managed</a> client connections.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/impl/conn/AbstractPooledConnAdapter.html">AbstractPooledConnAdapter</a></td>
+            <td class="jd-descrcol" width="100%">Abstract adapter from pool <a href="../../../../../reference/org/apache/http/impl/conn/AbstractPoolEntry.html">entries</a> to
+ <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html">managed</a>
+ client connections.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/impl/conn/tsccm/BasicPooledConnAdapter.html">BasicPooledConnAdapter</a></td>
+            <td class="jd-descrcol" width="100%">A connection wrapper and callback handler.&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="jd-linkcol"><a href="../../../../../reference/org/apache/http/impl/conn/SingleClientConnManager.ConnAdapter.html">SingleClientConnManager.ConnAdapter</a></td>
+            <td class="jd-descrcol" width="100%">The connection adapter used by this manager.&nbsp;</td>
+        </tr>
+</table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+<h2>Summary</h2>
+
+<div class="jd-descr">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<h3>Public Methods</h3>
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#getRoute()">getRoute</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the current route of this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/javax/net/ssl/SSLSession.html">SSLSession</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#getSSLSession()">getSSLSession</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Obtains the SSL session of the underlying connection, if any.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/lang/Object.html">Object</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#getState()">getState</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the state object associated with this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#isMarkedReusable()">isMarkedReusable</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether this connection is in a reusable communication state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#isSecure()">isSecure</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates whether this connection is secure.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#layerProtocol(org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)">layerProtocol</a>(<a href="../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Layers a new protocol on top of a <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelTarget(boolean, org.apache.http.params.HttpParams)">tunnelled</a>
+ connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#markReusable()">markReusable</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Marks this connection as being in a reusable communication state.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#open(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)">open</a>(<a href="../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Opens this connection according to the given route.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#setIdleDuration(long, java.util.concurrent.TimeUnit)">setIdleDuration</a>(long duration, <a href="../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the duration that this connection can remain idle before it is
+ reused.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#setState(java.lang.Object)">setState</a>(<a href="../../../../../reference/java/lang/Object.html">Object</a> state)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Assigns a state object to this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelProxy(org.apache.http.HttpHost, boolean, org.apache.http.params.HttpParams)">tunnelProxy</a>(<a href="../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> next, boolean secure, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates that a tunnel to an intermediate proxy has been established.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelTarget(boolean, org.apache.http.params.HttpParams)">tunnelTarget</a>(boolean secure, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Indicates that a tunnel to the target has been established.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#unmarkReusable()">unmarkReusable</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Marks this connection as not being in a reusable state.</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.HttpClientConnection')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.HttpClientConnection-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/org/apache/http/HttpClientConnection.html">org.apache.http.HttpClientConnection</a>
+</h5>
+<div id="inherited-methods-org.apache.http.HttpClientConnection">
+<div id="inherited-methods-org.apache.http.HttpClientConnection-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#flush()">flush</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#isResponseAvailable(int)">isResponseAvailable</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#receiveResponseEntity(org.apache.http.HttpResponse)">receiveResponseEntity</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#receiveResponseHeader()">receiveResponseHeader</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#sendRequestEntity(org.apache.http.HttpEntityEnclosingRequest)">sendRequestEntity</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpClientConnection.html#sendRequestHeader(org.apache.http.HttpRequest)">sendRequestHeader</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.HttpClientConnection-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#flush()">flush</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Writes out all pending buffered data over the open connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#isResponseAvailable(int)">isResponseAvailable</a>(int timeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks if response data is available from the connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#receiveResponseEntity(org.apache.http.HttpResponse)">receiveResponseEntity</a>(<a href="../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a> response)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receives the next response entity available from this connection and
+ attaches it to an existing HttpResponse object.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/HttpResponse.html">HttpResponse</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#receiveResponseHeader()">receiveResponseHeader</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Receives the request line and headers of the next response available from
+ this connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#sendRequestEntity(org.apache.http.HttpEntityEnclosingRequest)">sendRequestEntity</a>(<a href="../../../../../reference/org/apache/http/HttpEntityEnclosingRequest.html">HttpEntityEnclosingRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends the request entity over the connection.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpClientConnection.html#sendRequestHeader(org.apache.http.HttpRequest)">sendRequestHeader</a>(<a href="../../../../../reference/org/apache/http/HttpRequest.html">HttpRequest</a> request)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sends the request line and all headers over the connection.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.HttpConnection')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.HttpConnection-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/org/apache/http/HttpConnection.html">org.apache.http.HttpConnection</a>
+</h5>
+<div id="inherited-methods-org.apache.http.HttpConnection">
+<div id="inherited-methods-org.apache.http.HttpConnection-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#close()">close</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#getMetrics()">getMetrics</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#getSocketTimeout()">getSocketTimeout</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#isOpen()">isOpen</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#isStale()">isStale</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#setSocketTimeout(int)">setSocketTimeout</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpConnection.html#shutdown()">shutdown</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.HttpConnection-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#close()">close</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Closes this connection gracefully.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/org/apache/http/HttpConnectionMetrics.html">HttpConnectionMetrics</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#getMetrics()">getMetrics</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns a collection of connection metrcis</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#getSocketTimeout()">getSocketTimeout</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Returns the socket timeout value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#isOpen()">isOpen</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks if this connection is open.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">boolean&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#isStale()">isStale</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Checks whether this connection has gone down.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#setSocketTimeout(int)">setSocketTimeout</a>(int timeout)</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Sets the socket timeout value.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpConnection.html#shutdown()">shutdown</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Force-closes this connection.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.HttpInetConnection')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.HttpInetConnection-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/org/apache/http/HttpInetConnection.html">org.apache.http.HttpInetConnection</a>
+</h5>
+<div id="inherited-methods-org.apache.http.HttpInetConnection">
+<div id="inherited-methods-org.apache.http.HttpInetConnection-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getLocalAddress()">getLocalAddress</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getLocalPort()">getLocalPort</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getRemoteAddress()">getRemoteAddress</a>,
+
+<a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getRemotePort()">getRemotePort</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.HttpInetConnection-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/net/InetAddress.html">InetAddress</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getLocalAddress()">getLocalAddress</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getLocalPort()">getLocalPort</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol"><a href="../../../../../reference/java/net/InetAddress.html">InetAddress</a>&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getRemoteAddress()">getRemoteAddress</a>()</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">int&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/HttpInetConnection.html#getRemotePort()">getRemotePort</a>()</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+<h5>
+<a href="javascript:toggle_inherited('inherited-methods-org.apache.http.conn.ConnectionReleaseTrigger')" class="jd-expando-trigger"
+        ><img id="inherited-methods-org.apache.http.conn.ConnectionReleaseTrigger-trigger"
+        src="../../../../../assets/triangle-open.png"
+        class="jd-expando-trigger" /></a>
+Methods inherited
+    from interface
+    <a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html">org.apache.http.conn.ConnectionReleaseTrigger</a>
+</h5>
+<div id="inherited-methods-org.apache.http.conn.ConnectionReleaseTrigger">
+<div id="inherited-methods-org.apache.http.conn.ConnectionReleaseTrigger-list"
+        class="jd-inheritedlinks">
+
+<a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html#abortConnection()">abortConnection</a>,
+
+<a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html#releaseConnection()">releaseConnection</a>
+
+</div>
+<div id="inherited-methods-org.apache.http.conn.ConnectionReleaseTrigger-summary"
+    style="display: none;">
+
+<table class="jd-linktable">
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html#abortConnection()">abortConnection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases the connection without the option of keep-alive.</td>
+    </tr>
+    
+
+    <tr>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">&nbsp;</td>
+        <td class="jd-descrcol">void&nbsp;</td>
+        <td class="jd-linkcol" width="100%"><a href="../../../../../reference/org/apache/http/conn/ConnectionReleaseTrigger.html#releaseConnection()">releaseConnection</a>()</td>
+    </tr>
+    
+    <tr>
+        <td class="jd-commentrow" colspan="6"></td>
+        <td class="jd-commentrow">Releases the connection with the option of keep-alive.</td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<h2>Details</h2>
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Public methdos -->
+
+<h3>Public Methods</h3>
+
+
+
+<A NAME="getRoute()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a>
+        getRoute()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Obtains the current route of this connection.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the route established so far, or
+          <code>null</code> if not connected
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getSSLSession()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/javax/net/ssl/SSLSession.html">SSLSession</a>
+        getSSLSession()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Obtains the SSL session of the underlying connection, if any.
+ If this connection is open, and the underlying socket is an
+ <a href="../../../../../reference/javax/net/ssl/SSLSocket.html">SSLSocket</a>, the SSL session of
+ that socket is obtained. This is a potentially blocking operation.
+ <br/>
+ <b>Note:</b> Whether the underlying socket is an SSL socket
+ can not necessarily be determined via <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#isSecure()">isSecure()</a>.
+ Plain sockets may be considered secure, for example if they are
+ connected to a known host in the same network segment.
+ On the other hand, SSL sockets may be considered insecure,
+ for example depending on the chosen cipher suite.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>the underlying SSL session if available,
+          <code>null</code> otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="getState()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../reference/java/lang/Object.html">Object</a>
+        getState()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Returns the state object associated with this connection.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li>The state object
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isMarkedReusable()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isMarkedReusable()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether this connection is in a reusable communication state.
+ See <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#markReusable()">markReusable</a> and
+ <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#unmarkReusable()">unmarkReusable</a> for details.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if this connection is marked as being in
+          a reusable communication state,
+          <code>false</code> otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="isSecure()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        boolean
+        isSecure()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates whether this connection is secure.
+ The return value is well-defined only while the connection is open.
+ It may change even while the connection is open.
+
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Returns</h4>
+    <ul class="nolist"><li><code>true</code> if this connection is secure,
+          <code>false</code> otherwise
+</li></ul>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="layerProtocol(org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        layerProtocol(<a href="../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Layers a new protocol on top of a <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelTarget(boolean, org.apache.http.params.HttpParams)">tunnelled</a>
+ connection. This is typically used to create a TLS/SSL connection
+ through a proxy.
+ The route is the one previously passed to <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#open(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)">open</a>.
+ It is not guaranteed that the layered connection is
+ <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#isSecure()">secure</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>context</td>
+        <td>the context for layering on top of this connection</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameters for layering on top of this connection</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of a problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="markReusable()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        markReusable()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Marks this connection as being in a reusable communication state.
+ The checkpoints for reuseable communication states (in the absence
+ of pipelining) are before sending a request and after receiving
+ the response in it's entirety.
+ The connection will automatically clear the checkpoint when
+ used for communication. A call to this method indicates that
+ the next checkpoint has been reached.
+ <br/>
+ A reusable communication state is necessary but not sufficient
+ for the connection to be reused.
+ A <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#getRoute()">route</a> mismatch, the connection being closed,
+ or other circumstances might prevent reuse.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="open(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        open(<a href="../../../../../reference/org/apache/http/conn/routing/HttpRoute.html">HttpRoute</a> route, <a href="../../../../../reference/org/apache/http/protocol/HttpContext.html">HttpContext</a> context, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Opens this connection according to the given route.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>route</td>
+        <td>the route along which to open. It will be opened to
+                  the first proxy if present, or directly to the target.</td>
+      </tr>
+    <tr>
+        <th>context</td>
+        <td>the context for opening this connection</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameters for opening this connection</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of a problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setIdleDuration(long, java.util.concurrent.TimeUnit)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setIdleDuration(long duration, <a href="../../../../../reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> unit)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Sets the duration that this connection can remain idle before it is
+ reused. The connection should not be used again if this time elapses. The
+ idle duration must be reset after each request sent over this connection.
+ The elapsed time starts counting when the connection is released, which
+ is typically after the headers (and any response body, if present) is
+ fully consumed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="setState(java.lang.Object)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        setState(<a href="../../../../../reference/java/lang/Object.html">Object</a> state)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Assigns a state object to this connection. Connection managers may make 
+ use of the connection state when allocating persistent connections.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>state</td>
+        <td>The state object
+</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tunnelProxy(org.apache.http.HttpHost, boolean, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        tunnelProxy(<a href="../../../../../reference/org/apache/http/HttpHost.html">HttpHost</a> next, boolean secure, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that a tunnel to an intermediate proxy has been established.
+ This is used exclusively for so-called <i>proxy chains</i>, where
+ a request has to pass through multiple proxies before reaching the
+ target. In that case, all proxies but the last need to be tunnelled
+ when establishing the connection. Tunnelling of the last proxy to the
+ target is optional and would be indicated via <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelTarget(boolean, org.apache.http.params.HttpParams)">tunnelTarget(boolean, HttpParams)</a>.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>next</td>
+        <td>the proxy to which the tunnel was established.
+                  This is <i>not</i> the proxy <i>through</i> which
+                  the tunnel was established, but the new end point
+                  of the tunnel. The tunnel does <i>not</i> yet
+                  reach to the target, use <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#tunnelTarget(boolean, org.apache.http.params.HttpParams)">tunnelTarget(boolean, HttpParams)</a>
+                  to indicate an end-to-end tunnel.</td>
+      </tr>
+    <tr>
+        <th>secure</td>
+        <td><code>true</code> if the connection should be
+                  considered secure, <code>false</code> otherwise</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameters for tunnelling this connection</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of a problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="tunnelTarget(boolean, org.apache.http.params.HttpParams)"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        tunnelTarget(boolean secure, <a href="../../../../../reference/org/apache/http/params/HttpParams.html">HttpParams</a> params)
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Indicates that a tunnel to the target has been established.
+ The route is the one previously passed to <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#open(org.apache.http.conn.routing.HttpRoute, org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)">open</a>.
+ Subsequently, <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#layerProtocol(org.apache.http.protocol.HttpContext, org.apache.http.params.HttpParams)">layerProtocol</a> can be called
+ to layer the TLS/SSL protocol on top of the tunnelled connection.
+ <br/>
+ <b>Note:</b> In HttpClient 3, a call to the corresponding method
+ would automatically trigger the layering of the TLS/SSL protocol.
+ This is not the case anymore, you can establish a tunnel without
+ layering a new protocol over the connection.
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Parameters</h4>
+    <table class="jd-tagtable">
+    <tr>
+        <th>secure</td>
+        <td><code>true</code> if the tunnel should be considered
+                  secure, <code>false</code> otherwise</td>
+      </tr>
+    <tr>
+        <th>params</td>
+        <td>the parameters for tunnelling this connection</td>
+      </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+<div class="jd-tagdata">
+    <h4 class="jd-tagtitle">Throws</h4>
+    <table class="jd-tagtable">
+      <tr>
+            <th><a href="../../../../../reference/java/io/IOException.html">IOException</a></td>
+            <td>in case of a problem
+</td>
+        </tr>
+    
+    </table>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+<A NAME="unmarkReusable()"></A>
+<div class="jd-details"> 
+    <h4 class="jd-details-title">
+        public 
+         
+         
+         
+         
+        void
+        unmarkReusable()
+    </h4>
+    <div class="jd-details-descr">
+
+
+
+
+Marks this connection as not being in a reusable state.
+ This can be used immediately before releasing this connection
+ to prevent it's reuse. Reasons for preventing reuse include
+ error conditions and the evaluation of a
+ <a href="../../../../../reference/org/apache/http/ConnectionReuseStrategy.html">reuse strategy</a>.
+ <br/>
+ <b>Note:</b>
+ It is <i>not</i> necessary to call here before writing to
+ or reading from this connection. Communication attempts will
+ automatically unmark the state as non-reusable. It can then
+ be switched back using <a href="../../../../../reference/org/apache/http/conn/ManagedClientConnection.html#markReusable()">markReusable</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+</div> <!-- jd-content -->
+</div><!-- end gc-pagecontent -->
+</div><!-- end gooey wrapper -->
+
+<div style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 15px;">
+    <table style="width: 100%; border:none;"><tr>
+    <td style="border: none; width: 150px;"></td>
+    <td style="text-align: left; font-size: 10pt; border: none; color: silver;">Copyright 2007 <a href="http://labs.google.com/">Google Inc.</a></td>
+    <td style="text-align: right; font-size: 10pt; border: none; color: silver;">Build 119366-119366 - 19 Nov 2008 16:04</td>
+    </tr></table>
+</div>
+
+
+</body>
+
+</html>
